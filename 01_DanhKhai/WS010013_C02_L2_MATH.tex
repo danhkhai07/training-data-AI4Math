@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Sử dụng phương pháp Gauss - Jordan tìm ma trận nghịch đảo của ma trận sau:}
+
+$$
+B = \begin{pmatrix} 1 & 1 & 1 \\ 1 & -1 & -1 \\ 0 & 1 & 1 \end{pmatrix}
+$$
+
+\section*{Giải.}
+
+\text{Áp dụng phương pháp Gauss - Jordan, ta xét ma trận mở rộng $(B|I)$:}
+$$
+(B|I) = \begin{pmatrix}
+1 & 1 & 1 & | & 1 & 0 & 0 \\
+1 & -1 & -1 & | & 0 & 1 & 0 \\
+0 & 1 & 1 & | & 0 & 0 & 1
+\end{pmatrix}
+$$
+
+\text{Thực hiện các phép biến đổi sơ cấp trên hàng:}
+$$
+\xrightarrow{\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1}
+\begin{pmatrix}
+1 & 1 & 1 & | & 1 & 0 & 0 \\
+0 & -2 & -2 & | & -1 & 1 & 0 \\
+0 & 1 & 1 & | & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \text{H}_2 + 2\text{H}_3$:}
+$$
+\xrightarrow{\text{H}_2 \leftarrow \text{H}_2 + 2\text{H}_3}
+\begin{pmatrix}
+1 & 1 & 1 & | & 1 & 0 & 0 \\
+0 & 0 & 0 & | & -1 & 1 & 2 \\
+0 & 1 & 1 & | & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Vì tồn tại một hàng toàn số 0 ở bên trái ma trận mở rộng, ma trận $B$ không khả nghịch.}
+\text{Do đó, không tồn tại ma trận nghịch đảo $B^{-1}$.}
+
+\end{document}
