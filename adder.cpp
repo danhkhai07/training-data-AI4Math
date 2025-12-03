@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <csignal>
 #include <vector>
+#include <algorithm> // For std::max
 
 namespace fs = std::filesystem;
 
@@ -30,10 +31,10 @@ void cleanup_on_signal(int signum) {
             std::cerr << "Removed: " << f << "\n";
         }
     }
+    // MODIFICATION: Restore cache using 'TOTAL' key
     if (!cache_file.empty() && !old_cache.empty()) {
         std::ofstream out(cache_file, std::ios::trunc);
-        out << "WS=" << old_cache["WS"] << "\n";
-        out << "NS=" << old_cache["NS"] << "\n";
+        out << "TOTAL=" << old_cache["TOTAL"] << "\n";
         std::cerr << "Cache restored.\n";
     }
     std::exit(1);
@@ -75,8 +76,13 @@ bool has_upstream(const fs::path &repo) {
 /*************** CACHE ***************/
 std::map<std::string,int> load_cache(const fs::path &path) {
     std::map<std::string,int> m;
-    m["WS"]=0; m["NS"]=0;
+    // MODIFICATION: Initialize global counter. Include old keys for migration check.
+    m["TOTAL"]=0; 
+    m["WS"]=0; 
+    m["NS"]=0; 
+    
     if (!fs::exists(path)) return m;
+    
     std::ifstream in(path);
     std::string line;
     while (std::getline(in, line)) {
@@ -85,13 +91,24 @@ std::map<std::string,int> load_cache(const fs::path &path) {
         if (pos == std::string::npos) continue;
         m[line.substr(0,pos)] = std::stoi(line.substr(pos+1));
     }
+
+    // MODIFICATION: Migration logic for existing cache files (WS/NS -> TOTAL)
+    if (!m.count("TOTAL")) {
+        // If TOTAL is missing, use the maximum of the old WS and NS counters as the starting point.
+        int max_old = std::max(m["WS"], m["NS"]);
+        m["TOTAL"] = max_old;
+    }
+    // Clean up old keys if present (optional, but keeps cache clean)
+    m.erase("WS");
+    m.erase("NS");
+
     return m;
 }
 
 void save_cache(const fs::path &path, const std::map<std::string,int> &m) {
     std::ofstream out(path, std::ios::trunc);
-    out << "WS=" << m.at("WS") << "\n";
-    out << "NS=" << m.at("NS") << "\n";
+    // MODIFICATION: Save only the 'TOTAL' counter
+    out << "TOTAL=" << m.at("TOTAL") << "\n";
 }
 
 /*************** CREATOR NAME ***************/
@@ -119,7 +136,7 @@ int main() {
     std::signal(SIGINT, cleanup_on_signal);
     std::signal(SIGTERM, cleanup_on_signal);
 
-    std::cout << "AI4Math filename helper + Git automation\n\n";
+    std::cout << "AI4Math filename helper + Git automation (Global ID Fix)\n\n";
 
     // --- Base dataset folder (always current directory)
     fs::path base = fs::current_path();
@@ -130,10 +147,10 @@ int main() {
     if (has_git) {
         std::cout << "\nGit detected.\n";
         if (has_upstream(base)) {
-            std::cout << "Upstream found → running: git pull --rebase\n";
+            std::cout << "Upstream found -> running: git pull --rebase\n";
             run_git_command(base, "git pull --rebase");
         } else {
-            std::cout << "No upstream branch → skipping git pull\n";
+            std::cout << "No upstream branch -> skipping git pull\n";
         }
     }
 
@@ -162,7 +179,9 @@ int main() {
         for (auto &c : wsns) c = toupper(c);
         if (wsns == "WS" || wsns == "NS") break;
     }
-    int next_stt = cache[wsns] + 1;
+    
+    // MODIFICATION: Use the single 'TOTAL' counter for the sequence number.
+    int next_stt = cache.at("TOTAL") + 1;
 
     // --- Chapter ---
     std::string chapter;
@@ -195,6 +214,7 @@ int main() {
 
     // --- Build filename ---
     auto make_name = [&](int stt)->std::string {
+        // The stt part is unique because we use the global TOTAL counter
         return wsns + id_str + pad_num(stt,4) + "_" + chapter + "_" + difficulty + "_" + cls + ext;
     };
     int stt = next_stt;
@@ -202,6 +222,7 @@ int main() {
     while (true) {
         filename = make_name(stt);
         if (!fs::exists(creator_folder / filename)) break;
+        // Should not happen if cache is correct, but check anyway
         stt++;
     }
     std::cout << "\nFinal filename: " << filename << "\n";
@@ -227,7 +248,8 @@ int main() {
     created_files.push_back(fullpath);
 
     // --- Update cache ---
-    cache[wsns] = stt;
+    // MODIFICATION: Update the single 'TOTAL' counter
+    cache["TOTAL"] = stt; 
     save_cache(cache_file, cache);
 
     // --- Clear created_files on success ---
@@ -250,4 +272,3 @@ int main() {
 
     return 0;
 }
-
