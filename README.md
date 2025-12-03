@@ -32,26 +32,6 @@ Có **2 chương trình** để hỗ trợ mọi người trong việc tạo fil
 
 [WS/NS][ID người tạo][STT data][Chương][Độ khó]_[MATH/LEAN].*
 
-
-### Ví dụ cấu trúc thư mục:
-
-Training Data AI4Math/
-├── 01_Van_A
-│ ├── WS010001_C02_L3_MATH.tex (có đáp án)
-│ ├── WS010002_C05_L1_LEAN.lean
-│ ├── WS010003_C08_L5_LEAN.lean
-│ ├── NS010001_C02_L3_MATH.tex (không có đáp án)
-│ ├── NS010002_C05_L1_MATH.tex
-│ └── NS010003_C08_L5_LEAN.lean
-├── 02_Van_B
-│ ├── WS020001_C02_L3_LEAN.lean
-│ ├── WS020002_C05_L1_MATH.tex
-│ ├── WS020003_C08_L5_MATH.tex
-│ ├── NS020001_C02_L3_LEAN.lean
-│ ├── NS020002_C05_L1_MATH.tex
-│ └── NS020003_C08_L5_LEAN.lean
-...
-
 ---
 ## Mã ID
 
