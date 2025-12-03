@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho $A$ là một ma trận vuông cấp $n$ thỏa mãn $A^{-1} = 4A$. Tính $|\det(A^{2k+1} - A)|$, với $k \in \mathbb{N}^*$.}
+
+\section*{Giải.}
+
+\text{Ta có}
+$$
+A^{2k+1} - A = A(A^{2k} - I).
+$$
+\text{Lấy định thức hai vế ta thu được}
+$$
+|\det(A^{2k+1} - A)| = |\det A| |\det(A^{2k} - I)|.
+$$
+\text{Mặt khác, do $A^{-1} = 4A$ nên}
+$$
+I = A \cdot A^{-1} = A(4A) = 4A^2.
+$$
+\text{Từ đó suy ra}
+$$
+A^2 = \dfrac{1}{4} I.
+$$
+\text{Ta thu được}
+$$
+A^{2k} = (A^2)^k = \left(\dfrac{1}{4} I\right)^k = \dfrac{1}{4^k} I.
+$$
+\text{Từ đó suy ra}
+$$
+A^{2k} - I = \dfrac{1}{4^k} I - I = \left(\dfrac{1}{4^k} - 1\right) I = \left(\dfrac{1 - 4^k}{4^k}\right) I.
+$$
+\text{Do vậy}
+$$
+\det(A^{2k} - I) = \det \left( \left(\dfrac{1 - 4^k}{4^k}\right) I \right) = \left(\dfrac{1 - 4^k}{4^k}\right)^n \det I = \left(\dfrac{1 - 4^k}{4^k}\right)^n.
+$$
+\text{Hơn nữa, do $A^2 = \dfrac{1}{4} I$ nên $\det(A^2) = \det\left(\dfrac{1}{4} I\right)$.}
+$$
+\det(A^2) = (\det A)^2 \quad \text{và} \quad \det\left(\dfrac{1}{4} I\right) = \left(\dfrac{1}{4}\right)^n \det I = \left(\dfrac{1}{4}\right)^n.
+$$
+$$
+\Rightarrow (\det A)^2 = \left(\dfrac{1}{4}\right)^n \Rightarrow |\det A| = \sqrt{\left(\dfrac{1}{4}\right)^n} = \left(\dfrac{1}{2}\right)^n = \dfrac{1}{2^n}.
+$$
+\text{Vậy}
+$$
+|\det(A^{2k+1} - A)| = |\det A| |\det(A^{2k} - I)| = \dfrac{1}{2^n} \left| \left(\dfrac{1 - 4^k}{4^k}\right)^n \right| = \dfrac{1}{2^n} \left(\dfrac{|4^k - 1|}{4^k}\right)^n
+$$
+$$
+= \dfrac{|4^k - 1|^n}{(2 \cdot 4^k)^n} = \dfrac{|4^k - 1|^n}{(2^{2k+1})^n} = \left(\dfrac{4^k - 1}{2^{2k+1}}\right)^n.
+$$
+\text{Chú ý: Hình ảnh có thể viết đáp án là $\left(\dfrac{4^k - 1}{2^{2k+1}}\right)^n$. Lời giải trong hình ảnh có vẻ bị nhầm lẫn ở bước cuối.}
+\end{document}
