@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xfrac} % Cần thiết để hiển thị tổ hợp chập C_n^k
+
+\begin{document}
+
+\subsection*{Bài 1.1.3. Cho $A, B$ là hai ma trận vuông cùng cấp và giao hoán được ($AB = BA$). Chứng minh rằng}
+\begin{enumerate}
+    \item[a)] $(A+B)^2 = A^2 + 2AB + B^2$.
+    \item[b)] $A^2 - B^2 = (A-B)(A+B)$.
+    \item[c)] $(A+B)^n = \sum_{k=0}^{n} C_n^k A^{n-k} B^k \quad (*)$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\text{Do $A$ và $B$ giao hoán được ($AB = BA$), ta có:}
+
+\subsection*{a) Ta có}
+$$
+(A+B)^2 = (A+B)(A+B) = A(A+B) + B(A+B)
+$$
+$$
+= A^2 + AB + BA + B^2 = A^2 + AB + AB + B^2 = A^2 + 2AB + B^2.
+$$
+
+\subsection*{b) Ta có}
+$$
+(A-B)(A+B) = A(A+B) - B(A+B)
+$$
+$$
+= A^2 + AB - BA - B^2 = A^2 + AB - AB - B^2 = A^2 - B^2.
+$$
+
+\subsection*{c) Ta sẽ chứng minh đẳng thức $(*)$ bằng phương pháp quy nạp.}
+
+\begin{itemize}
+    \item \text{Với $n=1$, đẳng thức $(*)$ hiển nhiên đúng.}
+    $$
+    (A+B)^1 = C_1^0 A^1 B^0 + C_1^1 A^0 B^1 = A+B.
+    $$
+    \item \text{Với $n=2$, ta cũng có}
+    $$
+    (A+B)^2 = A^2 + 2AB + B^2 = C_2^0 A^2 B^0 + C_2^1 A^1 B^1 + C_2^2 A^0 B^2.
+    $$
+    \item \text{Giả sử đẳng thức $(*)$ đúng với $n=m$, nghĩa là}
+    $$
+    (A+B)^m = \sum_{k=0}^{m} C_m^k A^{m-k} B^k
+    $$
+    \item \text{Ta cần chứng minh $(*)$ đúng với $n=m+1$. Thật vậy, ta có}
+    $$
+    (A+B)^{m+1} = (A+B)^m (A+B) = \left(\sum_{k=0}^{m} C_m^k A^{m-k} B^k\right) (A+B)
+    $$
+    $$
+    = \left(\sum_{k=0}^{m} C_m^k A^{m-k} B^k\right) A + \left(\sum_{k=0}^{m} C_m^k A^{m-k} B^k\right) B
+    $$
+    \text{(Do $AB=BA$, ta có $A$ và $B$ giao hoán với $A^{m-k}$ và $B^k$)}
+    $$
+    = \sum_{k=0}^{m} C_m^k A^{m-k+1} B^k + \sum_{k=0}^{m} C_m^k A^{m-k} B^{k+1}
+    $$
+    \text{Tách số hạng đầu tiên của tổng thứ nhất và số hạng cuối cùng của tổng thứ hai:}
+    $$
+    = C_m^0 A^{m+1} B^0 + \sum_{k=1}^{m} C_m^k A^{m+1-k} B^k + \sum_{k=0}^{m-1} C_m^k A^{m-k} B^{k+1} + C_m^m A^0 B^{m+1}
+    $$
+    \text{Đặt $j = k+1$ cho tổng thứ ba. Khi $k=0 \Rightarrow j=1$. Khi $k=m-1 \Rightarrow j=m$. Ta được:}
+    $$
+    = C_m^0 A^{m+1} B^0 + \sum_{k=1}^{m} C_m^k A^{m+1-k} B^k + \sum_{j=1}^{m} C_m^{j-1} A^{m+1-j} B^{j} + C_m^m A^0 B^{m+1}
+    $$
+    \text{Đổi biến $j$ thành $k$ trong tổng thứ ba:}
+    $$
+    = C_m^0 A^{m+1} B^0 + \sum_{k=1}^{m} C_m^k A^{m+1-k} B^k + \sum_{k=1}^{m} C_m^{k-1} A^{m+1-k} B^{k} + C_m^m A^0 B^{m+1}
+    $$
+    $$
+    = C_m^0 A^{m+1} B^0 + \sum_{k=1}^{m} (C_m^k + C_m^{k-1}) A^{m+1-k} B^k + C_m^m A^0 B^{m+1}
+    $$
+    \text{Áp dụng công thức tam giác Pascal $C_m^k + C_m^{k-1} = C_{m+1}^k$:}
+    $$
+    = C_m^0 A^{m+1} B^0 + \sum_{k=1}^{m} C_{m+1}^k A^{m+1-k} B^k + C_m^m A^0 B^{m+1}
+    $$
+    \text{Vì $C_m^0 = C_{m+1}^0 = 1$ và $C_m^m = C_{m+1}^{m+1} = 1$, ta có thể gom các số hạng đầu và cuối vào tổng:}
+    $$
+    = C_{m+1}^0 A^{m+1} B^0 + \sum_{k=1}^{m} C_{m+1}^k A^{m+1-k} B^k + C_{m+1}^{m+1} A^0 B^{m+1}
+    $$
+    $$
+    (A+B)^{m+1} = \sum_{k=0}^{m+1} C_{m+1}^k A^{m+1-k} B^k.
+    $$
+    \text{Vậy $(A+B)^n = \sum_{k=0}^{n} C_n^k A^{n-k} B^k$ (công thức nhị thức Newton cho ma trận giao hoán) đã được chứng minh.}
+\end{itemize}
+
+\end{document}
