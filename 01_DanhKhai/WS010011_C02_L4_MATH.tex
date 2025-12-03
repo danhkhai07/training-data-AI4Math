@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho ma trận $A = \begin{pmatrix} 1 & 1 & -2 \\ -1 & 2 & -1 \\ 1 & 2 & a \end{pmatrix}$. Tìm $a$ để ma trận $A$ khả nghịch. Khi đó hãy tìm ma trận nghịch đảo của ma trận $A$.}
+
+\section*{Giải.}
+
+\text{Điều kiện và dấu hiệu để ma trận $A$ khả nghịch là $\det A \ne 0$. }
+
+\text{Ta tính $\det A$ (Khai triển theo hàng thứ nhất):}
+$$
+\det A = 1 \begin{vmatrix} 2 & -1 \\ 2 & a \end{vmatrix} - 1 \begin{vmatrix} -1 & -1 \\ 1 & a \end{vmatrix} + (-2) \begin{vmatrix} -1 & 2 \\ 1 & 2 \end{vmatrix}
+$$
+$$
+= 1(2a - (-2)) - 1(-a - (-1)) - 2(-2 - 2)
+$$
+$$
+= (2a + 2) - (-a + 1) - 2(-4)
+$$
+$$
+= 2a + 2 + a - 1 + 8 = 3a + 9.
+$$
+
+\text{Ma trận $A$ khả nghịch khi và chỉ khi $\det A \ne 0$, tức là $3a + 9 \ne 0 \Leftrightarrow a \ne -3$.}
+
+\text{Khi $a \ne -3$, ta tìm ma trận nghịch đảo $A^{-1}$ bằng ma trận phụ hợp. }
+\text{Các phần tử phụ hợp là:}
+$$
+A_{11} = +\begin{vmatrix} 2 & -1 \\ 2 & a \end{vmatrix} = 2a + 2, \quad A_{12} = -\begin{vmatrix} -1 & -1 \\ 1 & a \end{vmatrix} = -(-a + 1) = a - 1,
+$$
+$$
+A_{13} = +\begin{vmatrix} -1 & 2 \\ 1 & 2 \end{vmatrix} = -2 - 2 = -4,
+$$
+$$
+A_{21} = -\begin{vmatrix} 1 & -2 \\ 2 & a \end{vmatrix} = -(a - (-4)) = -a - 4, \quad A_{22} = +\begin{vmatrix} 1 & -2 \\ 1 & a \end{vmatrix} = a - (-2) = a + 2,
+$$
+$$
+A_{23} = -\begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} = -(2 - 1) = -1,
+$$
+$$
+A_{31} = +\begin{vmatrix} 1 & -2 \\ 2 & -1 \end{vmatrix} = -1 - (-4) = 3, \quad A_{32} = -\begin{vmatrix} 1 & -2 \\ -1 & -1 \end{vmatrix} = -(-1 - 2) = 3,
+$$
+$$
+A_{33} = +\begin{vmatrix} 1 & 1 \\ -1 & 2 \end{vmatrix} = 2 - (-1) = 3.
+$$
+
+\text{Ma trận phụ hợp (Adjungate) $Adj(A) = \begin{pmatrix} A_{11} & A_{21} & A_{31} \\ A_{12} & A_{22} & A_{32} \\ A_{13} & A_{23} & A_{33} \end{pmatrix}$ là:}
+$$
+Adj(A) = \begin{pmatrix}
+2a + 2 & -a - 4 & 3 \\
+a - 1 & a + 2 & 3 \\
+-4 & -1 & 3
+\end{pmatrix}
+$$
+
+\text{Vậy ma trận nghịch đảo của ma trận $A$ là}
+$$
+A^{-1} = \dfrac{1}{\det A} Adj(A) = \dfrac{1}{3a + 9} \begin{pmatrix}
+2a + 2 & -a - 4 & 3 \\
+a - 1 & a + 2 & 3 \\
+-4 & -1 & 3
+\end{pmatrix}.
+$$
+
+\end{document}
