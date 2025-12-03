@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Training Data AI4Math
 
 Vì các file data không có dung lượng lớn, **database của nhóm mình được lưu trên GitHub** tại đường link:
@@ -54,8 +55,6 @@ Training Data AI4Math/
 │ └── NS020003_C08_L5_LEAN.lean
 ...
 
-less
-Copy code
 
 ---
 
@@ -88,3 +87,7 @@ Copy code
 
 - **MATH**: file `.tex` chứa nội dung LaTeX  
 - **LEAN**: file `.lean` chứa logic của Lean
+=======
+# training-data-AI4Math
+# backup file
+>>>>>>> backup
