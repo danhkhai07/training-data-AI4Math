@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xfrac} 
+
+\begin{document}
+
+\subsection*{Bài 1.1.5. Cho ma trận $A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$ và ma trận $B = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$.}
+\begin{enumerate}
+    \item[a)] Tính các ma trận $B^2, B^3$.
+    \item[b)] Sử dụng các kết quả của câu a) hãy tính $A^n$, $n \in \mathbb{N}, n \ge 3$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Tính $B^2, B^3$}
+\text{Ta có}
+$$
+B^2 = B \cdot B = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}.
+$$
+$$
+B^3 = B^2 \cdot B = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} = O.
+$$
+\text{Suy ra $B^k = O, \forall k \ge 3$.}
+
+\subsection*{b) Tính $A^n$}
+\text{Ta có thể viết $A$ dưới dạng tổng của ma trận đơn vị $I$ và ma trận $B$:}
+$$
+A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} + \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} = I + B.
+$$
+\text{Do $I \cdot B = B \cdot I = B$ (tức là $I$ và $B$ giao hoán) và $B^k = O, \forall k \ge 3$, ta áp dụng công thức nhị thức Newton cho ma trận:}
+$$
+A^n = (I + B)^n = \sum_{k=0}^{n} C_n^k I^{n-k} B^k = \sum_{k=0}^{n} C_n^k B^k.
+$$
+\text{Vì $B^k = O$ với mọi $k \ge 3$, nên tổng chỉ còn lại các số hạng với $k=0, 1, 2$:}
+$$
+A^n = C_n^0 I + C_n^1 B + C_n^2 B^2.
+$$
+\text{Ta có:}
+\begin{itemize}
+    \item $C_n^0 = 1$
+    \item $C_n^1 = n$
+    \item $C_n^2 = \dfrac{n(n-1)}{2}$
+\end{itemize}
+$$
+A^n = I + nB + \dfrac{n(n-1)}{2} B^2
+$$
+$$
+= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} + n \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} + \dfrac{n(n-1)}{2} \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
+$$
+= \begin{pmatrix}
+1 & n & \dfrac{n(n-1)}{2} \\
+0 & 1 & n \\
+0 & 0 & 1
+\end{pmatrix}.
+$$
+
+\end{document}
