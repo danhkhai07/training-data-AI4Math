@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Giải hệ phương trình tuyến tính sau}
+$$
+\begin{cases}
+2x_1 + x_2 + 3x_3 + 2x_4 = 5 \\
+4x_1 + 3x_2 + 5x_3 + x_4 = 7 \\
+6x_1 + 5x_2 + 7x_3 + 4x_4 = 1
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Ma trận mở rộng của hệ là:}
+$$
+\bar{A} = \begin{pmatrix}
+2 & 1 & 3 & 2 & | & 5 \\
+4 & 3 & 5 & 1 & | & 7 \\
+6 & 5 & 7 & 4 & | & 1
+\end{pmatrix}
+$$
+
+\text{Ta thực hiện các phép biến đổi sơ cấp trên hàng để đưa ma trận về dạng bậc thang:}
+$$
+\bar{A} \xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1}
+\begin{pmatrix}
+2 & 1 & 3 & 2 & | & 5 \\
+0 & 1 & -1 & -3 & | & -3 \\
+0 & 2 & -2 & -2 & | & -14
+\end{pmatrix}
+$$
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_2}
+\begin{pmatrix}
+2 & 1 & 3 & 2 & | & 5 \\
+0 & 1 & -1 & -3 & | & -3 \\
+0 & 0 & 0 & 4 & | & -8
+\end{pmatrix}
+$$
+
+\text{Từ ma trận bậc thang này, ta xác định hạng của ma trận hệ số ($r(A)$) và hạng của ma trận mở rộng ($r(\bar{A})$):}
+$$
+\text{Hạng } r(A) = 3 \quad \text{và} \quad \text{Hạng } r(\bar{A}) = 3.
+$$
+\text{Số ẩn là } $n = 4$.
+
+\text{Vì $r(A) = r(\bar{A}) < n$ nên hệ phương trình có vô số nghiệm phụ thuộc vào $n - r(A) = 4 - 3 = 1$ tham số.}
+
+\text{Hệ phương trình tương đương với:}
+$$
+\begin{cases}
+2x_1 + x_2 + 3x_3 + 2x_4 = 5 \\
+x_2 - x_3 - 3x_4 = -3 \\
+4x_4 = -8
+\end{cases}
+$$
+
+\text{Giải ngược từ dưới lên:}
+\begin{itemize}
+    \item $4x_4 = -8 \Rightarrow x_4 = -2$.
+    \item Chọn $x_3 = \alpha$ là tham số tùy ý ($\alpha \in \mathbb{R}$).
+    \item Thay $x_3 = \alpha$ và $x_4 = -2$ vào phương trình thứ hai:
+    $$
+    x_2 - \alpha - 3(-2) = -3 \Rightarrow x_2 - \alpha + 6 = -3 \Rightarrow x_2 = \alpha - 9.
+    $$
+    \item Thay $x_2 = \alpha - 9$, $x_3 = \alpha$, $x_4 = -2$ vào phương trình thứ nhất:
+    $$
+    2x_1 + (\alpha - 9) + 3\alpha + 2(-2) = 5
+    $$
+    $$
+    2x_1 + 4\alpha - 13 = 5 \Rightarrow 2x_1 = 18 - 4\alpha \Rightarrow x_1 = 9 - 2\alpha.
+    $$
+\end{itemize}
+
+\text{Vậy nghiệm của hệ phương trình là:}
+$$
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}
+= \begin{pmatrix} 9 - 2\alpha \\ \alpha - 9 \\ \alpha \\ -2 \end{pmatrix}
+= \begin{pmatrix} 9 \\ -9 \\ 0 \\ -2 \end{pmatrix} + \alpha \begin{pmatrix} -2 \\ 1 \\ 1 \\ 0 \end{pmatrix}, \quad \text{với } \alpha \in \mathbb{R}.
+$$
+
+\end{document}
