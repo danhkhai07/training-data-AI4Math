@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Training Data AI4Math
 
 Vì các file data không có dung lượng lớn, **database của nhóm mình được lưu trên GitHub** tại đường link:
@@ -33,8 +32,6 @@ Có **2 chương trình** để hỗ trợ mọi người trong việc tạo fil
 
 [WS/NS][ID người tạo][STT data][Chương][Độ khó]_[MATH/LEAN].*
 
-css
-Copy code
 
 ### Ví dụ cấu trúc thư mục:
 
@@ -55,9 +52,7 @@ Training Data AI4Math/
 │ └── NS020003_C08_L5_LEAN.lean
 ...
 
-
 ---
-
 ## Mã ID
 
 - **WS**: có đáp án (**With Solution**)  
@@ -87,7 +82,3 @@ Training Data AI4Math/
 
 - **MATH**: file `.tex` chứa nội dung LaTeX  
 - **LEAN**: file `.lean` chứa logic của Lean
-=======
-# training-data-AI4Math
-# backup file
->>>>>>> backup
