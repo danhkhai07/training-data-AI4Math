@@ -64,5 +64,6 @@ Nên nếu mọi người làm thì làm thủ công hoặc dùng auto cho xuyê
 
 ## Phân loại toán
 
-- **MATH**: file `.tex` chứa nội dung LaTeX  
+- **MATH**: file `.tex` chứa nội dung LaTeX
+   - Một tool để sử dụng cho việc tạo LaTeX: https://snip.mathpix.com/
 - **LEAN**: file `.lean` chứa logic của Lean
