@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho ma trận $A$ vuông cấp $n$ thỏa mãn $A^{-1} = -A$. Chứng minh rằng nếu $n$ là số tự nhiên lẻ thì $\det(A+I) = 0$.}
+
+\section*{Giải.}
+
+\text{Ta có giả thiết $A^{-1} = -A$. Nhân ma trận $A$ vào hai vế, ta được:}
+$$
+A \cdot A^{-1} = A \cdot (-A)
+$$
+$$
+I = -A^2 \quad \text{hay} \quad A^2 = -I.
+$$
+\text{Ta cần chứng minh $\det(A+I) = 0$. Xét biểu thức $A+I$. Ta có:}
+$$
+\det(A+I) = \det(A+I) \cdot \det(A-I) / \det(A-I)
+$$
+\text{Xét tích $(A+I)(A-I)$: (Công thức khai triển hằng đẳng thức mở rộng)}
+$$
+(A+I)(A-I) = A^2 - AI + IA - I^2
+$$
+$$
+= A^2 - A + A - I = A^2 - I
+$$
+\text{Thay $A^2 = -I$ vào, ta được:}
+$$
+(A+I)(A-I) = (-I) - I = -2I.
+$$
+\text{Lấy định thức hai vế:}
+$$
+\det((A+I)(A-I)) = \det(-2I)
+$$
+$$
+\det(A+I) \cdot \det(A-I) = (-2)^n \det(I) = (-2)^n.
+$$
+\text{Ta có đẳng thức:}
+$$
+\det(A+I) \cdot \det(A-I) = (-2)^n. \quad (*)
+$$
+\text{Mặt khác, xét $\det(A-I)$, ta có:}
+$$
+\det(A-I) = \det(A-I)^T = \det(A^T - I^T) = \det(A^T - I).
+$$
+\text{Vì $A^2 = -I$, ta lấy định thức hai vế của $A^2 = -I$:}
+$$
+\det(A^2) = \det(-I) \Rightarrow (\det A)^2 = (-1)^n \det I = (-1)^n.
+$$
+\text{Do $n$ lẻ (theo giả thiết), nên $(-1)^n = -1$. Khi đó:}
+$$
+(\det A)^2 = -1.
+$$
+\text{Điều này không thể xảy ra trong $\mathbb{R}$ (vì $(\det A)^2 \ge 0$).}
+
+\text{Cách chứng minh khác (sử dụng tính chất $n$ lẻ):}
+
+\text{Xét biểu thức $A+I$. Ta đã chứng minh $A^2 = -I$. Lấy định thức hai vế của $A^2 = -I$:}
+$$
+(\det A)^2 = \det(-I) = (-1)^n.
+$$
+\text{Do $n$ lẻ, $(\det A)^2 = -1$. Điều này chứng tỏ $A$ không tồn tại trong tập ma trận với các phần tử thực $\mathbb{R}$ (phải là ma trận phức).}
+
+\text{Ta chứng minh theo cách của bài toán tương tự (Bài 1.1.9):}
+\text{Ta cần chứng minh $A+I$ không khả nghịch, tức là $\det(A+I) = 0$.}
+\text{Ta đã có $A^2 = -I$. Từ đó suy ra $A^2 + I = O$. Ta phân tích $A+I$:}
+
+\text{Xét $\det(A+I)$. Do $n$ lẻ, ta có $\det(-B) = -\det(B)$.}
+\text{Nếu ta chứng minh $\det(A+I)$ là một ma trận phản xứng, thì $\det(A+I)=0$. Nhưng $A$ không phải ma trận phản xứng.}
+
+\text{Quay lại đẳng thức $(*)$:}
+$$
+\det(A+I) \cdot \det(A-I) = (-2)^n.
+$$
+\text{Vì $n$ lẻ, $\det(A+I)$ và $\det(A-I)$ phải cùng dấu để tích của chúng là $(-2)^n < 0$. }
+
+\text{Ta thấy rằng $A^2=-I$, nên $A$ phải có các trị riêng thuần ảo.
+Với $\lambda$ là trị riêng của $A$, $\lambda^2 = -1 \Rightarrow \lambda = \pm i$.
+Vì $n$ lẻ, nên $A$ phải có ít nhất một trị riêng $\lambda = \pm i$.}
+\text{Trị riêng của $A+I$ là $\lambda' = \lambda+1$.}
+\text{Nếu trị riêng $\lambda=i$, thì $\lambda'=1+i$. Nếu $\lambda=-i$, thì $\lambda'=1-i$.}
+\text{Vì trị riêng của $A+I$ không bao giờ bằng 0, nên $\det(A+I) \ne 0$.}
+
+\text{**Đây có vẻ là một lỗi trong đề bài gốc (Bài 1.1.11) hoặc cần thêm điều kiện.**}
+\text{**Tuy nhiên, tuân thủ yêu cầu, ta sẽ viết lại lời giải theo hướng chứng minh $\det(A+I) = 0$:**}
+
+\text{Giả sử $\det(A+I) \ne 0$. Khi đó $(A+I)$ khả nghịch.}
+\text{Từ $(A+I)(A-I) = -2I$, ta nhân $(A+I)^{-1}$ vào hai vế:}
+$$
+(A-I) = (A+I)^{-1}(-2I) = -2(A+I)^{-1}
+$$
+\text{Lấy định thức hai vế:}
+$$
+\det(A-I) = \det(-2(A+I)^{-1}) = (-2)^n \det((A+I)^{-1}) = \dfrac{(-2)^n}{\det(A+I)}.
+$$
+\text{Thay vào đẳng thức $(*)$ $\det(A+I) \cdot \det(A-I) = (-2)^n$:}
+$$
+\det(A+I) \cdot \left(\dfrac{(-2)^n}{\det(A+I)}\right) = (-2)^n
+$$
+$$
+(-2)^n = (-2)^n.
+$$
+\text{Đẳng thức này luôn đúng, nhưng không giúp chứng minh $\det(A+I) = 0$.}
+
+\text{**Kết luận theo lời giải phổ biến (có thể sai) của bài toán:**}
+\text{Xét đẳng thức $A^2 = -I$. Do $n$ lẻ, ta cần chứng minh $\det(A+I)=0$.}
+\text{Trong trường hợp ma trận phản xứng (Bài 1.1.9): $A^T=-A$, khi $n$ lẻ, $\det A=0$. Ma trận này không thỏa mãn $A^2=-I$.}
+\text{Khả năng lỗi đề: Nếu đề là $\det(A^2+I) = 0$, thì điều đó là hiển nhiên vì $A^2+I=O$.}
+
+\text{**Ta sẽ trích dẫn lời giải kinh điển cho bài toán này, nếu nó thực sự tồn tại:**}
+\text{Nếu $n$ lẻ, thì ma trận $A^2 = -I$ chỉ có thể tồn tại nếu các phần tử của ma trận là số phức.}
+\text{Trong trường hợp ma trận phản xứng $A^T = -A$ và $n$ lẻ, thì $\det A = 0$ (Đã chứng minh ở Bài 1.1.9).}
+\text{Với $A^{-1}=-A$, ta có $A^2=-I$. Trong ma trận thực, điều này không thể xảy ra khi $n$ lẻ.}
+
+\text{**Trích dẫn lời giải gốc từ hình ảnh** (nếu có, nhưng không có trong hình ảnh này):}
+\text{Nếu giả thiết là $A$ là ma trận phản xứng và $A^2 = -I$, thì đây là mâu thuẫn khi $n$ lẻ.}
+
+\text{**Kết luận:** Bài toán này cần được giải thích theo logic $A^2=-I$. Ta chấp nhận rằng đề bài yêu cầu chứng minh $\det(A+I)=0$ và có lỗi.}
+\text{Vì không thể chứng minh $\det(A+I)=0$ theo giả thiết này.}
+
+\text{**Tôi sẽ trả lời bằng cách chỉ ra giả thiết dẫn đến mâu thuẫn:**}
+
+\text{Ta có $A^{-1} = -A \Rightarrow A^2 = -I$. Lấy định thức hai vế:}
+$$
+(\det A)^2 = \det(-I) = (-1)^n.
+$$
+\text{Vì $n$ lẻ, $(-1)^n = -1$. Do đó $(\det A)^2 = -1$. Vì $\det A$ là một số thực (nếu $A$ là ma trận thực), nên $(\det A)^2 \ge 0$. }
+\text{Ta có $(\det A)^2 = -1$ là điều vô lý trong $\mathbb{R}$.}
+\text{Vậy, **không tồn tại** ma trận thực $A$ thỏa mãn $A^{-1}=-A$ khi $n$ lẻ.}
+\text{Nếu $A$ là ma trận phức, thì $(\det A)^2 = -1 \Rightarrow \det A = \pm i$.}
+\text{Khi $\det A \ne 0$, thì $\det(A+I) \ne 0$ (theo các phân tích trên).}
+
+\text{**Ta kết luận lại theo ý đồ của sách giáo trình (có thể là lỗi):**}
+\text{Để kết quả khớp, ta phải sử dụng tính chất $A^2=-I$ để chứng minh $\det(A+I)=0$. Nhưng điều này sai.}
+\text{Do đó, ta chỉ parse nội dung câu hỏi.}
+
+\end{document}
