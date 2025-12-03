@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xfrac} 
+
+\begin{document}
+
+\subsection*{Bài 1.1.4. Cho ma trận $A = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & -2 \\ 0 & 0 & 0 \end{pmatrix}$. Kí hiệu $I$ là ma trận đơn vị cấp 3. Tìm các ma trận $A^2, A^3$. Từ đó hãy tính $(I + A)^7$.}
+
+\section*{Giải.}
+
+\text{Ta có}
+$$
+A^2 = A \cdot A = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & -2 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & -2 \\ 0 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & -2 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}.
+$$
+$$
+A^3 = A^2 \cdot A = \begin{pmatrix} 0 & 0 & -2 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & -2 \\ 0 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} = O.
+$$
+\text{Suy ra $A^n = O, \forall n \ge 3$. Do $A$ và $I$ giao hoán ($A \cdot I = I \cdot A = A$), ta có thể áp dụng công thức nhị thức Newton cho ma trận:}
+$$
+(I + A)^7 = \sum_{k=0}^{7} C_7^k I^{7-k} A^k = \sum_{k=0}^{7} C_7^k A^k.
+$$
+\text{Vì $A^k = O$ với mọi $k \ge 3$, nên tổng chỉ còn lại các số hạng với $k=0, 1, 2$:}
+$$
+(I + A)^7 = C_7^0 I + C_7^1 A + C_7^2 A^2.
+$$
+\text{Ta có:}
+\begin{itemize}
+    \item $C_7^0 = 1$
+    \item $C_7^1 = 7$
+    \item $C_7^2 = \dfrac{7 \cdot 6}{2} = 21$
+\end{itemize}
+$$
+(I + A)^7 = I + 7A + 21A^2
+$$
+$$
+= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} + 7 \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & -2 \\ 0 & 0 & 0 \end{pmatrix} + 21 \begin{pmatrix} 0 & 0 & -2 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
+$$
+= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} + \begin{pmatrix} 0 & 7 & 0 \\ 0 & 0 & -14 \\ 0 & 0 & 0 \end{pmatrix} + \begin{pmatrix} 0 & 0 & -42 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
+$$
+= \begin{pmatrix}
+1 & 7 & -42 \\
+0 & 1 & -14 \\
+0 & 0 & 1
+\end{pmatrix}.
+$$
+
+\end{document}
