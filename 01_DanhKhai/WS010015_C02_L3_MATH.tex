@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Chứng minh rằng nếu $A$ là ma trận vuông thỏa mãn $A^n + A^{n-1} + \dots + A + I = O$ thì $A$ khả nghịch và $A^{-1} = A^n$.}
+
+\section*{Giải.}
+
+\text{Từ giả thiết ta có}
+$$
+A^n + A^{n-1} + \dots + A + I = O.
+$$
+\text{Ta nhân ma trận $A$ vào vế trái của biểu thức trên, ta được}
+$$
+A(A^n + A^{n-1} + \dots + A + I) = A \cdot O = O.
+$$
+\text{Khai triển vế trái:}
+$$
+A^{n+1} + A^n + \dots + A^2 + A = O.
+$$
+\text{Từ giả thiết $A^n + A^{n-1} + \dots + A + I = O$, ta có $A^n + A^{n-1} + \dots + A = -I$. }
+
+\text{Thay $-I$ vào biểu thức $A^{n+1} + (A^n + \dots + A) = O$, ta có:}
+$$
+A^{n+1} + (-I) = O \quad \text{hay} \quad A^{n+1} = I.
+$$
+\text{Ta viết lại $A^{n+1} = I$ dưới dạng tích của $A$ và $A^n$:}
+$$
+A \cdot A^n = I.
+$$
+\text{Tương tự, ta có $A^n \cdot A = A^{n+1} = I$. }
+\text{Theo định nghĩa ma trận nghịch đảo, $A$ khả nghịch và ma trận nghịch đảo của nó là $A^{-1} = A^n$.}
+
+\end{document}
