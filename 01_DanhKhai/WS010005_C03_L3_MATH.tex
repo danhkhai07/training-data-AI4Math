@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Tính định thức}
+$$
+D = \begin{vmatrix}
+1 & 1 & 1 & 1 \\
+1 & 2 & 3 & 4 \\
+1 & 3 & 6 & 10 \\
+1 & 4 & 10 & 20
+\end{vmatrix}
+$$
+
+\section*{Giải.}
+
+\text{Ta thực hiện các phép biến đổi sơ cấp trên các hàng (tính chất định thức: $D' = D$ khi thực hiện $H_i \leftarrow H_i + c H_j$):}
+$$
+D = \begin{vmatrix}
+1 & 1 & 1 & 1 \\
+1 & 2 & 3 & 4 \\
+1 & 3 & 6 & 10 \\
+1 & 4 & 10 & 20
+\end{vmatrix}
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - \text{H}_2]{\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1}
+\begin{vmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 3 \\
+1 & 3 & 6 & 10 \\
+1 & 4 & 10 & 20
+\end{vmatrix}
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 - \text{H}_1}
+\begin{vmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 3 \\
+0 & 2 & 5 & 9 \\
+1 & 4 & 10 & 20
+\end{vmatrix}
+$$
+\text{Thực hiện $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_1$ và $\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_2$:}
+$$
+\xrightarrow{\text{H}_4 \leftarrow \text{H}_4 - \text{H}_1}
+\begin{vmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 3 \\
+0 & 2 & 5 & 9 \\
+0 & 3 & 9 & 19
+\end{vmatrix}
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_2]{\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_2}
+\begin{vmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 3 & 10
+\end{vmatrix}
+$$
+\text{Thực hiện $\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_3$:}
+$$
+\xrightarrow{\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_3}
+\begin{vmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 1
+\end{vmatrix}
+$$
+\text{Định thức của ma trận tam giác bằng tích các phần tử trên đường chéo chính:}
+$$
+D = 1 \cdot 1 \cdot 1 \cdot 1 = 1.
+$$
+
+\end{document}
