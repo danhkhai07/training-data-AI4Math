@@ -27,7 +27,7 @@ Có **2 chương trình** để hỗ trợ mọi người trong việc tạo fil
 
 ## Quy chuẩn cấu trúc dữ liệu
 **LƯU Ý: Phần này đã được tự động hóa trong hai file adder.exe và remover.exe, kể cả công đoạn tạo Folder.
-Nên nếu mọi người làm thủ công thì làm thủ công hoặc dùng auto cho chót, tránh ảnh hưởng đến cache của database.**
+Nên nếu mọi người làm thì làm thủ công hoặc dùng auto cho xuyên suốt, tránh ảnh hưởng đến cache của database.**
 
 1. **Tạo folder riêng cho mỗi người** với **ID không trùng lặp** và tên của mình để tránh lẫn lộn dữ liệu.  
 2. **Định dạng file**: `.tex` hoặc `.lean`  
