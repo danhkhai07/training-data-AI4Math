@@ -242,7 +242,7 @@ int main() {
         std::cout << "Auto commit message: " << msg << "\n";
 
         if (msg.empty()) msg = "Add " + filename;
-        run_git_command(base, ("git add \"" + fullpath.string() + "\"").c_str());
+        run_git_command(base, ("git add \"" + creator_folder.string() + "\"").c_str());
         run_git_command(base, ("git commit -m \"" + msg + "\"").c_str());
         run_git_command(base, "git push");
         std::cout << "Git push completed.\n";
