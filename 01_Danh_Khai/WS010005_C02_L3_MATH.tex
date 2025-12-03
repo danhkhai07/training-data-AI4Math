@@ -1,0 +1,35 @@
+Bài 1.1.5. Cho ma trận $A=\left(\begin{array}{lll}1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1\end{array}\right)$ và ma trận $B=\left(\begin{array}{lll}0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0\end{array}\right)$.
+a) Tính các ma trận $B^2, B^3$.
+b) Sử dụng các kết quả của câu a) hãy tính $A^n, n \in \mathbb{N}, n \geq 3$.
+
+Giải. a) Ta có $B^2=B \cdot B=\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right), B^3=B^2 \cdot B=\left(\begin{array}{lll}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)$.
+b) Ta có
+$$
+A=\left(\begin{array}{lll}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1
+\end{array}\right)=\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)+\left(\begin{array}{lll}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{array}\right)=I+B
+$$
+
+Do $I \cdot B=B \cdot I=B$ và $B^k=O, \quad \forall k \geq 3$ nên
+$$
+A^n=(I+B)^n=\sum_{k=0}^n C_n^k I^{n-k} B^k=\sum_{k=0}^n C_n^k B^k=C_n^0 I+C_n^1 B+C_n^2 B^2 .
+$$
+
+Vậy
+$$
+A^n=I+n B+\frac{n(n-1)}{2} B^2=\left(\begin{array}{ccc}
+1 & n & \frac{n(n-1)}{2} \\
+0 & 1 & n \\
+0 & 0 & 1
+\end{array}\right)
+$$
