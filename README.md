@@ -10,6 +10,8 @@ Nếu ai chưa có quyền truy cập, vui lòng nhắn cho mình (**Nguyễn Da
 
 ## Note về các executable hỗ trợ
 
+Cách sử dụng: https://drive.google.com/file/d/10IYnwJoqLp9lhOQxsJN02-v-UzW3hEOc/view?usp=sharing
+
 Có **2 chương trình** để hỗ trợ mọi người trong việc tạo file và xóa file lỗi:
 
 - **adder.exe**: tự động prompt tên, ID, lưu cache, và auto pull/push  
