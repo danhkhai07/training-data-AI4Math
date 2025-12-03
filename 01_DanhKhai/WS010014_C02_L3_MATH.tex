@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Chứng minh rằng nếu $A$ là ma trận vuông thỏa mãn $A^n + A^{n-1} + \dots + A + I = O$ thì $A$ khả nghịch và $A^{-1} = A^n$.}
+
+\section*{Giải.}
+
+\text{Từ giả thiết ta có}
+$$
+A^n + A^{n-1} + \dots + A + I = O.
+$$
+\text{Ta chuyển $A^n$ sang vế phải và đặt $A$ làm nhân tử chung (bên trái) cho vế trái:}
+$$
+A(A^{n-1} + A^{n-2} + \dots + A + I) = -A^n.
+$$
+\text{Nhân cả hai vế với $-1$:}
+$$
+A(-(A^{n-1} + A^{n-2} + \dots + A + I)) = A^n.
+$$
+\text{Từ giả thiết ban đầu, ta có $A^{n-1} + A^{n-2} + \dots + A + I = -A^n$. Do đó:}
+$$
+A(-(-A^n)) = I
+$$
+$$
+A \cdot A^n = I.
+$$
+\text{Vì $A \cdot A^n = I$ và $A^n \cdot A = A^{n+1} = I$ (tính chất lũy thừa ma trận), theo định nghĩa ma trận nghịch đảo, ma trận $A$ khả nghịch và $A^{-1} = A^n$.}
+
+\end{document}
