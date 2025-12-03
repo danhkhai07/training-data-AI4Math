@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Sử dụng ma trận phụ hợp tìm ma trận nghịch đảo của các ma trận sau:}
+\begin{enumerate}
+    \item[a)] $A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$.
+    \item[b)] $B = \begin{pmatrix} 2 & 5 & 7 \\ 6 & 3 & 4 \\ 5 & -2 & -3 \end{pmatrix}$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a)}
+\text{Ta có $\det A = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}$. Khi $\det A \ne 0$ thì ma trận $A$ khả nghịch. }
+
+\text{Các phần tử phụ hợp là:}
+$$
+A_{11} = (-1)^{1+1} a_{22} = a_{22}, \quad A_{12} = (-1)^{1+2} a_{21} = -a_{21},
+$$
+$$
+A_{21} = (-1)^{2+1} a_{12} = -a_{12}, \quad A_{22} = (-1)^{2+2} a_{11} = a_{11}.
+$$
+
+\text{Vậy ma trận nghịch đảo của ma trận $A$ là}
+$$
+A^{-1} = \dfrac{1}{\det A} \begin{pmatrix} A_{11} & A_{21} \\ A_{12} & A_{22} \end{pmatrix} = \dfrac{1}{a_{11}a_{22} - a_{12}a_{21}} \begin{pmatrix} a_{22} & -a_{12} \\ -a_{21} & a_{11} \end{pmatrix}.
+$$
+
+\subsection*{b)}
+\text{Ta có}
+$$
+\det B = \begin{vmatrix} 2 & 5 & 7 \\ 6 & 3 & 4 \\ 5 & -2 & -3 \end{vmatrix} = 2\begin{vmatrix} 3 & 4 \\ -2 & -3 \end{vmatrix} - 5\begin{vmatrix} 6 & 4 \\ 5 & -3 \end{vmatrix} + 7\begin{vmatrix} 6 & 3 \\ 5 & -2 \end{vmatrix}
+$$
+$$
+= 2(-9 - (-8)) - 5(-18 - 20) + 7(-12 - 15)
+$$
+$$
+= 2(-1) - 5(-38) + 7(-27) = -2 + 190 - 189 = -1 \ne 0.
+$$
+\text{nên $B$ là ma trận khả nghịch. }
+
+\text{Các phần tử phụ hợp là:}
+$$
+B_{11} = \begin{vmatrix} 3 & 4 \\ -2 & -3 \end{vmatrix} = -1, \quad B_{12} = -\begin{vmatrix} 6 & 4 \\ 5 & -3 \end{vmatrix} = 38, \quad B_{13} = \begin{vmatrix} 6 & 3 \\ 5 & -2 \end{vmatrix} = -27,
+$$
+$$
+B_{21} = -\begin{vmatrix} 5 & 7 \\ -2 & -3 \end{vmatrix} = 1, \quad B_{22} = \begin{vmatrix} 2 & 7 \\ 5 & -3 \end{vmatrix} = -41, \quad B_{23} = -\begin{vmatrix} 2 & 5 \\ 5 & -2 \end{vmatrix} = 29,
+$$
+$$
+B_{31} = \begin{vmatrix} 5 & 7 \\ 3 & 4 \end{vmatrix} = -1, \quad B_{32} = -\begin{vmatrix} 2 & 7 \\ 6 & 4 \end{vmatrix} = 34, \quad B_{33} = \begin{vmatrix} 2 & 5 \\ 6 & 3 \end{vmatrix} = -24.
+$$
+
+\text{Vậy ma trận nghịch đảo của ma trận $B$ là}
+$$
+B^{-1} = \dfrac{1}{\det B} \begin{pmatrix} B_{11} & B_{21} & B_{31} \\ B_{12} & B_{22} & B_{32} \\ B_{13} & B_{23} & B_{33} \end{pmatrix} = \dfrac{1}{-1} \begin{pmatrix} -1 & 1 & -1 \\ 38 & -41 & 34 \\ -27 & 29 & -24 \end{pmatrix}
+$$
+$$
+B^{-1} = \begin{pmatrix} 1 & -1 & 1 \\ -38 & 41 & -34 \\ 27 & -29 & 24 \end{pmatrix}.
+$$
+
+\end{document}
