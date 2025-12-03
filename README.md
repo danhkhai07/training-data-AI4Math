@@ -19,8 +19,8 @@ Có **2 chương trình** để hỗ trợ mọi người trong việc tạo fil
 
 **Lưu ý:**
 
-- Cả 2 chương trình trên yêu cầu mọi người **đã clone repo về**.  
-- Chỉ sử dụng khi đã clone repo và cấu hình GitHub của mình.  
+- Phần nhập dữ liệu của adder.exe dừng khi **dòng cuối chỉ nhập '.'**  
+- Chỉ sử dụng khi **đã clone repo và cấu hình GitHub** của mình.  
 - Chương trình được viết bằng AI, có thể lỗi, nên nếu có vấn đề gì vui lòng nhắn trực tiếp với mình qua Zalo.  
 
 ---
