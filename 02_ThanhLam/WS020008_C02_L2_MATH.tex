@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\textbf{Bài 8.}
+
+a) Chứng minh nếu $A$ là ma trận phản xứng cấp $n$ lẻ thì $\det(A) = 0$.
+
+b) Cho $A$ là ma trận vuông cấp 2019. Chứng minh $\det(A - A^T) = 0$.
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+a) Ta có $\det A = \det A^T = \det(-A)$ (do $A^T = -A$ vì $A$ phản xứng).
+
+Giả sử $A$ cấp $n$ lẻ $\Rightarrow \det(-A) = (-1)^n \det A = -\det A$.
+
+Do vậy $\det A = -\det A \Rightarrow 2\det A = 0 \Rightarrow \det A = 0$.
+
+b) Ta có:
+$$
+(A - A^T)^T = A^T - (A^T)^T = A^T - A = -(A - A^T)
+$$
+$\Rightarrow A - A^T$ là ma trận phản xứng cấp lẻ (cấp 2019).
+
+Áp dụng kết quả câu a), ta có:
+$$
+\det(A - A^T) = 0
+$$
+
+\end{document}
