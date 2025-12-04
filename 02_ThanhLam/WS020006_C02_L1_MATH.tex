@@ -1,0 +1,53 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 6.}
+
+\noindent a) Chứng minh rằng ma trận $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ thoả mãn phương trình sau: $x^2 - (a+d)x + ad - bc = 0$.
+
+\noindent b) Chứng minh với $A$ là ma trận vuông cấp 2 thì $A^k = 0 \, (k > 2) \Leftrightarrow A^2 = 0$.
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+\noindent a) Ta có:
+$$
+A^2 = \begin{bmatrix} a^2+bc & ab+bd \\ ac+cd & d^2+bc \end{bmatrix} \Rightarrow A^2 - (a+d)A + (ad-bc)I
+$$
+
+$$
+= \begin{bmatrix} a^2+bc - (a+d)a + ad - bc & ab+bd - (a+d)b \\ ac+cd - (a+d)c & d^2+bc - (a+d)d + ad - bc \end{bmatrix} = 0
+$$
+
+\noindent $\Rightarrow A$ thỏa mãn phương trình $x^2 - (a+d)x + ad - bc = 0$.
+
+\vspace{0.5cm}
+
+\noindent b) Rõ ràng $A^2 = 0$ thì $A^k = 0 \, \forall k > 2$.
+
+\noindent Giả sử $A^k = 0$ với $k > 2$. Ta chứng minh $A^2 = 0$.
+
+\noindent $A^k = 0 \Rightarrow \det A = 0 \Rightarrow ad - bc = 0 \Rightarrow A^2 - (a+d)A = 0$ (theo câu a)
+
+\noindent + $(a+d) = 0 \Rightarrow A^2 = 0$
+
+\noindent + $(a+d) \neq 0 \Rightarrow A^{k-2} \left[ A^2 - (a+d)A \right] = 0 \Rightarrow A^k - (a+d)A^{k-1} = 0$
+$$
+\Rightarrow -(a+d)A^{k-1} = 0 \quad (\text{do } A^k = 0)
+$$
+$$
+\Rightarrow A^{k-1} = 0 \quad (\text{do } a+d \neq 0)
+$$
+
+\noindent Tương tự cách làm ở trên $\Rightarrow A^2 = 0$.
+
+\end{document}

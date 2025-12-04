@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 5.} Tìm tất cả các ma trận vuông cấp 2 thoả mãn:
+
+\vspace{0.3cm}
+\noindent a) $X^2 = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$ \hfill b) $X^2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+\noindent a) $A = \begin{bmatrix} a & c \\ b & d \end{bmatrix}, A^2 = 0 \Leftrightarrow \begin{cases} a^2 + bc = 0 \\ ab + bd = 0 \\ ac + cd = 0 \\ bc + d^2 = 0 \end{cases}$
+
+\vspace{0.3cm}
+
+\noindent + $bc = 0 \Rightarrow a = d = 0$
+
+\noindent + $bc \neq 0 \Rightarrow a + d = 0$
+
+\vspace{0.3cm}
+
+\noindent Vậy các ma trận thỏa mãn là: $\begin{bmatrix} 0 & b \\ 0 & 0 \end{bmatrix}; \begin{bmatrix} 0 & 0 \\ c & 0 \end{bmatrix}; \begin{bmatrix} a & b \\ c & -a \end{bmatrix} (a^2+bc=0)$
+
+\vspace{0.5cm}
+
+\noindent b) $A = \begin{bmatrix} a & c \\ b & d \end{bmatrix}, A^2 = I \Leftrightarrow \begin{cases} a^2 + bc = d^2 + bc = 1 \\ b(a+d) = c(a+d) = 0 \end{cases}$
+
+\vspace{0.3cm}
+
+\noindent + $(a+d)=0 \Rightarrow a^2+bc=1$
+
+\noindent + $(a+d) \neq 0 \Rightarrow \left[ \begin{aligned} & a=d=1 \ \& \ b=c=0 \\ & a=d=-1 \ \& \ b=c=0 \end{aligned} \right.$
+
+\vspace{0.3cm}
+
+\noindent Vậy các ma trận thỏa mãn là: $\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}; \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}; \begin{bmatrix} a & b \\ c & -a \end{bmatrix} (a^2 + bc = 1)$
+
+\end{document}

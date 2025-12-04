@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 2 (CK 20152).} Cho $A = \begin{bmatrix} 1 & 3 \\ -1 & 2 \end{bmatrix}, B = \begin{bmatrix} -1 & 0 \\ 1 & 1 \end{bmatrix}$ và $E$ là ma trận đơn vị cấp 2
+
+\vspace{0.3cm}
+
+\noindent a) Tính $F = A^2 - 3A$
+
+\noindent b) Tìm ma trận $X$ thỏa mãn $\left( A^2 + 5E \right) X = B^T \left( 3A - A^2 \right)$
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+\noindent a) $A^2 = \begin{bmatrix} 1 & 3 \\ -1 & 2 \end{bmatrix}^2 = \begin{bmatrix} -2 & 9 \\ -3 & 1 \end{bmatrix} \Rightarrow A^2 - 3A = \begin{bmatrix} -5 & 0 \\ 0 & -5 \end{bmatrix} = -5E$
+
+\vspace{0.5cm}
+
+\noindent b) Theo câu a ở trên ta có: $A^2 - 3A + 5E = 0 \Rightarrow A^2 + 5E = 3A, \quad 3A - A^2 = 5E$
+
+$$
+\Rightarrow \text{Cần tìm } X \text{ thỏa mãn: } 3AX = B^T . 5E \Rightarrow X = \frac{5}{3} A^{-1} . B^T \quad (\text{do } \det A \neq 0)
+$$
+
+$$
+\Rightarrow X = \frac{5}{3} \begin{bmatrix} 1 & 3 \\ -1 & 2 \end{bmatrix}^{-1} \cdot \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} \frac{-2}{3} & \frac{-1}{3} \\ \frac{-1}{3} & \frac{2}{3} \end{bmatrix}
+$$
+
+\end{document}

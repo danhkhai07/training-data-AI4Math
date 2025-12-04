@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+
+% Đề bài
+\noindent \textbf{Bài 1.} Cho các ma trận 
+$A = \begin{bmatrix} 1 & -3 & 2 \\ 2 & 1 & -1 \\ 0 & 3 & -2 \end{bmatrix}, 
+B = \begin{bmatrix} 2 & 1 & 1 \\ -2 & 3 & 0 \\ 1 & 2 & 4 \end{bmatrix}, 
+C = \begin{bmatrix} -1 & 1 & 2 \\ 2 & 4 & -2 \end{bmatrix}.$
+
+\vspace{0.5cm}
+
+\noindent Trong các phép toán sau: $BC^T$, $A+BC$, $A^T B - C$, $A(BC)$, $(A+3B).C^T$, phép toán nào thực hiện được. Nếu thực hiện được cho biết kết quả.
+
+% Lời giải
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+\noindent Các phép toán có thể thực hiện được là: $B.C^T$ ; $(A+3B).C^T$
+
+% Phép tính 1
+$$
+B.C^T = \begin{bmatrix} 2 & 1 & 1 \\ -2 & 3 & 0 \\ 1 & 2 & 4 \end{bmatrix} \cdot \begin{bmatrix} -1 & 2 \\ 1 & 4 \\ 2 & -2 \end{bmatrix} = \begin{bmatrix} 1 & 6 \\ 5 & 8 \\ 9 & 2 \end{bmatrix}
+$$
+
+% Phép tính 2 - Bước trung gian
+$$
+A+3B = \begin{bmatrix} 1 & -3 & 2 \\ 2 & 1 & -1 \\ 0 & 3 & -2 \end{bmatrix} + 3\begin{bmatrix} 2 & 1 & 1 \\ -2 & 3 & 0 \\ 1 & 2 & 4 \end{bmatrix} = \begin{bmatrix} 7 & 0 & 5 \\ -4 & 10 & -1 \\ 3 & 9 & 10 \end{bmatrix}
+$$
+
+% Phép tính 2 - Kết quả cuối
+$$
+\Rightarrow (A+3B).C^T = \begin{bmatrix} 7 & 0 & 5 \\ -4 & 10 & -1 \\ 3 & 9 & 10 \end{bmatrix} \cdot \begin{bmatrix} -1 & 2 \\ 1 & 4 \\ 2 & -2 \end{bmatrix} = \begin{bmatrix} 3 & 4 \\ 12 & 34 \\ 26 & 22 \end{bmatrix}
+$$
+
+\end{document}

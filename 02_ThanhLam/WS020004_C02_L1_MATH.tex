@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 4.} Tính $A^n$ với
+
+\vspace{0.3cm}
+\noindent a) $A = \begin{bmatrix} \cos a & -\sin a \\ \sin a & \cos a \end{bmatrix}.$ \hfill b) $A = \begin{bmatrix} a & 1 & 0 \\ 0 & a & 1 \\ 0 & 0 & a \end{bmatrix}.$
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+\noindent a) $A = \begin{bmatrix} \cos ka & -\sin ka \\ \sin ka & \cos ka \end{bmatrix}.$ Quy nạp $A^n = \begin{bmatrix} \cos na & -\sin na \\ \sin na & \cos na \end{bmatrix}$
+
+\noindent + $n=1$. Đúng.
+
+\noindent + Giả sử mệnh đề đúng với $n=k \in \mathbb{N}^*$
+$$
+A^{k+1} = \begin{bmatrix} \cos ka & -\sin ka \\ \sin ka & \cos ka \end{bmatrix} \cdot \begin{bmatrix} \cos a & -\sin a \\ \sin a & \cos a \end{bmatrix} = \begin{bmatrix} \cos(k+1)a & -\sin(k+1)a \\ \sin(k+1)a & \cos(k+1)a \end{bmatrix}
+$$
+$\rightarrow$ Mệnh đề đúng với $k+1$.
+
+\noindent Vậy $A^n = \begin{bmatrix} \cos na & -\sin na \\ \sin na & \cos na \end{bmatrix}.$
+
+\vspace{0.5cm}
+
+\noindent b) $A = \begin{bmatrix} a & 1 & 0 \\ 0 & a & 1 \\ 0 & 0 & a \end{bmatrix} = a.I_3 + B, I_3$ là ma trận đơn vị cấp 3, $B = \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$
+
+\vspace{0.3cm}
+
+\noindent Nhận xét $B^2 = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}; B^k = 0 \forall k \ge 3$
+
+$$
+\Rightarrow A^n = (B+a.I_3)^n = \sum_{i=0}^n C_n^i . B^i . a^{n-i} = I.C_n^0.a^n + C_n^1.B.a^{n-1} + C_n^2.B^2.a^{n-2}
+$$
+
+$$
+= a^n.I + n.a^{n-1}.B + C_n^2.a^{n-2}.B^2 = \begin{bmatrix} a^n & n.a^{n-1} & C_n^2.a^{n-2} \\ 0 & a^n & n.a^{n-1} \\ 0 & 0 & a^n \end{bmatrix}
+$$
+
+\end{document}
