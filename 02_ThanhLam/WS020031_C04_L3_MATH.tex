@@ -1,0 +1,104 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 12 (CK 20151).} Trong $\mathbb{R}^4$, cho các véc tơ sau:
+$$ u_1 = (1; 3; -2; 1), \quad u_2 = (-2; 3; 1; 1), \quad u_3 = (2; 1; 0; 1), \quad u = (1; -1; -3; m) $$
+Tìm $m$ để $u \in \text{Span}\{u_1, u_2, u_3\}$.
+
+\section*{Lời giải}
+
+Để $u \in \text{Span}\{u_1, u_2, u_3\}$ thì véc tơ $u$ phải biểu diễn được dưới dạng tổ hợp tuyến tính của $u_1, u_2, u_3$. Tức là hệ phương trình sau (với ẩn $x_1, x_2, x_3$) phải có nghiệm:
+$$ x_1 u_1 + x_2 u_2 + x_3 u_3 = u $$
+
+Viết dưới dạng ma trận mở rộng $\bar{A}$:
+$$
+\bar{A} = \left[ \begin{array}{ccc|c}
+1 & -2 & 2 & 1 \\
+3 & 3 & 1 & -1 \\
+-2 & 1 & 0 & -3 \\
+1 & 1 & 1 & m
+\end{array} \right]
+$$
+
+Thực hiện các phép biến đổi sơ cấp để đưa về dạng bậc thang:
+\begin{itemize}
+    \item $L_2 - 3L_1 \to L_2$
+    \item $L_3 + 2L_1 \to L_3$
+    \item $L_4 - L_1 \to L_4$
+\end{itemize}
+
+$$
+\xrightarrow{}
+\left[ \begin{array}{ccc|c}
+1 & -2 & 2 & 1 \\
+0 & 9 & -5 & -4 \\
+0 & -3 & 4 & -1 \\
+0 & 3 & -1 & m-1
+\end{array} \right]
+$$
+
+Tiếp tục biến đổi khử cột 2:
+\begin{itemize}
+    \item Đổi chỗ $L_2$ và $L_3$ (để tính toán đơn giản hơn, hoặc giữ nguyên và nhân hệ số). Ta chọn cách nhân $3L_3 + L_2 \to L_3$ để khử phần tử $-3$.
+    \item $3L_4 - L_2 \to L_4$ (để khử số $3$ ở dòng 4, lưu ý $3 \times 3 = 9$). Hoặc đơn giản hơn: $L_4 + L_3 \to L_4$ (lấy dòng 4 cộng dòng 3 hiện tại).
+\end{itemize}
+
+Ta lấy $L_4 + L_3$ (dòng 3 ở bước trên):
+$$
+\left[ \begin{array}{ccc|c}
+1 & -2 & 2 & 1 \\
+0 & 9 & -5 & -4 \\
+0 & -3 & 4 & -1 \\
+0 & 0 & 3 & m-2
+\end{array} \right]
+$$
+\textit{(Lưu ý: Phép biến đổi trên chưa triệt để, ta nên làm chuẩn tắc như sau)}:
+
+\textbf{Biến đổi chuẩn:}
+Từ ma trận:
+$$
+\left[ \begin{array}{ccc|c}
+1 & -2 & 2 & 1 \\
+0 & -3 & 4 & -1 \\
+0 & 9 & -5 & -4 \\
+0 & 3 & -1 & m-1
+\end{array} \right] \quad (\text{Đổi } L_2 \leftrightarrow L_3)
+$$
+$$
+\xrightarrow{L_3 + 3L_2 \to L_3}
+\left[ \begin{array}{ccc|c}
+1 & -2 & 2 & 1 \\
+0 & -3 & 4 & -1 \\
+0 & 0 & 7 & -7 \\
+0 & 3 & -1 & m-1
+\end{array} \right]
+$$
+$$
+\xrightarrow{L_4 + L_2 \to L_4}
+\left[ \begin{array}{ccc|c}
+1 & -2 & 2 & 1 \\
+0 & -3 & 4 & -1 \\
+0 & 0 & 7 & -7 \\
+0 & 0 & 3 & m-2
+\end{array} \right]
+$$
+
+Từ dòng 3: $7x_3 = -7 \Rightarrow x_3 = -1$.
+Thay vào dòng 4: $3x_3 = m-2 \Rightarrow 3(-1) = m-2 \Rightarrow -3 = m-2 \Rightarrow m = -1$.
+
+Để hệ có nghiệm (tức là $u$ thuộc Span) thì hạng của ma trận hệ số phải bằng hạng của ma trận mở rộng. Điều này tương đương với việc hệ phương trình tương thích.
+Từ tính toán trên, ta thấy điều kiện là:
+$$ m = -1 $$
+
+\textbf{Kết luận:} Với $m = -1$ thì $u \in \text{Span}\{u_1, u_2, u_3\}$.
+
+\end{document}

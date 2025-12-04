@@ -10,76 +10,75 @@
 
 \begin{document}
 
-\noindent \textbf{Bài 3.} Cho $V_1, V_2$ là hai không gian véc tơ con của không gian véc tơ $V$. Chứng minh:
+\noindent \textbf{Bài 11.} Trong $P_3[x]$ cho các véc tơ:
+$$v_1 = 1, \quad v_2 = 1+x, \quad v_3 = x+x^2, \quad v_4 = x^2+x^3$$
 \begin{enumerate}
-    \item[a)] Giao của hai không gian con: $V_1 \cap V_2$ là không gian véc tơ con của $V$.
-    \item[b)] Tổng của hai không gian con: $V_1 + V_2 = \{ u = u_1 + u_2 \mid u_1 \in V_1, u_2 \in V_2 \}$ là không gian véc tơ con của $V$.
+    \item[a)] Chứng minh $B = \{v_1, v_2, v_3, v_4\}$ là một cơ sở của $P_3[x]$.
+    \item[b)] Tìm toạ độ của véc tơ $v = 2 + 3x - x^2 + 2x^3$ đối với cơ sở trên.
+    \item[c)] Tìm tọa độ của véc tơ $v = a_0 + a_1x + a_2x^2 + a_3x^3$ đối với cơ sở trên.
 \end{enumerate}
 
 \section*{Lời giải}
 
-Để chứng minh một tập hợp $W$ là không gian con của $V$, ta cần kiểm tra 2 điều kiện đóng kín:
+Chọn cơ sở chính tắc của $P_3[x]$ là $\mathcal{E} = \{1, x, x^2, x^3\}$.
+
+\subsection*{a) Chứng minh cơ sở}
+Ma trận các véc tơ của hệ $B$ đối với cơ sở $\mathcal{E}$ (xếp theo cột):
 \begin{itemize}
-    \item $\forall u, v \in W \Rightarrow u + v \in W$.
-    \item $\forall u \in W, \forall k \in \mathbb{R} \Rightarrow ku \in W$.
+    \item $v_1 = 1 \Rightarrow [v_1]_\mathcal{E} = (1, 0, 0, 0)^T$
+    \item $v_2 = 1+x \Rightarrow [v_2]_\mathcal{E} = (1, 1, 0, 0)^T$
+    \item $v_3 = x+x^2 \Rightarrow [v_3]_\mathcal{E} = (0, 1, 1, 0)^T$
+    \item $v_4 = x^2+x^3 \Rightarrow [v_4]_\mathcal{E} = (0, 0, 1, 1)^T$
 \end{itemize}
 
-% --- Câu a ---
-\subsection*{a) Chứng minh $V_1 \cap V_2$ là KGVT con}
+Ma trận chuyển cơ sở $P_{\mathcal{E} \to B}$:
+$$
+P = \begin{bmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+Ta thấy $\det(P) = 1 \cdot 1 \cdot 1 \cdot 1 = 1 \neq 0$.
+Do đó hệ $B$ độc lập tuyến tính. Vì $\dim(P_3[x]) = 4$, suy ra $B$ là một cơ sở của $P_3[x]$.
 
-\textbf{1. Tính đóng với phép cộng:}
-Lấy hai véc tơ bất kỳ $u, v \in V_1 \cap V_2$.
-$$
-\Rightarrow \begin{cases} u, v \in V_1 \\ u, v \in V_2 \end{cases}
-$$
-Vì $V_1$ và $V_2$ đều là KGVT con, nên:
-$$
-\begin{cases} u + v \in V_1 \quad (\text{do } V_1 \text{ là KGVT con}) \\ u + v \in V_2 \quad (\text{do } V_2 \text{ là KGVT con}) \end{cases}
-\Rightarrow u + v \in V_1 \cap V_2.
-$$
+\subsection*{b) Tìm tọa độ vectơ $v = 2 + 3x - x^2 + 2x^3$}
+Tọa độ của $v$ trong cơ sở chính tắc: $[v]_\mathcal{E} = (2; 3; -1; 2)^T$.
+Công thức đổi tọa độ: $[v]_B = P^{-1} \cdot [v]_\mathcal{E}$.
 
-\textbf{2. Tính đóng với phép nhân vô hướng:}
-Lấy $u \in V_1 \cap V_2$ và số thực $k$ bất kỳ.
+Tìm $P^{-1}$ (bằng phương pháp giải hệ hoặc ma trận phụ hợp):
 $$
-\Rightarrow \begin{cases} u \in V_1 \\ u \in V_2 \end{cases}
-\Rightarrow \begin{cases} ku \in V_1 \quad (\text{do } V_1 \text{ đóng kín với phép nhân}) \\ ku \in V_2 \quad (\text{do } V_2 \text{ đóng kín với phép nhân}) \end{cases}
-$$
-$$
-\Rightarrow ku \in V_1 \cap V_2.
-$$
-
-Từ (1) và (2), suy ra $V_1 \cap V_2$ là một không gian véc tơ con của $V$.
-
-% --- Câu b ---
-\subsection*{b) Chứng minh $V_1 + V_2$ là KGVT con}
-
-\textbf{1. Tính đóng với phép cộng:}
-Lấy hai véc tơ bất kỳ $x, y \in V_1 + V_2$.
-Theo định nghĩa, tồn tại $u_1, v_1 \in V_1$ và $u_2, v_2 \in V_2$ sao cho:
-$$
-x = u_1 + u_2 \quad \text{và} \quad y = v_1 + v_2
+P^{-1} = \begin{bmatrix}
+1 & -1 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
 $$
 Khi đó:
 $$
-x + y = (u_1 + u_2) + (v_1 + v_2) = (u_1 + v_1) + (u_2 + v_2)
-$$
-Do $V_1, V_2$ là KGVT con nên $(u_1 + v_1) \in V_1$ và $(u_2 + v_2) \in V_2$.
-Vậy $x + y$ biểu diễn được dưới dạng tổng của một phần tử thuộc $V_1$ và một phần tử thuộc $V_2$.
-$$
-\Rightarrow x + y \in V_1 + V_2.
-$$
-
-\textbf{2. Tính đóng với phép nhân vô hướng:}
-Lấy $x \in V_1 + V_2$ (với $x = u_1 + u_2$) và số thực $k$ bất kỳ.
-$$
-kx = k(u_1 + u_2) = ku_1 + ku_2
-$$
-Do $V_1, V_2$ là KGVT con nên $ku_1 \in V_1$ và $ku_2 \in V_2$.
-Vậy $kx$ là tổng của một phần tử thuộc $V_1$ và một phần tử thuộc $V_2$.
-$$
-\Rightarrow kx \in V_1 + V_2.
+[v]_B = \begin{bmatrix}
+1 & -1 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 1
+\end{bmatrix} \cdot \begin{bmatrix} 2 \\ 3 \\ -1 \\ 2 \end{bmatrix}
+= \begin{bmatrix} 2 - 3 - 1 - 2 \\ 0 + 3 + 1 + 2 \\ 0 + 0 - 1 - 2 \\ 0 + 0 + 0 + 2 \end{bmatrix}
+= \begin{bmatrix} -4 \\ 6 \\ -3 \\ 2 \end{bmatrix}
 $$
 
-Kết luận: $V_1 + V_2$ là một không gian véc tơ con của $V$.
+\subsection*{c) Tìm tọa độ vectơ tổng quát $v = a_0 + a_1x + a_2x^2 + a_3x^3$}
+Tọa độ trong cơ sở chính tắc: $[v]_\mathcal{E} = (a_0; a_1; a_2; a_3)^T$.
+Áp dụng ma trận nghịch đảo $P^{-1}$ đã tìm được ở câu b:
+$$
+[v]_B = P^{-1} [v]_\mathcal{E} = \begin{bmatrix}
+1 & -1 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 1
+\end{bmatrix} \cdot \begin{bmatrix} a_0 \\ a_1 \\ a_2 \\ a_3 \end{bmatrix}
+= \begin{bmatrix} a_0 - a_1 + a_2 - a_3 \\ a_1 - a_2 + a_3 \\ a_2 - a_3 \\ a_3 \end{bmatrix}
+$$
 
 \end{document}
