@@ -1,0 +1,107 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 20.} Cho hệ phương trình:
+$$
+\begin{cases}
+x_1 + 2x_2 - x_3 + mx_4 = 4 \\
+-x_1 - x_2 + 3x_3 + 2x_4 = k \\
+2x_1 - x_2 - 3x_3 + (m-1)x_4 = 3 \\
+x_1 + x_2 + x_3 + 2mx_4 = 5
+\end{cases}
+$$
+
+\section*{Lời giải}
+
+Lập ma trận hệ số mở rộng $\bar{A}$ và thực hiện các phép biến đổi sơ cấp Gauss:
+
+$$
+\bar{A} = \left[ \begin{array}{cccc|c}
+1 & 2 & -1 & m & 4 \\
+-1 & -1 & 3 & 2 & k \\
+2 & -1 & -3 & m-1 & 3 \\
+1 & 1 & 1 & 2m & 5
+\end{array} \right]
+\xrightarrow{\substack{L_2 + L_1 \to L_2 \\ L_3 - 2L_1 \to L_3 \\ L_4 - L_1 \to L_4}}
+\left[ \begin{array}{cccc|c}
+1 & 2 & -1 & m & 4 \\
+0 & 1 & 2 & m+2 & k+4 \\
+0 & -5 & -1 & -m-1 & -5 \\
+0 & -1 & 2 & m & 1
+\end{array} \right]
+$$
+
+Tiếp tục khử cột 2:
+$$
+\xrightarrow{\substack{L_3 + 5L_2 \to L_3 \\ L_4 + L_2 \to L_4}}
+\left[ \begin{array}{cccc|c}
+1 & 2 & -1 & m & 4 \\
+0 & 1 & 2 & m+2 & k+4 \\
+0 & 0 & 9 & 4m+9 & 5k+15 \\
+0 & 0 & 4 & 2m+2 & k+5
+\end{array} \right]
+$$
+
+Khử cột 3 (để tạo dạng tam giác, ta thực hiện $9L_4 - 4L_3 \to L_4$):
+$$
+\xrightarrow{9L_4 - 4L_3 \to L_4}
+\left[ \begin{array}{cccc|c}
+1 & 2 & -1 & m & 4 \\
+0 & 1 & 2 & m+2 & k+4 \\
+0 & 0 & 9 & 4m+9 & 5k+15 \\
+0 & 0 & 0 & 2m-18 & -11k-15
+\end{array} \right]
+$$
+\textit{(Giải thích phần tử cuối: $9(k+5) - 4(5k+15) = 9k + 45 - 20k - 60 = -11k - 15$)}
+
+\subsection*{a) Giải hệ khi $m=2, k=5$}
+Thay $m=2, k=5$ vào ma trận cuối:
+$$
+\left[ \begin{array}{cccc|c}
+1 & 2 & -1 & 2 & 4 \\
+0 & 1 & 2 & 4 & 9 \\
+0 & 0 & 9 & 17 & 40 \\
+0 & 0 & 0 & -14 & -70
+\end{array} \right]
+$$
+Giải ngược từ dưới lên:
+\begin{itemize}
+    \item $-14x_4 = -70 \Rightarrow x_4 = 5$.
+    \item $9x_3 + 17(5) = 40 \Rightarrow 9x_3 = 40 - 85 = -45 \Rightarrow x_3 = -5$.
+    \item $x_2 + 2(-5) + 4(5) = 9 \Rightarrow x_2 - 10 + 20 = 9 \Rightarrow x_2 = -1$.
+    \item $x_1 + 2(-1) - (-5) + 2(5) = 4 \Rightarrow x_1 - 2 + 5 + 10 = 4 \Rightarrow x_1 = -9$.
+\end{itemize}
+Vậy nghiệm của hệ là $(x_1; x_2; x_3; x_4) = (-9; -1; -5; 5)$.
+
+\subsection*{b) Tìm điều kiện để hệ có nghiệm duy nhất}
+Hệ có nghiệm duy nhất $\Leftrightarrow r(A) = r(\bar{A}) = 4$ (số ẩn).
+Điều này xảy ra khi phần tử trên đường chéo chính ở hàng 4 khác 0:
+$$
+2m - 18 \neq 0 \Leftrightarrow m \neq 9.
+$$
+
+\subsection*{c) Tìm điều kiện để hệ có vô số nghiệm}
+Hệ có vô số nghiệm khi $r(A) = r(\bar{A}) < 4$.
+Điều này xảy ra khi toàn bộ hàng 4 bằng 0:
+$$
+\begin{cases}
+2m - 18 = 0 \\
+-11k - 15 = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+m = 9 \\
+k = -\frac{15}{11}
+\end{cases}
+$$
+
+\end{document}
