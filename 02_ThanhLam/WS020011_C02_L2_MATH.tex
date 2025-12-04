@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\textbf{Bài 11 (GK20141).} Tìm $m$ để hạng của ma trận $A = \begin{bmatrix}
+1 & -1 & 1 & 2 \\
+-1 & 2 & 2 & 1 \\
+1 & 0 & 4 & m
+\end{bmatrix}$ bằng 2.
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+Ta thực hiện các phép biến đổi sơ cấp trên dòng để đưa ma trận về dạng bậc thang:
+
+$$
+A = \begin{bmatrix}
+1 & -1 & 1 & 2 \\
+-1 & 2 & 2 & 1 \\
+1 & 0 & 4 & m
+\end{bmatrix}
+\xrightarrow{\substack{L_2 + L_1 \rightarrow L_2 \\ L_3 - L_1 \rightarrow L_3}}
+\begin{bmatrix}
+1 & -1 & 1 & 2 \\
+0 & 1 & 3 & 3 \\
+0 & 1 & 3 & m-2
+\end{bmatrix}
+$$
+
+$$
+\xrightarrow{L_3 - L_2 \rightarrow L_3}
+\begin{bmatrix}
+1 & -1 & 1 & 2 \\
+0 & 1 & 3 & 3 \\
+0 & 0 & 0 & m-5
+\end{bmatrix}
+$$
+
+Để hạng của ma trận bằng 2 ($r(A)=2$), ma trận bậc thang phải có đúng 2 hàng khác 0. Điều này đồng nghĩa với việc hàng thứ 3 phải là hàng 0.
+
+$$
+\Rightarrow m - 5 = 0 \Longleftrightarrow m = 5
+$$
+
+Vậy với $m=5$ thì $r(A)=2$.
+
+\end{document}
