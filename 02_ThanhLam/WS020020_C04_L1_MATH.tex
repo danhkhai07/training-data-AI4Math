@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+% Cấu hình trang
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\begin{document}
+\section*{Bài 1. Kiểm tra Không gian vector}
+
+\textbf{a)} $V = \{(x, y, z) \mid x, y, z \in \mathbb{R}\}$ với các phép toán:
+\begin{itemize}
+    \item $(x, y, z) + (x', y', z') = (x+x', y+y', z+z')$
+    \item $k(x, y, z) = (k|x|, k|y|, k|z|)$
+\end{itemize}
+
+\textbf{Lời giải:}
+Nhận xét:
+$$
+(k_1 + k_2) \cdot (x; y; z) = (|k_1 + k_2|x; |k_1 + k_2|y; |k_1 + k_2|z)
+$$
+$$
+\neq (|k_1|x + |k_2|x; |k_1|y + |k_2|y; |k_1|z + |k_2|z) = k_1(x; y; z) + k_2(x; y; z)
+$$
+(Ví dụ khi $k_1 = 1, k_2 = -1$ thì $|1-1| \neq |1| + |-1|$).
+\\
+$\Rightarrow V$ \textbf{không là không gian vector.}
+
+\vspace{0.5cm}
+
+\textbf{b)} $V = \{x = (x_1, x_2) \mid x_1 > 0, x_2 > 0\} \subset \mathbb{R}^2$ với các phép toán:
+\begin{itemize}
+    \item $(x_1, x_2) + (y_1, y_2) = (x_1 y_1, x_2 y_2)$
+    \item $k(x_1, x_2) = (x_1^k, x_2^k)$ (trong đó $k$ là số thực bất kỳ)
+\end{itemize}
+
+\textbf{Lời giải:}
+Xét tập $V$ với phép toán $(+, \cdot)$ như trên:
+\begin{itemize}
+    \item $(V, +)$ là một nhóm giao hoán:
+    \begin{itemize}
+        \item Tính đóng, kết hợp, giao hoán (hiển nhiên do phép nhân số thực).
+        \item Phần tử trung hòa: $\theta = (1, 1)$ vì $(x_1, x_2) + (1, 1) = (x_1 \cdot 1, x_2 \cdot 1) = (x_1, x_2)$.
+        \item Phần tử đối của $(x_1, x_2)$ là $(1/x_1, 1/x_2)$.
+    \end{itemize}
+    
+    \item Kiểm tra các tiên đề nhân vô hướng:
+    $$
+    k[(x_1, x_2) + (y_1, y_2)] = (x_1^k y_1^k, x_2^k y_2^k) = k(x_1, x_2) + k(y_1, y_2)
+    $$
+    $$
+    (k_1 + k_2)(x_1, x_2) = (x_1^{k_1+k_2}, x_2^{k_1+k_2}) = (x_1^{k_1} x_1^{k_2}, x_2^{k_1} x_2^{k_2}) = k_1(x_1, x_2) + k_2(x_1, x_2)
+    $$
+    $$
+    k_1(k_2(x_1, x_2)) = k_1(x_1^{k_2}, x_2^{k_2}) = ((x_1^{k_2})^{k_1}, (x_2^{k_2})^{k_1}) = (k_1 k_2)(x_1, x_2)
+    $$
+    $$
+    1 \cdot (x_1, x_2) = (x_1^1, x_2^1) = (x_1, x_2)
+    $$
+\end{itemize}
+$\Rightarrow V$ \textbf{là một không gian vector.}
+
+\end{document}
