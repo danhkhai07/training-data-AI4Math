@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 3.} Cho $V_1, V_2$ là hai không gian véc tơ con của không gian véc tơ $V$. Chứng minh:
+\begin{enumerate}
+    \item[a)] Giao của hai không gian con: $V_1 \cap V_2$ là không gian véc tơ con của $V$.
+    \item[b)] Tổng của hai không gian con: $V_1 + V_2 = \{ u = u_1 + u_2 \mid u_1 \in V_1, u_2 \in V_2 \}$ là không gian véc tơ con của $V$.
+\end{enumerate}
+
+\section*{Lời giải}
+
+Để chứng minh một tập hợp $W$ là không gian con của $V$, ta cần kiểm tra 2 điều kiện đóng kín:
+\begin{itemize}
+    \item $\forall u, v \in W \Rightarrow u + v \in W$.
+    \item $\forall u \in W, \forall k \in \mathbb{R} \Rightarrow ku \in W$.
+\end{itemize}
+
+% --- Câu a ---
+\subsection*{a) Chứng minh $V_1 \cap V_2$ là KGVT con}
+
+\textbf{1. Tính đóng với phép cộng:}
+Lấy hai véc tơ bất kỳ $u, v \in V_1 \cap V_2$.
+$$
+\Rightarrow \begin{cases} u, v \in V_1 \\ u, v \in V_2 \end{cases}
+$$
+Vì $V_1$ và $V_2$ đều là KGVT con, nên:
+$$
+\begin{cases} u + v \in V_1 \quad (\text{do } V_1 \text{ là KGVT con}) \\ u + v \in V_2 \quad (\text{do } V_2 \text{ là KGVT con}) \end{cases}
+\Rightarrow u + v \in V_1 \cap V_2.
+$$
+
+\textbf{2. Tính đóng với phép nhân vô hướng:}
+Lấy $u \in V_1 \cap V_2$ và số thực $k$ bất kỳ.
+$$
+\Rightarrow \begin{cases} u \in V_1 \\ u \in V_2 \end{cases}
+\Rightarrow \begin{cases} ku \in V_1 \quad (\text{do } V_1 \text{ đóng kín với phép nhân}) \\ ku \in V_2 \quad (\text{do } V_2 \text{ đóng kín với phép nhân}) \end{cases}
+$$
+$$
+\Rightarrow ku \in V_1 \cap V_2.
+$$
+
+Từ (1) và (2), suy ra $V_1 \cap V_2$ là một không gian véc tơ con của $V$.
+
+% --- Câu b ---
+\subsection*{b) Chứng minh $V_1 + V_2$ là KGVT con}
+
+\textbf{1. Tính đóng với phép cộng:}
+Lấy hai véc tơ bất kỳ $x, y \in V_1 + V_2$.
+Theo định nghĩa, tồn tại $u_1, v_1 \in V_1$ và $u_2, v_2 \in V_2$ sao cho:
+$$
+x = u_1 + u_2 \quad \text{và} \quad y = v_1 + v_2
+$$
+Khi đó:
+$$
+x + y = (u_1 + u_2) + (v_1 + v_2) = (u_1 + v_1) + (u_2 + v_2)
+$$
+Do $V_1, V_2$ là KGVT con nên $(u_1 + v_1) \in V_1$ và $(u_2 + v_2) \in V_2$.
+Vậy $x + y$ biểu diễn được dưới dạng tổng của một phần tử thuộc $V_1$ và một phần tử thuộc $V_2$.
+$$
+\Rightarrow x + y \in V_1 + V_2.
+$$
+
+\textbf{2. Tính đóng với phép nhân vô hướng:}
+Lấy $x \in V_1 + V_2$ (với $x = u_1 + u_2$) và số thực $k$ bất kỳ.
+$$
+kx = k(u_1 + u_2) = ku_1 + ku_2
+$$
+Do $V_1, V_2$ là KGVT con nên $ku_1 \in V_1$ và $ku_2 \in V_2$.
+Vậy $kx$ là tổng của một phần tử thuộc $V_1$ và một phần tử thuộc $V_2$.
+$$
+\Rightarrow kx \in V_1 + V_2.
+$$
+
+Kết luận: $V_1 + V_2$ là một không gian véc tơ con của $V$.
+
+\end{document}
