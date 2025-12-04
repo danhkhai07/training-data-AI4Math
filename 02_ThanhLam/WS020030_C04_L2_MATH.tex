@@ -1,0 +1,75 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 10.} Trong các trường hợp sau, chứng minh $B = \{v_1, v_2, v_3\}$ là một cơ sở của $\mathbb{R}^3$ và tìm $[v]_B$ biết rằng:
+\begin{enumerate}
+    \item[a)] $v_1 = (2;1;1), v_2 = (6;2;0), v_3 = (7;0;7), v = (15;3;1)$.
+    \item[b)] $v_1 = (0;1;1), v_2 = (2;3;0), v_3 = (1;0;1), v = (2;3;0)$.
+\end{enumerate}
+
+\section*{Lời giải}
+
+% --- Câu a ---
+\subsection*{a)}
+Lập định thức của ma trận chuyển cơ sở từ cơ sở chính tắc $\mathcal{E}$ sang cơ sở $B$ (ma trận $P$):
+$$
+\det(P) = \begin{vmatrix}
+2 & 6 & 7 \\
+1 & 2 & 0 \\
+1 & 0 & 7
+\end{vmatrix}
+= 2(14 - 0) - 6(7 - 0) + 7(0 - 2) = 28 - 42 - 14 = -28 \neq 0.
+$$
+Vậy $B$ là hệ độc lập tuyến tính. Vì $\dim(\mathbb{R}^3)=3$ nên $B$ là một cơ sở của $\mathbb{R}^3$.
+
+Tìm tọa độ $[v]_B$:
+Ta có công thức $[v]_E = P_{E \to B} \cdot [v]_B \Rightarrow [v]_B = P_{E \to B}^{-1} \cdot [v]_E$.
+$$
+[v]_B = \begin{bmatrix} 2 & 6 & 7 \\ 1 & 2 & 0 \\ 1 & 0 & 7 \end{bmatrix}^{-1} \cdot \begin{bmatrix} 15 \\ 3 \\ 1 \end{bmatrix}
+$$
+Giải hệ phương trình (hoặc bấm máy tính ma trận nghịch đảo), ta được kết quả:
+$$
+[v]_B = \begin{bmatrix} -5/2 \\ 11/4 \\ 1/2 \end{bmatrix}
+$$
+\textit{(Lưu ý: Bạn có thể kiểm tra lại bằng cách nhân $ -2.5 v_1 + 2.75 v_2 + 0.5 v_3$ sẽ ra đúng vectơ $v$)}.
+
+% --- Câu b ---
+\subsection*{b)}
+Xét định thức:
+$$
+\det(P) = \begin{vmatrix}
+0 & 2 & 1 \\
+1 & 3 & 0 \\
+1 & 0 & 1
+\end{vmatrix}
+= 0 - 2(1 - 0) + 1(0 - 3) = -2 - 3 = -5 \neq 0.
+$$
+Vậy $B$ là một cơ sở của $\mathbb{R}^3$.
+
+Tìm tọa độ $[v]_B$:
+\textbf{Cách 1 (Tính toán):} Dùng công thức nghịch đảo ma trận.
+$$
+[v]_B = \begin{bmatrix} 0 & 2 & 1 \\ 1 & 3 & 0 \\ 1 & 0 & 1 \end{bmatrix}^{-1} \cdot \begin{bmatrix} 2 \\ 3 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+$$
+
+\textbf{Cách 2 (Quan sát nhanh):}
+Ta thấy vectơ cần tìm tọa độ $v = (2; 3; 0)$ chính là vectơ $v_2$ trong cơ sở $B$.
+Ta có biểu diễn tuyến tính:
+$$
+v = 0 \cdot v_1 + 1 \cdot v_2 + 0 \cdot v_3
+$$
+Vậy tọa độ của $v$ đối với cơ sở $B$ chính là cột hệ số:
+$$
+[v]_B = (0; 1; 0)^T.
+$$
+
+\end{document}
