@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 18 (GK 20171).} Tìm $a$ để hệ phương trình sau có nghiệm không tầm thường:
+$$
+\begin{cases}
+(a+5)x + 3y + (2a+1)z = 0 \\
+ax + (a-1)y + 4z = 0 \\
+(a+5)x + (a+2)y + 5z = 0
+\end{cases}
+$$
+
+\section*{Lời giải}
+
+Hệ phương trình đã cho là hệ thuần nhất $AX = 0$.
+Để hệ có nghiệm không tầm thường (tức là có nghiệm khác nghiệm $0$) thì $\det(A) = 0$.
+
+Xét định thức của ma trận hệ số $A$:
+$$
+\det(A) = \begin{vmatrix}
+a+5 & 3 & 2a+1 \\
+a & a-1 & 4 \\
+a+5 & a+2 & 5
+\end{vmatrix}
+$$
+
+Thực hiện biến đổi sơ cấp hàng $L_3 - L_1 \rightarrow L_3$:
+$$
+\det(A) = \begin{vmatrix}
+a+5 & 3 & 2a+1 \\
+a & a-1 & 4 \\
+0 & a-1 & 4-2a
+\end{vmatrix}
+$$
+
+Khai triển định thức theo cột 1:
+$$
+\begin{aligned}
+\det(A) &= (a+5) \begin{vmatrix} a-1 & 4 \\ a-1 & 4-2a \end{vmatrix} - a \begin{vmatrix} 3 & 2a+1 \\ a-1 & 4-2a \end{vmatrix} \\
+&= (a+5) \left[ (a-1)(4-2a) - 4(a-1) \right] - a \left[ 3(4-2a) - (2a+1)(a-1) \right] \\
+&= (a+5)(a-1)(4-2a-4) - a \left[ 12 - 6a - (2a^2 - a - 1) \right] \\
+&= (a+5)(a-1)(-2a) - a \left[ -2a^2 - 5a + 13 \right] \\
+&= -2a(a^2 + 4a - 5) + 2a^3 + 5a^2 - 13a \\
+&= -2a^3 - 8a^2 + 10a + 2a^3 + 5a^2 - 13a \\
+&= -3a^2 - 3a \\
+&= -3a(a+1)
+\end{aligned}
+$$
+
+Để hệ có nghiệm không tầm thường:
+$$
+\det(A) = 0 \iff -3a(a+1) = 0 \iff \left[ \begin{array}{l} a = 0 \\ a = -1 \end{array} \right.
+$$
+
+Vậy với $a = 0$ hoặc $a = -1$ thì hệ phương trình có nghiệm không tầm thường.
+
+\end{document}
