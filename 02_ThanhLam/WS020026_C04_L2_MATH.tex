@@ -1,0 +1,47 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 6.} Cho $\{v_1, v_2, \dots, v_m\}$ là hệ sinh của $W_1$, $\{u_1, u_2, \dots, u_n\}$ là hệ sinh của $W_2$ với $W_1, W_2$ là các không gian con của $V$. Chứng minh $\{v_1, \dots, v_m, u_1, \dots, u_n\}$ là hệ sinh của $W_1 + W_2$.
+
+\section*{Lời giải}
+
+Lấy một véc tơ bất kỳ $x \in W_1 + W_2$.
+Theo định nghĩa của không gian tổng, véc tơ $x$ luôn phân tích được thành:
+$$
+x = x_1 + x_2 \quad \text{với } x_1 \in W_1, x_2 \in W_2.
+$$
+
+\begin{itemize}
+    \item Vì $\{v_1, v_2, \dots, v_m\}$ là hệ sinh của $W_1$, nên $x_1$ biểu diễn được dưới dạng tổ hợp tuyến tính của các véc tơ $v_i$:
+    $$
+    x_1 = \sum_{i=1}^m k_i v_i = k_1 v_1 + k_2 v_2 + \dots + k_m v_m \quad (k_i \in \mathbb{R})
+    $$
+    
+    \item Vì $\{u_1, u_2, \dots, u_n\}$ là hệ sinh của $W_2$, nên $x_2$ biểu diễn được dưới dạng tổ hợp tuyến tính của các véc tơ $u_j$:
+    $$
+    x_2 = \sum_{j=1}^n l_j u_j = l_1 u_1 + l_2 u_2 + \dots + l_n u_n \quad (l_j \in \mathbb{R})
+    $$
+\end{itemize}
+
+Thay vào biểu thức của $x$, ta có:
+$$
+x = \left( \sum_{i=1}^m k_i v_i \right) + \left( \sum_{j=1}^n l_j u_j \right)
+$$
+$$
+x = k_1 v_1 + \dots + k_m v_m + l_1 u_1 + \dots + l_n u_n
+$$
+
+Như vậy, mọi véc tơ $x \in W_1 + W_2$ đều biểu diễn được dưới dạng tổ hợp tuyến tính của hệ véc tơ hợp nhất $\{v_1, \dots, v_m, u_1, \dots, u_n\}$.
+
+\textbf{Kết luận:} $\{v_1, \dots, v_m, u_1, \dots, u_n\}$ là hệ sinh của $W_1 + W_2$ (đpcm).
+
+\end{document}
