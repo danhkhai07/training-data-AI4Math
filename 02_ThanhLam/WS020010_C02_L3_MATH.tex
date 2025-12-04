@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 10.} Tìm hạng của các ma trận sau:
+
+\vspace{0.3cm}
+\noindent a) $A = \begin{bmatrix} 1 & 3 & 5 & -1 \\ 2 & -1 & -1 & 4 \\ 5 & 1 & -1 & 7 \\ 7 & 7 & 9 & 1 \end{bmatrix}$ \hfill
+b) $B = \begin{bmatrix} 4 & 3 & -5 & 2 & 3 \\ 8 & 6 & -7 & 4 & 2 \\ 4 & 3 & -8 & 2 & 7 \\ 4 & 3 & 1 & 2 & -5 \\ 8 & 6 & -1 & 4 & -6 \end{bmatrix}$
+
+\begin{center}
+    \textbf{Lời giải}
+\end{center}
+
+\noindent a)
+$$
+A = \begin{bmatrix} 1 & 3 & 5 & -1 \\ 2 & -1 & -1 & 4 \\ 5 & 1 & -1 & 7 \\ 7 & 7 & 9 & 1 \end{bmatrix} \xrightarrow{\substack{L_2-2L_1 \rightarrow L_2 \\ L_3-5L_1 \rightarrow L_3 \\ L_4-7L_1 \rightarrow L_4}}
+\begin{bmatrix} 1 & 3 & 5 & -1 \\ 0 & -7 & -11 & 6 \\ 0 & -14 & -26 & 12 \\ 0 & -14 & -26 & 8 \end{bmatrix} \xrightarrow{\substack{L_3-2L_2 \rightarrow L_3 \\ L_4-2L_2 \rightarrow L_4}}
+\begin{bmatrix} 1 & 3 & 5 & -1 \\ 0 & -7 & -11 & 6 \\ 0 & 0 & -4 & 0 \\ 0 & 0 & -4 & -4 \end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix} 1 & 3 & 5 & -1 \\ 0 & -7 & -11 & 6 \\ 0 & 0 & -4 & 0 \\ 0 & 0 & 0 & -4 \end{bmatrix}. \quad \text{Vậy } r(A) = 4.
+$$
+
+\noindent \underline{\textbf{Cách 2:}} $\det A = -112 \neq 0, A$ là ma trận vuông cấp $4 \Rightarrow \text{rank } A = 4$.
+
+\vspace{0.5cm}
+
+\noindent b)
+$$
+B = \begin{bmatrix} 4 & 3 & -5 & 2 & 3 \\ 8 & 6 & -7 & 4 & 2 \\ 4 & 3 & -8 & 2 & 7 \\ 4 & 3 & 1 & 2 & -5 \\ 8 & 6 & -1 & 4 & -6 \end{bmatrix} \xrightarrow{\substack{L_2-2L_1 \rightarrow L_2 \\ L_3-L_1 \rightarrow L_3 \\ L_4-L_1 \rightarrow L_4 \\ L_5-2L_1 \rightarrow L_5}}
+\begin{bmatrix} 4 & 3 & -5 & 2 & 3 \\ 0 & 0 & 3 & 0 & -4 \\ 0 & 0 & -3 & 0 & 4 \\ 0 & 0 & 6 & 0 & -8 \\ 0 & 0 & 9 & 0 & -12 \end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix} 4 & 3 & -5 & 2 & 3 \\ 0 & 0 & 3 & 0 & -4 \\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 6 & 0 & 0 \\ 0 & 0 & 9 & 0 & 0 \end{bmatrix} \xrightarrow{\substack{L_3+L_2 \rightarrow L_3 \\ L_4-2L_2 \rightarrow L_4 \\ L_5-3L_2 \rightarrow L_5}} . \quad \text{Vậy } r(B) = 2
+$$
+
+\end{document}
