@@ -1,0 +1,93 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 2.} Chứng minh các tập hợp con của các không gian véc tơ quen thuộc sau là các không gian véc tơ con của chúng:
+\begin{enumerate}
+    \item[a)] Tập $E = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \mid 2x_1 - 5x_2 + 3x_3 = 0\}$.
+    \item[b)] Tập các đa thức có hệ số bậc nhất bằng 0 (hệ số của $x$) của KGVT $P_n[x]$.
+    \item[c)] Tập các ma trận tam giác trên của các ma trận vuông cấp $n$.
+    \item[d)] Tập các ma trận đối xứng của tập các ma trận vuông cấp $n$.
+    \item[e)] Tập các ma trận phản xứng của tập các ma trận vuông cấp $n$ ($a_{ij} = -a_{ji}$).
+\end{enumerate}
+
+\section*{Lời giải}
+
+Để chứng minh tập con $W \subset V$ ($W \neq \emptyset$) là một không gian véc tơ con của $V$, ta cần kiểm tra 2 điều kiện đóng kín:
+\begin{itemize}
+    \item $\forall u, v \in W \Rightarrow u + v \in W$.
+    \item $\forall u \in W, \forall k \in \mathbb{R} \Rightarrow ku \in W$.
+\end{itemize}
+
+% --- Câu a ---
+\subsection*{a)}
+Xét tập $E = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \mid 2x_1 - 5x_2 + 3x_3 = 0\}$.
+\begin{itemize}
+    \item Rõ ràng vectơ không $\mathbf{0} = (0, 0, 0) \in E$ vì $2(0) - 5(0) + 3(0) = 0$.
+    \item Lấy $u = (x_1, x_2, x_3) \in E$ và $v = (y_1, y_2, y_3) \in E$. Ta có:
+    $$
+    2x_1 - 5x_2 + 3x_3 = 0 \quad \text{và} \quad 2y_1 - 5y_2 + 3y_3 = 0
+    $$
+    Xét tổng $u + v = (x_1+y_1, x_2+y_2, x_3+y_3)$. Kiểm tra điều kiện:
+    $$
+    2(x_1+y_1) - 5(x_2+y_2) + 3(x_3+y_3) = (2x_1 - 5x_2 + 3x_3) + (2y_1 - 5y_2 + 3y_3) = 0 + 0 = 0
+    $$
+    $\Rightarrow u + v \in E$.
+    \item Xét tích vô hướng $ku = (kx_1, kx_2, kx_3)$ với $k \in \mathbb{R}$:
+    $$
+    2(kx_1) - 5(kx_2) + 3(kx_3) = k(2x_1 - 5x_2 + 3x_3) = k \cdot 0 = 0
+    $$
+    $\Rightarrow ku \in E$.
+\end{itemize}
+Vậy $E$ là KGVT con của $\mathbb{R}^3$.
+
+% --- Câu b ---
+\subsection*{b)}
+Gọi $W$ là tập các đa thức thuộc $P_n[x]$ có hệ số của $x$ bằng 0.
+Mọi đa thức $p(x) \in W$ có dạng: $p(x) = a_0 + 0x + a_2x^2 + \dots + a_nx^n$.
+\begin{itemize}
+    \item Với $p(x), q(x) \in W$, hệ số bậc 1 của chúng đều bằng 0. Khi cộng hai đa thức, hệ số bậc 1 của tổng bằng tổng các hệ số bậc 1: $0 + 0 = 0$.
+    $\Rightarrow p(x) + q(x) \in W$.
+    \item Với $p(x) \in W$ và $k \in \mathbb{R}$, hệ số bậc 1 của $kp(x)$ là $k \cdot 0 = 0$.
+    $\Rightarrow kp(x) \in W$.
+\end{itemize}
+Vậy $W$ là KGVT con của $P_n[x]$.
+
+% --- Câu c ---
+\subsection*{c)}
+Gọi $U$ là tập các ma trận tam giác trên cấp $n$. Ma trận $A = [a_{ij}]$ là tam giác trên nếu $a_{ij} = 0$ với mọi $i > j$.
+\begin{itemize}
+    \item Tổng hai ma trận tam giác trên là một ma trận tam giác trên (các phần tử dưới đường chéo chính đều bằng tổng của các số 0).
+    \item Tích một số với ma trận tam giác trên vẫn là ma trận tam giác trên (các số 0 được nhân với $k$ vẫn là 0).
+\end{itemize}
+Vậy tập các ma trận tam giác trên là KGVT con của không gian các ma trận vuông cấp $n$.
+
+% --- Câu d ---
+\subsection*{d)}
+Gọi $S$ là tập các ma trận đối xứng ($A^T = A$).
+\begin{itemize}
+    \item Cho $A, B \in S$. Ta có $(A+B)^T = A^T + B^T = A + B$. Vậy $A+B \in S$.
+    \item Cho $A \in S, k \in \mathbb{R}$. Ta có $(kA)^T = k(A^T) = kA$. Vậy $kA \in S$.
+\end{itemize}
+Vậy tập các ma trận đối xứng là KGVT con.
+
+% --- Câu e ---
+\subsection*{e)}
+Gọi $K$ là tập các ma trận phản xứng ($A^T = -A$).
+\begin{itemize}
+    \item Cho $A, B \in K$. Ta có $(A+B)^T = A^T + B^T = (-A) + (-B) = -(A+B)$.
+    $\Rightarrow A+B \in K$.
+    \item Cho $A \in K, k \in \mathbb{R}$. Ta có $(kA)^T = k(A^T) = k(-A) = -(kA)$.
+    $\Rightarrow kA \in K$.
+\end{itemize}
+Vậy tập các ma trận phản xứng là KGVT con.
+
+\end{document}
