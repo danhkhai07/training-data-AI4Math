@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 5.} Trong không gian véc tơ $V$, cho hệ véctơ $\{u_1, u_2, \dots, u_n, u_{n+1}\}$ là phụ thuộc tuyến tính và $\{u_1, u_2, \dots, u_n\}$ là hệ độc lập tuyến tính. Chứng minh $u_{n+1}$ là tổ hợp tuyến tính của các véc tơ $u_1, u_2, \dots, u_n$.
+
+\section*{Lời giải}
+
+Theo giả thiết, hệ $\{u_1, u_2, \dots, u_n, u_{n+1}\}$ phụ thuộc tuyến tính.
+Theo định nghĩa, tồn tại các hệ số thực $k_1, k_2, \dots, k_{n+1}$ không đồng thời bằng 0 sao cho:
+\begin{equation} \label{eq:1}
+k_1 u_1 + k_2 u_2 + \dots + k_n u_n + k_{n+1} u_{n+1} = \theta
+\end{equation}
+
+Ta xét hệ số $k_{n+1}$:
+\begin{itemize}
+    \item \textbf{Trường hợp 1:} Giả sử $k_{n+1} = 0$.
+    Khi đó phương trình (\ref{eq:1}) trở thành:
+    $$
+    k_1 u_1 + k_2 u_2 + \dots + k_n u_n = \theta
+    $$
+    Do các hệ số $k_i$ không đồng thời bằng 0, nên trong các số $k_1, \dots, k_n$ phải có ít nhất một số khác 0.
+    Điều này suy ra hệ $\{u_1, u_2, \dots, u_n\}$ phụ thuộc tuyến tính.
+    $\Rightarrow$ Mâu thuẫn với giả thiết hệ $\{u_1, \dots, u_n\}$ là độc lập tuyến tính.
+    Vậy trường hợp này không xảy ra.
+    
+    \item \textbf{Trường hợp 2:} Do đó, ta phải có $k_{n+1} \neq 0$.
+    Từ phương trình (\ref{eq:1}), ta chuyển vế:
+    $$
+    k_{n+1} u_{n+1} = -k_1 u_1 - k_2 u_2 - \dots - k_n u_n
+    $$
+    Do $k_{n+1} \neq 0$, ta có thể chia hai vế cho $k_{n+1}$:
+    $$
+    u_{n+1} = \left( -\frac{k_1}{k_{n+1}} \right)u_1 + \left( -\frac{k_2}{k_{n+1}} \right)u_2 + \dots + \left( -\frac{k_n}{k_{n+1}} \right)u_n
+    $$
+    Đặt $\alpha_i = -\frac{k_i}{k_{n+1}}$, ta có:
+    $$
+    u_{n+1} = \alpha_1 u_1 + \alpha_2 u_2 + \dots + \alpha_n u_n
+    $$
+\end{itemize}
+
+Vậy $u_{n+1}$ biểu diễn được dưới dạng tổ hợp tuyến tính của $u_1, u_2, \dots, u_n$ (đpcm).
+
+\end{document}
