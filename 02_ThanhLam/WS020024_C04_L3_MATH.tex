@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 4.} Cho $V_1, V_2$ là hai không gian véc tơ con của KGVT $V$. Ta nói $V_1, V_2$ là bù nhau nếu $V_1 + V_2 = V$ và $V_1 \cap V_2 = \{\theta\}$.
+\\
+Chứng minh rằng $V_1, V_2$ bù nhau khi và chỉ khi mọi véc tơ $u$ của $V$ có biểu diễn duy nhất dưới dạng $u = u_1 + u_2$, với $u_1 \in V_1, u_2 \in V_2$.
+
+\section*{Lời giải}
+
+Ta cần chứng minh hai chiều của mệnh đề tương đương.
+
+\subsection*{Chiều thuận ($\Rightarrow$)}
+Giả sử $V_1, V_2$ bù nhau, tức là $V = V_1 + V_2$ và $V_1 \cap V_2 = \{\theta\}$.
+
+\begin{itemize}
+    \item \textbf{Sự tồn tại:} Do $V = V_1 + V_2$ nên với mọi $u \in V$, ta luôn phân tích được $u = u_1 + u_2$ với $u_1 \in V_1, u_2 \in V_2$.
+    \item \textbf{Tính duy nhất:} Giả sử $u$ có hai cách biểu diễn:
+    $$
+    u = u_1 + u_2 = u'_1 + u'_2 \quad (u_1, u'_1 \in V_1; u_2, u'_2 \in V_2)
+    $$
+    Chuyển vế ta được:
+    $$
+    u_1 - u'_1 = u'_2 - u_2
+    $$
+    Đặt $x = u_1 - u'_1 = u'_2 - u_2$.
+    \begin{itemize}
+        \item Vì $V_1$ là không gian con nên $x = u_1 - u'_1 \in V_1$.
+        \item Vì $V_2$ là không gian con nên $x = u'_2 - u_2 \in V_2$.
+    \end{itemize}
+    Suy ra $x \in V_1 \cap V_2$.
+    Theo giả thiết $V_1 \cap V_2 = \{\theta\}$, nên $x = \theta$.
+    $$
+    \Rightarrow u_1 - u'_1 = \theta \Rightarrow u_1 = u'_1 \quad \text{và} \quad u'_2 - u_2 = \theta \Rightarrow u_2 = u'_2.
+    $$
+    Vậy biểu diễn là duy nhất.
+\end{itemize}
+
+\subsection*{Chiều đảo ($\Leftarrow$)}
+Giả sử mọi $u \in V$ đều có biểu diễn duy nhất $u = u_1 + u_2$ ($u_1 \in V_1, u_2 \in V_2$).
+
+\begin{itemize}
+    \item \textbf{Chứng minh $V = V_1 + V_2$:} Điều này hiển nhiên đúng vì theo giả thiết mọi $u \in V$ đều biểu diễn được dưới dạng tổng hai phần tử thuộc $V_1$ và $V_2$.
+    \item \textbf{Chứng minh $V_1 \cap V_2 = \{\theta\}$:}
+    Lấy một phần tử $x \in V_1 \cap V_2$.
+    Ta có thể biểu diễn $x$ theo hai cách như sau:
+    \begin{enumerate}
+        \item $x = x + \theta$ (coi $x \in V_1$ và $\theta \in V_2$).
+        \item $x = \theta + x$ (coi $\theta \in V_1$ và $x \in V_2$).
+    \end{enumerate}
+    Theo giả thiết, biểu diễn của $x$ phải là duy nhất, nghĩa là các thành phần tương ứng phải bằng nhau:
+    $$
+    \begin{cases} x = \theta \\ \theta = x \end{cases} \Rightarrow x = \theta.
+    $$
+    Vậy giao của hai không gian chỉ chứa phần tử không: $V_1 \cap V_2 = \{\theta\}$.
+\end{itemize}
+
+\textbf{Kết luận:} $V_1, V_2$ bù nhau khi và chỉ khi biểu diễn là duy nhất (đpcm).
+
+\end{document}
