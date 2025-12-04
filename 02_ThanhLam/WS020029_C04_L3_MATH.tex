@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\begin{document}
+
+\noindent \textbf{Bài 9.} Trong $\mathbb{R}^3$, chứng minh hệ véc tơ $\{v_1 = (1;1;1), v_2 = (1;1;2), v_3 = (1;2;3)\}$ lập thành một cơ sở. Xác định ma trận chuyển từ cơ sở chính tắc sang cơ sở trên và tìm toạ độ của $x = (6;9;14)$ đối với cơ sở trên theo hai cách trực tiếp và dùng công thức đổi tọa độ.
+
+\section*{Lời giải}
+
+\subsection*{1. Chứng minh hệ cơ sở}
+Lập định thức của ma trận các véc tơ $\{v_1, v_2, v_3\}$ (xếp theo cột):
+$$
+\det(A) = \begin{vmatrix}
+1 & 1 & 1 \\
+1 & 1 & 2 \\
+1 & 2 & 3
+\end{vmatrix}
+$$
+Tính định thức:
+$$
+\det(A) = 1(3-4) - 1(3-2) + 1(2-1) = -1 - 1 + 1 = -1 \neq 0.
+$$
+Vì $\det(A) \neq 0$, hệ véc tơ độc lập tuyến tính.
+Mà $\dim(\mathbb{R}^3) = 3$, nên hệ $\{v_1, v_2, v_3\}$ lập thành một cơ sở của $\mathbb{R}^3$. Gọi cơ sở này là $\mathcal{B}$.
+
+\subsection*{2. Ma trận chuyển cơ sở}
+Ma trận chuyển từ cơ sở chính tắc $\mathcal{E}$ sang cơ sở $\mathcal{B}$ chính là ma trận có các cột là tọa độ của $v_1, v_2, v_3$:
+$$
+C = P_{\mathcal{E} \to \mathcal{B}} = \begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 2 \\
+1 & 2 & 3
+\end{bmatrix}
+$$
+
+\subsection*{3. Tìm tọa độ của $x = (6; 9; 14)$ đối với cơ sở $\mathcal{B}$}
+
+\textbf{Cách 1: Giải trực tiếp hệ phương trình}
+Giả sử $x = a v_1 + b v_2 + c v_3$. Khi đó tọa độ của $x$ trong cơ sở $\mathcal{B}$ là $[x]_{\mathcal{B}} = (a, b, c)^T$.
+Ta có hệ phương trình:
+$$
+a \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + b \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix} + c \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} = \begin{pmatrix} 6 \\ 9 \\ 14 \end{pmatrix}
+\Leftrightarrow
+\begin{cases}
+a + b + c = 6 \quad (1) \\
+a + b + 2c = 9 \quad (2) \\
+a + 2b + 3c = 14 \quad (3)
+\end{cases}
+$$
+Giải hệ:
+\begin{itemize}
+    \item Lấy $(2) - (1) \Rightarrow c = 3$.
+    \item Lấy $(3) - (2) \Rightarrow b + c = 5 \Rightarrow b = 5 - 3 = 2$.
+    \item Thay vào $(1) \Rightarrow a = 6 - 2 - 3 = 1$.
+\end{itemize}
+Vậy tọa độ của $x$ đối với cơ sở $\mathcal{B}$ là: $[x]_{\mathcal{B}} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$.
+
+\vspace{0.5cm}
+
+\textbf{Cách 2: Dùng công thức đổi tọa độ}
+Công thức: $[x]_{\mathcal{E}} = C \cdot [x]_{\mathcal{B}} \Rightarrow [x]_{\mathcal{B}} = C^{-1} \cdot [x]_{\mathcal{E}}$.
+
+Ta cần tìm ma trận nghịch đảo $C^{-1}$.
+Với $C = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 2 \\ 1 & 2 & 3 \end{bmatrix}$, ta tính được $C^{-1} = \begin{bmatrix} 1 & 1 & -1 \\ 1 & -2 & 1 \\ -1 & 1 & 0 \end{bmatrix}$.
+
+Khi đó:
+$$
+[x]_{\mathcal{B}} = \begin{bmatrix} 1 & 1 & -1 \\ 1 & -2 & 1 \\ -1 & 1 & 0 \end{bmatrix} \cdot \begin{bmatrix} 6 \\ 9 \\ 14 \end{bmatrix} = \begin{bmatrix} 1\cdot6 + 1\cdot9 + (-1)\cdot14 \\ 1\cdot6 + (-2)\cdot9 + 1\cdot14 \\ (-1)\cdot6 + 1\cdot9 + 0\cdot14 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}.
+$$
+
+\end{document}
