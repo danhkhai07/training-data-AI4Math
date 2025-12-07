@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Problem}
+
+\text{Let $\mathbf{A} = \begin{pmatrix} 1 & 2 \\ 1 & 3 \\ 1 & 5 \end{pmatrix}$. Find a $2 \times 3$ matrix $\mathbf{B}$, using only the entries $1, -1$, and $0$, such that $\mathbf{B}\mathbf{A} = \mathbf{I}_2$. Calculate $\mathbf{A}\mathbf{B}$ and show that $\mathbf{A}\mathbf{B} \neq \mathbf{I}_3$.}
+
+\section*{Solution}
+
+\subsection*{1. Finding the Left Inverse $\mathbf{B}$}
+
+\text{We seek a matrix $\mathbf{B} = \begin{pmatrix} b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \end{pmatrix}$ such that $\mathbf{B}\mathbf{A} = \mathbf{I}_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.}
+\text{The elements of $\mathbf{B}$ must belong to the set $\{1, -1, 0\}$.}
+
+\text{The system of equations is derived from $\mathbf{B}\mathbf{A} = \mathbf{I}_2$:}
+\begin{enumerate}
+    \item \text{First row of $\mathbf{B}$:}
+    $$
+    \begin{cases}
+    b_{11}(1) + b_{12}(1) + b_{13}(1) = 1 \\
+    b_{11}(2) + b_{12}(3) + b_{13}(5) = 0
+    \end{cases}
+    $$
+    \text{A solution using only $\{1, -1, 0\}$ is $\begin{pmatrix} b_{11} & b_{12} & b_{13} \end{pmatrix} = \begin{pmatrix} 1 & 1 & -1 \end{pmatrix}$.}
+    \text{(Check: $1+1-1=1$; $2(1)+3(1)+5(-1) = 5-5=0$)}
+
+    \item \text{Second row of $\mathbf{B}$:}
+    $$
+    \begin{cases}
+    b_{21}(1) + b_{22}(1) + b_{23}(1) = 0 \\
+    b_{21}(2) + b_{22}(3) + b_{23}(5) = 1
+    \end{cases}
+    $$
+    \text{A solution using only $\{1, -1, 0\}$ is $\begin{pmatrix} b_{21} & b_{22} & b_{23} \end{pmatrix} = \begin{pmatrix} -1 & 1 & 0 \end{pmatrix}$.}
+    \text{(Check: $-1+1+0=0$; $2(-1)+3(1)+5(0) = -2+3=1$)}
+\end{enumerate}
+
+\text{The left inverse matrix is:}
+$$
+\mathbf{B} = \begin{pmatrix} 1 & 1 & -1 \\ -1 & 1 & 0 \end{pmatrix}
+$$
+
+\subsection*{2. Calculating $\mathbf{A}\mathbf{B}$ and Verification}
+
+\text{We calculate the product $\mathbf{A}\mathbf{B}$:}
+$$
+\mathbf{A}\mathbf{B} = \begin{pmatrix} 1 & 2 \\ 1 & 3 \\ 1 & 5 \end{pmatrix} \begin{pmatrix} 1 & 1 & -1 \\ -1 & 1 & 0 \end{pmatrix} = \begin{pmatrix}
+1(1) + 2(-1) & 1(1) + 2(1) & 1(-1) + 2(0) \\
+1(1) + 3(-1) & 1(1) + 3(1) & 1(-1) + 3(0) \\
+1(1) + 5(-1) & 1(1) + 5(1) & 1(-1) + 5(0)
+\end{pmatrix}
+$$
+$$
+\mathbf{A}\mathbf{B} = \begin{pmatrix}
+-1 & 3 & -1 \\
+-2 & 4 & -1 \\
+-4 & 6 & -1
+\end{pmatrix}
+$$
+
+\text{The identity matrix $\mathbf{I}_3$ is:}
+$$
+\mathbf{I}_3 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+$$
+
+\text{Since, for example, the $(1, 1)$ entry of $\mathbf{A}\mathbf{B}$ is $-1$, which is not equal to the $(1, 1)$ entry of $\mathbf{I}_3$ (which is $1$), we conclude that $\mathbf{A}\mathbf{B} \neq \mathbf{I}_3$.}
+
+\end{document}
