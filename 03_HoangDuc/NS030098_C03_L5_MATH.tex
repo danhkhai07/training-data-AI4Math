@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Problem}
+
+\text{Prove that the volume $V$ of the tetrahedron with four vertices $(x_1, y_1, z_1)$, $(x_2, y_2, z_2)$, $(x_3, y_3, z_3)$, and $(x_4, y_4, z_4)$ is given by:}
+$$
+V = \pm \frac{1}{6} \det \begin{pmatrix}
+x_1 & y_1 & z_1 & 1 \\
+x_2 & y_2 & z_2 & 1 \\
+x_3 & y_3 & z_3 & 1 \\
+x_4 & y_4 & z_4 & 1
+\end{pmatrix}
+$$
+\text{where the sign ($+$ or $-$) is chosen such that $V \ge 0$. Subsequently, deduce that the four points $(x_1, y_1, z_1)$, $(x_2, y_2, z_2)$, $(x_3, y_3, z_3)$, and $(x_4, y_4, z_4)$ are coplanar if and only if}
+$$
+\det \begin{pmatrix}
+x_1 & y_1 & z_1 & 1 \\
+x_2 & y_2 & z_2 & 1 \\
+x_3 & y_3 & z_3 & 1 \\
+x_4 & y_4 & z_4 & 1
+\end{pmatrix} = 0
+$$
+\text{and that the equation of the plane passing through the three points $(x_1, y_1, z_1)$, $(x_2, y_2, z_2)$, and $(x_3, y_3, z_3)$ is:}
+$$
+\det \begin{pmatrix}
+x & y & z & 1 \\
+x_1 & y_1 & z_1 & 1 \\
+x_2 & y_2 & z_2 & 1 \\
+x_3 & y_3 & z_3 & 1
+\end{pmatrix} = 0
+$$
+
+\end{document}
