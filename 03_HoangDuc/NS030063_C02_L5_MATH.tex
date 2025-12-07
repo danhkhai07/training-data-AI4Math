@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Problem}
+
+\text{A food company produces 256 food products, all made from 91 basic ingredients.}
+\text{The company wants to establish a simple data structure to quickly retrieve answers to the following questions:}
+\begin{enumerate}
+    \item \text{How many ingredients does a given product contain?}
+    \item \text{How many products use a given pair of ingredients together?}
+    \item \text{How many ingredients do two given products share?}
+    \item \text{How many products use a certain ingredient?}
+\end{enumerate}
+
+\text{Specifically, the company requires the table structure to satisfy two conditions:}
+\begin{enumerate}
+    \item[(i)] \text{The answer to any of the above questions can be extracted easily and quickly (allowing matrix operations).}
+    \item[(ii)] \text{If one of the 91 ingredients is added to or deleted from a product, only a single entry in the table needs to be changed.}
+\end{enumerate}
+
+\text{Is this feasible? Explain by setting up the matrix and interpreting the matrix products.}
+
+\subsection*{Solution Setup}
+
+\text{Yes, this is feasible using an incidence matrix $\mathbf{A}_{256 \times 91}$ where rows represent products and columns represent ingredients:}
+$$
+a_{ij} =
+\begin{cases}
+1 & \text{if Product } i \text{ contains Ingredient } j \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+\text{Condition (ii) is satisfied since changing one ingredient in one product requires changing only one entry $a_{ij}$.}
+
+\text{Condition (i) is satisfied by the properties of matrix multiplication:}
+\begin{itemize}
+    \item \text{Question (c) (Ingredients shared by products $i$ and $k$) is given by the entry $(\mathbf{A}\mathbf{A}^T)_{ik}$.}
+    \item \text{Question (b) (Products using ingredients $j$ and $k$ together) is given by the entry $(\mathbf{A}^T\mathbf{A})_{jk}$.}
+\end{itemize}
+
+\end{document}
