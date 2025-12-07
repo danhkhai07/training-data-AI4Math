@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Problem}
+
+\text{Prove that the area $S$ of the triangle with vertices $(x_1, y_1)$, $(x_2, y_2)$, and $(x_3, y_3)$ is given by:}
+$$
+S = \pm \frac{1}{2} \det \begin{pmatrix}
+x_1 & y_1 & 1 \\
+x_2 & y_2 & 1 \\
+x_3 & y_3 & 1
+\end{pmatrix}
+$$
+\text{where the sign ($+$ or $-$) is chosen such that $S \ge 0$. Subsequently, deduce that the three points $(x_1, y_1)$, $(x_2, y_2)$, and $(x_3, y_3)$ are collinear if and only if}
+$$
+\det \begin{pmatrix}
+x_1 & y_1 & 1 \\
+x_2 & y_2 & 1 \\
+x_3 & y_3 & 1
+\end{pmatrix} = 0
+$$
+\text{and that the equation of the line passing through the two points $(x_1, y_1)$ and $(x_2, y_2)$ is:}
+$$
+\det \begin{pmatrix}
+x & y & 1 \\
+x_1 & y_1 & 1 \\
+x_2 & y_2 & 1
+\end{pmatrix} = 0
+$$
+
+\end{document}
