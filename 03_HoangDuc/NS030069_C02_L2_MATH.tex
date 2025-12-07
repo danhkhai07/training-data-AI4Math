@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Problem}
+
+\text{Suppose $\mathbf{M}$ is a square matrix satisfying the equation $3\mathbf{M}^3 + 2\mathbf{M}^2 + 5\mathbf{M} + \mathbf{I} = \mathbf{0}$, where $\mathbf{I}$ is the identity matrix of the same size as $\mathbf{M}$. Is $\mathbf{M}$ invertible? If so, find the inverse matrix $\mathbf{M}^{-1}$.}
+
+\section*{Solution}
+
+\text{Starting with the given equation:}
+$$
+3\mathbf{M}^3 + 2\mathbf{M}^2 + 5\mathbf{M} + \mathbf{I} = \mathbf{0}
+$$
+
+\text{Isolating the identity matrix $\mathbf{I}$:}
+$$
+\mathbf{I} = -3\mathbf{M}^3 - 2\mathbf{M}^2 - 5\mathbf{M}
+$$
+
+\text{Factoring $\mathbf{M}$ on the right side:}
+$$
+\mathbf{I} = \mathbf{M}(-3\mathbf{M}^2 - 2\mathbf{M} - 5\mathbf{I})
+$$
+
+\text{Since $\mathbf{M}$ commutes with $\mathbf{M}^2$ and $\mathbf{I}$, we also have:}
+$$
+\mathbf{I} = (-3\mathbf{M}^2 - 2\mathbf{M} - 5\mathbf{I})\mathbf{M}
+$$
+
+\text{Let $\mathbf{B} = -3\mathbf{M}^2 - 2\mathbf{M} - 5\mathbf{I}$. We have found a matrix $\mathbf{B}$ such that $\mathbf{M}\mathbf{B} = \mathbf{B}\mathbf{M} = \mathbf{I}$.}
+
+\text{Therefore, $\mathbf{M}$ is **invertible**, and its inverse is:}
+$$
+\mathbf{M}^{-1} = -3\mathbf{M}^2 - 2\mathbf{M} - 5\mathbf{I}
+$$
+
+\end{document}
