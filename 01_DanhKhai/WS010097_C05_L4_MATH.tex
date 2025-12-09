@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.26. Cho $\varphi$ là một phép biến đổi tuyến tính không suy biến trên $V$. $\mathbf{u}$ là véctơ riêng của $\varphi$ ứng với giá trị riêng $\lambda$.}
+\text{a) Chứng minh rằng nếu $\lambda$ là giá trị riêng của $\varphi$ thì $\lambda \ne 0$, đồng thời $\lambda^{-1}$ là giá trị riêng của $\varphi^{-1}$.} \\
+\text{b) Chứng minh rằng nếu $V$ có cơ sở gồm các véctơ riêng của $\varphi$ thì $V$ cũng có cơ sở gồm các véctơ riêng của $\varphi^{-1}$.}
+
+\section*{Giải.}
+
+\text{a) Giả sử $\varphi$ có một giá trị riêng $\lambda = 0$. Khi đó tồn tại $\mathbf{x}$ là một véctơ riêng của $\varphi$ ứng với giá trị riêng $0$, hay $\varphi(\mathbf{x}) = 0\cdot \mathbf{x} = \mathbf{0}$, hay $\mathbf{x} \in \text{Ker}\varphi$.} \text{Mặt khác $\varphi$ là một phép biến đổi tuyến tính không suy biến nên $\text{Ker}\varphi = \{\mathbf{0}\}$.} \text{Ta nhận được $\mathbf{x} = \mathbf{0}$, điều này là vô lý vì $\mathbf{x}$ là véctơ riêng.} \text{Vậy $\varphi$ không có giá trị riêng là $0$, hay $\lambda \ne 0$.}
+
+\text{Giả sử $\lambda$ là một giá trị riêng của $\varphi$ và $\mathbf{u}$ là véctơ riêng tương ứng. Khi đó ta có } $\varphi(\mathbf{u}) = \lambda\mathbf{u} \text{ hay } \lambda^{-1}\varphi(\mathbf{u}) = \mathbf{u}$. \text{Vì ánh xạ ngược của một phép biến đổi tuyến tính cũng là phép biến đổi tuyến tính nên ta có}
+$$
+\varphi^{-1}(\lambda^{-1}\varphi(\mathbf{u})) = \varphi^{-1}(\mathbf{u}) \implies \lambda^{-1}\varphi^{-1}(\varphi(\mathbf{u})) = \varphi^{-1}(\mathbf{u}).
+$$
+\text{Vì } $\varphi^{-1} \circ \varphi = id_V$ \text{ là ánh xạ đồng nhất, nên } $\lambda^{-1}\mathbf{u} = \varphi^{-1}(\mathbf{u})$. \text{Vậy $\mathbf{u}$ cũng là véctơ riêng của $\varphi^{-1}$ ứng với giá trị riêng $\lambda^{-1}$.}
+
+\text{b) Theo chứng minh ở câu a), thì các véctơ riêng của $\varphi$ cũng đồng thời là các véctơ riêng của $\varphi^{-1}$.} \text{Nên nếu $V$ có một cơ sở gồm các véctơ riêng của $\varphi$ thì $V$ cũng có cơ sở gồm các véctơ riêng của $\varphi^{-1}$.}
+
+\end{document}
