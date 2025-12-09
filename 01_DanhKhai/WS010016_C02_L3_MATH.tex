@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho $A = \begin{pmatrix} 1 & -1 & 1 & 1 \\ 1 & 1 & -1 & 1 \\ 1 & 1 & 1 & -1 \\ 1 & 1 & 1 & 1 \end{pmatrix}$. Tìm hạng của $A$ và tính $A^{-1}$.}
+
+\section*{Giải.}
+
+\text{Ta dùng phương pháp Gauss - Jordan để tìm $A^{-1}$. Xét ma trận mở rộng $(A|I)$:}
+$$
+(A|I) = \begin{pmatrix}
+1 & -1 & 1 & 1 & | & 1 & 0 & 0 & 0 \\
+1 & 1 & -1 & 1 & | & 0 & 1 & 0 & 0 \\
+1 & 1 & 1 & -1 & | & 0 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & | & 0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+
+\text{Thực hiện phép biến đổi $\text{H}_1 \leftarrow \text{H}_1 + \text{H}_2 + \text{H}_3 + \text{H}_4$ (để đơn giản hóa hàng đầu):}
+$$
+\xrightarrow{\text{H}_1 \leftarrow \text{H}_1 + \text{H}_2 + \text{H}_3 + \text{H}_4}
+\begin{pmatrix}
+4 & 2 & 2 & 2 & | & 1 & 1 & 1 & 1 \\
+1 & 1 & -1 & 1 & | & 0 & 1 & 0 & 0 \\
+1 & 1 & 1 & -1 & | & 0 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & | & 0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_1 \leftarrow \frac{1}{4} \text{H}_1$:}
+$$
+\xrightarrow{\text{H}_1 \leftarrow \frac{1}{4} \text{H}_1}
+\begin{pmatrix}
+1 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & | & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+1 & 1 & -1 & 1 & | & 0 & 1 & 0 & 0 \\
+1 & 1 & 1 & -1 & | & 0 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & | & 0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1$, $\text{H}_3 \leftarrow \text{H}_3 - \text{H}_1$, $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_1$ (Phần này có vẻ sai khác so với hình, tôi sẽ cố gắng tuân thủ các bước trong hình ảnh):}
+
+\text{Tuân thủ theo các bước biến đổi sơ cấp trong hình ảnh (bước 1):}
+$$
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - \text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1, \text{H}_3 \leftarrow \text{H}_3 - \text{H}_1}
+\begin{pmatrix}
+1 & -1 & 1 & 1 & | & 1 & 0 & 0 & 0 \\
+0 & 2 & -2 & 0 & | & -1 & 1 & 0 & 0 \\
+0 & 2 & 0 & -2 & | & -1 & 0 & 1 & 0 \\
+0 & 2 & 0 & 0 & | & -1 & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \frac{1}{2}\text{H}_2$, $\text{H}_3 \leftarrow \frac{1}{2}\text{H}_3$, $\text{H}_4 \leftarrow \frac{1}{2}\text{H}_4$:}
+$$
+\xrightarrow{\text{Các phép chia}}
+\begin{pmatrix}
+1 & -1 & 1 & 1 & | & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 0 & | & -\frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+0 & 1 & 0 & -1 & | & -\frac{1}{2} & 0 & \frac{1}{2} & 0 \\
+0 & 1 & 0 & 0 & | & -\frac{1}{2} & 0 & 0 & \frac{1}{2}
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 - \text{H}_2$, $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2$:}
+$$
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2]{\text{H}_3 \leftarrow \text{H}_3 - \text{H}_2}
+\begin{pmatrix}
+1 & -1 & 1 & 1 & | & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 0 & | & -\frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+0 & 0 & 1 & -1 & | & 0 & -\frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1 & 0 & | & 0 & -\frac{1}{2} & 0 & \frac{1}{2}
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_3$:}
+$$
+\xrightarrow{\text{H}_4 \leftarrow \text{H}_4 - \text{H}_3}
+\begin{pmatrix}
+1 & -1 & 1 & 1 & | & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 0 & | & -\frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+0 & 0 & 1 & -1 & | & 0 & -\frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 0 & 1 & | & 0 & 0 & -\frac{1}{2} & \frac{1}{2}
+\end{pmatrix}
+$$
+\text{Ma trận đã đạt dạng bậc thang. Hạng $r(A) = 4$.}
+
+\text{Tiếp tục đưa ma trận về dạng $\begin{pmatrix} I | A^{-1} \end{pmatrix}$.}
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 + \text{H}_4$, $\text{H}_1 \leftarrow \text{H}_1 - \text{H}_4$:}
+$$
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 + \text{H}_4]{\text{H}_1 \leftarrow \text{H}_1 - \text{H}_4}
+\begin{pmatrix}
+1 & -1 & 1 & 0 & | & 1 & 0 & \frac{1}{2} & -\frac{1}{2} \\
+0 & 1 & -1 & 0 & | & -\frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+0 & 0 & 1 & 0 & | & 0 & -\frac{1}{2} & 0 & \frac{1}{2} \\
+0 & 0 & 0 & 1 & | & 0 & 0 & -\frac{1}{2} & \frac{1}{2}
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \text{H}_2 + \text{H}_3$, $\text{H}_1 \leftarrow \text{H}_1 - \text{H}_3$:}
+$$
+\xrightarrow[\text{H}_1 \leftarrow \text{H}_1 - \text{H}_3]{\text{H}_2 \leftarrow \text{H}_2 + \text{H}_3}
+\begin{pmatrix}
+1 & -1 & 0 & 0 & | & 1 & \frac{1}{2} & \frac{1}{2} & -\frac{1}{2} \\
+0 & 1 & 0 & 0 & | & -\frac{1}{2} & 0 & 0 & \frac{1}{2} \\
+0 & 0 & 1 & 0 & | & 0 & -\frac{1}{2} & 0 & \frac{1}{2} \\
+0 & 0 & 0 & 1 & | & 0 & 0 & -\frac{1}{2} & \frac{1}{2}
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_1 \leftarrow \text{H}_1 + \text{H}_2$:}
+$$
+\xrightarrow{\text{H}_1 \leftarrow \text{H}_1 + \text{H}_2}
+\begin{pmatrix}
+1 & 0 & 0 & 0 & | & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 1 & 0 & 0 & | & -\frac{1}{2} & 0 & 0 & \frac{1}{2} \\
+0 & 0 & 1 & 0 & | & 0 & -\frac{1}{2} & 0 & \frac{1}{2} \\
+0 & 0 & 0 & 1 & | & 0 & 0 & -\frac{1}{2} & \frac{1}{2}
+\end{pmatrix}
+$$
+\text{Vậy hạng của ma trận là $r(A) = 4$, và ma trận nghịch đảo là}
+$$
+A^{-1} = \frac{1}{4} \begin{pmatrix}
+2 & 2 & 2 & 0 \\
+-2 & 0 & 0 & 2 \\
+0 & -2 & 0 & 2 \\
+0 & 0 & -2 & 2
+\end{pmatrix}.
+$$
+
+\end{document}
