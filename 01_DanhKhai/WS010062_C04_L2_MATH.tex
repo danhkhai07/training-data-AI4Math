@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.29. Hãy tìm chiều và chỉ ra một cơ sở của không gian $B = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid x_1 = x_4\}$.}
+
+\section*{Giải.}
+
+\text{Với mỗi } $\mathbf{u} = (x_1, x_2, x_3, x_4) \in B \text{ bất kỳ, ta có } x_4 = x_1$. \text{Ta viết véctơ } $\mathbf{u}$ \text{ dưới dạng tổ hợp tuyến tính:}
+$$
+\mathbf{u} = (x_1, x_2, x_3, x_1) = x_1(1, 0, 0, 1) + x_2(0, 1, 0, 0) + x_3(0, 0, 1, 0).
+$$
+\text{Đặt } $\mathbf{u}_1 = (1, 0, 0, 1), \mathbf{u}_2 = (0, 1, 0, 0), \mathbf{u}_3 = (0, 0, 1, 0)$, \text{ ta suy ra } $\mathbf{u} = x_1\mathbf{u}_1 + x_2\mathbf{u}_2 + x_3\mathbf{u}_3$. \text{Do đó } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một hệ sinh của } $B$.
+
+\text{Mặt khác, xét } $\alpha\mathbf{u}_1 + \beta\mathbf{u}_2 + \gamma\mathbf{u}_3 = \mathbf{0}$, \text{ hay } $\alpha(1, 0, 0, 1) + \beta(0, 1, 0, 0) + \gamma(0, 0, 1, 0) = (0, 0, 0, 0)$. \text{Ta thu được } $(\alpha, \beta, \gamma, \alpha) = (0, 0, 0, 0)$. \text{Suy ra } $\alpha = \beta = \gamma = 0$ \text{ là nghiệm duy nhất của hệ.} \text{Suy ra } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một hệ véctơ độc lập tuyến tính.}
+
+\text{Vậy } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một cơ sở của không gian } $B$ \text{ và } $\dim B = 3$.
+
+\end{document}
