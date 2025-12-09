@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Biện luận hạng của ma trận $A$ theo $a, b$}
+$$
+A = \begin{pmatrix}
+1 & 2 & -1 & 1 \\
+2 & -1 & 3 & b \\
+1 & a & 4 & 2
+\end{pmatrix}
+$$
+
+\section*{Giải.}
+
+\text{Thực hiện phép biến đổi trên ma trận $A$:}
+$$
+A \xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - \text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1}
+\begin{pmatrix}
+1 & 2 & -1 & 1 \\
+0 & -5 & 5 & b-2 \\
+0 & a-2 & 5 & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow -\frac{1}{5}\text{H}_2$:}
+$$
+\xrightarrow{\text{H}_2 \leftarrow -\frac{1}{5}\text{H}_2}
+\begin{pmatrix}
+1 & 2 & -1 & 1 \\
+0 & 1 & -1 & \frac{2-b}{5} \\
+0 & a-2 & 5 & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 - (a-2)\text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 - (a-2)\text{H}_2}
+\begin{pmatrix}
+1 & 2 & -1 & 1 \\
+0 & 1 & -1 & \frac{2-b}{5} \\
+0 & 0 & 5 + (a-2) & 1 - (a-2)\frac{2-b}{5}
+\end{pmatrix} \quad (*)
+$$
+\text{Phần tử ở vị trí $(3, 3)$ là $5 + a - 2 = a+3$. }
+\text{Phần tử ở vị trí $(3, 4)$ là $1 - \frac{(a-2)(2-b)}{5} = 1 + \frac{(a-2)(b-2)}{5} = \frac{5 + (a-2)(b-2)}{5}$.}
+
+\text{Xét ma trận sau biến đổi (*):}
+$$
+A' = \begin{pmatrix}
+1 & 2 & -1 & 1 \\
+0 & 1 & -1 & \frac{2-b}{5} \\
+0 & 0 & a+3 & \frac{5 + (a-2)(b-2)}{5}
+\end{pmatrix}
+$$
+
+\subsection*{Các trường hợp biện luận}
+
+\begin{itemize}
+    \item \text{Nếu $a \ne -3$:}
+    \text{Phần tử $(3, 3)$ là $a+3 \ne 0$. Ma trận có 3 hàng khác không.}
+    $$
+    r(A) = 3.
+    $$
+    
+    \item \text{Nếu $a = -3$:}
+    \text{Phần tử $(3, 3)$ là $a+3 = 0$. Ta xét phần tử $(3, 4)$:}
+    $$
+    \text{Tại } a=-3 \text{, phần tử }(3, 4) \text{ là: } \frac{5 + (-3-2)(b-2)}{5} = \frac{5 - 5(b-2)}{5} = 1 - (b-2) = 3 - b.
+    $$
+    \begin{itemize}
+        \item \text{Nếu $3 - b = 0$ (tức $b = 3$):}
+        \text{Hàng thứ ba là hàng không. Ma trận có 2 hàng khác không.}
+        $$
+        r(A) = 2.
+        $$
+        \item \text{Nếu $3 - b \ne 0$ (tức $b \ne 3$):}
+        \text{Hàng thứ ba là $\begin{pmatrix} 0 & 0 & 0 & 3-b \end{pmatrix} \ne 0$. Ma trận có 3 hàng khác không.}
+        $$
+        r(A) = 3.
+        $$
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Kết luận}
+
+\begin{itemize}
+    \item \text{Nếu $a \ne -3$ thì $r(A)=3$.}
+    \item \text{Nếu $a = -3$ và $b \ne 3$ thì $r(A)=3$.}
+    \item \text{Nếu $a = -3$ và $b = 3$ thì $r(A)=2$.}
+\end{itemize}
+
+\end{document}
