@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho hệ phương trình}
+$$
+\begin{cases}
+x_1 + 2x_2 - 3x_3 + 2x_4 = b_1 \\
+x_1 + x_2 - x_3 + x_4 = b_2 \\
+2x_1 + x_2 - x_3 + x_4 = b_3
+\end{cases}
+$$
+\begin{enumerate}
+    \item[a)] Tìm hạng của ma trận hệ số $A$.
+    \item[b)] Hỏi hệ phương trình có nghiệm với mọi $b_1, b_2, b_3 \in \mathbb{R}$ là đúng hay sai? Tại sao?
+    \item[c)] Tìm nghiệm tổng quát của hệ phương trình khi $b_1 = 6, b_2 = 2, b_3 = 0$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Tìm hạng của ma trận hệ số $A$}
+\text{Ma trận hệ số là:}
+$$
+A = \begin{pmatrix}
+1 & 2 & -3 & 2 \\
+1 & 1 & -1 & 1 \\
+2 & 1 & -1 & 1
+\end{pmatrix}
+$$
+\text{Áp dụng phương pháp Gauss, biến đổi ma trận $A$:}
+$$
+A \xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1}
+\begin{pmatrix}
+1 & 2 & -3 & 2 \\
+0 & -1 & 2 & -1 \\
+0 & -3 & 5 & -3
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_2}
+\begin{pmatrix}
+1 & 2 & -3 & 2 \\
+0 & -1 & 2 & -1 \\
+0 & 0 & -1 & 0
+\end{pmatrix}
+$$
+\text{Ma trận đã đạt dạng bậc thang. Số hàng khác không là 3.}
+\text{Vậy hạng của ma trận hệ số là $r(A) = 3$.}
+
+\subsection*{b) Khẳng định của đề bài là đúng hay sai?}
+\text{Theo định lý Kronecker - Capelli, hệ phương trình có nghiệm khi và chỉ khi $r(A) = r(\bar{A})$. }
+\text{Ma trận mở rộng $\bar{A}$ có 3 hàng và 5 cột. Hạng tối đa của $\bar{A}$ là 3. }
+\text{Do $r(A) = 3$ và $r(\bar{A}) \le 3$, luôn có $r(\bar{A}) = r(A) = 3$.}
+\text{Vậy, hệ phương trình có nghiệm với mọi $b_1, b_2, b_3 \in \mathbb{R}$. Khẳng định của đề bài là **đúng**.}
+
+\subsection*{c) Tìm nghiệm tổng quát khi $b_1 = 6, b_2 = 2, b_3 = 0$}
+\text{Ta xét ma trận mở rộng $\bar{A}$ với các giá trị $b_i$ đã cho:}
+$$
+\bar{A} = \begin{pmatrix}
+1 & 2 & -3 & 2 & | & 6 \\
+1 & 1 & -1 & 1 & | & 2 \\
+2 & 1 & -1 & 1 & | & 0
+\end{pmatrix}
+$$
+\text{Thực hiện phép biến đổi Gauss như trên:}
+$$
+\bar{A} \xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1}
+\begin{pmatrix}
+1 & 2 & -3 & 2 & | & 6 \\
+0 & -1 & 2 & -1 & | & -4 \\
+0 & -3 & 5 & -3 & | & -12
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_2}
+\begin{pmatrix}
+1 & 2 & -3 & 2 & | & 6 \\
+0 & -1 & 2 & -1 & | & -4 \\
+0 & 0 & -1 & 0 & | & 0
+\end{pmatrix}
+$$
+\text{Hệ phương trình tương đương là:}
+$$
+\begin{cases}
+x_1 + 2x_2 - 3x_3 + 2x_4 = 6 \\
+-x_2 + 2x_3 - x_4 = -4 \\
+-x_3 = 0
+\end{cases}
+$$
+\text{Từ phương trình thứ ba, ta có $x_3 = 0$. }
+\text{Chọn $x_4 = C$ là tham số tùy ý ($C \in \mathbb{R}$).}
+\text{Thay $x_3 = 0$ và $x_4 = C$ vào phương trình thứ hai:}
+$$
+-x_2 + 2(0) - C = -4 \Rightarrow -x_2 = C - 4 \Rightarrow x_2 = 4 - C.
+$$
+\text{Thay $x_2 = 4 - C, x_3 = 0, x_4 = C$ vào phương trình thứ nhất:}
+$$
+x_1 + 2(4 - C) - 3(0) + 2C = 6
+$$
+$$
+x_1 + 8 - 2C + 2C = 6
+$$
+$$
+x_1 + 8 = 6 \Rightarrow x_1 = -2.
+$$
+\text{Vậy nghiệm tổng quát của hệ phương trình là:}
+$$
+\begin{cases}
+x_1 = -2 \\
+x_2 = 4 - C \\
+x_3 = 0 \\
+x_4 = C
+\end{cases}
+$$
+\text{hay dưới dạng vectơ:}
+$$
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = \begin{pmatrix} -2 \\ 4 \\ 0 \\ 0 \end{pmatrix} + C \begin{pmatrix} 0 \\ -1 \\ 0 \\ 1 \end{pmatrix}, \quad \text{với } C \in \mathbb{R}.
+$$
+
+\end{document}
