@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.4. Ký hiệu $M_{2\times 2}(\mathbb{R})$ là không gian các ma trận thực vuông cấp hai. Cho ma trận $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ và ánh xạ $\varphi: M_{2\times 2}(\mathbb{R}) \to M_{2\times 2}(\mathbb{R}), X \mapsto AX$.}
+
+\text{a) Chứng minh $\varphi$ là một phép biến đổi tuyến tính trên $M_{2\times 2}(\mathbb{R})$.} \\
+\text{b) Tìm ma trận của $\varphi$ trong cơ sở chính tắc của $M_{2\times 2}(\mathbb{R})$ và tọa độ của ma trận $\varphi(B)$ trong cơ sở đó biết $B = \begin{pmatrix} -1 & 0 \\ 1 & 1 \end{pmatrix}$.} \\
+\text{c) Chứng minh $\varphi$ là song ánh. Hãy xác định $\varphi^{-1}$.}
+
+\section*{Giải.}
+
+\text{a) Giả sử $X, Y \in M_{2\times 2}(\mathbb{R})$ và $\alpha, \beta \in \mathbb{R}$ bất kỳ. Khi đó}
+\begin{align*}
+\varphi(\alpha X + \beta Y) &= A(\alpha X + \beta Y) \\
+&= \alpha AX + \beta AY \\
+&= \alpha\varphi(X) + \beta\varphi(Y).
+\end{align*}
+\text{Vậy $\varphi$ là một phép biến đổi tuyến tính trên $M_{2\times 2}(\mathbb{R})$.}
+
+\text{b) Ta có } $E_1 = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, E_2 = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, E_3 = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, E_4 = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}$ \text{ là cơ sở chính tắc của không gian } $M_{2\times 2}(\mathbb{R})$. \text{Khi đó}
+$$
+\varphi(E_1) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 3 & 0 \end{pmatrix} = 1\cdot E_1 + 0\cdot E_2 + 3\cdot E_3 + 0\cdot E_4
+$$
+$$
+\varphi(E_2) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 0 & 3 \end{pmatrix} = 0\cdot E_1 + 1\cdot E_2 + 0\cdot E_3 + 3\cdot E_4
+$$
+$$
+\varphi(E_3) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 2 & 0 \\ 4 & 0 \end{pmatrix} = 2\cdot E_1 + 0\cdot E_2 + 4\cdot E_3 + 0\cdot E_4
+$$
+$$
+\varphi(E_4) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 2 \\ 0 & 4 \end{pmatrix} = 0\cdot E_1 + 2\cdot E_2 + 0\cdot E_3 + 4\cdot E_4
+$$
+\text{Nên ma trận của $\varphi$ trong cơ sở chính tắc là }
+$$
+C = \begin{pmatrix}
+1 & 0 & 2 & 0 \\
+0 & 1 & 0 & 2 \\
+3 & 0 & 4 & 0 \\
+0 & 3 & 0 & 4
+\end{pmatrix}.
+$$
+\text{Vì tọa độ của ma trận } $B = \begin{pmatrix} -1 & 0 \\ 1 & 1 \end{pmatrix}$ \text{ trong cơ sở chính tắc là } $[-1 \ 0 \ 1 \ 1]^T$, \text{ nên tọa độ của ma trận } $\varphi(B)$ \text{ trong cơ sở chính tắc là}
+$$
+[\varphi(B)] = C [B] = \begin{pmatrix}
+1 & 0 & 2 & 0 \\
+0 & 1 & 0 & 2 \\
+3 & 0 & 4 & 0 \\
+0 & 3 & 0 & 4
+\end{pmatrix} \begin{pmatrix} -1 \\ 0 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \\ 1 \\ 4 \end{pmatrix}.
+$$
+\text{Vậy } $[\varphi(B)] = [1 \ 2 \ 1 \ 4]^T$.
+
+\text{c) Do $\det A = 1(4) - 2(3) = 4 - 6 = -2 \ne 0$, suy ra $A$ khả nghịch. Với $X, Y \in M_{2\times 2}(\mathbb{R})$ tùy ý, xét}
+$$
+\varphi(X) = Y \Leftrightarrow AX = Y \Leftrightarrow X = A^{-1}Y.
+$$
+\text{Do đó $\varphi$ là song ánh và $\varphi^{-1}(Y) = A^{-1}Y$. Mặt khác}
+$$
+A^{-1} = \frac{1}{\det A} \text{adj}(A) = \frac{1}{-2} \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ \frac{3}{2} & -\frac{1}{2} \end{pmatrix}.
+$$
+\text{Vậy $\varphi^{-1}: M_{2\times 2}(\mathbb{R}) \to M_{2\times 2}(\mathbb{R}), X \mapsto A^{-1}X$ với } $A^{-1} = \begin{pmatrix} -2 & 1 \\ \frac{3}{2} & -\frac{1}{2} \end{pmatrix}$.
+
+\end{document}
