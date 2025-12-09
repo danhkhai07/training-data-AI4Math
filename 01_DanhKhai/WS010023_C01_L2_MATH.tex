@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho hệ phương trình}
+$$
+\begin{cases}
+2x + 3y + z = 4 \\
+x + y - 2z = 1 \\
+x + 4y + mz = 1
+\end{cases}
+$$
+\begin{enumerate}
+    \item[a)] Tìm $m$ để hệ là hệ Cramer.
+    \item[b)] Giải hệ khi $m=1$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Định thức của ma trận hệ số là}
+$$
+\det A = \begin{vmatrix} 2 & 3 & 1 \\ 1 & 1 & -2 \\ 1 & 4 & m \end{vmatrix}
+$$
+\text{Khai triển định thức theo cột thứ nhất:}
+$$
+\det A = 2\begin{vmatrix} 1 & -2 \\ 4 & m \end{vmatrix} - 1\begin{vmatrix} 3 & 1 \\ 4 & m \end{vmatrix} + 1\begin{vmatrix} 3 & 1 \\ 1 & -2 \end{vmatrix}
+$$
+$$
+= 2(m - (-8)) - (3m - 4) + (-6 - 1)
+$$
+$$
+= 2m + 16 - 3m + 4 - 7 = -m + 13.
+$$
+
+\text{Hệ là hệ Cramer khi và chỉ khi $\det A \ne 0$, tức là $-m + 13 \ne 0 \Leftrightarrow m \ne 13$.}
+
+\subsection*{b) Giải hệ khi $m=1$}
+\text{Với $m = 1$, ta có $\det A = -1 + 13 = 12 \ne 0$. Hệ là hệ Cramer và có nghiệm duy nhất.}
+\text{Áp dụng quy tắc Cramer, ta có}
+$$
+x = \dfrac{D_x}{\det A}, \quad y = \dfrac{D_y}{\det A}, \quad z = \dfrac{D_z}{\det A}.
+$$
+\text{trong đó}
+$$
+D_x = \begin{vmatrix} 4 & 3 & 1 \\ 1 & 1 & -2 \\ 1 & 4 & 1 \end{vmatrix} = 4(1 - (-8)) - 3(1 - (-2)) + 1(4 - 1) = 4(9) - 3(3) + 3 = 36 - 9 + 3 = 30.
+$$
+$$
+D_y = \begin{vmatrix} 2 & 4 & 1 \\ 1 & 1 & -2 \\ 1 & 1 & 1 \end{vmatrix} = 2(1 - (-2)) - 4(1 - (-2)) + 1(1 - 1) = 2(3) - 4(3) + 0 = 6 - 12 = -6.
+$$
+$$
+D_z = \begin{vmatrix} 2 & 3 & 4 \\ 1 & 1 & 1 \\ 1 & 4 & 1 \end{vmatrix} = 2(1 - 4) - 3(1 - 1) + 4(4 - 1) = 2(-3) - 0 + 4(3) = -6 + 12 = 6.
+$$
+\text{Do đó nghiệm duy nhất của hệ phương trình là}
+$$
+x = \dfrac{30}{12} = \dfrac{5}{2}, \quad y = \dfrac{-6}{12} = -\dfrac{1}{2}, \quad z = \dfrac{6}{12} = \dfrac{1}{2}.
+$$
+\text{Vậy nghiệm của hệ là $\left( \dfrac{5}{2}, -\dfrac{1}{2}, \dfrac{1}{2} \right)$.}
+
+\end{document}
