@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.6. Cho $f: \mathbb{R}^3 \to \mathbb{R}^2, (x, y, z) \mapsto (x + y - z, 2x - z)$ là một ánh xạ tuyến tính.}
+\text{a) Xác định số chiều và một cơ sở của không gian nhân $\text{Ker}f$.} \\
+\text{b) Xác định số chiều và một cơ sở của không gian ảnh $\text{Im}f$.}
+
+\section*{Giải.}
+
+\text{a) Ta có } $\text{Ker}f = \{ (x, y, z) \in \mathbb{R}^3 \mid f(x, y, z) = \mathbf{0} \}$. \text{Do đó } $(x, y, z) \in \text{Ker}f \text{ khi và chỉ khi } (x, y, z)$ \text{ là nghiệm của hệ phương trình:}
+$$
+\begin{cases}
+x + y - z = 0 \\
+2x - z = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+y = C \\
+x = C \\
+z = 2C
+\end{cases}
+, C \in \mathbb{R}.
+$$
+\text{Vậy } $\text{Ker}f = \{ (x, y, z) \mid (x, y, z) = C(1, 1, 2), C \in \mathbb{R} \} = \mathcal{L}((1, 1, 2))$. \text{Do đó } $\dim \text{Ker}f = 1$ \text{ và cơ sở là } $\{(1, 1, 2)\}$.
+
+\text{b) Ta có}
+$$
+\text{Im}f = \{ f(x, y, z) \mid (x, y, z) \in \mathbb{R}^3 \}
+$$
+$$
+= \{ (x + y - z, 2x - z) \mid (x, y, z) \in \mathbb{R}^3 \}
+$$
+$$
+= \{ x(1, 2) + y(1, 0) + z(-1, -1) \mid x, y, z \in \mathbb{R}^3 \}.
+$$
+\text{Vậy } $\text{Im}f$ \text{ là không gian sinh bởi hệ véctơ } \mathbf{u}_1=(1, 2), \mathbf{u}_2=(1, 0), \mathbf{u}_3=(-1, -1)$.
+\text{Xét hệ véctơ } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$. \text{Do } $r(\mathbf{u}_1, \mathbf{u}_2) = 2$ \text{ nên } $\dim \text{Im}f = 2$. \text{Ta chọn cơ sở của } $\text{Im}f$ \text{ là } $\{(1, 2), (1, 0)\}$.
+
+\end{document}
