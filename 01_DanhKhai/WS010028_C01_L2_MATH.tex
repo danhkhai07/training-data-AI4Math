@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Tìm nghiệm tổng quát của hệ phương trình}
+$$
+\begin{cases}
+x_1 - x_2 + 2x_3 - x_4 = 0 \\
+-x_1 + 2x_2 - 3x_3 + x_4 = 0 \\
+2x_1 + 3x_2 + x_3 + 2x_4 = 0 \\
+3x_1 + x_2 + 2x_3 - 3x_4 = 0
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Vì đây là hệ phương trình thuần nhất, hệ luôn có nghiệm tầm thường $(0, 0, 0, 0)$. Ta xét ma trận hệ số $A$:}
+$$
+A = \begin{pmatrix}
+1 & -1 & 2 & -1 \\
+-1 & 2 & -3 & 1 \\
+2 & 3 & 1 & 2 \\
+3 & 1 & 2 & -3
+\end{pmatrix}
+$$
+\text{Sử dụng phương pháp Gauss, biến đổi ma trận $A$:}
+$$
+A \xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 + \text{H}_1, \text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_1}
+\begin{pmatrix}
+1 & -1 & 2 & -1 \\
+0 & 1 & -1 & 0 \\
+0 & 5 & -3 & 4 \\
+0 & 4 & -4 & 0
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_4 \leftarrow \frac{1}{4}\text{H}_4$:}
+$$
+\xrightarrow{\text{H}_4 \leftarrow \frac{1}{4}\text{H}_4}
+\begin{pmatrix}
+1 & -1 & 2 & -1 \\
+0 & 1 & -1 & 0 \\
+0 & 5 & -3 & 4 \\
+0 & 1 & -1 & 0
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2$ và $\text{H}_3 \leftarrow \text{H}_3 - 5\text{H}_2$:}
+$$
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2]{\text{H}_3 \leftarrow \text{H}_3 - 5\text{H}_2}
+\begin{pmatrix}
+1 & -1 & 2 & -1 \\
+0 & 1 & -1 & 0 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Ma trận đã đạt dạng bậc thang. Hạng $r(A) = 3$. Số ẩn $n=4$.}
+\text{Hệ có vô số nghiệm phụ thuộc $4 - 3 = 1$ tham số.}
+
+\text{Hệ phương trình tương đương:}
+$$
+\begin{cases}
+x_1 - x_2 + 2x_3 - x_4 = 0 \\
+x_2 - x_3 = 0 \\
+2x_3 + 4x_4 = 0
+\end{cases}
+$$
+\text{Từ phương trình thứ ba: $2x_3 = -4x_4 \Rightarrow x_3 = -2x_4$.}
+\text{Chọn $x_4 = C$ là tham số tùy ý ($C \in \mathbb{R}$).}
+\text{Suy ra $x_3 = -2C$.}
+
+\text{Thay $x_3$ vào phương trình thứ hai: $x_2 - (-2C) = 0 \Rightarrow x_2 = -2C$.}
+
+\text{Thay $x_2, x_3, x_4$ vào phương trình thứ nhất:}
+$$
+x_1 = x_2 - 2x_3 + x_4
+$$
+$$
+x_1 = (-2C) - 2(-2C) + C
+$$
+$$
+x_1 = -2C + 4C + C = 3C.
+$$
+\text{Vậy nghiệm tổng quát của hệ phương trình là:}
+$$
+\begin{cases}
+x_1 = 3C \\
+x_2 = -2C \\
+x_3 = -2C \\
+x_4 = C
+\end{cases}
+$$
+\text{hay dưới dạng vectơ:}
+$$
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = C \begin{pmatrix} 3 \\ -2 \\ -2 \\ 1 \end{pmatrix}, \quad \text{với } C \in \mathbb{R}.
+$$
+
+\end{document}
