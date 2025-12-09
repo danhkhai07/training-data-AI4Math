@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Chứng minh các tập hợp sau là các không gian tuyến tính thực}
+\begin{enumerate}
+    \item[a)] \text{Tập hợp $C_{[a,b]} = \{f: [a, b] \to \mathbb{R} \mid f \text{ liên tục trên } [a, b] \}$ với các phép toán cộng hàm số, nhân hàm số với một số thực, ký hiệu $P_n[x]$ là các phép toán thông thường.}
+    \item[b)] \text{Tập hợp $E = \{\mathbf{x} = (x_1, x_2) \in \mathbb{R}^2 \mid x_1 > 0, x_2 > 0 \}$ với các phép toán:}
+    $$
+    \mathbf{x} + \mathbf{y} = (x_1 y_1, x_2 y_2), \quad \alpha \cdot \mathbf{x} = (x_1^{\alpha}, x_2^{\alpha}), \quad \alpha \in \mathbb{R}.
+    $$
+    \item[c)] \text{Tập hợp $E \times F = \{(x, y) \mid x \in E, y \in F \}$ (E, F là hai không gian tuyến tính thực) với các phép toán:}
+    $$
+    (x, y) + (x', y') = (x+x', y+y'), \quad \alpha \cdot (x, y) = (\alpha x, \alpha y), \quad x, x' \in E, y, y' \in F, \alpha \in \mathbb{R}.
+    $$
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Tập $C_{[a,b]}$ (Các hàm số liên tục trên đoạn $[a, b]$)}
+\text{Xét tính chất của phép cộng đã được định nghĩa trên $C_{[a,b]}$. Giả sử $f, g, h \in C_{[a,b]}$, ta có:}
+\begin{itemize}
+    \item \text{Đóng: Do $f$ và $g$ liên tục nên $f+g$ liên tục, $f+g \in C_{[a,b]}$.}
+    \item \text{Giao hoán: $(f+g)(x) = f(x) + g(x) = g(x) + f(x) = (g+f)(x)$.}
+    \item \text{Kết hợp: $((f+g)+h)(x) = (f+g)(x) + h(x) = f(x) + g(x) + h(x) = (f+(g+h))(x)$.}
+    \item \text{Vectơ không: Là hàm không, ký hiệu $0(x)=0, \forall x \in [a, b]$. $f(x) + 0(x) = f(x)$.}
+    \item \text{Phần tử đối: Phần tử đối của $f$ là hàm $-f$. $(f+(-f))(x) = f(x) + (-f(x)) = 0$.}
+\end{itemize}
+\text{Xét tính chất của phép nhân đã được định nghĩa trên $C_{[a,b]}$. Giả sử $\alpha, \beta \in \mathbb{R}, f, g \in C_{[a,b]}$, ta có:}
+\begin{itemize}
+    \item \text{Đóng: Do $f$ liên tục, $\alpha f$ liên tục, $\alpha f \in C_{[a,b]}$.}
+    \item \text{Phân phối: $(\alpha(f+g))(x) = \alpha(f(x)+g(x)) = \alpha f(x) + \alpha g(x) = (\alpha f + \alpha g)(x)$.}
+    \item \text{Phân phối: $((\alpha + \beta)f)(x) = (\alpha + \beta)f(x) = \alpha f(x) + \beta f(x) = (\alpha f + \beta f)(x)$.}
+    \item \text{Kết hợp vô hướng: $((\alpha \beta) f)(x) = (\alpha \beta) f(x) = \alpha (\beta f(x)) = (\alpha (\beta f))(x)$.}
+    \item \text{Phần tử đơn vị: $(1 \cdot f)(x) = 1 \cdot f(x) = f(x)$.}
+\end{itemize}
+\text{Vậy $C_{[a,b]}$ là một không gian tuyến tính.}
+
+\subsection*{b) Tập $E = \{(x_1, x_2) \in \mathbb{R}^2 \mid x_1 > 0, x_2 > 0 \}$}
+\text{Xét tính chất của phép cộng đã được định nghĩa trên $E$. Giả sử $\mathbf{x} = (x_1, x_2), \mathbf{y} = (y_1, y_2), \mathbf{z} = (z_1, z_2) \in E$, ta có:}
+\begin{itemize}
+    \item \text{Đóng: $\mathbf{x} + \mathbf{y} = (x_1 y_1, x_2 y_2)$. Do $x_i > 0, y_i > 0$, suy ra $x_1 y_1 > 0, x_2 y_2 > 0$. $\mathbf{x}+\mathbf{y} \in E$.}
+    \item \text{Giao hoán: $\mathbf{x} + \mathbf{y} = (x_1 y_1, x_2 y_2) = (y_1 x_1, y_2 x_2) = \mathbf{y} + \mathbf{x}$.}
+    \item \text{Kết hợp: $(\mathbf{x} + \mathbf{y}) + \mathbf{z} = (x_1 y_1 z_1, x_2 y_2 z_2) = \mathbf{x} + (\mathbf{y} + \mathbf{z})$.}
+    \item \text{Vectơ không: Phần tử $\mathbf{0} = (1, 1) \in E$ vì $1 > 0$. $\mathbf{x} + \mathbf{0} = (x_1 \cdot 1, x_2 \cdot 1) = \mathbf{x}$.}
+    \item \text{Phần tử đối: Phần tử đối của $\mathbf{x}$ là $-\mathbf{x} = \left(\frac{1}{x_1}, \frac{1}{x_2}\right) \in E$. $\mathbf{x} + (-\mathbf{x}) = \left(x_1 \frac{1}{x_1}, x_2 \frac{1}{x_2}\right) = (1, 1) = \mathbf{0}$.}
+\end{itemize}
+\text{Xét tính chất của phép nhân vô hướng đã được định nghĩa trên $E$. Giả sử $\alpha, \beta \in \mathbb{R}, \mathbf{x}, \mathbf{y} \in E$, ta có:}
+\begin{itemize}
+    \item \text{Đóng: $\alpha \mathbf{x} = (x_1^{\alpha}, x_2^{\alpha})$. Do $x_i > 0$, $x_i^{\alpha} > 0$. $\alpha \mathbf{x} \in E$.}
+    \item \text{Phân phối vô hướng với phép cộng vectơ: $\alpha (\mathbf{x} + \mathbf{y}) = \alpha (x_1 y_1, x_2 y_2) = ((x_1 y_1)^\alpha, (x_2 y_2)^\alpha) = (x_1^\alpha y_1^\alpha, x_2^\alpha y_2^\alpha) = (x_1^\alpha, x_2^\alpha) + (y_1^\alpha, y_2^\alpha) = \alpha \mathbf{x} + \alpha \mathbf{y}$.}
+    \item \text{Phân phối vô hướng với phép cộng vô hướng: $(\alpha + \beta) \mathbf{x} = (x_1^{\alpha + \beta}, x_2^{\alpha + \beta}) = (x_1^\alpha x_1^\beta, x_2^\alpha x_2^\beta) = \alpha \mathbf{x} + \beta \mathbf{x}$.}
+    \item \text{Kết hợp vô hướng: $(\alpha \beta) \mathbf{x} = (x_1^{\alpha \beta}, x_2^{\alpha \beta}) = ((x_1^\beta)^\alpha, (x_2^\beta)^\alpha) = \alpha (\beta \mathbf{x})$.}
+    \item \text{Phần tử đơn vị: $1 \cdot \mathbf{x} = (x_1^1, x_2^1) = \mathbf{x}$.}
+\end{itemize}
+\text{Vậy $E$ là một không gian tuyến tính.}
+
+\subsection*{c) Tập $E \times F$}
+\text{Xét tính chất của phép toán đã được định nghĩa trên $E \times F$. Giả sử $\mathbf{x} = (x, y), \mathbf{x}' = (x', y'), \mathbf{x}'' = (x'', y'') \in E \times F$. $\alpha, \beta \in \mathbb{R}$.}
+\begin{itemize}
+    \item \text{Đóng: $\mathbf{x} + \mathbf{x}' = (x+x', y+y')$. Do $x, x' \in E$ và $E$ đóng với phép cộng nên $x+x' \in E$. Tương tự $y+y' \in F$. $\mathbf{x}+\mathbf{x}' \in E \times F$.}
+    \item \text{Giao hoán: $\mathbf{x} + \mathbf{x}' = (x+x', y+y') = (x'+x, y'+y) = \mathbf{x}' + \mathbf{x}$.}
+    \item \text{Kết hợp: $(\mathbf{x} + \mathbf{x}') + \mathbf{x}'' = ((x+x')+x'', (y+y')+y'') = \mathbf{x} + (\mathbf{x}' + \mathbf{x}'')$.}
+    \item \text{Vectơ không: $\mathbf{0}_{E \times F} = (0_E, 0_F)$ (với $0_E, 0_F$ là vectơ không của $E, F$). $\mathbf{x} + \mathbf{0} = (x+0_E, y+0_F) = \mathbf{x}$.}
+    \item \text{Phần tử đối: $-\mathbf{x} = (-x, -y)$. $\mathbf{x} + (-\mathbf{x}) = (x+(-x), y+(-y)) = (0_E, 0_F) = \mathbf{0}_{E \times F}$.}
+    \item \text{Đóng với nhân vô hướng: $\alpha \mathbf{x} = (\alpha x, \alpha y)$. Do $x \in E, y \in F$ và $E, F$ đóng với nhân vô hướng. $\alpha \mathbf{x} \in E \times F$.}
+    \item \text{Phân phối: $\alpha (\mathbf{x} + \mathbf{x}') = \alpha (x+x', y+y') = (\alpha(x+x'), \alpha(y+y')) = (\alpha x + \alpha x', \alpha y + \alpha y') = \alpha \mathbf{x} + \alpha \mathbf{x}'$.}
+    \item \text{Phân phối: $(\alpha + \beta) \mathbf{x} = ((\alpha+\beta)x, (\alpha+\beta)y) = (\alpha x + \beta x, \alpha y + \beta y) = \alpha \mathbf{x} + \beta \mathbf{x}$.}
+    \item \text{Kết hợp vô hướng: $(\alpha \beta) \mathbf{x} = ((\alpha \beta) x, (\alpha \beta) y) = (\alpha (\beta x), \alpha (\beta y)) = \alpha (\beta \mathbf{x})$.}
+    \item \text{Phần tử đơn vị: $1 \cdot \mathbf{x} = (1 \cdot x, 1 \cdot y) = \mathbf{x}$.}
+\end{itemize}
+\text{Vậy $E \times F$ là một không gian tuyến tính.}
+
+\end{document}
