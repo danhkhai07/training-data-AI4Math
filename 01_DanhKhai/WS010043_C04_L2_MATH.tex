@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Trong không gian $M_{2 \times 2}(\mathbb{R})$ các ma trận thực vuông cấp hai, cho tập hợp $V = \left\{ A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \mid a=d, b=-c \right\}$. Chứng minh $V$ là một không gian con của $M_{2 \times 2}(\mathbb{R})$.}
+
+\section*{Giải.}
+
+\text{Để chứng minh $V$ là không gian con, ta chứng minh $V$ thỏa mãn hai điều kiện đóng (hay điều kiện tổ hợp tuyến tính) và chứa vectơ không.}
+
+\subsection*{Điều kiện 1: $V \ne \emptyset$}
+\text{Ma trận zero $O = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$ thỏa mãn điều kiện $a=d=0$ và $b=-c=0$. }
+\text{Ta có $O \in V$, nên $V$ là tập hợp khác rỗng ($V \ne \emptyset$).}
+
+\subsection*{Điều kiện 2: Đóng với tổ hợp tuyến tính}
+\text{Cho $A_1, A_2 \in V$ và $\alpha, \beta \in \mathbb{R}$.}
+\text{Theo định nghĩa của tập $V$, ta có:}
+$$
+A_1 = \begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}, \quad \text{với } a_1 = d_1, b_1 = -c_1.
+$$
+$$
+A_2 = \begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix}, \quad \text{với } a_2 = d_2, b_2 = -c_2.
+$$
+\text{Xét ma trận $C = \alpha A_1 + \beta A_2 = \begin{pmatrix} \alpha a_1 + \beta a_2 & \alpha b_1 + \beta b_2 \\ \alpha c_1 + \beta c_2 & \alpha d_1 + \beta d_2 \end{pmatrix}$.}
+
+\text{Ta kiểm tra điều kiện thứ nhất ($C_{11} = C_{22}$):}
+$$
+C_{11} = \alpha a_1 + \beta a_2 \quad \text{và} \quad C_{22} = \alpha d_1 + \beta d_2.
+$$
+\text{Do $a_1 = d_1$ và $a_2 = d_2$, ta có $C_{11} = \alpha d_1 + \beta d_2 = C_{22}$. (Thỏa mãn)}
+
+\text{Ta kiểm tra điều kiện thứ hai ($C_{12} = -C_{21}$):}
+$$
+C_{12} = \alpha b_1 + \beta b_2 \quad \text{và} \quad C_{21} = \alpha c_1 + \beta c_2.
+$$
+\text{Do $b_1 = -c_1$ và $b_2 = -c_2$, ta có $c_1 = -b_1$ và $c_2 = -b_2$. }
+$$
+C_{21} = \alpha (-b_1) + \beta (-b_2) = -(\alpha b_1 + \beta b_2) = -C_{12}.
+$$
+\text{Hay $C_{12} = -C_{21}$. (Thỏa mãn)}
+
+\text{Vậy $C \in V$. Tập $V$ đóng với tổ hợp tuyến tính.}
+\text{Do đó, $V$ là một không gian con của $M_{2 \times 2}(\mathbb{R})$.}
+
+\end{document}
