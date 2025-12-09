@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.37. Chứng minh rằng}
+$$
+V_1 = \{ f \in P_n[x] \mid f(-x) = f(x) \forall x \in \mathbb{R} \}
+$$
+\text{và}
+$$
+V_2 = \{ f \in P_n[x] \mid f(-x) = -f(x) \forall x \in \mathbb{R} \}
+$$
+\text{là hai không gian con của } $P_n[x]$, \text{ đồng thời } $P_n[x] = V_1 \oplus V_2$.
+
+\section*{Giải.}
+
+\begin{itemize}
+    \item \text{Dễ dàng chứng minh } $V_1$ \text{ và } $V_2$ \text{ là các không gian véctơ con của không gian véctơ } $P_n[x]$.
+    \item \text{Ta chứng minh } $P_n[x] = V_1 + V_2$ \text{ và } $V_1 \cap V_2 = \{\mathbf{0}\}$.
+\end{itemize}
+
+\text{Xét một đa thức bất kỳ } $f(x) \in P_n[x]$. \text{Đặt } $f_1(x) = \frac{1}{2}(f(x) + f(-x))$ \text{ và } $f_2(x) = \frac{1}{2}(f(x) - f(-x))$ \text{ thì rõ ràng } $f(x) = f_1(x) + f_2(x)$.
+\text{Ta kiểm tra:}
+$$
+f_1(-x) = \frac{1}{2}(f(-x) + f(-(-x))) = \frac{1}{2}(f(-x) + f(x)) = f_1(x).
+$$
+\text{Vậy } $f_1(x) \in V_1$.
+$$
+f_2(-x) = \frac{1}{2}(f(-x) - f(-(-x))) = \frac{1}{2}(f(-x) - f(x)) = -\frac{1}{2}(f(x) - f(-x)) = -f_2(x).
+$$
+\text{Vậy } $f_2(x) \in V_2$.
+\text{Vậy } $P_n[x] = V_1 + V_2$.
+
+\text{Giả sử có đa thức } $f(x) \in V_1 \cap V_2$. \text{Khi đó } $f(-x) = f(x)$ \text{ và } $f(-x) = -f(x)$ \text{ với mọi } $x \in \mathbb{R}$. \text{Suy ra } $f(x) = -f(x)$, \text{ hay } $2f(x) = 0$, \text{ điều này dẫn tới } $f(x)$ \text{ là đa thức $\mathbf{0}$}. \text{Vậy } $V_1 \cap V_2 = \{\mathbf{0}\}$.
+
+\text{Tức là } $P_n[x] = V_1 \oplus V_2$.
+
+\end{document}
