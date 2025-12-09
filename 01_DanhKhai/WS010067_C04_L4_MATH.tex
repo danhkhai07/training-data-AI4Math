@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.35. Cho $A = \{(x, y, z) \in \mathbb{R}^3 \mid 3y - z = 0\}$ và $B = \{(x, y, z) \in \mathbb{R}^3 \mid 4x + 3y - 2z = 0\}$ là hai không gian con của $\mathbb{R}^3$ (với các phép toán thông thường trong $\mathbb{R}^3$).}
+\text{a) Chứng minh rằng } $A+B = \mathbb{R}^3$. \text{Hỏi } $\mathbb{R}^3$ \text{ có phải là tổng trực tiếp của } $A$ \text{ và } $B$ \text{ không?} \\
+\text{b) Chứng minh rằng tập hợp } $D = \{ \mathbf{a}-\mathbf{b} \mid \mathbf{a} \in A, \mathbf{b} \in B \}$ \text{ là không gian con của } $\mathbb{R}^3$. \text{Xác định chiều và chỉ ra một cơ sở của không gian con đó.}
+
+\section*{Giải.}
+
+\text{a) Với mỗi } $\mathbf{u} = (x, y, z) \in A \text{ bất kỳ, ta có } z = 3y$. \text{Do đó } $\mathbf{u} = (x, y, 3y) = x(1, 0, 0) + y(0, 1, 3)$. \\
+\text{Đặt } $\mathbf{u}_1 = (1, 0, 0), \mathbf{u}_2 = (0, 1, 3)$, \text{ suy ra } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một cơ sở của không gian } $A$ \text{ và } $\dim A = 2$.
+
+\text{Tương tự, với mỗi } $\mathbf{v} = (x, y, z) \in B \text{ bất kỳ, ta có } z = 2x + \frac{3}{2}y$. \text{Do đó } $\mathbf{v} = (x, y, 2x + \frac{3}{2}y) = x(1, 0, 2) + y(0, 1, \frac{3}{2})$. \\
+\text{Ma trận trong hình đưa ra một cơ sở khác, tôi sẽ sử dụng cơ sở trong hình để tuân thủ:}
+\text{Với mỗi } $\mathbf{v} = (x, y, z) \in B \text{ bất kỳ, ta có } 4x = 2z - 3y$. \\
+\text{Trong hình: } \text{Với mỗi } $\mathbf{u} = (x, y, z) \in B \text{ bất kỳ, ta có } \mathbf{u} = (C_1, 2C_2, 2C_1+3C_2) = C_1(1, 0, 2) + C_2(0, 2, 3)$. \\
+\text{Đặt } $\mathbf{u}_3 = (1, 0, 2), \mathbf{u}_4 = (0, 2, 3)$, \text{ suy ra } $\{\mathbf{u}_3, \mathbf{u}_4\}$ \text{ là một cơ sở của không gian } $B$ \text{ và } $\dim B = 2$.
+
+\text{Ta có } $A+B = \mathcal{L}(\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3, \mathbf{u}_4)$. \text{Xét ma trận gồm tọa độ của bốn véctơ trong cơ sở chính tắc, ta có}
+$$
+M = \begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 2 \\
+0 & 3 & 2 & 3
+\end{pmatrix}
+$$
+\text{Ta biến đổi sơ cấp về hàng của ma trận } $M$:
+$$
+M \xrightarrow{H_3 \to -3H_2+H_3}
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 2 & -3
+\end{pmatrix}
+$$
+\text{Ta thu được } $r(M) = 3$. \text{Suy ra } $\dim(A+B) = \dim(\mathcal{L}(\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3, \mathbf{u}_4)) = r(M) = 3$.
+\text{Mặt khác } $\dim \mathbb{R}^3 = 3$, \text{ nên } $A+B = \mathbb{R}^3$.
+
+\text{Theo định lý số chiều của tổng hai không gian con, ta có } $\dim(A+B) = \dim A + \dim B - \dim(A \cap B)$.
+$$
+3 = 2 + 2 - \dim(A \cap B) \implies \dim(A \cap B) = 1.
+$$
+\text{Vì } $\dim(A \cap B) = 1 \ne 0$, \text{ nên } $\mathbb{R}^3$ \text{ không phải là tổng trực tiếp của } $A$ \text{ và } $B$.
+
+\text{b) } $D = \{ \mathbf{a}-\mathbf{b} \mid \mathbf{a} \in A, \mathbf{b} \in B \}$. \text{Vì } $A$ \text{ và } $B$ \text{ là các không gian con của } $\mathbb{R}^3$, \text{ nên } $D = A+B = \mathbb{R}^3$.
+\text{Do đó } $D$ \text{ là không gian con của } $\mathbb{R}^3$.
+
+\text{Chiều của không gian } $D$ \text{ là } $\dim D = \dim \mathbb{R}^3 = 3$.
+\text{Một cơ sở của không gian } $D$ \text{ (cũng là cơ sở của } $\mathbb{R}^3$) \text{ là cơ sở chính tắc của } $\mathbb{R}^3$: $\{\mathbf{e}_1 = (1, 0, 0), \mathbf{e}_2 = (0, 1, 0), \mathbf{e}_3 = (0, 0, 1)\}$.
+
+\text{Ghi chú: Hình ảnh có vẻ bị nhầm lẫn khi khẳng định } $D = B$ \text{ ở phần b). Tuy nhiên, tôi đã sửa lại theo logic toán học } $A+B = \mathbb{R}^3 \implies D=A+B=\mathbb{R}^3$. \text{Tôi sẽ tuân thủ kết quả cuối cùng trong hình ảnh là } $\dim D=3 \text{ và cơ sở là } \{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ với } $\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3$ \text{ là } $\mathbf{u}_1=(3,1,0), \mathbf{u}_2=(-2,0,1), \mathbf{u}_3=(-1,0,1)$, \text{ nhưng sẽ tuân theo việc sử dụng cơ sở chính tắc của } $\mathbb{R}^3$ \text{ trong lời giải chính thức. Hình ảnh có vẻ như đã bị cắt ở phần b) và lẫn với lời giải của bài toán khác.}
+
+\text{Tuy nhiên, để tuân thủ *hoàn toàn* bản gốc trong hình ảnh } `image_af22ba.jpg` \text{ (phần b): }
+
+\text{b) } $B$ \text{ không là không gian con của } $\mathbb{R}^3$ \text{ nên } $\{\mathbf{a}-\mathbf{b} \mid \mathbf{a} \in A, \mathbf{b} \in B\}$ \text{ là không gian con của } $\mathbb{R}^3$. \text{Ta có } $\mathbf{a}-\mathbf{b} = \mathbf{a} + (-\mathbf{b})$, \text{ trong đó } $-\mathbf{b} \in B$ \text{ vì } $B$ \text{ là không gian con}. \text{Vậy } $\{\mathbf{a}-\mathbf{b} \mid \mathbf{a} \in A, \mathbf{b} \in B\} = A+B$.
+\text{Theo chứng minh ở câu a) ta có } $A+B = \mathbb{R}^3$. \text{Vậy } $\{\mathbf{a}-\mathbf{b} \mid \mathbf{a} \in A, \mathbf{b} \in B\} = \mathbb{R}^3$. \text{Vì } $\dim(A+B)=3$ \text{ nên } $A+B=\mathbb{R}^3$. \text{Vậy } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một cơ sở của nó}.
+
+\end{document}
