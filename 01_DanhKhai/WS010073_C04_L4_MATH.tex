@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.41. Trong không gian $P_2[x]$ cho hệ véctơ sau}
+$$
+B = \{ \mathbf{b}_1 = 1+x, \mathbf{b}_2 = 1+x+x^2, \mathbf{b}_3 = 1+x-x^2 \}.
+$$
+\text{Tìm hạng của hệ } $B$. \text{Gọi } $V$ \text{ là không gian sinh bởi } $B$. \text{Tìm không gian } $W$ \text{ sao cho } $V \oplus W = P_2[x]$.
+
+\section*{Giải.}
+
+\text{Gọi } $E = \{1, x, x^2\}$ \text{ là cơ sở chính tắc của } $P_2[x]$. \text{Xét ma trận tọa độ của các véctơ trong } $B$ \text{ trong cơ sở chính tắc}:
+$$
+A = \begin{pmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+0 & 1 & -1
+\end{pmatrix}
+$$
+\text{Ta biến đổi sơ cấp về hàng của ma trận } $A$:
+$$
+A \xrightarrow{H_2 \to H_2-H_1}
+\begin{pmatrix}
+1 & 1 & 1 \\
+0 & 0 & 0 \\
+0 & 1 & -1
+\end{pmatrix}
+\xrightarrow{H_2 \leftrightarrow H_3}
+\begin{pmatrix}
+1 & 1 & 1 \\
+0 & 1 & -1 \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Dùng phép biến đổi sơ cấp về hàng, ta thu được } $r(A) = 2$. \text{Nên hạng của hệ } $B$ \text{ bằng } $2$.
+
+\text{Ta có } $\dim V = r(B) = 2$. \text{Vì cột 1 và cột 2 chứa các phần tử cơ sở nên } $\{\mathbf{b}_1, \mathbf{b}_2\}$ \text{ là một cơ sở của } $V$.
+
+\text{Vì } $\dim P_2[x] = 3 \text{ và } \dim V = 2$, \text{ để có } $V \oplus W = P_2[x]$, \text{ ta cần tìm không gian } $W$ \text{ sao cho } $\dim W = 1$ \text{ và } $V \cap W = \{\mathbf{0}\}$.
+
+\text{Ta chọn một véctơ } $\mathbf{c} \in P_2[x]$ \text{ sao cho } $\mathbf{c} \notin V$. \text{Chọn } $\mathbf{c} = 2x^2$. \text{Đặt } $W = \mathcal{L}(\mathbf{c})$.
+\text{Ta kiểm tra hệ } $C = \{\mathbf{b}_1, \mathbf{b}_2, \mathbf{c}\}$ \text{ có độc lập tuyến tính hay không}. \text{Xét ma trận tọa độ của các véctơ trong } $C$ \text{ trong cơ sở chính tắc}:
+$$
+D = \begin{pmatrix}
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 2
+\end{pmatrix}
+$$
+\text{Biến đổi sơ cấp về hàng của ma trận } $D$:
+$$
+D \xrightarrow{H_2 \to H_2-H_1}
+\begin{pmatrix}
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 2
+\end{pmatrix}
+\xrightarrow{H_2 \leftrightarrow H_3}
+\begin{pmatrix}
+1 & 1 & 0 \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Ta thu được } $r(D) = 2$. \text{Hệ } $C$ \text{ độc lập tuyến tính.} \text{Vì } $\dim P_2[x] = 3$, \text{ nên } $C$ \text{ không thể là cơ sở của } $P_2[x]$ \text{ nếu } $r(D) < 3$. \text{ (Ghi chú: Có lỗi trong lời giải gốc khi khẳng định } $r(D)=3$)
+
+\text{Ta sẽ làm lại với } $\mathbf{c}$ \text{ khác.} \text{Theo lời giải gốc, ta chọn } $\mathbf{c} = 2x^2$.
+\text{Xét lại ma trận } $D$ \text{ trong lời giải gốc:}
+$$
+D = \begin{pmatrix}
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 2
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2-H_1}
+\begin{pmatrix}
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 2
+\end{pmatrix}
+$$
+\text{Ta thấy } $r(D) = 2$ \text{ (vì hàng 1 và hàng 3 độc lập tuyến tính)}. \text{Do đó } $V+W = \mathcal{L}(\mathbf{b}_1, \mathbf{b}_2, \mathbf{c})$ \text{ có chiều bằng } $2$. \text{Điều này mâu thuẫn với yêu cầu } $V \oplus W = P_2[x]$ \text{ (chiều } 3$).
+
+\text{**Phải chọn** $\mathbf{c}$ sao cho $r(D)=3$. Ta thử chọn $\mathbf{c} = x^2$ (tọa độ là $(0, 0, 1)$):}
+$$
+D' = \begin{pmatrix}
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2-H_1}
+\begin{pmatrix}
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 1
+\end{pmatrix}
+$$
+\text{Ta thấy } $r(D') = 2$. \text{Vẫn không được.}
+
+\text{**Ta chọn lại $\mathbf{c}$ theo đề bài gốc, nhưng tính lại tọa độ của $\mathbf{b}_1, \mathbf{b}_2$**. Tọa độ của $B$ là}
+$$
+\mathbf{b}_1 = (1, 1, 0), \mathbf{b}_2 = (1, 1, 1), \mathbf{b}_3 = (1, 1, -1).
+$$
+\text{Đề bài gốc chọn cơ sở của } $V$ \text{ là } $B' = \{\mathbf{b}_1, \mathbf{b}_2\}$.
+\text{Chọn } $\mathbf{c} = 1+2x^2$ \text{ (tọa độ là } $(1, 0, 2)$). \text{Xét hệ } $C' = \{\mathbf{b}_1, \mathbf{b}_2, \mathbf{c}\}$.
+$$
+D_{C'} = \begin{pmatrix}
+1 & 1 & 1 \\
+1 & 1 & 0 \\
+0 & 1 & 2
+\end{pmatrix}
+$$
+\text{Tính } $\det(D_{C'}) = 1(1\cdot 2 - 0\cdot 1) - 1(1\cdot 2 - 0\cdot 0) + 1(1\cdot 1 - 1\cdot 0) = 2 - 2 + 1 = 1 \ne 0$.
+\text{Vậy } $r(C') = 3$. \text{Suy ra } $V+W = P_2[x]$.
+
+\text{Do } $\dim(V+W) = 3$, \text{ ta có }
+$$
+\dim(V \cap W) = \dim V + \dim W - \dim(V+W) = 2 + 1 - 3 = 0.
+$$
+\text{Vì } $V+W = P_2[x] \text{ và } V \cap W = \{\mathbf{0}\}$, \text{ ta suy ra } $V \oplus W = P_2[x]$.
+
+\text{Không gian con } $W$ \text{ cần tìm là } $W = \mathcal{L}(\mathbf{c})$, \text{ với } $\mathbf{c} = 1+2x^2$.
+
+\end{document}
