@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.8. Cho ánh xạ $\varphi: \mathbb{R}^3 \to \mathbb{R}^2, (x, y, z) \mapsto (x + y - 2z, x - y + z)$.}
+\text{a) Chứng minh $\varphi$ là một ánh xạ tuyến tính.} \\
+\text{b) Tìm $\text{Ker}\varphi$ và $\text{Im}\varphi$.} \\
+\text{c) Tìm ma trận của $\varphi$ trong cặp cơ sở chính tắc của $\mathbb{R}^3, \mathbb{R}^2$.}
+
+\section*{Giải.}
+
+\text{a) Giả sử } $\mathbf{x} = (x_1, y_1, z_1), \mathbf{y} = (x_2, y_2, z_2) \in \mathbb{R}^3, \alpha, \beta \in \mathbb{R}$ \text{ bất kỳ, khi đó ta có}
+\begin{align*}
+\varphi(\alpha\mathbf{x} + \beta\mathbf{y}) &= \varphi(\alpha x_1 + \beta x_2, \alpha y_1 + \beta y_2, \alpha z_1 + \beta z_2) \\
+&= \left( (\alpha x_1 + \beta x_2) + (\alpha y_1 + \beta y_2) - 2(\alpha z_1 + \beta z_2), (\alpha x_1 + \beta x_2) - (\alpha y_1 + \beta y_2) + (\alpha z_1 + \beta z_2) \right) \\
+&= \left( \alpha(x_1 + y_1 - 2z_1) + \beta(x_2 + y_2 - 2z_2), \alpha(x_1 - y_1 + z_1) + \beta(x_2 - y_2 + z_2) \right) \\
+&= \alpha(x_1 + y_1 - 2z_1, x_1 - y_1 + z_1) + \beta(x_2 + y_2 - 2z_2, x_2 - y_2 + z_2) \\
+&= \alpha\varphi(\mathbf{x}) + \beta\varphi(\mathbf{y}).
+\end{align*}
+\text{Vậy $\varphi$ là một ánh xạ tuyến tính.}
+
+\text{b) } $\text{Ker}\varphi = \{ (x, y, z) \in \mathbb{R}^3 \mid \varphi(x, y, z) = \mathbf{0} \}$. \text{Ta có}
+$$
+(x, y, z) \in \text{Ker}\varphi \Leftrightarrow
+\begin{cases}
+x + y - 2z = 0 \\
+x - y + z = 0
+\end{cases}
+$$
+\text{Xét ma trận hệ số mở rộng của hệ phương trình:}
+$$
+\begin{pmatrix}
+1 & 1 & -2 & \bigm| 0 \\
+1 & -1 & 1 & \bigm| 0
+\end{pmatrix}
+\xrightarrow{H_2 \to -H_1+H_2}
+\begin{pmatrix}
+1 & 1 & -2 & \bigm| 0 \\
+0 & -2 & 3 & \bigm| 0
+\end{pmatrix}
+$$
+\text{Ta có hệ tương đương:}
+$$
+\begin{cases}
+x + y - 2z = 0 \\
+-2y + 3z = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+z = 2C \\
+y = 3C \\
+x = C
+\end{cases}
+\text{ với } C \in \mathbb{R}.
+$$
+\text{Vậy } $\text{Ker}\varphi = \{ C(1, 3, 2) \mid C \text{ là hằng số} \}$. \text{Cơ sở của } $\text{Ker}\varphi$ \text{ là } $\{(1, 3, 2)\}$, \text{ và } $\dim \text{Ker}\varphi = 1$.
+
+\text{Để tìm } $\text{Im}\varphi$, \text{ ta dùng định lý về hạng của ánh xạ } $\dim \mathbb{R}^3 = \dim \text{Ker}\varphi + \dim \text{Im}\varphi$:
+$$
+3 = 1 + \dim \text{Im}\varphi \implies \dim \text{Im}\varphi = 2.
+$$
+\text{Vì } $\text{Im}\varphi \triangleleft \mathbb{R}^2 \text{ và } \dim \text{Im}\varphi = 2 = \dim \mathbb{R}^2$, \text{ suy ra } $\text{Im}\varphi = \mathbb{R}^2$. \text{Cơ sở của } $\text{Im}\varphi$ \text{ là cơ sở chính tắc của } $\mathbb{R}^2$, \text{ ví dụ } $\{(1, 0), (0, 1)\}$.
+
+\text{c) Cơ sở chính tắc của $\mathbb{R}^3$ là } $E = \{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3\}$, \text{ cơ sở chính tắc của $\mathbb{R}^2$ là } $F = \{\mathbf{f}_1, \mathbf{f}_2\}$.
+\text{Ta có}
+$$
+\varphi(\mathbf{e}_1) = \varphi(1, 0, 0) = (1, 1) = 1\mathbf{f}_1 + 1\mathbf{f}_2
+$$
+$$
+\varphi(\mathbf{e}_2) = \varphi(0, 1, 0) = (1, -1) = 1\mathbf{f}_1 + (-1)\mathbf{f}_2
+$$
+$$
+\varphi(\mathbf{e}_3) = \varphi(0, 0, 1) = (-2, 1) = (-2)\mathbf{f}_1 + 1\mathbf{f}_2
+$$
+\text{Vậy ma trận của $\varphi$ trong cặp cơ sở chính tắc của $\mathbb{R}^3$ và $\mathbb{R}^2$ là}
+$$
+A = \begin{pmatrix}
+1 & 1 & -2 \\
+1 & -1 & 1
+\end{pmatrix}.
+$$
+
+\end{document}
+,
