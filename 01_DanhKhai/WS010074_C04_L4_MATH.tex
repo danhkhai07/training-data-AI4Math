@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.42. Trong không gian $M_{2\times 2}(\mathbb{R})$, cho hệ véctơ sau: $F = \{A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}, B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, C = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}, D = \begin{pmatrix} 1 & 1 \\ 0 & -1 \end{pmatrix}\}$.}
+
+\text{a) Gọi } $V$ \text{ là không gian con sinh bởi } $F$. \text{Tìm chiều và cơ sở của không gian } $V$. \\
+\text{b) Cho hệ } $H = \{M = \begin{pmatrix} 2 & 0 \\ 1 & 2 \end{pmatrix}, N = \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}, P = \begin{pmatrix} 1 & 0 \\ 3 & 1 \end{pmatrix}\}$. \text{Tìm chiều và cơ sở của không gian } $W$ \text{ sinh bởi } $H$. \text{Hỏi đẳng thức } $V \oplus W = M_{2\times 2}(\mathbb{R})$ \text{ có đúng không? Tại sao?}
+
+\section*{Giải.}
+
+\text{a) Gọi } $E$ \text{ là cơ sở chính tắc của } $M_{2\times 2}(\mathbb{R})$. \text{Ta xét ma trận hàng tọa độ của các véctơ trong } $F$:
+$$
+A_F = \begin{pmatrix}
+1 & 1 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & -1
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2-H_1}
+\xrightarrow{H_4 \to H_4-H_1}
+\begin{pmatrix}
+1 & 1 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & -1 & -1 & -1
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_3 \to H_3+H_2}
+\xrightarrow{H_4 \to H_4-H_2}
+\begin{pmatrix}
+1 & 1 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & -1 & -2
+\end{pmatrix}
+\xrightarrow{H_4 \to H_4+H_3}
+\begin{pmatrix}
+1 & 1 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Do hạng của ma trận bằng } $3$ \text{ nên chiều của không gian sinh bởi hệ } $F$ \text{ bằng } $3$. \text{Vậy } $\dim V = 3$.
+\text{Chọn } $A_1 = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}, B_1 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, C_1 = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}$ \text{ là cơ sở của } $V$.
+
+\text{b) Ta xét ma trận hàng tọa độ của các véctơ trong } $H$:
+$$
+A_H = \begin{pmatrix}
+2 & 0 & 1 & 2 \\
+1 & 1 & -1 & 1 \\
+1 & 0 & 3 & 1
+\end{pmatrix}
+\xrightarrow{H_1 \leftrightarrow H_2}
+\begin{pmatrix}
+1 & 1 & -1 & 1 \\
+2 & 0 & 1 & 2 \\
+1 & 0 & 3 & 1
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2-2H_1}
+\xrightarrow{H_3 \to H_3-H_1}
+\begin{pmatrix}
+1 & 1 & -1 & 1 \\
+0 & -2 & 3 & 0 \\
+0 & -1 & 4 & 0
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_2 \to H_2-2H_3}
+\begin{pmatrix}
+1 & 1 & -1 & 1 \\
+0 & 0 & -5 & 0 \\
+0 & -1 & 4 & 0
+\end{pmatrix}
+\xrightarrow{H_2 \leftrightarrow -H_3}
+\begin{pmatrix}
+1 & 1 & -1 & 1 \\
+0 & 1 & -4 & 0 \\
+0 & 0 & -5 & 0
+\end{pmatrix}
+$$
+\text{Do hạng của ma trận bằng } $3$ \text{ nên chiều của không gian sinh bởi hệ } $H$ \text{ bằng } $3$. \text{Vậy } $\dim W = 3$.
+\text{Chọn } $M_1 = \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}, N_1 = \begin{pmatrix} 0 & 1 \\ 4 & 0 \end{pmatrix}, P_1 = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$ \text{ là cơ sở của } $W$.
+
+\text{Không gian } $V+W$ \text{ sinh bởi các véctơ } $\{A, B, C, M, N, P\}$. \text{Xét ma trận tọa độ của các véctơ trên:}
+$$
+A_{V+W} = \begin{pmatrix}
+1 & 1 & 0 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 & -1 & 3 \\
+0 & 1 & 1 & 2 & 1 & 1
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2-H_1}
+\begin{pmatrix}
+1 & 1 & 0 & 1 & 0 & 0 \\
+0 & -1 & 1 & -1 & 1 & 0 \\
+0 & 0 & 1 & 1 & -1 & 3 \\
+0 & 1 & 1 & 2 & 1 & 1
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_4 \to H_4+H_2}
+\begin{pmatrix}
+1 & 1 & 0 & 1 & 0 & 0 \\
+0 & -1 & 1 & -1 & 1 & 0 \\
+0 & 0 & 1 & 1 & -1 & 3 \\
+0 & 0 & 2 & 1 & 2 & 1
+\end{pmatrix}
+\xrightarrow{H_4 \to H_4-2H_3}
+\begin{pmatrix}
+1 & 1 & 0 & 1 & 0 & 0 \\
+0 & -1 & 1 & -1 & 1 & 0 \\
+0 & 0 & 1 & 1 & -1 & 3 \\
+0 & 0 & 0 & -1 & 4 & -5
+\end{pmatrix}
+$$
+\text{Hạng của ma trận bằng } $4$. \text{Suy ra } $\dim(V+W) = 4$. \text{Vì } $\dim M_{2\times 2}(\mathbb{R}) = 4$, \text{ nên } $V+W = M_{2\times 2}(\mathbb{R})$.
+
+\text{Ta kiểm tra tổng trực tiếp: } $\dim(V \cap W) = \dim V + \dim W - \dim(V+W) = 3 + 3 - 4 = 2$.
+\text{Vì } $\dim(V \cap W) = 2 \ne 0$, \text{ nên đẳng thức } $V \oplus W = M_{2\times 2}(\mathbb{R})$ \text{ là sai (không gian } $M_{2\times 2}(\mathbb{R})$ \text{ không phải là tổng trực tiếp của } $V$ \text{ và } $W$).
+
+\end{document}
