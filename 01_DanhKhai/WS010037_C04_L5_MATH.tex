@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Chứng minh các tập hợp sau là không gian tuyến tính thực}
+\begin{enumerate}
+    \item[a)] \text{Tập hợp các đa thức có bậc không vượt quá $n$ với phép cộng các đa thức và phép nhân đa thức với một số thực, ký hiệu $P_n[x] = \{a_0 + a_1x + a_2x^2 + \dots + a_nx^n \mid a_i \in \mathbb{R}, i = \overline{1, n}\}$.}
+    \item[b)] \text{Tập hợp các ma trận thực kiểu $m \times n$ với phép toán cộng các ma trận và phép nhân ma trận với một số thực, ký hiệu $M_{m \times n}(\mathbb{R}) = \{ A = (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{R}, i = \overline{1, m}, j = \overline{1, n} \}$.}
+\end{enumerate}
+
+\section*{Giải.}
+
+\text{Để chứng minh một tập hợp là không gian tuyến tính (không gian vectơ), ta cần chứng minh nó thỏa mãn 10 tiên đề của định nghĩa không gian tuyến tính.}
+
+\subsection*{a) Tập $P_n[x]$}
+\text{Cho $p(x), q(x), r(x) \in P_n[x]$ với $p(x) = \sum_{i=0}^n a_i x^i, q(x) = \sum_{i=0}^n b_i x^i, r(x) = \sum_{i=0}^n c_i x^i$. $\alpha, \beta \in \mathbb{R}$.}
+
+\begin{itemize}
+    \item \textbf{1. Đóng với phép cộng:} $p(x) + q(x) = \sum_{i=0}^n (a_i + b_i) x^i$. Do $a_i + b_i \in \mathbb{R}$, $p(x)+q(x) \in P_n[x]$.
+    
+    \item \textbf{2. Giao hoán:} $p(x) + q(x) = \sum (a_i + b_i) x^i = \sum (b_i + a_i) x^i = q(x) + p(x)$.
+    
+    \item \textbf{3. Kết hợp:} $(p(x) + q(x)) + r(x) = \sum ((a_i + b_i) + c_i) x^i = \sum (a_i + (b_i + c_i)) x^i = p(x) + (q(x) + r(x))$.
+    
+    \item \textbf{4. Phần tử không:} Đa thức zero $0(x) = 0 + 0x + \dots + 0x^n \in P_n[x]$. $p(x) + 0(x) = p(x)$.
+    
+    \item \textbf{5. Phần tử đối:} Đa thức đối $-p(x) = \sum (-a_i) x^i \in P_n[x]$. $p(x) + (-p(x)) = 0(x)$.
+    
+    \item \textbf{6. Đóng với phép nhân vô hướng:} $\alpha p(x) = \sum (\alpha a_i) x^i$. Do $\alpha a_i \in \mathbb{R}$, $\alpha p(x) \in P_n[x]$.
+    
+    \item \textbf{7. Phân phối vô hướng với phép cộng vectơ:} $\alpha(p(x) + q(x)) = \sum (\alpha(a_i + b_i)) x^i = \sum (\alpha a_i + \alpha b_i) x^i = \alpha p(x) + \alpha q(x)$.
+    
+    \item \textbf{8. Phân phối vô hướng với phép cộng vô hướng:} $(\alpha + \beta) p(x) = \sum ((\alpha + \beta) a_i) x^i = \sum (\alpha a_i + \beta a_i) x^i = \alpha p(x) + \beta p(x)$.
+    
+    \item \textbf{9. Kết hợp vô hướng:} $(\alpha \beta) p(x) = \sum ((\alpha \beta) a_i) x^i = \sum (\alpha (\beta a_i)) x^i = \alpha (\beta p(x))$.
+    
+    \item \textbf{10. Phần tử đơn vị:} $1 \cdot p(x) = \sum (1 \cdot a_i) x^i = p(x)$.
+\end{itemize}
+\text{Vậy $P_n[x]$ là một không gian tuyến tính (không gian vectơ) thực.}
+
+\subsection*{b) Tập $M_{m \times n}(\mathbb{R})$}
+\text{Cho $A, B, C \in M_{m \times n}(\mathbb{R})$ và $\alpha, \beta \in \mathbb{R}$.}
+
+\begin{itemize}
+    \item \textbf{1. Đóng với phép cộng:} $A+B = (a_{ij} + b_{ij})_{m \times n} \in M_{m \times n}(\mathbb{R})$.
+    
+    \item \textbf{2. Giao hoán:} $A+B = (a_{ij} + b_{ij}) = (b_{ij} + a_{ij}) = B+A$.
+    
+    \item \textbf{3. Kết hợp:} $(A+B)+C = A+(B+C)$.
+    
+    \item \textbf{4. Phần tử không:} Ma trận zero $O \in M_{m \times n}(\mathbb{R})$. $A+O = A$.
+    
+    \item \textbf{5. Phần tử đối:} Ma trận đối $-A = (-a_{ij})_{m \times n} \in M_{m \times n}(\mathbb{R})$. $A+(-A) = O$.
+    
+    \item \textbf{6. Đóng với phép nhân vô hướng:} $\alpha A = (\alpha a_{ij})_{m \times n} \in M_{m \times n}(\mathbb{R})$.
+    
+    \item \textbf{7. Phân phối vô hướng với phép cộng vectơ:} $\alpha(A+B) = (\alpha(a_{ij} + b_{ij})) = (\alpha a_{ij} + \alpha b_{ij}) = \alpha A + \alpha B$.
+    
+    \item \textbf{8. Phân phối vô hướng với phép cộng vô hướng:} $(\alpha + \beta) A = ((\alpha + \beta) a_{ij}) = (\alpha a_{ij} + \beta a_{ij}) = \alpha A + \beta A$.
+    
+    \item \textbf{9. Kết hợp vô hướng:} $(\alpha \beta) A = ((\alpha \beta) a_{ij}) = (\alpha (\beta a_{ij})) = \alpha (\beta A)$.
+    
+    \item \textbf{10. Phần tử đơn vị:} $1 \cdot A = (1 \cdot a_{ij}) = A$.
+\end{itemize}
+\text{Vậy $M_{m \times n}(\mathbb{R})$ là một không gian tuyến tính (không gian vectơ) thực.}
+
+\end{document}
