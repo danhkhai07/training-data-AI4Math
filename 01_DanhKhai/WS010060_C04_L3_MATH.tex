@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.27. Trong $\mathbb{R}^3$ cho hệ các véctơ}
+$$
+\mathbf{a}_1 = (-1, 3, 5), \mathbf{a}_2 = (2, 1, -3), \mathbf{a}_3 = (m, 2, -2), \mathbf{a}_4 = (1, m, 1).
+$$
+\text{a) Với } $m=2$, \text{ tìm chiều và một cơ sở của không gian con sinh bởi } $\{\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3\}$. \\
+\text{b) Tìm hạng của hệ véctơ } $\{\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3, \mathbf{a}_4\}$ \text{ (theo } $m$).
+
+\section*{Giải.}
+
+\text{a) Với } $m=2$, \text{ ta có ma trận gồm tọa độ của các véctơ } $\{\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3\}$ \text{ trong cơ sở chính tắc của } $\mathbb{R}^3$ \text{ là}
+$$
+A = \begin{pmatrix}
+-1 & 2 & 2 \\
+3 & 1 & 2 \\
+5 & -3 & -2
+\end{pmatrix}
+$$
+\text{Ta biến đổi sơ cấp về hàng của ma trận } $A$:
+$$
+A \xrightarrow{H_2 \to 3H_1+H_2}
+\xrightarrow{H_3 \to 5H_1+H_3}
+\begin{pmatrix}
+-1 & 2 & 2 \\
+0 & 7 & 8 \\
+0 & 7 & 8
+\end{pmatrix}
+\xrightarrow{H_3 \to -H_2+H_3}
+\begin{pmatrix}
+-1 & 2 & 2 \\
+0 & 7 & 8 \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Ta thu được } $r(A) = 2$. \text{Do đó } $\dim \mathcal{L}(\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3) = r(\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3) = r(A) = 2$.
+\text{Vì } $r(\mathbf{a}_1, \mathbf{a}_2) = 2$ \text{ nên } $\{\mathbf{a}_1, \mathbf{a}_2\}$ \text{ là một cơ sở của không gian } $\mathcal{L}(\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3)$.
+
+\text{b) Xét ma trận tọa độ của các véctơ } $\{\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3, \mathbf{a}_4\}$ \text{ trong cơ sở chính tắc của } $\mathbb{R}^3$:
+$$
+B = \begin{pmatrix}
+-1 & 2 & m & 1 \\
+3 & 1 & 2 & m \\
+5 & -3 & -2 & 1
+\end{pmatrix}
+$$
+\text{Ta biến đổi sơ cấp về hàng của ma trận } $B$:
+$$
+B \xrightarrow{H_2 \to 3H_1+H_2}
+\xrightarrow{H_3 \to 5H_1+H_3}
+\begin{pmatrix}
+-1 & 2 & m & 1 \\
+0 & 7 & 3m+2 & m+3 \\
+0 & 7 & 5m-2 & 6
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_3 \to -H_2+H_3}
+\begin{pmatrix}
+-1 & 2 & m & 1 \\
+0 & 7 & 3m+2 & m+3 \\
+0 & 0 & 2m-4 & -m+3
+\end{pmatrix}
+$$
+\text{Ta thấy hai số } $2m-4$ \text{ và } $-m+3$ \text{ không đồng thời bằng } $0$ \text{ với mọi } $m \in \mathbb{R}$.
+\begin{itemize}
+    \item \text{Nếu } $2m-4 = 0 \Leftrightarrow m=2$, \text{ thì } $-m+3 = -2+3 = 1 \ne 0$.
+    \item \text{Nếu } $-m+3 = 0 \Leftrightarrow m=3$, \text{ thì } $2m-4 = 2(3)-4 = 2 \ne 0$.
+    \item \text{Nếu } $m \ne 2$ \text{ và } $m \ne 3$, \text{ thì cả hai đều khác } $0$.
+\end{itemize}
+\text{Do đó, luôn có một hàng cơ sở chứa phần tử khác } $0$ \text{ ở hàng thứ ba.}
+
+\text{Vậy hạng của hệ véctơ } $\{\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3, \mathbf{a}_4\}$ \text{ bằng } $3$ \text{ với mọi } $m \in \mathbb{R}$.
+
+\end{document}
