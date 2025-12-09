@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.19. Cho $A, B$ là các ma trận vuông cấp $n$. Chứng minh}
+\text{a) } $r(A+B) \le r(A) + r(B)$ \text{ và } $r(AB) + n \ge r(A) + r(B)$. \\
+\text{b) Nếu } $A^2 = I$ \text{ thì } $r(I+A) + r(I-A) = n$.
+
+\section*{Giải.}
+
+\text{a) Gọi $U$ là không gian tuyến tính $n$ chiều có hệ $E = \{\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_n\}$ là một cơ sở. } \\
+\text{Giả sử $A$ là ma trận của phép biến đổi tuyến tính $f: U \to U$ đối với cơ sở $E$, $B$ là ma trận của phép biến đổi tuyến tính $g: U \to U$ đối với cơ sở $E$. Khi đó $A+B, AB$ lần lượt là ma trận của các phép biến đổi tuyến tính $f+g, f \circ g$ đối với cơ sở $E$.}
+
+\begin{itemize}
+    \item \textbf{Chứng minh $r(A+B) \le r(A) + r(B)$:} \\
+    \text{Ta có } $\text{Im}(f+g) \subset \text{Im}f + \text{Im}g$. \text{Suy ra } $\dim(\text{Im}(f+g)) \le \dim(\text{Im}f + \text{Im}g) = \dim(\text{Im}f) + \dim(\text{Im}g) - \dim(\text{Im}f \cap \text{Im}g)$. \\
+    \text{Do } $\dim(\text{Im}f \cap \text{Im}g) \ge 0$, \text{ suy ra } $\dim(\text{Im}(f+g)) \le \dim(\text{Im}f) + \dim(\text{Im}g)$. \\
+    \text{Vậy } $r(A+B) \le r(A) + r(B)$.
+
+    \item \textbf{Chứng minh $r(AB) + n \ge r(A) + r(B)$ (Bất đẳng thức Sylvester):} \\
+    \text{Ta có } $\dim U = \dim(\text{Ker}f) + \dim(\text{Im}f)$. \text{Mặt khác } $\text{Im}(f \circ g) = f(\text{Im}g)$. \\
+    \text{Xét ánh xạ } $f': \text{Im}g \to \text{Im}(f \circ g)$ \text{ là ánh xạ hạn chế của } $f$ \text{ trên } $\text{Im}g$. \text{Dễ thấy } $f'$ \text{ là một ánh xạ tuyến tính từ không gian } $\text{Im}g$ \text{ vào } $\text{Im}(f \circ g)$. \\
+    \text{Do đó } $\dim(\text{Im}g) = \dim(\text{Ker}f') + \dim(\text{Im}f')$. \text{Vì } $\text{Im}f' = \text{Im}(f \circ g)$, \text{ nên } $\dim(\text{Im}g) = \dim(\text{Ker}f') + \dim(\text{Im}(f \circ g))$. \\
+    \text{Chú ý rằng } $\text{Ker}f' = \text{Ker}f \cap \text{Im}g$. \text{Do } $\text{Ker}f' \subset \text{Ker}f$, \text{ nên } $\dim(\text{Ker}f') \le \dim(\text{Ker}f)$. \\
+    \text{Ta có } $\dim(\text{Im}g) \le \dim(\text{Ker}f) + \dim(\text{Im}(f \circ g))$. \\
+    \text{Thay thế bằng hạng:} $r(B) \le (n - r(A)) + r(AB)$. \\
+    \text{Hay } $r(AB) + n \ge r(A) + r(B)$.
+\end{itemize}
+
+\text{b) Áp dụng công thức } $\dim V = \dim(\text{Ker}f) + \dim(\text{Im}f)$ \text{ cho hai ma trận vuông cấp } $n$ \text{ là } $I+A$ \text{ và } $I-A$. \\
+\text{Ta có } $\dim \mathbb{R}^n = r(I+A) + \dim(\text{Ker}(I+A))$. \\
+\text{Ta cần chứng minh } $\dim(\text{Ker}(I+A)) = r(I-A)$. \\
+\text{Đặt } $B = I-A$. \text{Ta chứng minh } $\text{Im}B = \text{Ker}(I+A)$. \\
+\text{Với mọi } $\mathbf{x} \in \text{Im}B$, \text{ tồn tại } $\mathbf{y}$ \text{ sao cho } $\mathbf{x} = (I-A)\mathbf{y} = \mathbf{y} - A\mathbf{y}$. \\
+\text{Ta có } (I+A)\mathbf{x} = (I+A)(I-A)\mathbf{y} = (I^2 - A^2)\mathbf{y}$. \\
+\text{Vì } $A^2 = I$, \text{ nên } $(I^2 - A^2)\mathbf{y} = (I - I)\mathbf{y} = \mathbf{0}$. \text{Do đó } $\mathbf{x} \in \text{Ker}(I+A)$. \text{Vậy } $\text{Im}(I-A) \subset \text{Ker}(I+A)$.
+
+\text{Ngược lại, với mọi } $\mathbf{z} \in \text{Ker}(I+A)$, \text{ ta có } $(I+A)\mathbf{z} = \mathbf{0} \Leftrightarrow \mathbf{z} + A\mathbf{z} = \mathbf{0} \Leftrightarrow A\mathbf{z} = -\mathbf{z}$. \\
+\text{Xét } $\mathbf{z} = \frac{1}{2}(I-A)\mathbf{z} + \frac{1}{2}(I+A)\mathbf{z}$. \text{Vì } $(I+A)\mathbf{z} = \mathbf{0}$, \text{ nên } $\mathbf{z} = \frac{1}{2}(I-A)\mathbf{z} = (I-A) (\frac{1}{2}\mathbf{z})$. \\
+\text{Đặt } $\mathbf{y} = \frac{1}{2}\mathbf{z}$. \text{Ta có } $\mathbf{z} = (I-A)\mathbf{y} \in \text{Im}(I-A)$. \text{Vậy } $\text{Ker}(I+A) \subset \text{Im}(I-A)$.
+
+\text{Do } $\text{Im}(I-A) = \text{Ker}(I+A)$, \text{ nên } $\dim(\text{Im}(I-A)) = \dim(\text{Ker}(I+A))$. \\
+\text{Hay } $r(I-A) = \dim(\text{Ker}(I+A))$.
+
+\text{Áp dụng định lý số chiều cho } $I+A$:
+$$
+\dim \mathbb{R}^n = r(I+A) + \dim(\text{Ker}(I+A)).
+$$
+\text{Thay thế } $\dim(\text{Ker}(I+A)) = r(I-A)$, \text{ ta được}
+$$
+n = r(I+A) + r(I-A). \quad (\text{Điều phải chứng minh})
+$$
+
+\end{document}
