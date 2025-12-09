@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{moresize}
+\usepackage{graphicx}
+\usepackage[left=3.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\DeclareMathOperator{\rank}{rank}
+\makeatletter
+\newenvironment{sqcases}{%
+  \matrix@check\sqcases\env@sqcases
+}{%
+  \endarray\right.%
+}
+\def\env@sqcases{%
+  \let\@ifnextchar\new@ifnextchar
+  \left\lbrack
+  \def\arraystretch{1.2}%
+  \array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+\DeclareMathAlphabet      {\mathbfit}{OML}{cmm}{b}{it}
+\begin{document}
+Cho ma trận vuông $\mathbfit{A}=\begin{bmatrix}a_0&a_1&a_2&\cdots&a_{n-1}&a_n\\a_1&a_0&a_1&\cdots&a_{n-2}&a_{n-1}\\a_2&a_1&a_0&\cdots&a_{n-3}&a_{n-2}\\\vdots&\vdots&\vdots&\ddots&\vdots&\vdots\\a_n&a_{n-1}&a_{n-2}&\cdots&a_1&a_0\end{bmatrix}$\\
+Biết rằng $n\geq3$, và $a_k=a_0+kd$ với $k\in\{1;2;...;n\}$. Hãy tính $\det\mathbfit{A}$.
+\end{document}
