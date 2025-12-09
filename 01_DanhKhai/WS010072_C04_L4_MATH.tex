@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.40. Chứng minh rằng các tập hợp $A, B$ được cho dưới đây là các không gian con của $\mathbb{R}^4$. Hãy tìm chiều và chỉ ra một cơ sở của mỗi không gian đó. Hỏi $\mathbb{R}^4 = A \oplus B$ đúng không? Tại sao?}
+$$
+\text{a) } A = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid x_1 = 2x_2 = x_4\}. \\
+\text{b) } B = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid 2x_1 = -x_2 = x_3\}.
+$$
+
+\section*{Giải.}
+
+\text{a) Chứng minh $A$ là không gian con của $\mathbb{R}^4$.}
+\text{Vì } $(0, 0, 0, 0) \in A$, \text{ suy ra } $A \ne \emptyset$.
+\text{Hơn nữa, với mỗi } $\mathbf{u} = (x_1, x_2, x_3, x_4), \mathbf{v} = (y_1, y_2, y_3, y_4) \in A$ \text{ bất kỳ và với mọi } $\alpha, \beta \in \mathbb{R}$ \text{ tùy ý, ta có}
+$$
+\alpha\mathbf{u} + \beta\mathbf{v} = (\alpha x_1 + \beta y_1, \alpha x_2 + \beta y_2, \alpha x_3 + \beta y_3, \alpha x_4 + \beta y_4).
+$$
+\text{Vì } $\mathbf{u} \in A \text{ nên } x_1 = 2x_2 = x_4 \text{ hay } x_1 = x_4 \text{ và } x_1 = 2x_2$.
+\text{Vì } $\mathbf{v} \in A \text{ nên } y_1 = 2y_2 = y_4 \text{ hay } y_1 = y_4 \text{ và } y_1 = 2y_2$.
+\text{Ta có}
+\begin{align*}
+\alpha x_1 + \beta y_1 &= \alpha x_4 + \beta y_4 \\
+\alpha x_1 + \beta y_1 &= \alpha (2x_2) + \beta (2y_2) = 2(\alpha x_2 + \beta y_2).
+\end{align*}
+\text{Vậy } $\alpha\mathbf{u} + \beta\mathbf{v} \in A$, \text{ do đó } $A$ \text{ là không gian con của } $\mathbb{R}^4$.
+
+\text{Tìm chiều và cơ sở của $A$:}
+\text{Với mỗi } $\mathbf{u} = (x_1, x_2, x_3, x_4) \in A \text{ bất kỳ, ta có } x_1 = 2x_2 \text{ và } x_4 = x_1 = 2x_2$.
+$$
+\mathbf{u} = (2x_2, x_2, x_3, 2x_2) = x_2(2, 1, 0, 2) + x_3(0, 0, 1, 0).
+$$
+\text{Đặt } $\mathbf{u}_1 = (2, 1, 0, 2), \mathbf{u}_2 = (0, 0, 1, 0)$, \text{ ta suy ra } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là hệ sinh của } $A$.
+\text{Do } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là hai véctơ không cùng phương nên chúng độc lập tuyến tính.}
+\text{Vậy } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một cơ sở của không gian } $A$ \text{ và } $\dim A = 2$.
+
+\text{b) Chứng minh $B$ là không gian con của $\mathbb{R}^4$.}
+\text{Với mỗi } $\mathbf{v} = (x_1, x_2, x_3, x_4) \in B \text{ bất kỳ, ta có } x_2 = -2x_1 \text{ và } x_3 = 2x_1$.
+$$
+\mathbf{v} = (x_1, -2x_1, 2x_1, x_4) = x_1(1, -2, 2, 0) + x_4(0, 0, 0, 1).
+$$
+\text{Đặt } $\mathbf{u}_3 = (1, -2, 2, 0), \mathbf{u}_4 = (0, 0, 0, 1)$, \text{ ta suy ra } $\{\mathbf{u}_3, \mathbf{u}_4\}$ \text{ là hệ sinh của } $B$.
+\text{Tương tự, chứng minh được } $B$ \text{ là không gian con của } $\mathbb{R}^4$, \text{ và } $\{\mathbf{u}_3, \mathbf{u}_4\}$ \text{ là một cơ sở của } $B$ \text{ với } $\dim B = 2$.
+
+\text{Kiểm tra } $\mathbb{R}^4 = A \oplus B$:
+\text{Ta cần kiểm tra } $A+B = \mathbb{R}^4$ \text{ và } $A \cap B = \{\mathbf{0}\}$.
+\text{Xét hệ véctơ } $F = \{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3, \mathbf{u}_4\}$ \text{ là hệ sinh của } $A+B$.
+\text{Xét ma trận gồm tọa độ của bốn véctơ trong cơ sở chính tắc của } $\mathbb{R}^4$:
+$$
+M = \begin{pmatrix}
+2 & 0 & 1 & 0 \\
+1 & 0 & -2 & 0 \\
+0 & 1 & 2 & 0 \\
+2 & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Biến đổi sơ cấp về hàng của ma trận } $M$ \text{ (hoặc tính định thức) cho thấy } $r(M) = 4$.
+$$
+M \xrightarrow{H_1 \leftrightarrow H_2} \begin{pmatrix}
+1 & 0 & -2 & 0 \\
+2 & 0 & 1 & 0 \\
+0 & 1 & 2 & 0 \\
+2 & 0 & 0 & 1
+\end{pmatrix}
+\xrightarrow{H_2 \to -2H_1+H_2}
+\xrightarrow{H_4 \to -2H_1+H_4}
+\begin{pmatrix}
+1 & 0 & -2 & 0 \\
+0 & 0 & 5 & 0 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 4 & 1
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_2 \leftrightarrow H_3}
+\begin{pmatrix}
+1 & 0 & -2 & 0 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 5 & 0 \\
+0 & 0 & 4 & 1
+\end{pmatrix}
+\xrightarrow{H_3 \to \frac{1}{5}H_3}
+\begin{pmatrix}
+1 & 0 & -2 & 0 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 4 & 1
+\end{pmatrix}
+\xrightarrow{H_4 \to -4H_3+H_4}
+\begin{pmatrix}
+1 & 0 & -2 & 0 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+\text{Ta thu được } $r(M) = 4$. \text{Suy ra } $\dim(A+B) = r(M) = 4$. \text{Mà } $\dim \mathbb{R}^4 = 4$, \text{ nên } $A+B = \mathbb{R}^4$.
+
+\text{Theo định lý số chiều của tổng hai không gian con, ta có }
+$$
+\dim(A+B) = \dim A + \dim B - \dim(A \cap B).
+$$
+$$
+4 = 2 + 2 - \dim(A \cap B) \implies \dim(A \cap B) = 0.
+$$
+\text{Vậy } $A \cap B = \{\mathbf{0}\}$.
+
+\text{Vì } $A+B = \mathbb{R}^4 \text{ và } A \cap B = \{\mathbf{0}\}$, \text{ nên } $\mathbb{R}^4 = A \oplus B$.
+
+\end{document}
