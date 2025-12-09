@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Tìm hạng của ma trận hệ số và hạng của ma trận hệ số mở rộng rồi tìm nghiệm tổng quát của hệ phương trình}
+$$
+\begin{cases}
+2x_1 - x_2 + 3x_3 - 7x_4 = 5 \\
+6x_1 - 3x_2 + x_3 - 4x_4 = 7 \\
+4x_1 - 2x_2 + 14x_3 - 31x_4 = 18
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Sử dụng phương pháp Gauss, biến đổi ma trận hệ số mở rộng:}
+$$
+\bar{A} = \begin{pmatrix}
+2 & -1 & 3 & -7 & | & 5 \\
+6 & -3 & 1 & -4 & | & 7 \\
+4 & -2 & 14 & -31 & | & 18
+\end{pmatrix}
+$$
+\text{Thực hiện các phép biến đổi $\text{H}_2 \leftarrow \text{H}_2 - 3\text{H}_1$, $\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_1$:}
+$$
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 3\text{H}_1}
+\begin{pmatrix}
+2 & -1 & 3 & -7 & | & 5 \\
+0 & 0 & -8 & 17 & | & -8 \\
+0 & 0 & 8 & -17 & | & 8
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 + \text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 + \text{H}_2}
+\begin{pmatrix}
+2 & -1 & 3 & -7 & | & 5 \\
+0 & 0 & -8 & 17 & | & -8 \\
+0 & 0 & 0 & 0 & | & 0
+\end{pmatrix}
+$$
+\text{Ma trận đã đạt dạng bậc thang. }
+\text{Hạng của ma trận hệ số là $r(A) = 2$.}
+\text{Hạng của ma trận hệ số mở rộng là $r(\bar{A}) = 2$.}
+\text{Vì $r(A) = r(\bar{A}) = 2 < n = 4$ (số ẩn), hệ có vô số nghiệm phụ thuộc $4 - 2 = 2$ tham số.}
+
+\text{Hệ phương trình tương đương với hệ sau:}
+$$
+\begin{cases}
+2x_1 - x_2 + 3x_3 - 7x_4 = 5 \\
+-8x_3 + 17x_4 = -8
+\end{cases}
+$$
+\text{Chọn $x_2 = C_1$ và $x_4 = C_2$ là các tham số tùy ý ($C_1, C_2 \in \mathbb{R}$).}
+
+\text{Từ phương trình thứ hai: }
+$$
+-8x_3 = 17x_4 - 8 = 17C_2 - 8
+$$
+$$
+x_3 = \frac{8 - 17C_2}{8} = 1 - \frac{17}{8}C_2.
+$$
+\text{Thay $x_2, x_3, x_4$ vào phương trình thứ nhất:}
+$$
+2x_1 = 5 + x_2 - 3x_3 + 7x_4
+$$
+$$
+2x_1 = 5 + C_1 - 3 \left(1 - \frac{17}{8}C_2\right) + 7C_2
+$$
+$$
+2x_1 = 5 + C_1 - 3 + \frac{51}{8}C_2 + 7C_2
+$$
+$$
+2x_1 = 2 + C_1 + \left(\frac{51}{8} + \frac{56}{8}\right)C_2 = 2 + C_1 + \frac{107}{8}C_2
+$$
+$$
+x_1 = 1 + \frac{1}{2}C_1 + \frac{107}{16}C_2.
+$$
+\text{Vậy nghiệm tổng quát của hệ phương trình là:}
+$$
+\begin{cases}
+x_1 = 1 + \frac{1}{2}C_1 + \frac{107}{16}C_2 \\
+x_2 = C_1 \\
+x_3 = 1 - \frac{17}{8}C_2 \\
+x_4 = C_2
+\end{cases}
+$$
+\text{với $C_1, C_2 \in \mathbb{R}$.}
+
+\end{document}
