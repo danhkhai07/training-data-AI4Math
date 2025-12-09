@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.1. Cho $f: \mathbb{R}^3 \to \mathbb{R}^2, (x, y, z) \mapsto (2x + y, x + 3z)$.}
+\text{a) Chứng minh $f$ là một ánh xạ tuyến tính.} \\
+\text{b) Tìm ma trận của $f$ trong cặp cơ sở chính tắc của $\mathbb{R}^3, \mathbb{R}^2$.}
+
+\section*{Giải.}
+
+\text{a) Để chứng minh $f$ là ánh xạ tuyến tính, ta kiểm tra đẳng thức } $f(\alpha\mathbf{u} + \beta\mathbf{v}) = \alpha f(\mathbf{u}) + \beta f(\mathbf{v})$.
+\text{Thật vậy, lấy } $\mathbf{u} = (x_1, y_1, z_1), \mathbf{v} = (x_2, y_2, z_2) \in \mathbb{R}^3 \text{ tùy ý, thì } f(\mathbf{u}) = (2x_1 + y_1, x_1 + 3z_1), f(\mathbf{v}) = (2x_2 + y_2, x_2 + 3z_2)$.
+\text{Đặt } $\alpha\mathbf{u} + \beta\mathbf{v} = (\alpha x_1 + \beta x_2, \alpha y_1 + \beta y_2, \alpha z_1 + \beta z_2)$.
+\text{Ta có}
+\begin{align*}
+f(\alpha\mathbf{u} + \beta\mathbf{v}) &= \left( 2(\alpha x_1 + \beta x_2) + (\alpha y_1 + \beta y_2), (\alpha x_1 + \beta x_2) + 3(\alpha z_1 + \beta z_2) \right) \\
+&= \left( \alpha(2x_1 + y_1) + \beta(2x_2 + y_2), \alpha(x_1 + 3z_1) + \beta(x_2 + 3z_2) \right) \\
+&= \alpha(2x_1 + y_1, x_1 + 3z_1) + \beta(2x_2 + y_2, x_2 + 3z_2) \\
+&= \alpha f(\mathbf{u}) + \beta f(\mathbf{v}).
+\end{align*}
+\text{Vậy $f$ là ánh xạ tuyến tính.}
+
+\text{b) Cơ sở chính tắc của $\mathbb{R}^3$ là } $E = \{\mathbf{e}_1 = (1, 0, 0), \mathbf{e}_2 = (0, 1, 0), \mathbf{e}_3 = (0, 0, 1)\}$, \text{ cơ sở chính tắc của $\mathbb{R}^2$ là } $F = \{\mathbf{f}_1 = (1, 0), \mathbf{f}_2 = (0, 1)\}$.
+\text{Để tìm ma trận của $f$ trong cặp cơ sở trên, ta tìm ảnh của các véctơ cơ sở $E$ trong cơ sở $F$ như sau:}
+$$
+f(\mathbf{e}_1) = f(1, 0, 0) = (2, 1) = 2\mathbf{f}_1 + 1\mathbf{f}_2
+$$
+$$
+f(\mathbf{e}_2) = f(0, 1, 0) = (1, 0) = 1\mathbf{f}_1 + 0\mathbf{f}_2
+$$
+$$
+f(\mathbf{e}_3) = f(0, 0, 1) = (0, 3) = 0\mathbf{f}_1 + 3\mathbf{f}_2
+$$
+\text{Vậy ma trận của $f$ trong cặp cơ sở $E, F$ là } $A = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 0 & 3 \end{pmatrix}$.
+
+\end{document}
