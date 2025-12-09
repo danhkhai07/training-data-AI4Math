@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Tìm chiều của không gian nghiệm của hệ phương trình}
+$$
+\begin{cases}
+2x + 3t = 0 \\
+-2y + z = 0
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Gọi } $A$ \text{ là không gian nghiệm của hệ phương trình thuần nhất đã cho.}
+\text{Với mỗi } $\mathbf{u} = (x, y, z, t) \in A \text{ bất kỳ, khi đó}$
+$$
+\mathbf{u} = (-3C_2, C_1, 2C_1, 2C_2)
+$$
+$$
+\mathbf{u} = C_1(0, 1, 2, 0) + C_2(-3, 0, 0, 2).
+$$
+\text{Đặt } $\mathbf{u}_1 = (0, 1, 2, 0), \mathbf{u}_2 = (-3, 0, 0, 2)$, \text{ ta suy ra } $\mathbf{u} = C_1\mathbf{u}_1 + C_2\mathbf{u}_2$. \text{Do đó } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một hệ sinh của } $A$.
+
+\text{Mặt khác, } $\mathbf{u}_1, \mathbf{u}_2$ \text{ là hai véctơ không cùng phương nên chúng tạo thành hệ véctơ độc lập tuyến tính. Vậy } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một cơ sở của không gian } $A$ \text{ và } $\dim A = 2$.
+
+\end{document}
