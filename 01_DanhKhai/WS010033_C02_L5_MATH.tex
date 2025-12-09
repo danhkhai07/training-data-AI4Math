@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho ma trận $A = \begin{pmatrix} 1 & 1 & 2 \\ 0 & -1 & 0 \end{pmatrix}$.}
+\begin{enumerate}
+    \item[a)] Chứng minh phương trình $AX = B$ luôn có nghiệm với mọi ma trận vuông cấp hai $B$.
+    \item[b)] Chứng minh phương trình $XA = I_3$ vô nghiệm.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Chứng minh phương trình $AX = B$ luôn có nghiệm}
+\text{Phương trình $AX = B$ là một hệ phương trình tuyến tính mở rộng. $A$ là ma trận $2 \times 3$, $X$ là ma trận $3 \times 2$, và $B$ là ma trận $2 \times 2$ bất kỳ. }
+\text{Phương trình $AX = B$ luôn có nghiệm khi và chỉ khi hạng của ma trận hệ số bằng hạng của ma trận hệ số mở rộng: $r(A) = r(A|B)$.}
+
+\text{Ta tính hạng của $A$:}
+$$
+A = \begin{pmatrix} 1 & 1 & 2 \\ 0 & -1 & 0 \end{pmatrix}
+$$
+\text{Dễ thấy định thức con cấp 2 $\begin{vmatrix} 1 & 1 \\ 0 & -1 \end{vmatrix} = -1 \ne 0$. Vậy hạng của $A$ là $r(A) = 2$.}
+
+\text{Ma trận mở rộng $(A|B)$ là ma trận kiểu $2 \times 5$. Do đó, hạng của $(A|B)$ tối đa là $\min(2, 5) = 2$.}
+\text{Mặt khác, $(A|B)$ chứa ma trận $A$, nên $r(A|B) \ge r(A) = 2$.}
+\text{Từ đó suy ra $r(A|B) = 2$.}
+
+\text{Do $r(A) = r(A|B) = 2$, theo định lý Kronecker - Capelli, hệ phương trình $AX = B$ luôn có nghiệm với mọi ma trận $B$.}
+
+\subsection*{b) Chứng minh phương trình $XA = I_3$ vô nghiệm}
+\text{Phương trình $XA = I_3$ là phương trình tìm ma trận $X$ kiểu $3 \times 2$. Ma trận $A$ là $2 \times 3$ và $I_3$ là $3 \times 3$.}
+\text{Theo quy tắc nhân ma trận, để phép nhân $XA$ khả thi, ma trận $X$ phải có số cột bằng số hàng của $A$ ($3$ cột), và số hàng của $I_3$ phải bằng số hàng của $X$ ($3$ hàng).}
+\text{Vậy $X$ phải là ma trận $3 \times 2$. Phép nhân $XA$ sẽ cho ma trận $3 \times 3$.}
+\text{Phương trình $X_{3 \times 2} A_{2 \times 3} = I_{3 \times 3}$ có kiểu ma trận đúng.}
+
+\text{Lấy định thức hai vế của phương trình $XA = I_3$:}
+$$
+\det(XA) = \det(I_3) = 1.
+$$
+\text{Tuy nhiên, do $X$ là ma trận $3 \times 2$ và $A$ là ma trận $2 \times 3$, $\det(XA)$ không thể được tính trực tiếp bằng $\det X \cdot \det A$ vì $X$ và $A$ không phải là ma trận vuông.}
+
+\text{Ta sử dụng tính chất Hạng ma trận: $r(XA) \le \min(r(X), r(A))$.}
+\text{Ta có $r(A) = 2$. Ma trận $X$ là $3 \times 2$ nên $r(X) \le 2$.}
+$$
+r(XA) \le \min(r(X), r(A)) \le \min(2, 2) = 2.
+$$
+\text{Mặt khác, $XA = I_3$. Hạng của $I_3$ là $r(I_3) = 3$.}
+\text{Điều này dẫn đến mâu thuẫn: $r(XA) = 3$ và $r(XA) \le 2$.}
+$$
+3 \le 2 \quad (\text{Vô lý}).
+$$
+\text{Do đó, không tồn tại ma trận $X$ thỏa mãn phương trình $XA = I_3$. Phương trình $XA = I_3$ vô nghiệm.}
+
+\end{document}
