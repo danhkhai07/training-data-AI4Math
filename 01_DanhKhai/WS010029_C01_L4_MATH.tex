@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Giải và biện luận hệ phương trình sau:}
+$$
+\begin{cases}
+mx + y + z = 1 \\
+x + my + z = m \\
+x + y + mz = m^2
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Ma trận hệ số mở rộng là:}
+$$
+\bar{A} = \begin{pmatrix}
+m & 1 & 1 & | & 1 \\
+1 & m & 1 & | & m \\
+1 & 1 & m & | & m^2
+\end{pmatrix}
+$$
+\text{Ta đổi vị trí $\text{H}_1 \leftrightarrow \text{H}_3$ để có phần tử dẫn đầu bằng 1:}
+$$
+\xrightarrow{\text{H}_1 \leftrightarrow \text{H}_3}
+\begin{pmatrix}
+1 & 1 & m & | & m^2 \\
+1 & m & 1 & | & m \\
+m & 1 & 1 & | & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1$ và $\text{H}_3 \leftarrow \text{H}_3 - m\text{H}_1$:}
+$$
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - m\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - \text{H}_1}
+\begin{pmatrix}
+1 & 1 & m & | & m^2 \\
+0 & m-1 & 1-m & | & m-m^2 \\
+0 & 1-m & 1-m^2 & | & 1-m^3
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 + \text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 + \text{H}_2}
+\begin{pmatrix}
+1 & 1 & m & | & m^2 \\
+0 & m-1 & 1-m & | & m(1-m) \\
+0 & 0 & 1-m^2 + 1-m & | & 1-m^3 + m-m^2
+\end{pmatrix}
+$$
+\text{Phần tử $(3, 3)$ là $2 - m - m^2 = (2+m)(1-m)$. }
+\text{Phần tử $(3, 4)$ là $1 + m - m^2 - m^3 = 1 + m - m^2(1+m) = (1+m)(1-m^2) = (1+m)(1-m)(1+m) = (1+m)^2(1-m)$.}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & m & | & m^2 \\
+0 & m-1 & -(m-1) & | & -m(m-1) \\
+0 & 0 & (2+m)(1-m) & | & (1-m)(1+m)^2
+\end{pmatrix}
+$$
+
+\subsection*{Biện luận}
+
+\subsubsection*{Trường hợp 1: $m \ne 1$ và $m \ne -2$}
+\text{Khi $m \ne 1$, ta chia $\text{H}_2$ cho $m-1$:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & m & | & m^2 \\
+0 & 1 & -1 & | & -m \\
+0 & 0 & (2+m)(1-m) & | & (1-m)(1+m)^2
+\end{pmatrix}
+$$
+\text{Vì $m \ne 1$ và $m \ne -2$, phần tử $(3, 3)$ là $(2+m)(1-m) \ne 0$. }
+\text{Hệ có nghiệm duy nhất $r(A) = r(\bar{A}) = 3 = n$.}
+\text{Giải ngược từ phương trình thứ ba:}
+$$
+(2+m)(1-m) z = (1-m)(1+m)^2
+$$
+$$
+z = \dfrac{(1-m)(1+m)^2}{(2+m)(1-m)} = \dfrac{(1+m)^2}{m+2}.
+$$
+\text{Thay vào phương trình thứ hai: $y - z = -m \Rightarrow y = z - m$}
+$$
+y = \dfrac{(1+m)^2}{m+2} - m = \dfrac{1 + 2m + m^2 - m^2 - 2m}{m+2} = \dfrac{1}{m+2}.
+$$
+\text{Thay $y, z$ vào phương trình thứ nhất: $x + y + mz = m^2 \Rightarrow x = m^2 - y - mz$}
+$$
+x = m^2 - \dfrac{1}{m+2} - m \left(\dfrac{(1+m)^2}{m+2}\right) = \dfrac{m^2(m+2) - 1 - m(1+2m+m^2)}{m+2}
+$$
+$$
+x = \dfrac{m^3 + 2m^2 - 1 - m - 2m^2 - m^3}{m+2} = \dfrac{-m - 1}{m+2} = -\dfrac{m+1}{m+2}.
+$$
+\text{Vậy nghiệm duy nhất là:}
+$$
+x = -\dfrac{m+1}{m+2}, \quad y = \dfrac{1}{m+2}, \quad z = \dfrac{(m+1)^2}{m+2}.
+$$
+
+\subsubsection*{Trường hợp 2: $m = 1$}
+\text{Thay $m=1$ vào ma trận bậc thang:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 1 & | & 1 \\
+0 & 0 & 0 & | & 0 \\
+0 & 0 & 0 & | & 0
+\end{pmatrix}
+$$
+\text{Hạng $r(A) = r(\bar{A}) = 1 < n=3$. Hệ có vô số nghiệm phụ thuộc $3 - 1 = 2$ tham số.}
+\text{Hệ tương đương $x + y + z = 1$. Chọn $y = C_1, z = C_2$ là tham số tùy ý.}
+$$
+x = 1 - C_1 - C_2.
+$$
+\text{Nghiệm tổng quát là $\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 1 - C_1 - C_2 \\ C_1 \\ C_2 \end{pmatrix}, \quad C_1, C_2 \in \mathbb{R}$.}
+
+\subsubsection*{Trường hợp 3: $m = -2$}
+\text{Thay $m=-2$ vào ma trận bậc thang:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & -2 & | & 4 \\
+0 & -3 & 3 & | & -(-2)(-3) \\
+0 & 0 & 0 & | & (1-(-2))(-2+1)^2
+\end{pmatrix}
+$$
+\text{Phần tử $(3, 4)$ là $(1-(-2))(1+(-2))^2 = 3(-1)^2 = 3$. }
+\text{Ma trận bậc thang là:}
+$$
+\begin{pmatrix}
+1 & 1 & -2 & | & 4 \\
+0 & -3 & 3 & | & -6 \\
+0 & 0 & 0 & | & 3
+\end{pmatrix}
+$$
+\text{Hạng $r(A) = 2$ và $r(\bar{A}) = 3$. Vì $r(A) \ne r(\bar{A})$, hệ vô nghiệm.}
+
+\end{document}
