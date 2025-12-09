@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Chứng minh các tập con của $M_{n \times n}(\mathbb{R})$ sau đây là không gian tuyến tính con}
+\begin{enumerate}
+    \item[a)] \text{Tập hợp $D_n$ các ma trận đường chéo cấp $n$.}
+    \item[b)] \text{Tập hợp $S_n$ các ma trận đối xứng cấp $n$ ($A^T = A$).}
+    \item[c)] \text{Tập hợp $A_n$ các ma trận phản xứng cấp $n$ ($A^T = -A$).}
+\end{enumerate}
+
+\section*{Giải.}
+
+\text{Để chứng minh $W$ là không gian tuyến tính con của không gian vectơ $V$, ta chỉ cần chứng minh $W$ thỏa mãn hai điều kiện đóng của định nghĩa không gian con (tiên đề 1) và chứa vectơ không (tiên đề 2), hay tương đương là thỏa mãn điều kiện $W \ne \emptyset$ và điều kiện sau:}
+\text{Nếu $u, v \in W$ và $\alpha, \beta \in \mathbb{R}$ thì $\alpha u + \beta v \in W$.}
+
+\subsection*{a) Tập $D_n$ các ma trận đường chéo cấp $n$}
+\text{Ma trận đường chéo là ma trận vuông $A=(a_{ij})$ với $a_{ij}=0$ khi $i \ne j$.}
+\begin{itemize}
+    \item \text{Điều kiện 1: $D_n \ne \emptyset$.}
+    \text{Ma trận zero $O \in D_n$ vì các phần tử ngoài đường chéo chính đều bằng 0. Vậy $D_n \ne \emptyset$.}
+    
+    \item \text{Điều kiện 2: Đóng với tổ hợp tuyến tính.}
+    \text{Cho $A, B \in D_n$ và $\alpha, \beta \in \mathbb{R}$. Ta có $a_{ij} = 0, b_{ij} = 0$ khi $i \ne j$.}
+    \text{Xét ma trận $C = \alpha A + \beta B$. Phần tử $(i, j)$ của $C$ là $c_{ij} = \alpha a_{ij} + \beta b_{ij}$.}
+    \text{Nếu $i \ne j$, thì $c_{ij} = \alpha \cdot 0 + \beta \cdot 0 = 0$.}
+    \text{Vậy $C$ là ma trận đường chéo, $C \in D_n$.}
+\end{itemize}
+\text{Do đó, $D_n$ là một không gian tuyến tính con của $M_{n \times n}(\mathbb{R})$.}
+
+\subsection*{b) Tập $S_n$ các ma trận đối xứng cấp $n$}
+\text{Ma trận đối xứng là ma trận vuông $A$ thỏa mãn $A^T = A$.}
+\begin{itemize}
+    \item \text{Điều kiện 1: $S_n \ne \emptyset$.}
+    \text{Ma trận zero $O$ thỏa mãn $O^T = O$, nên $O \in S_n$. Vậy $S_n \ne \emptyset$.}
+    
+    \item \text{Điều kiện 2: Đóng với tổ hợp tuyến tính.}
+    \text{Cho $A, B \in S_n$ và $\alpha, \beta \in \mathbb{R}$. Ta có $A^T = A$ và $B^T = B$.}
+    \text{Xét ma trận $C = \alpha A + \beta B$. Ta kiểm tra $(C)^T$:}
+    $$
+    (C)^T = (\alpha A + \beta B)^T = (\alpha A)^T + (\beta B)^T = \alpha A^T + \beta B^T
+    $$
+    $$
+    = \alpha A + \beta B = C.
+    $$
+    \text{Vì $(C)^T = C$, nên $C$ là ma trận đối xứng, $C \in S_n$.}
+\end{itemize}
+\text{Do đó, $S_n$ là một không gian tuyến tính con của $M_{n \times n}(\mathbb{R})$.}
+
+\subsection*{c) Tập $A_n$ các ma trận phản xứng cấp $n$}
+\text{Ma trận phản xứng là ma trận vuông $A$ thỏa mãn $A^T = -A$.}
+\begin{itemize}
+    \item \text{Điều kiện 1: $A_n \ne \emptyset$.}
+    \text{Ma trận zero $O$ thỏa mãn $O^T = -O$, nên $O \in A_n$. Vậy $A_n \ne \emptyset$.}
+    
+    \item \text{Điều kiện 2: Đóng với tổ hợp tuyến tính.}
+    \text{Cho $A, B \in A_n$ và $\alpha, \beta \in \mathbb{R}$. Ta có $A^T = -A$ và $B^T = -B$.}
+    \text{Xét ma trận $C = \alpha A + \beta B$. Ta kiểm tra $(C)^T$:}
+    $$
+    (C)^T = (\alpha A + \beta B)^T = \alpha A^T + \beta B^T
+    $$
+    $$
+    = \alpha (-A) + \beta (-B) = -(\alpha A + \beta B) = -C.
+    $$
+    \text{Vì $(C)^T = -C$, nên $C$ là ma trận phản xứng, $C \in A_n$.}
+\end{itemize}
+\text{Do đó, $A_n$ là một không gian tuyến tính con của $M_{n \times n}(\mathbb{R})$.}
+
+\end{document}
