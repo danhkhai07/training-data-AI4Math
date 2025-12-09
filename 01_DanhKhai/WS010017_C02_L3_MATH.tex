@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Biện luận hạng của ma trận sau theo tham số $m$:}
+$$
+A = \begin{pmatrix}
+1 & -1 & 2 & 1 \\
+2 & -2 & m+5 & m^2+1 \\
+1 & -1 & 2 & m-1
+\end{pmatrix}
+$$
+
+\section*{Giải.}
+
+\text{Dùng phép biến đổi sơ cấp về hàng đưa ma trận đã cho về dạng bậc thang:}
+$$
+\begin{pmatrix}
+1 & -1 & 2 & 1 \\
+2 & -2 & m+5 & m^2+1 \\
+1 & -1 & 2 & m-1
+\end{pmatrix}
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - \text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1}
+\begin{pmatrix}
+1 & -1 & 2 & 1 \\
+0 & 0 & m+1 & m^2-1 \\
+0 & 0 & 0 & m-2
+\end{pmatrix}
+$$
+
+\text{Ma trận đã cho về dạng bậc thang. Hạng của ma trận $A$ bằng số hàng khác không trong ma trận này.}
+\begin{itemize}
+    \item \text{Nếu $m+1 = 0$ (tức $m=-1$) và $m-2 = 0$ (tức $m=2$):}
+    \text{Xét trường hợp $m=-1$:}
+    $$
+    \begin{pmatrix}
+    1 & -1 & 2 & 1 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & -3
+    \end{pmatrix} \quad \text{Hạng } r(A) = 2.
+    $$
+    \text{Xét trường hợp $m=2$:}
+    $$
+    \begin{pmatrix}
+    1 & -1 & 2 & 1 \\
+    0 & 0 & 3 & 3 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix} \quad \text{Hạng } r(A) = 2.
+    $$
+    \text{Vậy, nếu $m = -1$ hoặc $m = 2$ thì $r(A) = 2$.}
+    
+    \item \text{Nếu $m \notin \{-1; 2\}$:}
+    \text{Cả hai phần tử $m+1$ và $m-2$ đều khác 0. Ma trận bậc thang có 3 hàng khác không.}
+    $$
+    r(A) = 3.
+    $$
+\end{itemize}
+
+\end{document}
