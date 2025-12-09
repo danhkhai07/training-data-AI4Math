@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho $A, B$ là hai không gian con của không gian tuyến tính $V$. Chứng minh rằng $A \cup B$ không là không gian con của $V$ khi và chỉ khi $A \not\subset B$ hoặc $B \not\subset A$.}
+
+\section*{Giải.}
+
+\text{Ta chứng minh điều kiện tương đương: $A \cup B$ là không gian con của $V$ khi và chỉ khi $A \subset B$ hoặc $B \subset A$.}
+
+\subsection*{Điều kiện đủ: Nếu $A \subset B$ hoặc $B \subset A$}
+\begin{itemize}
+    \item \text{Nếu $A \subset B$ thì $A \cup B = B$. Do $B$ là không gian con của $V$ (theo giả thiết), nên $A \cup B$ là không gian con của $V$.}
+    \item \text{Nếu $B \subset A$ thì $A \cup B = A$. Do $A$ là không gian con của $V$ (theo giả thiết), nên $A \cup B$ là không gian con của $V$.}
+\end{itemize}
+\text{Vậy, nếu $A \subset B$ hoặc $B \subset A$ thì $A \cup B$ là không gian con của $V$.}
+
+\subsection*{Điều kiện cần: Nếu $A \cup B$ là không gian con của $V$, chứng minh $A \subset B$ hoặc $B \subset A$}
+\text{Ta chứng minh bằng phương pháp phản chứng. Giả sử $A \not\subset B$ và $B \not\subset A$. }
+\begin{itemize}
+    \item \text{Do $A \not\subset B$, tồn tại phần tử $\mathbf{a} \in A$ mà $\mathbf{a} \notin B$.}
+    \item \text{Do $B \not\subset A$, tồn tại phần tử $\mathbf{b} \in B$ mà $\mathbf{b} \notin A$.}
+\end{itemize}
+\text{Vì $\mathbf{a} \in A$ và $\mathbf{b} \in B$, nên $\mathbf{a}, \mathbf{b} \in A \cup B$.}
+\text{Vì $A \cup B$ là không gian con, nó phải đóng với phép cộng. Do đó, tổng $\mathbf{w} = \mathbf{a} + \mathbf{b}$ phải thuộc $A \cup B$.}
+\text{Nếu $\mathbf{w} \in A \cup B$, thì $\mathbf{w} \in A$ hoặc $\mathbf{w} \in B$.}
+
+\begin{itemize}
+    \item \text{Trường hợp 1: Nếu $\mathbf{w} = \mathbf{a} + \mathbf{b} \in A$.}
+    \text{Vì $\mathbf{a} \in A$ và $A$ là không gian con (đóng với phép trừ), ta có $\mathbf{b} = \mathbf{w} - \mathbf{a} \in A$. }
+    \text{Điều này mâu thuẫn với giả thiết $\mathbf{b} \notin A$. }
+    
+    \item \text{Trường hợp 2: Nếu $\mathbf{w} = \mathbf{a} + \mathbf{b} \in B$.}
+    \text{Vì $\mathbf{b} \in B$ và $B$ là không gian con (đóng với phép trừ), ta có $\mathbf{a} = \mathbf{w} - \mathbf{b} \in B$. }
+    \text{Điều này mâu thuẫn với giả thiết $\mathbf{a} \notin B$. }
+\end{itemize}
+\text{Cả hai trường hợp đều dẫn đến mâu thuẫn. Vậy giả sử phản chứng là sai. }
+\text{Phải có $A \subset B$ hoặc $B \subset A$.}
+
+\text{Kết luận chung: $A \cup B$ là không gian con của $V$ khi và chỉ khi $A \subset B$ hoặc $B \subset A$. }
+\text{Do đó, $A \cup B$ không là không gian con của $V$ khi và chỉ khi $A \not\subset B$ hoặc $B \not\subset A$ (phủ định của điều kiện tương đương).}
+
+\end{document}
