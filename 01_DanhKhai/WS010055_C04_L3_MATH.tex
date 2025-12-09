@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Tìm một cơ sở và tìm chiều của không gian $A = \{ p(x) \in P_2[x] | p(x) = p(1-x) \}$.}
+
+\section*{Giải.}
+
+\text{Với } $p(x) = ax^2 + bx + c \in A$ \text{ ta có}
+$$
+p(x) = p(1-x)
+$$
+$$
+\Leftrightarrow ax^2 + bx + c = a(1-x)^2 + b(1-x) + c
+$$
+$$
+\Leftrightarrow ax^2 + bx + c = a(1 - 2x + x^2) + b - bx + c
+$$
+$$
+\Leftrightarrow ax^2 + bx + c = a - 2ax + ax^2 + b - bx + c
+$$
+$$
+\Leftrightarrow (2a + 2b)x + (a - b) = 0
+$$
+\text{Để đẳng thức này đúng với mọi } $x \in \mathbb{R}$, \text{ ta phải có các hệ số bằng 0:}
+$$
+\begin{cases}
+2a - 2b = 0 \\
+a + b = 0
+\end{cases}
+$$
+\text{Phân tích: Hình ảnh có lẽ đã bị sai ở bước này, vì } $ax^2 + bx + c = a - 2ax + ax^2 + b - bx + c$ \text{ dẫn đến } $(2b - 2a)x + (a+b) = 0$ \text{ hoặc } $2a x + (a+b) = 0$ \text{ chứ không phải } $(2a+2b)x + (-a-b)=0$ \text{ như trong hình. Tuy nhiên, tôi sẽ cố gắng sao chép chính xác như hình ảnh (từ bước } $(2a+2b)x + (-a-b)=0$ \text{ trở đi).}
+
+\text{(Dựa theo công thức trong hình ảnh):}
+$$
+\Leftrightarrow (2a + 2b)x + (-a - b) = 0
+$$
+\text{Điều này dẫn đến hệ phương trình (khi so sánh với đa thức 0):}
+$$
+\begin{cases}
+2a + 2b = 0 \\
+-a - b = 0
+\end{cases}
+\Leftrightarrow a = -b.
+$$
+\text{Suy ra } $p(x) = ax^2 + bx + c = ax^2 - ax + c = a(x^2 - x) + c \cdot 1$. \text{ (Ghi chú: Hình ảnh có ghi là } $p(x) = ax^2 - ax + c$, \text{ sau đó lại viết } $p(x) = a(x^2 - x) + c \cdot 1$, \text{ nên tôi sẽ tuân theo bản copy cuối cùng).}
+
+\text{Do đó } \{ u_1 = x^2 - x; u_2 = 1 \} \text{ là một hệ sinh của } A.
+$$
+\text{Dễ dàng chứng minh được } \{u_1; u_2\} \text{ độc lập tuyến tính.}
+$$
+\text{Vậy } \{u_1; u_2\} \text{ là một cơ sở của không gian } A \text{ và } \dim A = 2.
+
+\end{document}
