@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho $E = \{\mathbf{e}_1, \mathbf{e}_2, \dots, \mathbf{e}_n\}$ là cơ sở của không gian vectơ $V$, $n$ là số tự nhiên lẻ. Chứng tỏ rằng hệ vectơ $F = \{\mathbf{f}_1, \mathbf{f}_2, \dots, \mathbf{f}_n\}$ cùng là cơ sở của không gian vectơ $V$, trong đó}
+$$
+\mathbf{f}_i = \mathbf{e}_i + \mathbf{e}_{i+1}, \quad i = 1, 2, \dots, n-1; \quad \mathbf{f}_n = \mathbf{e}_n + \mathbf{e}_1.
+$$
+\text{Khẳng định trên còn đúng không nếu $n$ là số tự nhiên chẵn?}
+
+\section*{Giải. Cách 1}
+
+\text{Hệ $F$ là cơ sở của $V$ khi và chỉ khi hệ $F$ độc lập tuyến tính, tức là phương trình tổ hợp tuyến tính thuần nhất $\alpha_1 \mathbf{f}_1 + \alpha_2 \mathbf{f}_2 + \dots + \alpha_n \mathbf{f}_n = \mathbf{0}$ chỉ có nghiệm tầm thường $\alpha_1 = \alpha_2 = \dots = \alpha_n = 0$.}
+
+\text{Xét phương trình:}
+$$
+\alpha_1 \mathbf{f}_1 + \alpha_2 \mathbf{f}_2 + \dots + \alpha_n \mathbf{f}_n = \mathbf{0}.
+$$
+\text{Thay $\mathbf{f}_i$ bằng biểu diễn qua cơ sở $E$:}
+$$
+\alpha_1 (\mathbf{e}_1 + \mathbf{e}_2) + \alpha_2 (\mathbf{e}_2 + \mathbf{e}_3) + \dots + \alpha_{n-1} (\mathbf{e}_{n-1} + \mathbf{e}_n) + \alpha_n (\mathbf{e}_n + \mathbf{e}_1) = \mathbf{0}.
+$$
+\text{Phân tích theo các vectơ cơ sở $\mathbf{e}_i$:}
+$$
+(\alpha_1 + \alpha_n) \mathbf{e}_1 + (\alpha_1 + \alpha_2) \mathbf{e}_2 + (\alpha_2 + \alpha_3) \mathbf{e}_3 + \dots + (\alpha_{n-1} + \alpha_n) \mathbf{e}_n = \mathbf{0}.
+$$
+\text{Do hệ $E = \{\mathbf{e}_1, \dots, \mathbf{e}_n\}$ độc lập tuyến tính, tất cả các hệ số phải bằng 0. Ta thu được hệ phương trình thuần nhất đối với các ẩn $\alpha_i$:}
+$$
+\begin{cases}
+\alpha_1 + \alpha_n = 0 \\
+\alpha_1 + \alpha_2 = 0 \\
+\alpha_2 + \alpha_3 = 0 \\
+\quad \dots \\
+\alpha_{n-1} + \alpha_n = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+\alpha_2 = -\alpha_1 \\
+\alpha_3 = -\alpha_2 = (-1)^2 \alpha_1 \\
+\alpha_4 = -\alpha_3 = (-1)^3 \alpha_1 \\
+\quad \dots \\
+\alpha_n = -\alpha_{n-1} = (-1)^{n-1} \alpha_1.
+\end{cases}
+$$
+\text{Thay $\alpha_n$ vào phương trình thứ nhất ($\alpha_1 + \alpha_n = 0$):}
+$$
+\alpha_1 + (-1)^{n-1} \alpha_1 = 0 \Leftrightarrow \alpha_1 (1 + (-1)^{n-1}) = 0.
+$$
+
+\subsection*{Trường hợp 1: Nếu $n$ lẻ}
+\text{Nếu $n$ là số tự nhiên lẻ, thì $n-1$ là số chẵn. Do đó $(-1)^{n-1} = 1$.}
+$$
+\alpha_1 (1 + 1) = 0 \Leftrightarrow 2\alpha_1 = 0 \Leftrightarrow \alpha_1 = 0.
+$$
+\text{Vì $\alpha_1 = 0$, ta suy ra $\alpha_2 = \alpha_3 = \dots = \alpha_n = 0$. }
+\text{Hệ phương trình có nghiệm duy nhất là nghiệm tầm thường $\alpha_1 = \alpha_2 = \dots = \alpha_n = 0$. }
+\text{Do đó, hệ $F$ độc lập tuyến tính. Vì $F$ có $n$ vectơ trong không gian $n$ chiều, nên $F$ là cơ sở của $V$.}
+
+\subsection*{Trường hợp 2: Nếu $n$ chẵn}
+\text{Nếu $n$ là số tự nhiên chẵn, thì $n-1$ là số lẻ. Do đó $(-1)^{n-1} = -1$.}
+$$
+\alpha_1 (1 + (-1)) = 0 \Leftrightarrow \alpha_1 (1 - 1) = 0 \Leftrightarrow 0 \cdot \alpha_1 = 0.
+$$
+\text{Phương trình này luôn đúng với mọi $\alpha_1$. Chọn $\alpha_1 = 1 \ne 0$. }
+\text{Khi đó, ta có nghiệm không tầm thường $\alpha_1 = 1, \alpha_2 = -1, \alpha_3 = 1, \dots, \alpha_n = -1$.}
+\text{Hệ có nghiệm không tầm thường. Do đó hệ $F$ **phụ thuộc tuyến tính**.}
+\text{Vậy, khẳng định trên **không còn đúng** nếu $n$ là số tự nhiên chẵn.}
+
+\end{document}
