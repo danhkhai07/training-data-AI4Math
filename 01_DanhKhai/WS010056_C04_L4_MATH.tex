@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Bài 2.1.23. Chứng minh rằng hệ đa thức $F = \{1, x-\alpha, (x-\alpha)^2, \dots, (x-\alpha)^n\}$, với $\alpha \in \mathbb{R}$ cố định, là một cơ sở của $P_n[x]$. Tìm tọa độ của $p(x) = x^2+2x+3$ trong cơ sở $F$.}
+
+\section*{Giải.}
+
+\text{Vì } $\dim P_n[x] = n+1$ \text{ nên để chứng minh hệ vectơ } $F$ \text{ là một cơ sở của không gian } $P_n[x]$ \text{ ta chỉ cần chứng minh } $F$ \text{ là một hệ sinh của không gian } $P_n[x]$.
+
+\text{Thật vậy, với mỗi } $q(x) \in P_n[x]$ \text{ bất kỳ, ta có } $q(x)$ \text{ là đa thức bậc nhỏ hơn hoặc bằng } $n$ \text{ nên khả vi mọi cấp trên } $\mathbb{R}$. \text{Theo công thức khai triển Taylor của } $q(x)$ \text{ tại } $x = \alpha$, \text{ ta được}
+$$
+q(x) = q(\alpha) + \frac{q'(\alpha)}{1!}(x-\alpha) + \frac{q''(\alpha)}{2!}(x-\alpha)^2 + \dots + \frac{q^{(n)}(\alpha)}{n!}(x-\alpha)^n \quad (*)
+$$
+\text{Hay } $F$ \text{ là một hệ sinh của không gian } $P_n[x]$. \text{ Vậy } $F$ \text{ là một cơ sở của không gian } $P_n[x]$.
+
+\begin{itemize}
+    \item \text{Tìm tọa độ của } $p(x) = x^2+2x+3$ \text{ trong cơ sở } $F$.
+\end{itemize}
+
+\text{Ta có } $p(x) = x^2+2x+3$. \text{ Ta tính các đạo hàm tại } $x=\alpha$:
+$$
+p'(x) = 2x + 2, \quad p''(\alpha) = 2, \quad p^{(k)}(x) = 0, \forall k > 2.
+$$
+\text{Áp dụng công thức } $(*)$, \text{ ta được}
+\begin{align*}
+p(\alpha) &= \alpha^2 + 2\alpha + 3 \\
+p'(\alpha) &= 2\alpha + 2 \\
+p''(\alpha) &= 2 \\
+p^{(k)}(\alpha) &= 0, \forall k > 2.
+\end{align*}
+\text{Do đó, khai triển Taylor của } $p(x)$ \text{ tại } $\alpha$ \text{ là}
+$$
+p(x) = (\alpha^2+2\alpha+3) \cdot 1 + \frac{(2\alpha+2)}{1!}(x-\alpha) + \frac{2}{2!}(x-\alpha)^2 + 0 \cdot (x-\alpha)^3 + \dots
+$$
+$$
+p(x) = (\alpha^2+2\alpha+3) \cdot 1 + (2\alpha+2)(x-\alpha) + 1 \cdot (x-\alpha)^2.
+$$
+\text{Do đó tọa độ của } $p(x)$ \text{ trong cơ sở } $F$ \text{ là } $\left( \alpha^2+2\alpha+3, 2\alpha+2, 1, 0, \dots, 0 \right)$.
+
+\end{document}
