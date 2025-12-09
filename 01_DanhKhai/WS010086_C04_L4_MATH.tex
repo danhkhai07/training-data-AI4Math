@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.12. Cho ánh xạ $\varphi: P_n[x] \to P_n[x], p(x) \mapsto p'(x)$, ($p'(x)$ là hàm đạo hàm của $p(x)$).}
+\text{a) Chứng minh $\varphi$ là một phép biến đổi tuyến tính trên $P_n[x]$.} \\
+\text{b) Tìm ma trận của $\varphi$ trong cơ sở chính tắc của $P_n[x]$.} \\
+\text{c) Tìm $\text{Ker}\varphi$.}
+
+\section*{Giải.}
+
+\text{a) Giả sử $p(x), q(x) \in P_n[x]$ và $\alpha, \beta \in \mathbb{R}$ bất kỳ. Khi đó}
+\begin{align*}
+\varphi(\alpha p(x) + \beta q(x)) &= (\alpha p(x) + \beta q(x))' \\
+&= \alpha p'(x) + \beta q'(x) \\
+&= \alpha\varphi(p(x)) + \beta\varphi(q(x)).
+\end{align*}
+\text{Vậy $\varphi$ là một phép biến đổi tuyến tính trên $P_n[x]$.}
+
+\text{b) Gọi } $E = \{1, x, x^2, \dots, x^n\}$ \text{ là cơ sở chính tắc của } $P_n[x]$. \text{Ta tìm ảnh của các véctơ cơ sở } $E$ \text{ và biểu diễn chúng trong cơ sở } $E$:
+$$
+\varphi(1) = 0 = 0\cdot 1 + 0\cdot x + \dots + 0\cdot x^n
+$$
+$$
+\varphi(x) = 1 = 1\cdot 1 + 0\cdot x + \dots + 0\cdot x^n
+$$
+$$
+\varphi(x^2) = 2x = 0\cdot 1 + 2\cdot x + 0\cdot x^2 + \dots + 0\cdot x^n
+$$
+$$
+\vdots
+$$
+$$
+\varphi(x^n) = nx^{n-1} = 0\cdot 1 + 0\cdot x + \dots + n\cdot x^{n-1} + 0\cdot x^n
+$$
+\text{Do đó ma trận của $\varphi$ trong cơ sở chính tắc là}
+$$
+A = \begin{pmatrix}
+0 & 1 & 0 & 0 & \dots & 0 \\
+0 & 0 & 2 & 0 & \dots & 0 \\
+0 & 0 & 0 & 3 & \dots & 0 \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & 0 & \dots & n \\
+0 & 0 & 0 & 0 & \dots & 0
+\end{pmatrix}.
+$$
+
+\text{c) } $p(x) \in \text{Ker}\varphi \text{ khi và chỉ khi } \varphi(p(x)) = \mathbf{0} \text{ hay } p'(x) = 0$. \text{Mặt khác } $p'(x) = 0 \text{ khi và chỉ khi } p(x) = C \text{ (với } C \text{ là hằng số)}$.
+\text{Vậy } $\text{Ker}\varphi = \{p(x) = C \mid C \text{ là hằng số} \}$.
+
+\end{document}
