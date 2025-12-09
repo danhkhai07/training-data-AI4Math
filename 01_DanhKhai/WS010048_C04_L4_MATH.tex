@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Trong không gian $P_2[x]$ các đa thức có bậc không vượt quá 2, cho hệ vectơ sau:}
+$$
+B = \{\mathbf{b}_1 = 1+x, \mathbf{b}_2 = x+x^2, \mathbf{b}_3 = 2x^2\}.
+$$
+\begin{enumerate}
+    \item[a)] Chứng minh $B$ là một cơ sở của không gian $P_2[x]$.
+    \item[b)] Tìm ma trận chuyển cơ sở từ cơ sở chính tắc $E = \{1, x, x^2\}$ sang cơ sở $B$.
+    \item[c)] Tìm tọa độ của vectơ $q(x) = 2x^2 - x + 1$ trong hai cơ sở trên.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Chứng minh $B$ là một cơ sở của không gian $P_2[x]$}
+\text{Không gian $P_2[x]$ có cơ sở chính tắc là $E = \{1, x, x^2\}$, nên $\dim P_2[x] = 3$. Do hệ $B$ có 3 vectơ nên để chứng minh $B$ là cơ sở của $P_2[x]$, ta chứng minh $B$ là hệ sinh của $P_2[x]$ hoặc $B$ độc lập tuyến tính.}
+
+\text{Ta sẽ chứng minh $B$ là hệ sinh của $P_2[x]$. Thật vậy, gọi $q(x) = a + bx + cx^2$ là một đa thức bất kỳ trong $P_2[x]$.}
+\text{Xét $q(x) = \alpha_1 \mathbf{b}_1 + \alpha_2 \mathbf{b}_2 + \alpha_3 \mathbf{b}_3$, ta thu được:}
+$$
+a + bx + cx^2 = \alpha_1(1+x) + \alpha_2(x+x^2) + \alpha_3(2x^2)
+$$
+\text{Đồng nhất hệ số của các lũy thừa của $x$:}
+$$
+a + bx + cx^2 = \alpha_1 + (\alpha_1 + \alpha_2)x + (\alpha_2 + 2\alpha_3)x^2
+$$
+\text{Ta thu được hệ phương trình:}
+$$
+\begin{cases}
+\alpha_1 = a \\
+\alpha_1 + \alpha_2 = b \\
+\alpha_2 + 2\alpha_3 = c
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+\alpha_1 = a \\
+\alpha_2 = b - a \\
+\alpha_3 = c - b + a.
+\end{cases}
+$$
+\text{Do hệ luôn có nghiệm với mọi $a, b, c$ nên $B$ là hệ sinh của $P_2[x]$. Ta suy ra $B$ là cơ sở của $P_2[x]$.}
+
+\subsection*{b) Tìm ma trận chuyển cơ sở $T_{E \to B}$}
+\text{Ta biểu diễn các vectơ cơ sở $B$ theo cơ sở chính tắc $E = \{1, x, x^2\}$:}
+$$
+\mathbf{b}_1 = 1 \cdot 1 + 1 \cdot x + 0 \cdot x^2
+$$
+$$
+\mathbf{b}_2 = 0 \cdot 1 + 1 \cdot x + 1 \cdot x^2
+$$
+$$
+\mathbf{b}_3 = 0 \cdot 1 + 0 \cdot x + 2 \cdot x^2
+$$
+\text{Ma trận chuyển cơ sở từ $E$ sang $B$, ký hiệu $T_{E \to B}$, có các cột là tọa độ của $\mathbf{b}_i$ trong cơ sở $E$ (theo quy ước trong tài liệu):}
+$$
+T_{E \to B} = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 2 \end{pmatrix}.
+$$
+
+\subsection*{c) Tìm tọa độ của vectơ $q(x) = 2x^2 - x + 1$ trong hai cơ sở trên}
+\begin{itemize}
+    \item \text{Tọa độ của $q(x)$ trong cơ sở chính tắc $E$:}
+    \text{Ta có $q(x) = 1 \cdot 1 + (-1) \cdot x + 2 \cdot x^2$. }
+    \text{Tọa độ của $q(x)$ trong cơ sở $E$ là $(1, -1, 2)$.}
+    
+    \item \text{Tọa độ của $q(x)$ trong cơ sở $B$:}
+    \text{Ta sử dụng công thức nghiệm $\alpha_1 = a, \alpha_2 = b - a, \alpha_3 = c - b + a$ với $a=1, b=-1, c=2$:}
+    $$
+    \begin{cases}
+    \alpha_1 = 1 \\
+    \alpha_2 = (-1) - 1 = -2 \\
+    \alpha_3 = 2 - (-1) + 1 = 4.
+    \end{cases}
+    $$
+    \text{Nên tọa độ của $q(x)$ trong cơ sở $B$ là $(1, -2, 4)$.}
+\end{itemize}
+
+\end{document}
