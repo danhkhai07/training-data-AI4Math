@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.7. Cho $f: M_{2\times 2}(\mathbb{R}) \to M_{2\times 2}(\mathbb{R}), X \mapsto AX$, với $A = \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix}$ là một phép biến đổi tuyến tính.}
+\text{a) Xác định chiều và một cơ sở của không gian nhân $\text{Ker}f$.} \\
+\text{b) Xác định chiều và một cơ sở của không gian ảnh $\text{Im}f$.}
+
+\section*{Giải.}
+
+\text{a) Ta có } $\text{Ker}f = \{ X = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2\times 2}(\mathbb{R}) \mid AX = \mathbf{0} \}$. \text{Do đó } $X \in \text{Ker}f \text{ khi và chỉ khi } X$ \text{ là nghiệm của hệ phương trình}
+$$
+\begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+$$
+\text{Ta có hệ phương trình}
+$$
+\begin{cases}
+a + 2c = 0 \\
+b + 2d = 0 \\
+3a + 6c = 0 \\
+3b + 6d = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a = -2c \\
+b = -2d.
+\end{cases}
+$$
+\text{Vậy } $X = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \text{Ker}f \text{ khi và chỉ khi } X = \begin{pmatrix} -2c & -2d \\ c & d \end{pmatrix}$.
+$$
+X = c \begin{pmatrix} -2 & 0 \\ 1 & 0 \end{pmatrix} + d \begin{pmatrix} 0 & -2 \\ 0 & 1 \end{pmatrix}.
+$$
+\text{Đặt } $B_1 = \begin{pmatrix} -2 & 0 \\ 1 & 0 \end{pmatrix}, B_2 = \begin{pmatrix} 0 & -2 \\ 0 & 1 \end{pmatrix}$. \text{Ta có } $\text{Ker}f = \mathcal{L}\{B_1, B_2\}$.
+\text{Do } $B_1, B_2$ \text{ độc lập tuyến tính (vì } $B_2 \ne k B_1 \text{ và } B_1 \ne k B_2$), \text{ nên } $\{B_1, B_2\}$ \text{ là một cơ sở của } $\text{Ker}f$.
+\text{Vậy } $\dim \text{Ker}f = 2$.
+
+\text{b) Ta có } $\text{Im}f = \{ Y = AX \mid X \in M_{2\times 2}(\mathbb{R}) \}$.
+$$
+Y = \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} a + 2c & b + 2d \\ 3a + 6c & 3b + 6d \end{pmatrix}.
+$$
+$$
+\text{Im}f = \left\{ a \begin{pmatrix} 1 & 0 \\ 3 & 0 \end{pmatrix} + b \begin{pmatrix} 0 & 1 \\ 0 & 3 \end{pmatrix} + c \begin{pmatrix} 2 & 0 \\ 6 & 0 \end{pmatrix} + d \begin{pmatrix} 0 & 2 \\ 0 & 6 \end{pmatrix} \right\}.
+$$
+\text{Đặt } $C_1 = \begin{pmatrix} 1 & 0 \\ 3 & 0 \end{pmatrix}, C_2 = \begin{pmatrix} 0 & 1 \\ 0 & 3 \end{pmatrix}$. \text{Ta có } $C_3 = 2C_1 \text{ và } C_4 = 2C_2$.
+\text{Vậy } $\text{Im}f = \mathcal{L}\{C_1, C_2\}$.
+\text{Do } $C_1, C_2$ \text{ độc lập tuyến tính (vì } $C_2 \ne k C_1 \text{ và } C_1 \ne k C_2$), \text{ nên } $\{C_1, C_2\}$ \text{ là một cơ sở của } $\text{Im}f$.
+\text{Vậy } $\dim \text{Im}f = 2$.
+
+\end{document}
