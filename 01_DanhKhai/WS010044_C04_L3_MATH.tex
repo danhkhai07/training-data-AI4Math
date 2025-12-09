@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Chứng minh tập hợp $A = \{ p(x) \in P_2[x] \mid p(x) = p(1-x) \}$ là không gian con của không gian $P_2[x]$ các đa thức hệ số thực có bậc không vượt quá 2.}
+
+\section*{Giải.}
+
+\text{Để chứng minh $A$ là không gian con của $P_2[x]$, ta chứng minh $A$ thỏa mãn hai điều kiện đóng (hay điều kiện tổ hợp tuyến tính) và chứa vectơ không.}
+
+\subsection*{Điều kiện 1: $A \ne \emptyset$}
+\text{Ta xét đa thức zero $\mathbf{0}(x) = 0 + 0x + 0x^2$. }
+\text{Ta có $\mathbf{0}(x) = 0$ và $\mathbf{0}(1-x) = 0$. Suy ra $\mathbf{0}(x) = \mathbf{0}(1-x)$.}
+\text{Do đó, đa thức zero $\mathbf{0}(x) \in A$, suy ra $A$ là tập hợp khác rỗng ($A \ne \emptyset$).}
+
+\subsection*{Điều kiện 2: Đóng với tổ hợp tuyến tính}
+\text{Cho hai đa thức $p(x), q(x) \in A$ và hai số thực $\alpha, \beta \in \mathbb{R}$.}
+\text{Theo định nghĩa của tập $A$, ta có $p(x) = p(1-x)$ và $q(x) = q(1-x)$.}
+\text{Ta xét đa thức $r(x) = \alpha p(x) + \beta q(x)$. Ta kiểm tra $r(1-x)$:}
+$$
+r(1-x) = (\alpha p + \beta q)(1-x) = \alpha p(1-x) + \beta q(1-x).
+$$
+\text{Áp dụng điều kiện $p(1-x) = p(x)$ và $q(1-x) = q(x)$:}
+$$
+r(1-x) = \alpha p(x) + \beta q(x) = r(x).
+$$
+\text{Vì $r(x) = r(1-x)$, ta có $r(x) \in A$. Tức là $\alpha p(x) + \beta q(x) \in A$.}
+
+\text{Vậy $A$ là một không gian con của $P_2[x]$.}
+
+\end{document}
