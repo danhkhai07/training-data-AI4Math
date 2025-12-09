@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.14. Cho ánh xạ tuyến tính $f: \mathbb{R}^3 \to \mathbb{R}^3$. Biết $f(1, 1, 1) = (2, -1, 3), f(0, 1, 1) = (0, -1, 2), f(0, 0, 1) = (0, 1, -1)$.}
+\text{a) Tìm ma trận của $f$ trong cơ sở chính tắc $E = \{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3\}$ của $\mathbb{R}^3$.} \\
+\text{b) Chứng minh $F = \{\mathbf{f}_1 = (1, 1, 1), \mathbf{f}_2 = (0, 1, 1), \mathbf{f}_3 = (0, 0, 1)\}$ là một cơ sở của $\mathbb{R}^3$.} \\
+\text{c) Tìm ma trận của $f$ trong cơ sở $F$.}
+
+\section*{Giải.}
+
+\text{b) Ta chứng minh hệ véctơ $F = \{\mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3\}$ độc lập tuyến tính.}
+\text{Xét ma trận chứa các véctơ $F$ làm cột:}
+$$
+A_F = \begin{pmatrix}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1
+\end{pmatrix}.
+$$
+\text{Vì } $\det(A_F) = 1 \cdot 1 \cdot 1 = 1 \ne 0$, \text{ nên } $F$ \text{ là hệ véctơ độc lập tuyến tính. Do } $\dim \mathbb{R}^3 = 3$ \text{ nên } $F$ \text{ là một cơ sở của } $\mathbb{R}^3$.
+
+\text{a) Ta tìm ma trận của $f$ trong cơ sở chính tắc $E$ là } $A = [f]_E = \begin{pmatrix} [f(\mathbf{e}_1)]_E & [f(\mathbf{e}_2)]_E & [f(\mathbf{e}_3)]_E \end{pmatrix}$.
+\text{Các véctơ cơ sở chính tắc } $\mathbf{e}_i$ \text{ được biểu diễn qua cơ sở } $F$:
+$$
+\mathbf{e}_3 = (0, 0, 1) = \mathbf{f}_3 \implies f(\mathbf{e}_3) = f(\mathbf{f}_3) = (0, 1, -1).
+$$
+$$
+\mathbf{e}_2 = (0, 1, 0) = \mathbf{f}_2 - \mathbf{f}_3 \implies f(\mathbf{e}_2) = f(\mathbf{f}_2) - f(\mathbf{f}_3) = (0, -1, 2) - (0, 1, -1) = (0, -2, 3).
+$$
+$$
+\mathbf{e}_1 = (1, 0, 0) = \mathbf{f}_1 - \mathbf{f}_2 \implies f(\mathbf{e}_1) = f(\mathbf{f}_1) - f(\mathbf{f}_2) = (2, -1, 3) - (0, -1, 2) = (2, 0, 1).
+$$
+\text{Ma trận của $f$ trong cơ sở chính tắc $E$ là}
+$$
+A = [f]_E = \begin{pmatrix}
+2 & 0 & 0 \\
+0 & -2 & 1 \\
+1 & 3 & -1
+\end{pmatrix}.
+$$
+
+\text{c) Ma trận của $f$ trong cơ sở $F = \{\mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3\}$ là } $[f]_F = \begin{pmatrix} [f(\mathbf{f}_1)]_F & [f(\mathbf{f}_2)]_F & [f(\mathbf{f}_3)]_F \end{pmatrix}$.
+\text{Ta có tọa độ của các véctơ ảnh $f(\mathbf{f}_i)$ trong cơ sở $E$: } $f(\mathbf{f}_1) = (2, -1, 3), f(\mathbf{f}_2) = (0, -1, 2), f(\mathbf{f}_3) = (0, 1, -1)$.
+\text{Gọi } $[f(\mathbf{f}_i)]_F = \begin{pmatrix} a \\ b \\ c \end{pmatrix}. \text{Ta có } f(\mathbf{f}_i) = a\mathbf{f}_1 + b\mathbf{f}_2 + c\mathbf{f}_3$.
+
+\text{Với } $f(\mathbf{f}_1) = (2, -1, 3)$:
+$$
+\begin{cases}
+a = 2 \\
+a + b = -1 \\
+a + b + c = 3
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a = 2 \\
+b = -3 \\
+c = 4
+\end{cases}
+$$
+\text{Với } $f(\mathbf{f}_2) = (0, -1, 2)$:
+$$
+\begin{cases}
+a = 0 \\
+a + b = -1 \\
+a + b + c = 2
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a = 0 \\
+b = -1 \\
+c = 3
+\end{cases}
+$$
+\text{Với } $f(\mathbf{f}_3) = (0, 1, -1)$:
+$$
+\begin{cases}
+a = 0 \\
+a + b = 1 \\
+a + b + c = -1
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a = 0 \\
+b = 1 \\
+c = -2
+\end{cases}
+$$
+\text{Ma trận của $f$ trong cơ sở $F$ là}
+$$
+[f]_F = \begin{pmatrix}
+2 & 0 & 0 \\
+-3 & -1 & 1 \\
+4 & 3 & -2
+\end{pmatrix}.
+$$
+
+\end{document}
