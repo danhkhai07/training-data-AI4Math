@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.36. Trong không gian $\mathbb{R}^3$ cho tập hợp $A = \{(x, y, z) \in \mathbb{R}^3 \mid 2x - 2y + z = 0\}$ và gọi $B$ là không gian con sinh bởi $\mathbf{b} = (1, -3, 1)$.}
+
+\text{a) Xác định một cơ sở của $A$ và chứng minh rằng $A+B = \mathbb{R}^3$. Hỏi $\mathbb{R}^3$ có phải là tổng trực tiếp của $A$ và $B$ không?} \\
+\text{b) Tập hợp $A-B = \{ \mathbf{x}-\mathbf{y} \mid \mathbf{x} \in A, \mathbf{y} \in B \}$ có là không gian con của $\mathbb{R}^3$ không? Xác định tập đó.}
+
+\section*{Giải.}
+
+\text{a) Với mỗi $\mathbf{u} = (x, y, z) \in A$ bất kỳ, ta có $z = 2y - 2x$. Do đó}
+$$
+\mathbf{u} = (x, y, 2y - 2x) = x(1, 0, -2) + y(0, 1, 2).
+$$
+\text{Đặt } $\mathbf{a}_1 = (1, 0, -2), \mathbf{a}_2 = (0, 1, 2)$. \text{Ta suy ra } $\{\mathbf{a}_1, \mathbf{a}_2\}$ \text{ là một cơ sở của } $A$ \text{ và } $\dim A = 2$.
+\text{Ma trận trong hình đưa ra một cơ sở khác, tôi sẽ sử dụng cơ sở trong hình để tuân thủ:}
+\text{Để thấy $A$ là không gian véctơ con của $\mathbb{R}^3$ với một cơ sở là $E = \{\mathbf{a}_1 = (1, 1, 0), \mathbf{a}_2 = (1, 0, -2)\}$.}
+
+\text{Ta có } $\mathbf{b} = (1, -3, 1)$. \text{Xét hệ véctơ } $F = \{\mathbf{a}_1, \mathbf{a}_2, \mathbf{b}\} = \{(1, 1, 0), (1, 0, -2), (1, -3, 1)\}$. \text{Xét ma trận tọa độ}
+$$
+M = \begin{pmatrix}
+1 & 1 & 1 \\
+1 & 0 & -3 \\
+0 & -2 & 1
+\end{pmatrix}
+$$
+\text{Tính định thức của } $M$: $\det(M) = 1(0(1) - (-3)(-2)) - 1(1(1) - (-3)(0)) + 1(1(-2) - 0) = -6 - 1 - 2 = -9 \ne 0$.
+\text{Do } $r(F) = 3$ \text{ nên } $F$ \text{ là một cơ sở của không gian véctơ } $\mathbb{R}^3$.
+\text{Mà } $A+B = \mathcal{L}(\mathbf{a}_1, \mathbf{a}_2, \mathbf{b})$. \text{Do } $\dim(A+B) = 3$ \text{ nên } $A+B = \mathbb{R}^3$.
+
+\text{Để kiểm tra tổng trực tiếp, ta xét giao } $A \cap B$.
+\text{Ta có } $\mathbf{u} \in B \Leftrightarrow \mathbf{u} = \alpha \mathbf{b} = (\alpha, -3\alpha, \alpha)$ \text{ với } $\alpha \in \mathbb{R}$.
+\text{Ta có } $\mathbf{u} \in A \Leftrightarrow 2x - 2y + z = 0$.
+\text{Thay tọa độ của } $\mathbf{u} \in B$ \text{ vào phương trình của } $A$:
+$$
+2(\alpha) - 2(-3\alpha) + (\alpha) = 0 \Leftrightarrow 2\alpha + 6\alpha + \alpha = 0 \Leftrightarrow 9\alpha = 0 \Leftrightarrow \alpha = 0.
+$$
+\text{Vậy } $\mathbf{u} = (0, 0, 0)$. \text{Suy ra } $A \cap B = \{\mathbf{0}\}$.
+\text{Vì } $A+B = \mathbb{R}^3$ \text{ và } $A \cap B = \{\mathbf{0}\}$, \text{ nên } $\mathbb{R}^3$ \text{ là tổng trực tiếp của } $A$ \text{ và } $B$, \text{ ký hiệu } $\mathbb{R}^3 = A \oplus B$.
+
+\text{b) Tập hợp } $A-B = \{ \mathbf{x}-\mathbf{y} \mid \mathbf{x} \in A, \mathbf{y} \in B \}$.
+\text{Vì } $A$ \text{ và } $B$ \text{ là các không gian con của } $\mathbb{R}^3$, \text{ nên } $A-B = A+B$.
+\text{Thật vậy, với mọi } $\mathbf{y} \in B$ \text{ thì } $-\mathbf{y} \in B$ \text{ (vì } $B$ \text{ là không gian con). Do đó } $A-B = \{ \mathbf{x} + (-\mathbf{y}) \mid \mathbf{x} \in A, -\mathbf{y} \in B \} = A+B$.
+\text{Vì } $A+B$ \text{ là không gian con của } $\mathbb{R}^3$, \text{ nên } $A-B$ \text{ là không gian con của } $\mathbb{R}^3$.
+\text{Từ câu a) ta có } $A+B = \mathbb{R}^3$. \text{Vậy } $A-B = \mathbb{R}^3$.
+
+\end{document}
