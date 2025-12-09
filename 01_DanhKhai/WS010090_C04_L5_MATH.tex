@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.16. Cho ánh xạ tuyến tính $f: V_1 \to V_2$ với $\dim V_1 = \dim V_2 = n$. Chứng minh các mệnh đề sau tương đương với nhau:}
+\text{a) $f$ là đơn ánh.} \\
+\text{b) $f$ là toàn ánh.} \\
+\text{c) $f$ là song ánh.}
+
+\section*{Giải.}
+
+\text{Ta có $f$ là song ánh khi và chỉ khi $f$ vừa là đơn ánh vừa là toàn ánh. Do đó để chứng minh các mệnh đề trên là tương đương, ta chỉ cần chứng minh mệnh đề a) tương đương với mệnh đề b).}
+
+\text{Chứng minh a) } $\Rightarrow$ \text{ b):}
+\text{Ta biết $f$ là đơn ánh khi và chỉ khi } $\text{Ker}f = \{\mathbf{0}\}$. \text{Mặt khác } $\dim V_1 = \dim \text{Ker}f + \dim \text{Im}f$. \text{Do đó } $\dim \text{Im}f = \dim V_1 = \dim V_2$. \text{Suy ra } $\text{Im}f = V_2$ \text{ hay } $f$ \text{ là toàn ánh.}
+
+\text{Chứng minh b) } $\Rightarrow$ \text{ a):}
+\text{Ta có $f$ là toàn ánh nên } $\text{Im}f = V_2$. \text{Suy ra } $\dim \text{Im}f = \dim V_2 = \dim V_1$. \text{Mặt khác } $\dim V_1 = \dim \text{Ker}f + \dim \text{Im}f$. \text{Do đó } $\dim \text{Ker}f = 0$ \text{ hay } $\text{Ker}f = \{\mathbf{0}\}$, \text{ từ đó suy ra $f$ là đơn ánh.}
+
+\end{document}
