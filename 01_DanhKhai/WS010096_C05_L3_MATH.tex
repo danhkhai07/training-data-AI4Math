@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.25. Cho $\varphi$ là một phép biến đổi tuyến tính trên không gian tuyến tính $V$, $\mathbf{u}$ là một véctơ riêng của $\varphi$ ứng với giá trị riêng $\lambda$. Chứng minh $\mathbf{u}$ là véctơ riêng của $\varphi^3$ ứng với giá trị riêng $\lambda^3$. (Lưu ý rằng $\varphi^3$ là ánh xạ hợp thành $\varphi^3 = \varphi \circ \varphi \circ \varphi$).}
+
+\section*{Giải.}
+
+\text{Vì $\mathbf{u}$ là một véctơ riêng của $\varphi$ ứng với giá trị riêng $\lambda$ nên ta có } $\varphi(\mathbf{u}) = \lambda\mathbf{u}$. \text{Do đó}
+\begin{align*}
+\varphi^3(\mathbf{u}) &= \varphi^2(\varphi(\mathbf{u})) \\
+&= \varphi^2(\lambda\mathbf{u}) \\
+&= \lambda\varphi(\varphi(\mathbf{u})) \\
+&= \lambda\varphi(\lambda\mathbf{u}) \\
+&= \lambda^2\varphi(\mathbf{u}) \\
+&= \lambda^2(\lambda\mathbf{u}) \\
+&= \lambda^3\mathbf{u}.
+\end{align*}
+\text{Vậy $\mathbf{u}$ là một véctơ riêng của $\varphi^3$ ứng với giá trị riêng $\lambda^3$.}
+
+\end{document}
