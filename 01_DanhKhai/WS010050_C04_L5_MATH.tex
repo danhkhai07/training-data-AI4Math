@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Tìm cơ sở và chiều của các không gian tuyến tính sau:}
+\begin{enumerate}
+    \item[a)] $E = \{\mathbf{x} = (x_1, x_2) \in \mathbb{R}^2 \mid x_1 > 0, x_2 > 0 \}$ \text{với các phép toán:}
+    $$
+    \mathbf{x} + \mathbf{y} = (x_1 y_1, x_2 y_2), \quad \alpha \cdot \mathbf{x} = (x_1^{\alpha}, x_2^{\alpha}), \quad \alpha \in \mathbb{R}.
+    $$
+    \item[b)] $A = \{p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \in P_n[x] \mid p(0) = 0, p(1) = 0 \}$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Không gian $E$ với phép toán bất thường}
+\text{Ta đã chứng minh $E$ là không gian vectơ trong Bài 2.1.2b), với vectơ không là $\mathbf{0}_E = (1, 1)$.}
+\text{Ta tìm cơ sở cho $E$. Mọi vectơ $\mathbf{x} = (x_1, x_2) \in E$ có thể viết là:}
+$$
+\mathbf{x} = (x_1, x_2) = (x_1, 1) + (1, x_2)
+$$
+\text{Đặt $\mathbf{e}_1 = (e, 1)$ và $\mathbf{e}_2 = (1, e)$ (trong đó $e$ là cơ số tự nhiên, $e \approx 2.718$).}
+\text{Mọi vectơ $\mathbf{x} = (x_1, x_2)$ có thể viết dưới dạng tổ hợp tuyến tính $\mathbf{x} = \alpha_1 \mathbf{e}_1 + \alpha_2 \mathbf{e}_2$, với phép toán nhân và cộng bất thường.}
+
+\text{Ta có:}
+$$
+\alpha_1 \cdot \mathbf{e}_1 + \alpha_2 \cdot \mathbf{e}_2 = (e^{\alpha_1}, 1^{\alpha_1}) + (1^{\alpha_2}, e^{\alpha_2})
+$$
+$$
+= (e^{\alpha_1} \cdot 1^{\alpha_2}, 1^{\alpha_1} \cdot e^{\alpha_2}) = (e^{\alpha_1}, e^{\alpha_2}).
+$$
+\text{Đặt $x_1 = e^{\alpha_1}$ và $x_2 = e^{\alpha_2}$, ta tìm được $\alpha_1 = \ln x_1$ và $\alpha_2 = \ln x_2$. }
+\text{Vậy, $\mathbf{x} = (\ln x_1) \cdot \mathbf{e}_1 + (\ln x_2) \cdot \mathbf{e}_2$. }
+\text{Hệ $\{\mathbf{e}_1, \mathbf{e}_2 \}$ là một hệ sinh của $E$.}
+\text{Hệ $\{\mathbf{e}_1, \mathbf{e}_2 \}$ độc lập tuyến tính vì nếu $\alpha_1 \mathbf{e}_1 + \alpha_2 \mathbf{e}_2 = \mathbf{0}_E = (1, 1)$, ta có:}
+$$
+(e^{\alpha_1}, e^{\alpha_2}) = (1, 1) \Leftrightarrow e^{\alpha_1}=1, e^{\alpha_2}=1 \Leftrightarrow \alpha_1=0, \alpha_2=0.
+$$
+\text{Vậy $E$ có một cơ sở là $\{\mathbf{e}_1 = (e, 1), \mathbf{e}_2 = (1, e) \}$. Do đó $\dim E = 2$ chiều.}
+
+\subsection*{b) Không gian đa thức $A = \{p(x) \in P_n[x] \mid p(0) = 0, p(1) = 0 \}$}
+\text{Điều kiện $p(0)=0$ có nghĩa là hằng số $a_0 = 0$. $p(x)$ có thể viết là $p(x) = x(a_1 + a_2 x + \dots + a_n x^{n-1})$.}
+\text{Điều kiện $p(1)=0$ có nghĩa là $p(x)$ nhận $x=1$ là nghiệm, hay $p(x)$ chia hết cho $(x-1)$.}
+\text{Do $p(0)=0$ và $p(1)=0$, ta có $p(x)$ chia hết cho $x(x-1)$.}
+\text{Vậy $p(x)$ có thể viết dưới dạng $p(x) = x(x-1) q(x)$, với $q(x) \in P_{n-2}[x]$.}
+$$
+p(x) = x(x-1)(b_0 + b_1 x + \dots + b_{n-2} x^{n-2}).
+$$
+\text{Ta có thể viết $p(x)$ dưới dạng tổ hợp tuyến tính của các đa thức:}
+$$
+p(x) = b_0 (x^2 - x) + b_1 (x^3 - x^2) + \dots + b_{n-2} (x^n - x^{n-1}).
+$$
+\text{Đặt cơ sở là $B = \{x^2 - x, x^3 - x^2, \dots, x^n - x^{n-1} \}$. Hệ $B$ có $n-1$ vectơ.}
+\text{Hệ $B$ là hệ sinh của $A$.}
+\text{Hệ $B$ độc lập tuyến tính vì nếu}
+$$
+\sum_{k=2}^n c_k (x^k - x^{k-1}) = 0
+$$
+\text{Ta có thể viết lại theo lũy thừa của $x$:}
+$$
+-c_2 x + (c_2 - c_3) x^2 + (c_3 - c_4) x^3 + \dots + (c_{n-1} - c_n) x^{n-1} + c_n x^n = 0
+$$
+\text{Đồng nhất hệ số bằng 0, ta có $c_2 = 0$, $c_n = 0$, và $c_k - c_{k+1} = 0 \Leftrightarrow c_k = c_{k+1}$.}
+\text{Từ $c_2=0$ và $c_k = c_{k+1}$ ta suy ra $c_2 = c_3 = \dots = c_n = 0$. }
+\text{Vậy $B$ là cơ sở của $A$. Do đó $\dim A = n-1$ chiều.}
+
+\end{document}
