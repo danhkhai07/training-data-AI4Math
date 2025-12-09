@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.13. Cho ánh xạ tuyến tính $f: \mathbb{R}^3 \to \mathbb{R}^2$. Biết $f(1, 0, 0) = (1, 3), f(0, 1, 0) = (-1, 1), f(0, 0, 1) = (2, -1)$.}
+\text{a) Tìm ma trận $A$ của $f$ trong cặp cơ sở chính tắc của $\mathbb{R}^3$ và $\mathbb{R}^2$.} \\
+\text{b) Tìm công thức của $f$.} \\
+\text{c) Tìm cơ sở và số chiều của $\text{Ker}f, \text{Im}f$.}
+
+\section*{Giải.}
+
+\text{a) Cơ sở chính tắc của $\mathbb{R}^3$ là } $E_3 = \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}$, \text{ cơ sở chính tắc của $\mathbb{R}^2$ là } $E_2 = \{(1, 0), (0, 1)\}$.
+\text{Ma trận của $f$ trong cặp cơ sở chính tắc là ma trận có các cột là tọa độ của các véctơ ảnh $f(\mathbf{e}_i)$ biểu diễn qua cơ sở $E_2$:}
+$$
+A = [f]_{E_3}^{E_2} = \begin{pmatrix} [f(1, 0, 0)]_{E_2} & [f(0, 1, 0)]_{E_2} & [f(0, 0, 1)]_{E_2} \end{pmatrix}
+$$
+$$
+A = \begin{pmatrix}
+1 & -1 & 2 \\
+3 & 1 & -1
+\end{pmatrix}.
+$$
+
+\text{b) Với mọi véctơ $\mathbf{x} = (x, y, z) \in \mathbb{R}^3$, ta có $[\mathbf{x}]_{E_3} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$. Tọa độ của $f(\mathbf{x})$ trong cơ sở $E_2$ là}
+$$
+[f(\mathbf{x})]_{E_2} = A [\mathbf{x}]_{E_3} = \begin{pmatrix}
+1 & -1 & 2 \\
+3 & 1 & -1
+\end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} x - y + 2z \\ 3x + y - z \end{pmatrix}.
+$$
+\text{Vì } $E_2$ \text{ là cơ sở chính tắc, nên công thức của } $f$ \text{ là}
+$$
+f(x, y, z) = (x - y + 2z, 3x + y - z).
+$$
+
+\text{c) Ta tìm } $\text{Ker}f$. \text{Véctơ } $(x, y, z) \in \text{Ker}f \text{ khi và chỉ khi } f(x, y, z) = (0, 0)$, \text{ tức là}
+$$
+\begin{cases}
+x - y + 2z = 0 \\
+3x + y - z = 0
+\end{cases}
+$$
+\text{Cộng hai phương trình, ta được } $4x + z = 0 \Leftrightarrow z = -4x$.
+\text{Thay vào phương trình thứ hai: } $3x + y - (-4x) = 0 \Leftrightarrow 7x + y = 0 \Leftrightarrow y = -7x$.
+\text{Đặt } $x = C \in \mathbb{R}$. \text{Vậy } $\text{Ker}f = \{ (C, -7C, -4C) \mid C \in \mathbb{R} \} = \mathcal{L}((1, -7, -4))$.
+\text{Cơ sở của } $\text{Ker}f$ \text{ là } $\{(1, -7, -4)\}$ \text{ và } $\dim \text{Ker}f = 1$.
+
+\text{Ta tìm } $\text{Im}f$. \text{Theo định lý số chiều: } $\dim \mathbb{R}^3 = \dim \text{Ker}f + \dim \text{Im}f$.
+$$
+3 = 1 + \dim \text{Im}f \implies \dim \text{Im}f = 2.
+$$
+\text{Vì } $\text{Im}f \triangleleft \mathbb{R}^2 \text{ và } \dim \text{Im}f = 2 = \dim \mathbb{R}^2$, \text{ suy ra } $\text{Im}f = \mathbb{R}^2$.
+\text{Cơ sở của } $\text{Im}f$ \text{ là cơ sở chính tắc của } $\mathbb{R}^2$, \text{ ví dụ } $\{(1, 0), (0, 1)\}$.
+
+\end{document}
