@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho $A = \{ f: [a, b] \to \mathbb{R} \mid f(x) \ge 0, \forall x \in [a, b] \}$. Chứng minh $A$ không phải là không gian con của không gian tuyến tính $C_{[a, b]}$ (các hàm số liên tục trên $[a, b]$).}
+
+\section*{Giải.}
+
+\text{Để chứng minh $A$ không phải là không gian con của $C_{[a, b]}$, ta chỉ cần chỉ ra một trong hai điều kiện đóng của không gian con bị vi phạm.}
+
+\text{Tập $A$ là tập hợp các hàm liên tục nhận giá trị không âm trên đoạn $[a, b]$.}
+\text{Phép cộng các hàm số và nhân hàm số với một số thực là các phép toán thông thường.}
+
+\text{Điều kiện cần cho $A$ là không gian con là $A$ phải đóng với phép nhân vô hướng. }
+
+\text{Ta xét một hàm số $f(x) \in A$ bất kỳ, nghĩa là $f(x) \ge 0, \forall x \in [a, b]$.}
+
+\text{Chọn số vô hướng $\alpha = -1 \in \mathbb{R}$.}
+
+\text{Ta xét hàm số $g(x) = \alpha f(x) = -f(x)$.}
+
+\text{Vì $f(x) \ge 0$, nên $g(x) = -f(x) \le 0, \forall x \in [a, b]$.}
+
+\text{Nếu $f(x)$ không phải là hàm zero (tức là tồn tại $x_0$ sao cho $f(x_0) > 0$), thì $g(x_0) = -f(x_0) < 0$.}
+
+\text{Theo định nghĩa của tập $A$, hàm số $g(x)$ không thỏa mãn điều kiện $g(x) \ge 0$ (trừ khi $f(x) \equiv 0$).}
+
+\text{Do đó, $g(x) = -f(x) \notin A$ (trừ khi $f(x)$ là hàm zero).}
+
+\text{Vậy, $A$ không đóng với phép nhân vô hướng. $A$ không phải là không gian con của $C_{[a, b]}$.}
+
+\end{document}
