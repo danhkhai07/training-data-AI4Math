@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Bài 3.1.30. Cho $f$ là một phép biến đổi tuyến tính trên $\mathbb{R}^3$ có ma trận trong cơ sở chính tắc là}
+$$
+A = \begin{pmatrix} 2 & -1 & 1 \\ -1 & 2 & -1 \\ 0 & 0 & 1 \end{pmatrix}.
+$$
+\text{Tìm một cơ sở của không gian $\mathbb{R}^3$ sao cho ma trận của $f$ trong cơ sở đó là ma trận chéo.}
+
+\section*{Giải.}
+\text{Đa thức đặc trưng của ma trận $A$ là}
+$$
+\det(A - \lambda I) = \det \begin{pmatrix} 2 - \lambda & -1 & 1 \\ -1 & 2 - \lambda & -1 \\ 0 & 0 & 1 - \lambda \end{pmatrix} = (1 - \lambda)^2 (3 - \lambda).
+$$
+\text{Do đó $\det(A - \lambda I) = 0$ khi và chỉ khi $\lambda = 3$ hoặc $\lambda = 1$. Vậy $f$ có các giá trị riêng $\lambda_1 = 3$ và $\lambda_2 = 1$.}
+
+\begin{itemize}
+    \item \text{Tọa độ vectơ riêng của $f$ ứng với giá trị riêng $\lambda_1 = 3$ là nghiệm không tầm thường của hệ phương trình $(A - 3I)x = 0$, tức là}
+    $$
+    \begin{pmatrix} -1 & -1 & 1 \\ -1 & -1 & -1 \\ 0 & 0 & -2 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}.
+    $$
+\end{itemize}
+
+\text{Xét ma trận các hệ số mở rộng}
+$$
+\begin{pmatrix}
+-1 & -1 & 1 & | & 0 \\
+-1 & -1 & -1 & | & 0 \\
+0 & 0 & -2 & | & 0
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2 - H_1}
+\begin{pmatrix}
+-1 & -1 & 1 & | & 0 \\
+0 & 0 & -2 & | & 0 \\
+0 & 0 & -2 & | & 0
+\end{pmatrix}
+\xrightarrow{H_3 \to H_3 - H_2}
+\begin{pmatrix}
+-1 & -1 & 1 & | & 0 \\
+0 & 0 & -2 & | & 0 \\
+0 & 0 & 0 & | & 0
+\end{pmatrix}.
+$$
+\text{Ta nhận được phương trình tương đương}
+$$
+\begin{cases}
+-x_1 - x_2 + x_3 = 0 \\
+-2x_3 = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+x_3 = 0 \\
+x_1 = -x_2
+\end{cases}
+$$
+\text{Từ đó suy ra $(x_1, x_2, x_3) = C(1, -1, 0)$ với $C$ là hằng số.}
+\text{Do $A$ là ma trận của $f$ trong cơ sở chính tắc của $\mathbb{R}^3$ nên ta chọn một vectơ riêng ứng với giá trị riêng $\lambda_1 = 3$ là $u_1 = (1, -1, 0)$.}
+
+\begin{itemize}
+    \item \text{Tọa độ vectơ riêng của $f$ ứng với giá trị riêng $\lambda_2 = 1$ là nghiệm không tầm thường của hệ phương trình $(A - I)x = 0$, tức là}
+    $$
+    \begin{pmatrix} 1 & -1 & 1 \\ -1 & 1 & -1 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}.
+    $$
+\end{itemize}
+
+\text{Xét ma trận các hệ số mở rộng}
+$$
+\begin{pmatrix}
+1 & -1 & 1 & | & 0 \\
+-1 & 1 & -1 & | & 0 \\
+0 & 0 & 0 & | & 0
+\end{pmatrix}
+\xrightarrow{H_2 \to H_2 + H_1}
+\begin{pmatrix}
+1 & -1 & 1 & | & 0 \\
+0 & 0 & 0 & | & 0 \\
+0 & 0 & 0 & | & 0
+\end{pmatrix}.
+$$
+\text{Ta nhận được phương trình tương đương}
+$$
+x_1 - x_2 + x_3 = 0 \Leftrightarrow x_1 = x_2 - x_3.
+$$
+\text{Từ đó suy ra $(x_1, x_2, x_3) = (x_2 - x_3, x_2, x_3) = x_2(1, 1, 0) + x_3(-1, 0, 1) = C_1(1, 1, 0) + C_2(-1, 0, 1)$ với $C_1, C_2$ là hằng số.}
+\text{Do $A$ là ma trận của $f$ trong cơ sở chính tắc của $\mathbb{R}^3$ nên ta chọn hai vectơ riêng độc lập tuyến tính của $f$ ứng với giá trị riêng $\lambda_2 = 1$ là}
+$$
+u_2 = (1, 1, 0) \quad \text{và} \quad u_3 = (0, 1, 1).
+$$
+\text{Ta có hệ gồm ba vectơ riêng}
+$$
+S = \{u_1 = (1, -1, 0), u_2 = (1, 1, 0), u_3 = (0, 1, 1)\}
+$$
+\text{độc lập tuyến tính trong $\mathbb{R}^3$ nên chúng lập thành cơ sở. Vậy trong cơ sở $\{u_1, u_2, u_3\}$ thì ma trận của phép biến đổi tuyến tính $f$ có dạng chéo}
+$$
+D = \begin{pmatrix}
+3 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}.
+$$
+
+\end{document}
