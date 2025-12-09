@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.30. Hãy tìm chiều và chỉ ra một cơ sở của không gian nghiệm của hệ phương trình}
+$$
+\begin{cases}
+x_1 + x_2 + x_3 + x_4 + x_5 = 0 \\
+x_1 - 2x_2 + 3x_3 - x_4 + 2x_5 = 0 \\
+2x_1 - x_2 + 4x_3 + 3x_5 = 0
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Gọi } $B$ \text{ là không gian nghiệm của hệ phương trình thuần nhất đã cho. Để tìm một cơ sở của } $B$, \text{ ta cần tìm nghiệm tổng quát của hệ. Ta biến đổi ma trận hệ số}
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \\
+1 & -2 & 3 & -1 & 2 \\
+2 & -1 & 4 & 0 & 3
+\end{pmatrix}
+\xrightarrow{H_2 \to -H_1+H_2}
+\xrightarrow{H_3 \to -2H_1+H_3}
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \\
+0 & -3 & 2 & -2 & 1 \\
+0 & -3 & 2 & -2 & 1
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \\
+0 & -3 & 2 & -2 & 1 \\
+0 & -3 & 2 & -2 & 1
+\end{pmatrix}
+\xrightarrow{H_3 \to -H_2+H_3}
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \\
+0 & -3 & 2 & -2 & 1 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Do đó hệ đã cho tương đương với}
+$$
+\begin{cases}
+x_1 + x_2 + x_3 + x_4 + x_5 = 0 \\
+-3x_2 + 2x_3 - 2x_4 + x_5 = 0
+\end{cases}
+$$
+\text{Với mỗi } $\mathbf{u} = (x_1, x_2, x_3, x_4, x_5) \in B$ \text{ bất kỳ, ta có}
+$$
+\mathbf{u} = (-4x_2 + x_3 - 3x_4, x_2, x_3, x_4, 3x_2 - 2x_3 + 2x_4)
+$$
+$$
+\mathbf{u} = x_2(-4, 1, 0, 0, 3) + x_3(1, 0, 1, 0, -2) + x_4(-3, 0, 0, 1, 2).
+$$
+\text{Đặt } $\mathbf{u}_1 = (-4, 1, 0, 0, 3), \mathbf{u}_2 = (1, 0, 1, 0, -2), \mathbf{u}_3 = (-3, 0, 0, 1, 2)$, \text{ ta suy ra } $\mathbf{u} = x_2\mathbf{u}_1 + x_3\mathbf{u}_2 + x_4\mathbf{u}_3$. \text{Do đó } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là hệ sinh của } $B$.
+
+\text{Mặt khác, xét } $\alpha\mathbf{u}_1 + \beta\mathbf{u}_2 + \gamma\mathbf{u}_3 = \mathbf{0}$, \text{ hay } $\alpha(-4, 1, 0, 0, 3) + \beta(1, 0, 1, 0, -2) + \gamma(-3, 0, 0, 1, 2) = (0, 0, 0, 0, 0)$. \text{Ta thu được } $\alpha = \beta = \gamma = 0$ \text{ là nghiệm duy nhất của hệ. Do đó } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một hệ véctơ độc lập tuyến tính.}
+
+\text{Vậy } $\{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một cơ sở của không gian } $B$ \text{ và } $\dim B = 3$.
+
+\end{document}
