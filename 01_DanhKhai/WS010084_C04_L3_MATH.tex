@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.10. Cho ánh xạ $f: P_2[x] \to \mathbb{R}^3, f(p) = (p(-1), p(0), p(1))$.}
+\text{a) Chứng minh $f$ là một ánh xạ tuyến tính.} \\
+\text{b) Tìm ma trận của $f$ trong cơ sở chính tắc của $P_2[x]$ và $\mathbb{R}^3$.} \\
+\text{c) Tìm $\dim(\text{Ker}f)$.}
+
+\section*{Giải.}
+
+\text{a) Giả sử $p(x), q(x) \in P_2[x], \alpha, \beta \in \mathbb{R}$ bất kỳ, khi đó}
+\begin{align*}
+f(\alpha p(x) + \beta q(x)) &= ((\alpha p + \beta q)(-1), (\alpha p + \beta q)(0), (\alpha p + \beta q)(1)) \\
+&= (\alpha p(-1) + \beta q(-1), \alpha p(0) + \beta q(0), \alpha p(1) + \beta q(1)) \\
+&= \alpha(p(-1), p(0), p(1)) + \beta(q(-1), q(0), q(1)) \\
+&= \alpha f(p(x)) + \beta f(q(x)).
+\end{align*}
+\text{Vậy $f$ là một ánh xạ tuyến tính.}
+
+\text{b) Gọi } $E = \{1, x, x^2\}$ \text{ là cơ sở chính tắc của } $P_2[x]$, \text{ và } $F = \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}$ \text{ là cơ sở chính tắc của } $\mathbb{R}^3$.
+\text{Ta tìm ảnh của các véctơ cơ sở } $E$ \text{ và biểu diễn chúng trong cơ sở } $F$ \text{ như sau:}
+$$
+f(1) = (1, 1, 1) = 1\cdot (1, 0, 0) + 1\cdot (0, 1, 0) + 1\cdot (0, 0, 1)
+$$
+$$
+f(x) = (-1, 0, 1) = -1\cdot (1, 0, 0) + 0\cdot (0, 1, 0) + 1\cdot (0, 0, 1)
+$$
+$$
+f(x^2) = (1, 0, 1) = 1\cdot (1, 0, 0) + 0\cdot (0, 1, 0) + 1\cdot (0, 0, 1)
+$$
+\text{Nên ma trận của $f$ trong các cơ sở chính tắc của $P_2[x]$ và $\mathbb{R}^3$ là}
+$$
+A = \begin{pmatrix}
+1 & -1 & 1 \\
+1 & 0 & 0 \\
+1 & 1 & 1
+\end{pmatrix}.
+$$
+
+\text{c) } $p(x) \in \text{Ker}f \text{ khi và chỉ khi } f(p(x)) = \mathbf{0}$. \text{Đặt } $p(x) = ax^2 + bx + c$. \text{Ta có}
+$$
+f(p(x)) = (a(-1)^2 + b(-1) + c, a(0)^2 + b(0) + c, a(1)^2 + b(1) + c) = (a - b + c, c, a + b + c).
+$$
+\text{Ta có hệ phương trình}
+$$
+\begin{cases}
+a - b + c = 0 \\
+c = 0 \\
+a + b + c = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a = 0 \\
+b = 0 \\
+c = 0
+\end{cases}
+$$
+\text{Vậy } $\text{Ker}f = \{\mathbf{0}\}$ \text{ và do đó } $\dim(\text{Ker}f) = 0$.
+
+\end{document}
