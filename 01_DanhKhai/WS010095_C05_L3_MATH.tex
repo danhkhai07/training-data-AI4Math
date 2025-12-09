@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.23. Cho phép biến đổi $f: P_2[x] \to P_2[x], f(p(x)) = (3x-1)p'(x) + 2p(x), \forall p(x) \in P_2[x]$.}
+\text{a) Chứng minh rằng $f$ là một phép biến đổi tuyến tính.} \\
+\text{b) Tìm các giá trị riêng và các véctơ riêng của $f$.}
+
+\section*{Giải.}
+
+\text{a) Chứng minh $f$ là phép biến đổi tuyến tính.}
+\text{Thật vậy, với } $\forall p_1(x), p_2(x) \in P_2[x]$ \text{ ta có}
+\begin{align*}
+f(p_1(x) + p_2(x)) &= (3x-1)(p_1(x) + p_2(x))' + 2(p_1(x) + p_2(x)) \\
+&= (3x-1)p_1'(x) + (3x-1)p_2'(x) + 2p_1(x) + 2p_2(x) \\
+&= [(3x-1)p_1'(x) + 2p_1(x)] + [(3x-1)p_2'(x) + 2p_2(x)] \\
+&= f(p_1(x)) + f(p_2(x)). \quad \text{(3.1)}
+\end{align*}
+\text{Với } $\forall p(x) \in P_2[x], \alpha \in \mathbb{R}$ \text{ ta có}
+\begin{align*}
+f(\alpha p(x)) &= (3x-1)(\alpha p(x))' + 2(\alpha p(x)) \\
+&= (3x-1)\alpha p'(x) + 2\alpha p(x) \\
+&= \alpha [(3x-1)p'(x) + 2p(x)] \\
+&= \alpha f(p(x)). \quad \text{(3.2)}
+\end{align*}
+\text{Từ (3.1) và (3.2) suy ra $f$ là phép biến đổi tuyến tính.}
+
+\text{b) Cơ sở chính tắc của $P_2[x]$ là } $E = \{\mathbf{e}_1 = 1, \mathbf{e}_2 = x, \mathbf{e}_3 = x^2\}$. \text{Ta có}
+$$
+f(\mathbf{e}_1) = f(1) = (3x-1)(1)' + 2(1) = 2 = 2\mathbf{e}_1 + 0\mathbf{e}_2 + 0\mathbf{e}_3
+$$
+$$
+f(\mathbf{e}_2) = f(x) = (3x-1)(x)' + 2(x) = (3x-1) + 2x = 5x - 1 = -1\mathbf{e}_1 + 5\mathbf{e}_2 + 0\mathbf{e}_3
+$$
+$$
+f(\mathbf{e}_3) = f(x^2) = (3x-1)(x^2)' + 2(x^2) = (3x-1)2x + 2x^2 = 6x^2 - 2x + 2x^2 = 8x^2 - 2x = 0\mathbf{e}_1 - 2\mathbf{e}_2 + 8\mathbf{e}_3
+$$
+\text{Nên ma trận của $f$ trong cơ sở chính tắc là}
+$$
+A = \begin{pmatrix}
+2 & -1 & 0 \\
+0 & 5 & -2 \\
+0 & 0 & 8
+\end{pmatrix}.
+$$
+\text{Đa thức đặc trưng của ma trận } $A$ \text{ là}
+$$
+\det(A - \lambda I) = \begin{vmatrix}
+2 - \lambda & -1 & 0 \\
+0 & 5 - \lambda & -2 \\
+0 & 0 & 8 - \lambda
+\end{vmatrix} = (2 - \lambda)(5 - \lambda)(8 - \lambda).
+$$
+\text{Vậy } $\lambda_1 = 2, \lambda_2 = 5, \lambda_3 = 8$ \text{ là các giá trị riêng của phép biến đổi tuyến tính } $f$.
+
+\text{Tìm các véctơ riêng (đa thức riêng) tương ứng:}
+
+\text{1. Với giá trị riêng } $\lambda_1 = 2$: \text{Tọa độ } $[p(x)]_E = (a, b, c)^T$ \text{ là nghiệm của hệ } $(A - 2I)\mathbf{x} = \mathbf{0}$.
+$$
+\begin{pmatrix}
+0 & -1 & 0 \\
+0 & 3 & -2 \\
+0 & 0 & 6
+\end{pmatrix} \begin{pmatrix} a \\ b \\ c \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\Leftrightarrow
+\begin{cases}
+-b = 0 \\
+3b - 2c = 0 \\
+6c = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+b = 0 \\
+c = 0
+\end{cases}
+$$
+\text{Chọn } $a = C \in \mathbb{R}$. \text{Véctơ riêng là } $p_1(x) = C(1) = C$, \text{ với } $C \ne 0$.
+
+\text{2. Với giá trị riêng } $\lambda_2 = 5$: \text{Tọa độ } $[p(x)]_E = (a, b, c)^T$ \text{ là nghiệm của hệ } $(A - 5I)\mathbf{x} = \mathbf{0}$.
+$$
+\begin{pmatrix}
+-3 & -1 & 0 \\
+0 & 0 & -2 \\
+0 & 0 & 3
+\end{pmatrix} \begin{pmatrix} a \\ b \\ c \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\Leftrightarrow
+\begin{cases}
+-3a - b = 0 \\
+-2c = 0 \\
+3c = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+b = -3a \\
+c = 0
+\end{cases}
+$$
+\text{Chọn } $a = C \in \mathbb{R}$. \text{Véctơ riêng là } $p_2(x) = C(1) + (-3C)x = C(1 - 3x)$, \text{ với } $C \ne 0$.
+
+\text{3. Với giá trị riêng } $\lambda_3 = 8$: \text{Tọa độ } $[p(x)]_E = (a, b, c)^T$ \text{ là nghiệm của hệ } $(A - 8I)\mathbf{x} = \mathbf{0}$.
+$$
+\begin{pmatrix}
+-6 & -1 & 0 \\
+0 & -3 & -2 \\
+0 & 0 & 0
+\end{pmatrix} \begin{pmatrix} a \\ b \\ c \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\Leftrightarrow
+\begin{cases}
+-6a - b = 0 \\
+-3b - 2c = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+b = -6a \\
+c = -\frac{3}{2}b = -\frac{3}{2}(-6a) = 9a
+\end{cases}
+$$
+\text{Chọn } $a = C \in \mathbb{R}$. \text{Véctơ riêng là } $p_3(x) = C(1) + (-6C)x + (9C)x^2 = C(1 - 6x + 9x^2)$, \text{ với } $C \ne 0$.
+
+\end{document}
