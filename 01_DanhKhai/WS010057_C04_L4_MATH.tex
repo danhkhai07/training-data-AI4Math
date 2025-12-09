@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.24. Biết $F = \{1, x-\alpha, (x-\alpha)^2, \dots, (x-\alpha)^n\}$, với $\alpha \in \mathbb{R}$ cố định, là một cơ sở của $P_n[x]$. Hãy tìm ma trận chuyển cơ sở từ cơ sở chính tắc $E=\{1, x, x^2, \dots, x^n\}$ sang cơ sở $F$.}
+
+\section*{Giải.}
+
+\text{Ma trận chuyển cơ sở từ cơ sở chính tắc } $E = \{1, x, x^2, \dots, x^n\}$ \text{ sang cơ sở } $F = \{f_0, f_1, \dots, f_n\}$ \text{ là ma trận } $T_{F \leftarrow E} = (T_{E \leftarrow F})^{-1}$. \text{Trong đó ma trận chuyển cơ sở từ } $F$ \text{ sang } $E$ \text{ (ký hiệu trong hình là } $T$\text{) là ma trận có các cột là tọa độ của các vectơ cơ sở } $F$ \text{ biểu diễn qua cơ sở } $E$.
+
+\text{Ta có}
+\begin{align*}
+1 &= 1 \cdot 1 + 0 \cdot x + 0 \cdot x^2 + \dots + 0 \cdot x^n \\
+x - \alpha &= -\alpha \cdot 1 + 1 \cdot x + 0 \cdot x^2 + \dots + 0 \cdot x^n \\
+(x - \alpha)^2 &= \alpha^2 \cdot 1 - 2\alpha \cdot x + 1 \cdot x^2 + 0 \cdot x^3 + \dots + 0 \cdot x^n \\
+\vdots \\
+(x - \alpha)^n &= C_n^0 (-\alpha)^n \cdot 1 + C_n^1 (-\alpha)^{n-1} \cdot x + C_n^2 (-\alpha)^{n-2} \cdot x^2 + \dots + C_n^n (-\alpha)^0 \cdot x^n
+\end{align*}
+\text{Áp dụng công thức nhị thức Newton } $(x - \alpha)^k = \sum_{i=0}^k C_k^i x^i (-\alpha)^{k-i}$.
+\text{Cụ thể cho } $(x - \alpha)^n$:
+$$
+(x - \alpha)^n = C_n^0 (-\alpha)^n \cdot 1 + C_n^1 (-\alpha)^{n-1} \cdot x + C_n^2 (-\alpha)^{n-2} \cdot x^2 + \dots + C_n^n \cdot x^n
+$$
+\text{Ta suy ra ma trận chuyển cơ sở từ cơ sở } $F$ \text{ sang cơ sở chính tắc } $E = \{1, x, x^2, \dots, x^n\}$ \text{ là}
+$$
+T_{E \leftarrow F} = T =
+\begin{pmatrix}
+1 & -\alpha & \alpha^2 & \dots & C_n^0 (-\alpha)^n \\
+0 & 1 & -2\alpha & \dots & C_n^1 (-\alpha)^{n-1} \\
+0 & 0 & 1 & \dots & C_n^2 (-\alpha)^{n-2} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \dots & 1
+\end{pmatrix}.
+$$
+
+\text{Ghi chú: Ma trận trong hình có một chút khác biệt về hàng, nhưng có vẻ ý tưởng về các cột là như trên. Hình ảnh gợi ý ma trận chuyển từ } $E$ \text{ sang } $F$ \text{ là}
+$$
+T_{F \leftarrow E} =
+\begin{pmatrix}
+1 & -\alpha & \alpha^2 & \dots & C_n^0 (-\alpha)^n \\
+0 & 1 & -2\alpha & \dots & C_n^1 (-\alpha)^{n-1} \\
+0 & 0 & 1 & \dots & C_n^2 (-\alpha)^{n-2} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \dots & 1
+\end{pmatrix}
+$$
+\text{Ma trận } $T$ \text{ trong hình ảnh chính là ma trận chuyển từ } $F$ \text{ sang } $E$. \text{ Ma trận này có dạng tam giác trên (lower triangular matrix) với các phần tử trên đường chéo chính bằng 1. }
+
+\text{Ma trận } $T_{F \leftarrow E}$ \text{ cần tìm là } $(T_{E \leftarrow F})^{-1}$.
+
+\end{document}
