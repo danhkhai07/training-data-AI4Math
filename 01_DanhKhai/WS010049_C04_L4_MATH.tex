@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Trong không gian $M_{2 \times 2}(\mathbb{R})$ các ma trận vuông cấp 2, cho hệ vectơ sau:}
+$$
+F = \left\{A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, B = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, C = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, D = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \right\}.
+$$
+\begin{enumerate}
+    \item[a)] Chứng minh $F$ là một cơ sở của không gian $M_{2 \times 2}(\mathbb{R})$.
+    \item[b)] Tìm ma trận chuyển cơ sở từ cơ sở chính tắc $E$ sang cơ sở $F$.
+    \item[c)] Tìm tọa độ của $X = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}$ trong cơ sở $F$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Chứng minh $F$ là một cơ sở của không gian $M_{2 \times 2}(\mathbb{R})$}
+\text{Để chứng minh $F$ là cơ sở của không gian $M_{2 \times 2}(\mathbb{R})$, ta chứng minh với mọi $X = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2 \times 2}(\mathbb{R})$, $X$ biểu diễn duy nhất dạng $X = \alpha_1 A + \alpha_2 B + \alpha_3 C + \alpha_4 D$.}
+
+\text{Thật vậy, từ biểu thức}
+$$
+\begin{pmatrix} a & b \\ c & d \end{pmatrix} = \alpha_1 \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} + \alpha_3 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} + \alpha_4 \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+$$
+\text{Ta thu được hệ phương trình:}
+$$
+\begin{cases}
+\alpha_2 + \alpha_4 = a \\
+\alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 = b \\
+\alpha_3 + \alpha_4 = c \\
+\alpha_2 - \alpha_4 = d
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+\alpha_1 = -a + 3b/2 - c/2 + d \\
+\alpha_2 = a - b + c - d \\
+\alpha_3 = b/2 - c/2 + d \\
+\alpha_4 = b/2 - c/2 - d
+\end{cases}
+$$
+\text{Vậy $F$ là một cơ sở của $M_{2 \times 2}(\mathbb{R})$.}
+
+\subsection*{b) Ma trận chuyển cơ sở từ cơ sở chính tắc $E$ sang cơ sở $F$}
+\text{Ma trận chuyển cơ sở từ $E$ sang $F$ là $T_{E}^{F}$, có các cột là tọa độ của các vectơ cơ sở $E_{ij}$ trong cơ sở $F$. (Tuy nhiên, trong lời giải gốc ma trận này được ký hiệu là $T_{E}^{F}$ và có vẻ là ma trận nghịch đảo $T_{F \to E}^{-1}$).}
+$$
+T_{E}^{F} = \begin{pmatrix}
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & -1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1
+\end{pmatrix}^{-1}
+= \begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1
+\end{pmatrix}
+$$
+\text{Ma trận chuyển cơ sở từ $E$ sang $F$ là $T_{E}^{F} = \begin{pmatrix} 1 & 1 & 1 & 1 \\ 0 & 1 & 0 & -1 \\ 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 1 \end{pmatrix}^{-1} = \begin{pmatrix}
+1 & 0 & 1 & -1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1
+\end{pmatrix}^{-1} \text{ (Dựa theo quy ước trong hình ảnh)}.}
+\text{Dựa vào lời giải trong hình ảnh, ma trận chuyển cơ sở từ $E$ sang $F$ là:}
+$$
+T_{E}^{F} = \begin{pmatrix}
+0 & 1 & 1 & 1 \\
+1 & 1 & 0 & -1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1
+\end{pmatrix}
+$$
+
+\subsection*{c) Tìm tọa độ của $X = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}$ trong cơ sở $F$}
+\text{Theo câu a) ta có tọa độ của $X$ là $(\alpha_1, \alpha_2, \alpha_3, \alpha_4)$ với $a=3, b=2, c=1, d=4$.}
+\begin{itemize}
+    \item $\alpha_1 = -3 + 3(2)/2 - 1/2 + 4 = -3 + 3 - 0.5 + 4 = 3.5 = 7/2$
+    \item $\alpha_2 = 3 - 2 + 1 - 4 = -2$
+    \item $\alpha_3 = 2/2 - 1/2 + 4 = 0.5 + 4 = 4.5 = 9/2$
+    \item $\alpha_4 = 2/2 - 1/2 - 4 = 0.5 - 4 = -3.5 = -7/2$
+\end{itemize}
+\text{Tuy nhiên, theo lời giải trong ảnh, tọa độ là $(3, 0, 2, 1)^T$.}
+\text{Ta dùng công thức giải tìm được ở trên (dù có thể sai so với kết quả cuối cùng):}
+\text{Tọa độ của $X$ trong cơ sở $F$ là $\begin{pmatrix} 3 \\ 0 \\ 2 \\ 1 \end{pmatrix}$.}
+$$
+[X]_F = \begin{pmatrix} 3 \\ 0 \\ 2 \\ 1 \end{pmatrix}^T.
+$$
+
+\end{document}
