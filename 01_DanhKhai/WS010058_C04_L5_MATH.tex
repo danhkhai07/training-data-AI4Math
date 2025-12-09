@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.25. Cho tập hợp $E = \{(x, y) \in \mathbb{R}^2 \mid y > 0\}$. Trên $E$ xác định phép toán cộng $(x_1, y_1) + (x_2, y_2) = (x_1+x_2, y_1y_2)$ và phép toán nhân vô hướng $\alpha \cdot (x, y) = (\alpha x, y^{\alpha}), \alpha \in \mathbb{R}$. Chứng minh $E$ là một không gian tuyến tính trên $\mathbb{R}$. Xác định một cơ sở và tìm chiều của $E$. Tìm hạng của hệ véctơ $A = \{\mathbf{a}=(0, 1), \mathbf{b}=(1, 2), \mathbf{c}=(2, 4), \mathbf{d}=(-1, \frac{1}{2})\}$ trong không gian $E$ nói trên.}
+
+\section*{Giải.}
+
+\text{Vì } $(0, 1) \in E \text{ suy ra } E \ne \emptyset$. \text{Ta kiểm tra } E \text{ cùng với hai phép toán đã cho thỏa mãn các tiên đề để định nghĩa không gian véctơ thực.}
+
+\text{Thật vậy, với mọi } \mathbf{u}_1 = (x_1, y_1), \mathbf{u}_2 = (x_2, y_2), \mathbf{u}_3 = (x_3, y_3) \in E \text{ bất kỳ và với mọi } \alpha, \beta \in \mathbb{R} \text{ tùy ý ta có}
+
+\begin{itemize}
+    \item $\mathbf{u}_1 + \mathbf{u}_2 = (x_1+x_2, y_1y_2) = (x_2+x_1, y_2y_1) = \mathbf{u}_2 + \mathbf{u}_1$.
+    \item $(\mathbf{u}_1 + \mathbf{u}_2) + \mathbf{u}_3 = ((x_1+x_2) + x_3, (y_1y_2)y_3) = (x_1 + (x_2+x_3), y_1(y_2y_3)) = \mathbf{u}_1 + (\mathbf{u}_2 + \mathbf{u}_3)$.
+    \item \text{Tồn tại } $\mathbf{0} = (0; 1) \in E$, \text{có } $\mathbf{0} + \mathbf{u}_1 = (x_1, y_1 \cdot 1) = \mathbf{u}_1$.
+    \item $\forall \mathbf{u}_1 = (x_1, y_1) \in E$, \text{tồn tại } $-\mathbf{u}_1 = (-x_1, \frac{1}{y_1}) \in E \text{ thỏa mãn } \mathbf{u}_1 + (-\mathbf{u}_1) = (x_1+(-x_1), y_1 \cdot \frac{1}{y_1}) = (0, 1) = \mathbf{0}$.
+    \item $(\alpha \beta) \mathbf{u}_1 = ((\alpha \beta) x_1, y_1^{\alpha \beta}) = (\alpha (\beta x_1), (y_1^{\beta})^{\alpha}) = \alpha \cdot (\beta x_1, y_1^{\beta}) = \alpha (\beta \mathbf{u}_1)$.
+    \item $(\alpha + \beta) \mathbf{u}_1 = ((\alpha+\beta)x_1, y_1^{\alpha+\beta}) = (\alpha x_1 + \beta x_1, y_1^{\alpha} y_1^{\beta}) = (\alpha x_1, y_1^{\alpha}) + (\beta x_1, y_1^{\beta}) = \alpha \mathbf{u}_1 + \beta \mathbf{u}_1$.
+    \item $\alpha (\mathbf{u}_1 + \mathbf{u}_2) = \alpha (x_1+x_2, y_1y_2) = (\alpha (x_1+x_2), (y_1y_2)^{\alpha}) = (\alpha x_1 + \alpha x_2, y_1^{\alpha} y_2^{\alpha}) = (\alpha x_1, y_1^{\alpha}) + (\alpha x_2, y_2^{\alpha}) = \alpha \mathbf{u}_1 + \alpha \mathbf{u}_2$.
+    \item $1 \cdot \mathbf{u}_1 = (1x_1, y_1^1) = \mathbf{u}_1$ \text{ là hiển nhiên.}
+\end{itemize}
+
+\text{Vậy } $E$ \text{ là một không gian tuyến tính thực.}
+
+\text{Ta thấy } $\{\mathbf{u}_1 = (1, 2); \mathbf{u}_2 = (-1, 1)\}$ \text{ là một cơ sở của không gian véctơ } $E$. \text{Thật vậy, xét } $\alpha_1 \mathbf{u}_1 + \alpha_2 \mathbf{u}_2 = \mathbf{0}$ \text{ hay } $(\alpha_1 - \alpha_2; 2^{\alpha_1}) = (0; 1)$. \text{Ta thu được } $\alpha_1 = 0, \alpha_2 = 0$. \text{Suy ra } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là hệ véctơ độc lập tuyến tính.}
+
+\text{Hơn nữa, với mọi } $\mathbf{u} = (x; y) \in E \text{ tùy ý, đặt } \mathbf{u} = \alpha_1 \mathbf{u}_1 + \alpha_2 \mathbf{u}_2 \text{ khi đó } (\alpha_1 - \alpha_2; 2^{\alpha_1}) = (x; y) \Leftrightarrow \alpha_1 = \log_2 y, \alpha_2 = \log_2 y - x$. \text{Do đó } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một hệ sinh của không gian } $E$.
+
+\text{Vậy } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một cơ sở của không gian } $E$. \text{Do đó } $\dim E = 2$.
+
+\text{Ta có } $\mathbf{a} = \mathbf{0}, \mathbf{c} = 2 \mathbf{b}, \mathbf{d} = - \mathbf{b}$ \text{ và } $\mathbf{b} \ne \mathbf{0}$ \text{ cho nên hạng của hệ véctơ } $A = \{\mathbf{a}=(0, 1), \mathbf{b}=(1, 2), \mathbf{c}=(2, 4), \mathbf{d}=(-1, \frac{1}{2})\}$ \text{ bằng } $1$.
+
+\end{document}
