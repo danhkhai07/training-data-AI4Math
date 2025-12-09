@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Trong số các tập con dưới đây, tập hợp nào là không gian con của không gian tuyến tính $M_{n \times n}(\mathbb{R})$?}
+\begin{enumerate}
+    \item[a)] $A = \{ \text{diag}(a_{11}, a_{22}, \dots, a_{nn}), a_{ii} \in \mathbb{R}, i = \overline{1, n} \}$, \text{tập các ma trận chéo cấp $n$.}
+    \item[b)] $B = \{ \text{diag}(a_{11}, a_{22}, \dots, a_{nn}), \sum_{i=1}^n a_{ii} = 0 \}$, \text{tập các ma trận chéo cấp $n$ có vết bằng 0.}
+    \item[c)] $C = \{ A \in M_{n \times n}(\mathbb{R}), \det(A) \ne 0 \}$, \text{tập các ma trận vuông khả nghịch cấp $n$.}
+    \item[d)] $D = \{ A \in M_{n \times n}(\mathbb{R}), \det(A) = 0 \}$, \text{tập các ma trận vuông cấp $n$ suy biến (có định thức bằng 0).}
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Tập $A$ (Ma trận chéo)}
+\text{Ta đã chứng minh $A$ là không gian con của $M_{n \times n}(\mathbb{R})$ trong Bài 2.1.4a).}
+\text{Ma trận zero $O$ là ma trận chéo, nên $O \in A$, $A \ne \emptyset$.}
+\text{Nếu $M, N \in A$ và $\alpha, \beta \in \mathbb{R}$, thì $M$ và $N$ chỉ có phần tử khác 0 trên đường chéo chính. }
+\text{Ma trận $\alpha M + \beta N$ cũng chỉ có các phần tử khác 0 trên đường chéo chính.}
+\text{Vậy $A$ là không gian con.}
+
+\subsection*{b) Tập $B$ (Ma trận chéo có vết bằng 0)}
+\text{Vết của ma trận $A$ là $\text{tr}(A) = \sum_{i=1}^n a_{ii}$.}
+\begin{itemize}
+    \item \text{Điều kiện 1: $B \ne \emptyset$.}
+    \text{Ma trận zero $O$ là ma trận chéo và $\text{tr}(O) = 0$. $O \in B$, $B \ne \emptyset$.}
+    
+    \item \text{Điều kiện 2: Đóng với tổ hợp tuyến tính.}
+    \text{Cho $M, N \in B$ và $\alpha, \beta \in \mathbb{R}$. Ta có $\text{tr}(M) = 0, \text{tr}(N) = 0$. }
+    \text{Ma trận $C = \alpha M + \beta N$ là ma trận chéo (vì $A$ là không gian con). }
+    \text{Ta kiểm tra vết của $C$: }
+    $$
+    \text{tr}(C) = \text{tr}(\alpha M + \beta N) = \alpha \text{tr}(M) + \beta \text{tr}(N) = \alpha \cdot 0 + \beta \cdot 0 = 0.
+    $$
+    \text{Do $\text{tr}(C) = 0$, $C \in B$. Vậy $B$ là không gian con.}
+\end{itemize}
+
+\subsection*{c) Tập $C$ (Ma trận khả nghịch)}
+\text{Tập $C$ không phải là không gian con.}
+\text{Ta kiểm tra điều kiện đóng với phép cộng:}
+\text{Xét $A = I_n$ (ma trận đơn vị) và $B = -I_n$. Ta có $\det(A) = 1 \ne 0$ và $\det(B) = (-1)^n \ne 0$ (với $n \ge 1$).}
+\text{Vậy $A, B \in C$.}
+\text{Tuy nhiên, $A + B = I_n + (-I_n) = O$ (ma trận zero). $\det(A+B) = \det(O) = 0$. }
+\text{Do đó $A+B \notin C$. Tập $C$ không đóng với phép cộng.}
+
+\subsection*{d) Tập $D$ (Ma trận suy biến)}
+\text{Tập $D$ không phải là không gian con.}
+\text{Ta kiểm tra điều kiện đóng với phép cộng (hoặc tính chất vectơ không):}
+\text{Ma trận zero $O \in D$ vì $\det(O)=0$. }
+\text{Ta xét hai ma trận $A, B \in D$ (giả sử $n=2$):}
+$$
+A = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad \det A = 0.
+$$
+$$
+B = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}, \quad \det B = 0.
+$$
+\text{Vậy $A, B \in D$. Tuy nhiên, $A + B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I_2$. $\det(A+B) = \det(I_2) = 1 \ne 0$. }
+\text{Do đó $A+B \notin D$. Tập $D$ không đóng với phép cộng.}
+
+\text{Kết luận: Các tập hợp là không gian con là $A$ và $B$.}
+
+\end{document}
