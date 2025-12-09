@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Cho ma trận $A = \begin{pmatrix} 1 & -1 & 2 \\ 2 & 1 & -1 \\ 1 & -4 & 7 \end{pmatrix}$. Tìm số chiều và một cơ sở của không gian nghiệm của hệ phương trình thuần nhất $AX = 0$.}
+
+\section*{Giải.}
+\text{Xét ma trận hệ số mở rộng}
+$$
+\begin{pmatrix}
+1 & -1 & 2 & \bigm| 0 \\
+2 & 1 & -1 & \bigm| 0 \\
+1 & -4 & 7 & \bigm| 0
+\end{pmatrix}
+\xrightarrow{H_2 \to -2H_1 + H_2}
+\xrightarrow{H_3 \to -H_1 + H_3}
+\begin{pmatrix}
+1 & -1 & 2 & \bigm| 0 \\
+0 & 3 & -5 & \bigm| 0 \\
+0 & -3 & 5 & \bigm| 0
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+1 & -1 & 2 & \bigm| 0 \\
+0 & 3 & -5 & \bigm| 0 \\
+0 & -3 & 5 & \bigm| 0
+\end{pmatrix}
+\xrightarrow{H_3 \to H_2 + H_3}
+\begin{pmatrix}
+1 & -1 & 2 & \bigm| 0 \\
+0 & 3 & -5 & \bigm| 0 \\
+0 & 0 & 0 & \bigm| 0
+\end{pmatrix}
+$$
+\text{Nên hệ phương trình tương đương với}
+$$
+\begin{pmatrix}
+1 & -1 & 2 \\
+0 & 3 & -5 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+0
+\end{pmatrix}
+$$
+\text{Giải phương trình ta nhận được nghiệm}
+$$
+\begin{cases}
+x_1 = -C \\
+x_2 = 5C \\
+x_3 = 3C
+\end{cases}
+\text{ với } C \text{ là hằng số.}
+$$
+\text{Vậy } \left\{ C \begin{pmatrix} -1 \\ 5 \\ 3 \end{pmatrix}, C \text{ là hằng số} \right\} \text{ là tập nghiệm của phương trình } AX = 0.
+$$
+\text{Nên } \{ (-1, 5, 3) \} \text{ là một cơ sở của không gian nghiệm. Đồng thời số chiều của không gian nghiệm là một.}
+
+\end{document}
