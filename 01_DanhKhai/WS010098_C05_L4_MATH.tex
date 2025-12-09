@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.28. Gọi $V = \{ \begin{pmatrix} x & y \\ z & x \end{pmatrix} \mid x, y, z \in \mathbb{R} \}$ là không gian con của không gian các ma trận vuông cấp hai. Xét phép biến đổi tuyến tính $f: V \to V, \begin{pmatrix} x & y \\ z & x \end{pmatrix} \mapsto \begin{pmatrix} 5x + 2y & 2x + 2y \\ 2x + 2z & 5x + 2y \end{pmatrix}$.}
+\text{a) Tìm số chiều và một cơ sở của $V$.} \\
+\text{b) Xác định không gian $\text{Ker}f$ và viết ma trận của $f$ trong cơ sở vừa tìm được.} \\
+\text{c) Tìm các trị riêng và các véctơ riêng của $f$.}
+
+\section*{Giải.}
+
+\text{a) Ta nhận thấy với mọi } $\mathbf{u} = \begin{pmatrix} x & y \\ z & x \end{pmatrix} \in V \text{ bất kỳ, ta có}$
+$$
+\mathbf{u} = x \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + y \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} + z \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}.
+$$
+\text{Đặt } $\mathbf{u}_1 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \mathbf{u}_2 = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \mathbf{u}_3 = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$. \text{Ta suy ra } $B = \{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$ \text{ là một hệ sinh của không gian } $V$.
+\text{Mặt khác ta lại có}
+$$
+\alpha\mathbf{u}_1 + \beta\mathbf{u}_2 + \gamma\mathbf{u}_3 = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} \Leftrightarrow \begin{pmatrix} \alpha & \beta \\ \gamma & \alpha \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} \Leftrightarrow \alpha = \beta = \gamma = 0.
+$$
+\text{Nên } $B$ \text{ là một cơ sở của không gian } $V$ \text{ và } $\dim V = 3$.
+
+\text{b) Ta có } $X \in \text{Ker}f \text{ khi và chỉ khi } f(X) = \mathbf{0} \text{ hay } \begin{pmatrix} 5x + 2y & 2x + 2y \\ 2x + 2z & 5x + 2y \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$.
+$$
+\Leftrightarrow
+\begin{cases}
+5x + 2y = 0 \\
+2x + 2y = 0 \\
+2x + 2z = 0
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+x = 0 \\
+y = 0 \\
+z = 0
+\end{cases}
+$$
+\text{Vậy } $\text{Ker}f = \{\begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}\}$.
+
+\text{Ma trận của } $f$ \text{ trong cơ sở } $B = \{\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\}$:
+$$
+f(\mathbf{u}_1) = f \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 5 & 2 \\ 2 & 5 \end{pmatrix} = 5\mathbf{u}_1 + 2\mathbf{u}_2 + 2\mathbf{u}_3
+$$
+$$
+f(\mathbf{u}_2) = f \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 2 & 2 \\ 0 & 2 \end{pmatrix} = 2\mathbf{u}_1 + 2\mathbf{u}_2 + 0\mathbf{u}_3
+$$
+$$
+f(\mathbf{u}_3) = f \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 2 & 0 \end{pmatrix} = 0\mathbf{u}_1 + 0\mathbf{u}_2 + 2\mathbf{u}_3
+$$
+\text{Vậy ma trận của } $f$ \text{ trong cơ sở } $B$ \text{ là } $A = \begin{pmatrix} 5 & 2 & 0 \\ 2 & 2 & 0 \\ 2 & 0 & 2 \end{pmatrix}$.
+
+\text{c) Đa thức đặc trưng của phép biến đổi tuyến tính } $f$ \text{ là}
+$$
+\det(A - \lambda I) = \begin{vmatrix}
+5 - \lambda & 2 & 0 \\
+2 & 2 - \lambda & 0 \\
+2 & 0 & 2 - \lambda
+\end{vmatrix} = (2 - \lambda) \begin{vmatrix} 5 - \lambda & 2 \\ 2 & 2 - \lambda \end{vmatrix}
+$$
+$$
+= (2 - \lambda) [(5 - \lambda)(2 - \lambda) - 4] = (2 - \lambda) (\lambda^2 - 7\lambda + 6) = (2 - \lambda)(6 - \lambda)(1 - \lambda).
+$$
+\text{Nên } $\lambda_1 = 6, \lambda_2 = 2, \lambda_3 = 1$ \text{ là các giá trị riêng của } $f$.
+
+\text{1. Véctơ riêng ứng với giá trị riêng } $\lambda_1 = 6$: \text{Tọa độ } $\mathbf{x} = (x_1, x_2, x_3)^T$ \text{ là nghiệm của hệ } $(A - 6I)\mathbf{x} = \mathbf{0}$.
+$$
+\begin{pmatrix}
+-1 & 2 & 0 \\
+2 & -4 & 0 \\
+2 & 0 & -4
+\end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+$$
+\text{Giải hệ phương trình ta được } $x_2 = 2x_1, x_3 = x_1$. \text{Chọn } $x_1 = C$.
+\text{Véctơ riêng của } $f$ \text{ ứng với } $\lambda_1 = 6$ \text{ là } $\mathbf{v}_1 = C \mathbf{u}_1 + 2C \mathbf{u}_2 + C \mathbf{u}_3 = C \begin{pmatrix} 1 & 2 \\ 1 & 1 \end{pmatrix}$, \text{ với } $C \ne 0$.
+
+\text{2. Véctơ riêng ứng với giá trị riêng } $\lambda_2 = 2$: \text{Tọa độ } $\mathbf{x} = (x_1, x_2, x_3)^T$ \text{ là nghiệm của hệ } $(A - 2I)\mathbf{x} = \mathbf{0}$.
+$$
+\begin{pmatrix}
+3 & 2 & 0 \\
+2 & 0 & 0 \\
+2 & 0 & 0
+\end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+$$
+\text{Giải hệ phương trình ta được } $x_1 = 0, x_2 = 0$. \text{Chọn } $x_3 = C$.
+\text{Véctơ riêng của } $f$ \text{ ứng với } $\lambda_2 = 2$ \text{ là } $\mathbf{v}_2 = C \mathbf{u}_3 = C \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$, \text{ với } $C \ne 0$.
+
+\text{3. Véctơ riêng ứng với giá trị riêng } $\lambda_3 = 1$: \text{Tọa độ } $\mathbf{x} = (x_1, x_2, x_3)^T$ \text{ là nghiệm của hệ } $(A - I)\mathbf{x} = \mathbf{0}$.
+$$
+\begin{pmatrix}
+4 & 2 & 0 \\
+2 & 1 & 0 \\
+2 & 0 & 1
+\end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+$$
+\text{Giải hệ phương trình ta được } $x_2 = -2x_1, x_3 = -2x_1$. \text{Chọn } $x_1 = C$.
+\text{Véctơ riêng của } $f$ \text{ ứng với } $\lambda_3 = 1$ \text{ là } $\mathbf{v}_3 = C \mathbf{u}_1 - 2C \mathbf{u}_2 - 2C \mathbf{u}_3 = C \begin{pmatrix} 1 & -2 \\ -2 & 1 \end{pmatrix}$, \text{ với } $C \ne 0$.
+
+\end{document}
