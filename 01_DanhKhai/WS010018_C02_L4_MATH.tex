@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Biện luận hạng của ma trận sau theo tham số $a, b$:}
+$$
+A = \begin{pmatrix}
+1 & 2 & 0 & -1 \\
+2 & 1 & 3 & 0 \\
+0 & 3 & a & b \\
+3 & 3 & 3 & -1
+\end{pmatrix}
+$$
+
+\section*{Giải.}
+
+\text{Dùng phép biến đổi sơ cấp về hàng đưa ma trận đã cho về dạng bậc thang:}
+$$
+\begin{pmatrix}
+1 & 2 & 0 & -1 \\
+2 & 1 & 3 & 0 \\
+0 & 3 & a & b \\
+3 & 3 & 3 & -1
+\end{pmatrix}
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1}
+\begin{pmatrix}
+1 & 2 & 0 & -1 \\
+0 & -3 & 3 & 2 \\
+0 & 3 & a & b \\
+0 & -3 & 3 & 2
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2$ (hoặc $\text{H}_4 \leftarrow \text{H}_4 + \text{H}_2$ tùy theo ma trận gốc trong hình có bị sai không, ở đây $\text{H}_4 = \text{H}_2$ nên $\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2$):}
+$$
+\xrightarrow{\text{H}_4 \leftarrow \text{H}_4 - \text{H}_2}
+\begin{pmatrix}
+1 & 2 & 0 & -1 \\
+0 & -3 & 3 & 2 \\
+0 & 3 & a & b \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 + \text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 + \text{H}_2}
+\begin{pmatrix}
+1 & 2 & 0 & -1 \\
+0 & -3 & 3 & 2 \\
+0 & 0 & a+3 & b+2 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+$$
+
+\text{Ma trận đã cho về dạng bậc thang. Hạng của ma trận $A$ bằng số hàng khác không.}
+\begin{itemize}
+    \item \text{Nếu $a+3 = 0$ và $b+2 = 0$ (tức $a=-3$ và $b=-2$):}
+    \text{Hàng thứ ba là hàng không. Ma trận có 2 hàng khác không.}
+    $$
+    r(A) = 2.
+    $$
+    
+    \item \text{Nếu $a \ne -3$ hoặc $b \ne -2$ (tức là ít nhất một trong hai phần tử $a+3$ hoặc $b+2$ khác 0):}
+    \text{Ma trận có 3 hàng khác không.}
+    $$
+    r(A) = 3.
+    $$
+\end{itemize}
+
+\end{document}
