@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.33. Hãy tìm chiều và chỉ ra một cơ sở của không gian nghiệm của hệ phương trình}
+$$
+\begin{cases}
+x_1 - 3x_2 + 2x_3 = 0 \\
+2x_1 - 6x_2 + 4x_3 = 0 \\
+3x_1 - 9x_2 + 6x_3 = 0
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Gọi } $A$ \text{ là không gian nghiệm của hệ phương trình thuần nhất đã cho. Để tìm một cơ sở của } $A$, \text{ ta cần tìm nghiệm tổng quát của hệ. Ta biến đổi ma trận hệ số}
+$$
+\begin{pmatrix}
+1 & -3 & 2 \\
+2 & -6 & 4 \\
+3 & -9 & 6
+\end{pmatrix}
+\xrightarrow{H_2 \to -2H_1+H_2}
+\xrightarrow{H_3 \to -3H_1+H_3}
+\begin{pmatrix}
+1 & -3 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Do đó hệ đã cho tương đương với } $x_1 - 3x_2 + 2x_3 = 0$.
+\text{Với mỗi } $\mathbf{u} = (x_1, x_2, x_3) \in A \text{ bất kỳ, ta có } x_1 = 3x_2 - 2x_3$. \text{Do đó}
+$$
+\mathbf{u} = (3x_2 - 2x_3, x_2, x_3) = x_2(3, 1, 0) + x_3(-2, 0, 1).
+$$
+\text{Đặt } $\mathbf{u}_1 = (3, 1, 0), \mathbf{u}_2 = (-2, 0, 1)$, \text{ ta suy ra } $\mathbf{u} = x_2\mathbf{u}_1 + x_3\mathbf{u}_2$. \text{Do đó } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một hệ sinh của } $A$.
+
+\text{Mặt khác, } $\mathbf{u}_1, \mathbf{u}_2$ \text{ là hai véctơ không cùng phương nên chúng tạo thành hệ véctơ độc lập tuyến tính. Vậy } $\{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là một cơ sở của không gian } $A$ \text{ và } $\dim A = 2$.
+
+\end{document}
