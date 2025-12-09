@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Trong không gian các đa thức hệ số thực có bậc không vượt quá $n$ ($P_n[x]$), cho $A = \{p(x) = a_0 + a_1 x + \dots + a_n x^n \in P_n[x] \mid p(0) = 0\}$ là tập hợp các đa thức nhận 0 là nghiệm. $A$ có là một không gian con của $P_n[x]$ không?}
+
+\section*{Giải.}
+
+\text{Để chứng minh $A$ là không gian con của $P_n[x]$, ta cần chứng minh $A$ thỏa mãn hai điều kiện:}
+\begin{enumerate}
+    \item \text{$A$ là tập hợp khác rỗng ($A \ne \emptyset$).}
+    \item \text{Với mọi $p(x), q(x) \in A$ và $\alpha, \beta \in \mathbb{R}$ bất kỳ, ta có $\alpha p(x) + \beta q(x) \in A$.}
+\end{enumerate}
+
+\subsection*{Điều kiện 1: $A \ne \emptyset$}
+\text{Ta xét đa thức zero $\mathbf{0} \in P_n[x]$, tức là $p(x) = 0 + 0x + \dots + 0x^n$. }
+\text{Ta có $p(0) = 0 + 0(0) + \dots + 0(0)^n = 0$. }
+\text{Do đó, đa thức zero $\mathbf{0} \in A$, suy ra $A \ne \emptyset$.}
+
+\subsection*{Điều kiện 2: Đóng với tổ hợp tuyến tính}
+\text{Cho hai đa thức $p(x), q(x) \in A$ và hai số thực $\alpha, \beta \in \mathbb{R}$.}
+\text{Theo định nghĩa của tập $A$, ta có $p(0) = 0$ và $q(0) = 0$. }
+\text{Ta xét đa thức $r(x) = \alpha p(x) + \beta q(x)$. Ta kiểm tra $r(0)$:}
+$$
+r(0) = (\alpha p + \beta q)(0) = \alpha p(0) + \beta q(0).
+$$
+\text{Thay $p(0)=0$ và $q(0)=0$ vào biểu thức:}
+$$
+r(0) = \alpha \cdot 0 + \beta \cdot 0 = 0.
+$$
+\text{Vì $r(0) = 0$, theo định nghĩa của tập $A$, ta có $r(x) \in A$. Tức là $\alpha p(x) + \beta q(x) \in A$.}
+
+\text{Vậy $A$ là một không gian con của $P_n[x]$.}
+
+\end{document}
