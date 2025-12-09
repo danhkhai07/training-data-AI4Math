@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Cho $A = (a_{ij})_{6 \times 6}$ là một ma trận vuông cấp 6. Kí hiệu $A_{ij}$ là phần phụ đại số tương ứng với phần tử $a_{ij}$ của ma trận $A$. Gọi $B = (A_{ij})_{6 \times 6}$ là ma trận các phần phụ đại số. Tìm hạng của $B$ trong các trường hợp sau:}
+\begin{enumerate}
+    \item[a)] Hạng của ma trận $A$ là 6.
+    \item[b)] Hạng của ma trận $A$ là 3.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Nếu $\text{hạng } r(A) = 6$}
+\text{Nếu $r(A) = 6$ thì $\det A \ne 0$. Ta suy ra $A$ khả nghịch.}
+\text{Ma trận nghịch đảo của $A$ được xác định bởi công thức:}
+$$
+A^{-1} = \dfrac{1}{\det A} B^T.
+$$
+\text{Do $A^{-1}$ tồn tại nên $\det(A^{-1}) \ne 0$. Ta có}
+$$
+\det(A^{-1}) = \det \left(\dfrac{1}{\det A} B^T\right) = \left(\dfrac{1}{\det A}\right)^6 \det(B^T) = \left(\dfrac{1}{\det A}\right)^6 \det B.
+$$
+\text{Vì $\det(A^{-1}) \ne 0$, suy ra $\det B \ne 0$. }
+\text{Do $B$ là ma trận vuông cấp 6 và $\det B \ne 0$, nên hạng của $B$ là $r(B) = 6$.}
+
+\subsection*{b) Nếu $\text{hạng } r(A) = 3$}
+\text{Nếu $r(A) = 3$ thì mọi ma trận con cấp $k > 3$ của ma trận $A$ đều có định thức bằng 0.}
+\text{Ta xét các phần tử phụ đại số $A_{ij}$. $A_{ij} = (-1)^{i+j} \det M_{ij}$, với $M_{ij}$ là ma trận con cấp 5 được tạo ra từ $A$ bằng cách xóa hàng thứ $i$ và cột thứ $j$.}
+\text{Do $\det M_{ij}$ là định thức của ma trận con cấp 5, và $5 > r(A) = 3$, nên $\det M_{ij} = 0$ với mọi $i, j$.}
+\text{Suy ra $A_{ij} = 0$, với mọi $i, j$.}
+\text{Vậy $B$ là ma trận zero $B = O$. Do đó hạng của $B$ là $r(B) = 0$.}
+
+\end{document}
