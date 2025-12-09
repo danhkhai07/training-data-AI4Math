@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Tìm ma trận $X$ thỏa mãn phương trình}
+\begin{enumerate}
+    \item[a)] $\begin{pmatrix} 2 & -3 & 1 \\ 4 & -5 & 2 \\ 5 & -7 & 3 \end{pmatrix} X = \begin{pmatrix} 9 & 7 & 6 \\ 12 & 18 & 12 \\ 23 & 15 & 11 \end{pmatrix}$.
+    \item[b)] $\begin{pmatrix} 1 & 1 & \dots & 1 \\ 0 & 1 & \dots & 1 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & 1 \end{pmatrix} X = \begin{pmatrix} 1 & 2 & \dots & n \\ 0 & 1 & \dots & n-1 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & 1 \end{pmatrix}$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Trước hết, ta giải phương trình $AY = B$. Áp dụng phương pháp Gauss - Jordan ta có}
+$$
+\begin{pmatrix}
+2 & -3 & 1 & | & 9 & 7 & 6 \\
+4 & -5 & 2 & | & 12 & 18 & 12 \\
+5 & -7 & 3 & | & 23 & 15 & 11
+\end{pmatrix}
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1}
+\begin{pmatrix}
+2 & -3 & 1 & | & 9 & 7 & 6 \\
+0 & 1 & 0 & | & -6 & 4 & 0 \\
+1 & -1 & 1 & | & 5 & 1 & -1
+\end{pmatrix}
+$$
+\text{Thực hiện các phép biến đổi tiếp theo (theo các bước trong hình):}
+$$
+\dots \xrightarrow{\text{Gauss-Jordan}} \begin{pmatrix}
+1 & 0 & 0 & | & 11 & 9 & 9 \\
+0 & 1 & 0 & | & 14 & 12 & 13 \\
+0 & 0 & 1 & | & 22 & 18 & 19
+\end{pmatrix}
+$$
+\text{Ta suy ra $Y = \begin{pmatrix} 11 & 9 & 9 \\ 14 & 12 & 13 \\ 22 & 18 & 19 \end{pmatrix}$.}
+
+\text{Sau đó ta có phương trình $X B' = Y$, với $B' = \begin{pmatrix} 9 & 7 & 6 \\ 12 & 18 & 12 \\ 23 & 15 & 11 \end{pmatrix}$.}
+\text{Chuyển vị hai vế của phương trình $X B' = Y$, ta được $(X B')^T = Y^T$, hay $(B')^T X^T = Y^T$.}
+$$
+\begin{pmatrix} 9 & 12 & 23 \\ 7 & 18 & 15 \\ 6 & 12 & 11 \end{pmatrix} X^T = \begin{pmatrix} 11 & 14 & 22 \\ 9 & 12 & 18 \\ 9 & 13 & 19 \end{pmatrix}
+$$
+\text{Tiếp tục áp dụng phương pháp Gauss - Jordan cho ma trận mở rộng $\left((B')^T | Y^T\right)$ ta được:}
+$$
+\dots \xrightarrow{\text{Gauss-Jordan}} \begin{pmatrix}
+1 & 0 & 0 & | & 1 & 1 & 1 \\
+0 & 1 & 0 & | & 1 & 2 & 3 \\
+0 & 0 & 1 & | & 1 & 3 & 1
+\end{pmatrix}
+$$
+\text{Do đó $X^T = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 1 & 3 & 1 \end{pmatrix}$. Vậy nghiệm của phương trình là}
+$$
+X = (X^T)^T = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 1 & 3 & 1 \end{pmatrix}.
+$$
+
+\subsection*{b) Áp dụng phương pháp Gauss - Jordan ta có ma trận mở rộng $(A|B)$:}
+$$
+(A|B) = \begin{pmatrix}
+1 & 1 & \dots & 1 & | & 1 & 2 & \dots & n \\
+0 & 1 & \dots & 1 & | & 0 & 1 & \dots & n-1 \\
+\vdots & \vdots & \ddots & \vdots & | & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & 1 & | & 0 & 0 & \dots & 1
+\end{pmatrix}
+$$
+\text{Thực hiện phép biến đổi $\text{H}_i \leftarrow \text{H}_i - \text{H}_{i+1}$ với $i = n-1, \dots, 1$:}
+$$
+\dots \xrightarrow{\text{H}_i \leftarrow \text{H}_i - \text{H}_{i+1}}
+\begin{pmatrix}
+1 & 0 & \dots & 0 & | & 1 & 1 & \dots & 1 \\
+0 & 1 & \dots & 0 & | & 0 & 1 & \dots & 1 \\
+\vdots & \vdots & \ddots & \vdots & | & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & 1 & | & 0 & 0 & \dots & 1
+\end{pmatrix}
+$$
+\text{Vậy nghiệm của phương trình là}
+$$
+X = \begin{pmatrix}
+1 & 1 & \dots & 1 \\
+0 & 1 & \dots & 1 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & 1
+\end{pmatrix}.
+$$
+
+\end{document}
