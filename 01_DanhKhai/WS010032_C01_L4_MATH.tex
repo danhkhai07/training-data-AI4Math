@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Biện luận số nghiệm của hệ phương trình sau theo tham số $m$}
+$$
+\begin{cases}
+x + y + (m+1)z = 1 \\
+(m+1)x + (m+1)y + z = 1 \\
+(2m+1)x + y + z = 1-m
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Ta xét ma trận hệ số mở rộng $\bar{A}$:}
+$$
+\bar{A} = \begin{pmatrix}
+1 & 1 & m+1 & | & 1 \\
+m+1 & m+1 & 1 & | & 1 \\
+2m+1 & 1 & 1 & | & 1-m
+\end{pmatrix}
+$$
+\text{Thực hiện phép biến đổi $\text{H}_2 \leftarrow \text{H}_2 - (m+1)\text{H}_1$ và $\text{H}_3 \leftarrow \text{H}_3 - (2m+1)\text{H}_1$:}
+$$
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - (2m+1)\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - (m+1)\text{H}_1}
+\begin{pmatrix}
+1 & 1 & m+1 & | & 1 \\
+0 & 0 & 1 - (m+1)^2 & | & 1 - (m+1) \\
+0 & 1-(2m+1) & 1 - (2m+1)(m+1) & | & 1-m - (2m+1)
+\end{pmatrix}
+$$
+\text{Làm gọn các phần tử:}
+\begin{itemize}
+    \item $C_{23}: 1 - (m^2 + 2m + 1) = -m^2 - 2m = -m(m+2)$.
+    \item $C_{24}: 1 - m - 1 = -m$.
+    \item $C_{32}: 1 - 2m - 1 = -2m$.
+    \item $C_{33}: 1 - (2m^2 + 3m + 1) = -2m^2 - 3m = -m(2m+3)$.
+    \item $C_{34}: 1 - m - 2m - 1 = -3m$.
+\end{itemize}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & m+1 & | & 1 \\
+0 & 0 & -m(m+2) & | & -m \\
+0 & -2m & -m(2m+3) & | & -3m
+\end{pmatrix}
+$$
+\text{Đổi vị trí $\text{H}_2 \leftrightarrow \text{H}_3$:}
+$$
+\xrightarrow{\text{H}_2 \leftrightarrow \text{H}_3}
+\begin{pmatrix}
+1 & 1 & m+1 & | & 1 \\
+0 & -2m & -m(2m+3) & | & -3m \\
+0 & 0 & -m(m+2) & | & -m
+\end{pmatrix}
+$$
+
+\subsection*{Biện luận}
+
+\subsubsection*{Trường hợp 1: $m \ne 0$ và $m \ne -2$}
+\text{Khi $m \ne 0$, ta chia $\text{H}_2$ cho $-m$, $\text{H}_3$ cho $-m$:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & m+1 & | & 1 \\
+0 & 2 & 2m+3 & | & 3 \\
+0 & 0 & m+2 & | & 1
+\end{pmatrix}
+$$
+\text{Vì $m \ne -2$, phần tử $(3, 3)$ là $m+2 \ne 0$. Hệ có nghiệm duy nhất $r(A)=r(\bar{A})=3=n$.}
+
+\subsubsection*{Trường hợp 2: $m = 0$}
+\text{Thay $m=0$ vào ma trận ban đầu (hoặc ma trận bậc thang):}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 1 & | & 1 \\
+0 & 0 & 0 & | & 0 \\
+0 & 0 & 0 & | & 0
+\end{pmatrix}
+$$
+\text{Hạng $r(A) = r(\bar{A}) = 1 < n=3$. Hệ có vô số nghiệm phụ thuộc $3 - 1 = 2$ tham số.}
+
+\subsubsection*{Trường hợp 3: $m = -2$}
+\text{Thay $m=-2$ vào ma trận bậc thang trước khi chia:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & -1 & | & 1 \\
+0 & 4 & 2(-2) & | & 6 \\
+0 & 0 & 0 & | & 2
+\end{pmatrix}
+$$
+\text{Hàng cuối là $\begin{pmatrix} 0 & 0 & 0 & | & 2 \end{pmatrix}$, tương đương $0 = 2$ (Vô lý).}
+\text{Hạng $r(A) = 2$ và $r(\bar{A}) = 3$. Vì $r(A) \ne r(\bar{A})$, hệ vô nghiệm.}
+
+\subsection*{Kết luận}
+\begin{itemize}
+    \item \text{Nếu $m \ne 0$ và $m \ne -2$: Hệ có nghiệm duy nhất.}
+    \item \text{Nếu $m = 0$: Hệ có vô số nghiệm.}
+    \item \text{Nếu $m = -2$: Hệ vô nghiệm.}
+\end{itemize}
+
+\end{document}
