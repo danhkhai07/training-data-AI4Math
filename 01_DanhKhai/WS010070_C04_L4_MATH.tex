@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.38. Cho $A$ và $B$ là hai không gian con của không gian véctơ $V$ thỏa mãn các tính chất $V = A+B$ và $\dim V = \dim A + \dim B$. Ta có thể khẳng định $V = A \oplus B$ không? Tại sao?}
+
+\section*{Giải.}
+
+\text{Có thể khẳng định } $V = A \oplus B$.
+
+\text{Thật vậy, theo công thức tính chiều của tổng hai không gian con, ta có}
+$$
+\dim(A+B) = \dim A + \dim B - \dim(A \cap B).
+$$
+\text{Từ giả thiết } $V = A+B \text{ suy ra } \dim(A+B) = \dim V$.
+\text{Vậy}
+$$
+\dim V = \dim A + \dim B - \dim(A \cap B).
+$$
+\text{Kết hợp với giả thiết } $\dim V = \dim A + \dim B$ \text{ ta suy ra}
+$$
+\dim A + \dim B = \dim A + \dim B - \dim(A \cap B).
+$$
+\text{Từ đó suy ra } $\dim(A \cap B) = 0$, \text{ nghĩa là } $A \cap B = \{\mathbf{0}\}$.
+
+\text{Vì } $V = A+B \text{ và } A \cap B = \{\mathbf{0}\}$, \text{ nên theo định nghĩa tổng trực tiếp, ta có } $V = A \oplus B$.
+
+\end{document}
