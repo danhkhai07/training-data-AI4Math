@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.17. Cho ánh xạ tuyến tính $f: \mathbb{R}^4 \to \mathbb{R}^3, (x_1, x_2, x_3, x_4) \mapsto (x_1 - 2x_2 + x_3 + x_4, x_1 - 2x_2 - 3x_3 + 2x_4, 2x_1 + 2x_3 - x_4)$. Hãy xác định các không gian con $\text{Ker}f, \text{Im}f$ và tìm $f^{-1}(2, -8, 2)$. Hỏi ánh xạ $f$ là đơn ánh, toàn ánh, hay song ánh?}
+
+\section*{Giải.}
+
+\text{Ta có ma trận của } $f$ \text{ trong cặp cơ sở chính tắc của } $\mathbb{R}^4 \text{ và } \mathbb{R}^3$ \text{ là}
+$$
+A = \begin{pmatrix}
+1 & -2 & 1 & 1 \\
+1 & -2 & -3 & 2 \\
+2 & 0 & 2 & -1
+\end{pmatrix}.
+$$
+
+\text{1. Tìm } $\text{Ker}f$: $\mathbf{x} \in \text{Ker}f \Leftrightarrow f(\mathbf{x}) = \mathbf{0}$, \text{ hay } $(x_1, x_2, x_3, x_4)$ \text{ là nghiệm của hệ phương trình thuần nhất } $A\mathbf{x} = \mathbf{0}$.
+\text{Xét ma trận hệ số mở rộng } $(A | \mathbf{0})$:
+$$
+\begin{pmatrix}
+1 & -2 & 1 & 1 & \bigm| 0 \\
+1 & -2 & -3 & 2 & \bigm| 0 \\
+2 & 0 & 2 & -1 & \bigm| 0
+\end{pmatrix}
+\xrightarrow{H_2 \to -H_1+H_2}
+\xrightarrow{H_3 \to -2H_1+H_3}
+\begin{pmatrix}
+1 & -2 & 1 & 1 & \bigm| 0 \\
+0 & 0 & -4 & 1 & \bigm| 0 \\
+0 & 4 & 0 & -3 & \bigm| 0
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_2 \leftrightarrow H_3}
+\begin{pmatrix}
+1 & -2 & 1 & 1 & \bigm| 0 \\
+0 & 4 & 0 & -3 & \bigm| 0 \\
+0 & 0 & -4 & 1 & \bigm| 0
+\end{pmatrix}
+$$
+\text{Ta có hệ phương trình tương đương:}
+$$
+\begin{cases}
+x_1 - 2x_2 + x_3 + x_4 = 0 \\
+4x_2 - 3x_4 = 0 \\
+-4x_3 + x_4 = 0
+\end{cases}
+$$
+\text{Chọn } $x_4 = 4C$. \text{Từ đó suy ra } $x_3 = C, x_2 = 3C, x_1 = 2C$.
+\text{Vậy } $\text{Ker}f = \{ (2C, 3C, C, 4C) \mid C \in \mathbb{R} \} = \mathcal{L}((2, 3, 1, 4))$.
+\text{Cơ sở của } $\text{Ker}f$ \text{ là } $\{(2, 3, 1, 4)\}$ \text{ và } $\dim \text{Ker}f = 1$.
+
+\text{2. Tìm } $\text{Im}f$:
+\text{Không gian ảnh } $\text{Im}f$ \text{ sinh bởi các cột của ma trận } $A$. \text{Từ dạng ma trận bậc thang của } $A$, \text{ ta thấy } $r(A) = 3$.
+\text{Vậy } $\dim \text{Im}f = 3$. \text{Vì } $\text{Im}f \triangleleft \mathbb{R}^3 \text{ và } \dim \text{Im}f = 3$, \text{ nên } $\text{Im}f = \mathbb{R}^3$.
+\text{Cơ sở của } $\text{Im}f$ \text{ là cơ sở chính tắc của } $\mathbb{R}^3$, \text{ ví dụ } $\{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}$.
+
+\text{3. Tìm } $f^{-1}(2, -8, 2)$:
+\text{Ta giải hệ phương trình } $f(x_1, x_2, x_3, x_4) = (2, -8, 2)$.
+\text{Xét ma trận hệ số mở rộng } $(A | \mathbf{b})$:
+$$
+\begin{pmatrix}
+1 & -2 & 1 & 1 & \bigm| 2 \\
+1 & -2 & -3 & 2 & \bigm| -8 \\
+2 & 0 & 2 & -1 & \bigm| 2
+\end{pmatrix}
+\xrightarrow{H_2 \to -H_1+H_2}
+\xrightarrow{H_3 \to -2H_1+H_3}
+\begin{pmatrix}
+1 & -2 & 1 & 1 & \bigm| 2 \\
+0 & 0 & -4 & 1 & \bigm| -10 \\
+0 & 4 & 0 & -3 & \bigm| -2
+\end{pmatrix}
+$$
+$$
+\xrightarrow{H_2 \leftrightarrow H_3}
+\begin{pmatrix}
+1 & -2 & 1 & 1 & \bigm| 2 \\
+0 & 4 & 0 & -3 & \bigm| -2 \\
+0 & 0 & -4 & 1 & \bigm| -10
+\end{pmatrix}
+$$
+\text{Ta có hệ phương trình tương đương:}
+$$
+\begin{cases}
+x_1 - 2x_2 + x_3 + x_4 = 2 \\
+4x_2 - 3x_4 = -2 \\
+-4x_3 + x_4 = -10
+\end{cases}
+$$
+\text{Chọn } $x_4 = 4C$. \text{Ta có } $x_3 = \frac{x_4}{4} + \frac{10}{4} = C + \frac{5}{2}$.
+\text{Và } $x_2 = \frac{3x_4 - 2}{4} = \frac{12C - 2}{4} = 3C - \frac{1}{2}$.
+\text{Thay vào phương trình đầu tiên:}
+$$
+x_1 = 2x_2 - x_3 - x_4 + 2 = 2(3C - \frac{1}{2}) - (C + \frac{5}{2}) - 4C + 2 = 6C - 1 - C - \frac{5}{2} - 4C + 2 = C - \frac{3}{2}.
+$$
+\text{Tập hợp ảnh ngược là:}
+$$
+f^{-1}(2, -8, 2) = \left\{ (C - \frac{3}{2}, 3C - \frac{1}{2}, C + \frac{5}{2}, 4C) \mid C \in \mathbb{R} \right\}
+$$
+$$
+= \left\{ (-\frac{3}{2}, -\frac{1}{2}, \frac{5}{2}, 0) + C(1, 3, 1, 4) \mid C \in \mathbb{R} \right\}.
+$$
+
+\text{4. Tính chất ánh xạ:}
+\text{Vì } $\dim \text{Ker}f = 1 \ne 0$, \text{ nên } $f$ \text{ không phải là đơn ánh.}
+\text{Vì } $\dim \text{Im}f = 3 = \dim \mathbb{R}^3$, \text{ nên } $f$ \text{ là toàn ánh.}
+\text{Do } $f$ \text{ không là đơn ánh, nên } $f$ \text{ không phải là song ánh.}
+
+\end{document}
