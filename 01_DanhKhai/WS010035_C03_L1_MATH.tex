@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Tìm $a$ để hệ sau có nghiệm không tầm thường}
+$$
+\begin{cases}
+2x - y + z = 0 \\
+x + y + 2z = 0 \\
+5x - y + az = 0
+\end{cases}
+$$
+
+\section*{Giải.}
+
+\text{Hệ phương trình thuần nhất có nghiệm không tầm thường khi và chỉ khi $\det A = 0$, với $A$ là ma trận hệ số.}
+\text{Ta tính định thức của ma trận hệ số:}
+$$
+\det A = \begin{vmatrix} 2 & -1 & 1 \\ 1 & 1 & 2 \\ 5 & -1 & a \end{vmatrix}
+$$
+\text{Khai triển định thức theo cột thứ nhất:}
+$$
+\det A = 2\begin{vmatrix} 1 & 2 \\ -1 & a \end{vmatrix} - 1\begin{vmatrix} -1 & 1 \\ -1 & a \end{vmatrix} + 5\begin{vmatrix} -1 & 1 \\ 1 & 2 \end{vmatrix}
+$$
+$$
+= 2(a - (-2)) - 1(-a - (-1)) + 5(-2 - 1)
+$$
+$$
+= 2(a + 2) - (-a + 1) + 5(-3)
+$$
+$$
+= 2a + 4 + a - 1 - 15 = 3a - 12.
+$$
+
+\text{Hệ có nghiệm không tầm thường khi $\det A = 0$, tức là:}
+$$
+3a - 12 = 0 \Leftrightarrow a = 4.
+$$
+
+\text{Vậy với $a = 4$ thì hệ phương trình đã cho có nghiệm không tầm thường.}
+
+\end{document}
