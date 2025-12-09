@@ -1,0 +1,169 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Giải và biện luận các hệ phương trình sau:}
+\begin{enumerate}
+    \item[a)] $\begin{cases}
+    (3-2m)x + (2-m)y + z = m \\
+    (2-m)x + (2-m)y + z = 1 \\
+    x + y + (2-m)z = 1
+    \end{cases}$
+    \item[b)] $\begin{cases}
+    x_1 + x_2 + x_3 + x_4 = 1 \\
+    x_1 + mx_2 + x_3 + x_4 = 1 \\
+    x_1 + x_2 + mx_3 + x_4 = 1 \\
+    x_1 + x_2 + x_3 + mx_4 = 1
+    \end{cases}$
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Giải và biện luận hệ phương trình}
+\text{Ma trận hệ số mở rộng là:}
+$$
+\bar{A} = \begin{pmatrix}
+3-2m & 2-m & 1 & | & m \\
+2-m & 2-m & 1 & | & 1 \\
+1 & 1 & 2-m & | & 1
+\end{pmatrix}
+$$
+\text{Đổi vị trí $\text{H}_1 \leftrightarrow \text{H}_3$:}
+$$
+\xrightarrow{\text{H}_1 \leftrightarrow \text{H}_3}
+\begin{pmatrix}
+1 & 1 & 2-m & | & 1 \\
+2-m & 2-m & 1 & | & 1 \\
+3-2m & 2-m & 1 & | & m
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \text{H}_2 - (2-m)\text{H}_1$ và $\text{H}_3 \leftarrow \text{H}_3 - (3-2m)\text{H}_1$:}
+$$
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 - (3-2m)\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - (2-m)\text{H}_1}
+\begin{pmatrix}
+1 & 1 & 2-m & | & 1 \\
+0 & m-1 & (m-1)(m-3) & | & m-1 \\
+0 & m-1 & (m-1)(5-2m) & | & 3(m-1)
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 - \text{H}_2$:}
+$$
+\xrightarrow{\text{H}_3 \leftarrow \text{H}_3 - \text{H}_2}
+\begin{pmatrix}
+1 & 1 & 2-m & | & 1 \\
+0 & m-1 & (m-1)(m-3) & | & m-1 \\
+0 & 0 & (m-1)(5-2m) - (m-1)(m-3) & | & 2(m-1)
+\end{pmatrix}
+$$
+\text{Phần tử $(3, 3)$ là $(m-1)(5-2m - m+3) = (m-1)(8-3m)$.}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 2-m & | & 1 \\
+0 & m-1 & (m-1)(m-3) & | & m-1 \\
+0 & 0 & (m-1)(8-3m) & | & 2(m-1)
+\end{pmatrix}
+$$
+
+\subsubsection*{Trường hợp 1: $m \ne 1$ và $m \ne \frac{8}{3}$}
+\text{Khi $m \ne 1$, ta chia $\text{H}_2$ cho $m-1$ và $\text{H}_3$ cho $m-1$:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 2-m & | & 1 \\
+0 & 1 & m-3 & | & 1 \\
+0 & 0 & 8-3m & | & 2
+\end{pmatrix}
+$$
+\text{Vì $m \ne \frac{8}{3}$, phần tử $(3, 3)$ là $8-3m \ne 0$. Hệ có nghiệm duy nhất $r(A)=r(\bar{A})=3=n$.}
+$$
+z = \dfrac{2}{8-3m}.
+$$
+$$
+y = 1 - (m-3)z = 1 - \dfrac{2(m-3)}{8-3m} = \dfrac{8-3m - 2m + 6}{8-3m} = \dfrac{14-5m}{8-3m}.
+$$
+$$
+x = 1 - y - (2-m)z = 1 - \dfrac{14-5m}{8-3m} - \dfrac{2(2-m)}{8-3m}
+$$
+$$
+x = \dfrac{8-3m - (14-5m) - (4-2m)}{8-3m} = \dfrac{8-3m - 14+5m - 4+2m}{8-3m} = \dfrac{4m - 10}{8-3m}.
+$$
+\text{Nghiệm duy nhất là $x = \dfrac{4m - 10}{8-3m}, y = \dfrac{14-5m}{8-3m}, z = \dfrac{2}{8-3m}$.}
+
+\subsubsection*{Trường hợp 2: $m = 1$}
+\text{Thay $m=1$ vào ma trận bậc thang:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 1 & | & 1 \\
+0 & 0 & 0 & | & 0 \\
+0 & 0 & 0 & | & 0
+\end{pmatrix}
+$$
+\text{Hạng $r(A) = r(\bar{A}) = 1 < n=3$. Hệ có vô số nghiệm phụ thuộc $3 - 1 = 2$ tham số.}
+\text{Hệ tương đương $x + y + z = 1$. Nghiệm tổng quát là $x = 1 - C_1 - C_2, y = C_1, z = C_2$, với $C_1, C_2 \in \mathbb{R}$.}
+
+\subsubsection*{Trường hợp 3: $m = \frac{8}{3}$}
+\text{Thay $m=\frac{8}{3}$ vào ma trận bậc thang. Phần tử $(3, 3)$ bằng 0. }
+\text{Phần tử $(3, 4)$ là $2(m-1) = 2(\frac{8}{3} - 1) = 2(\frac{5}{3}) = \frac{10}{3} \ne 0$.}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 2-m & | & 1 \\
+0 & m-1 & (m-1)(m-3) & | & m-1 \\
+0 & 0 & 0 & | & \frac{10}{3}
+\end{pmatrix}
+$$
+\text{Hạng $r(A) = 2$ và $r(\bar{A}) = 3$. Vì $r(A) \ne r(\bar{A})$, hệ vô nghiệm.}
+
+\subsection*{b) Giải và biện luận hệ phương trình}
+\text{Ma trận hệ số mở rộng là:}
+$$
+\bar{A} = \begin{pmatrix}
+1 & 1 & 1 & 1 & | & 1 \\
+1 & m & 1 & 1 & | & 1 \\
+1 & 1 & m & 1 & | & 1 \\
+1 & 1 & 1 & m & | & 1
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_i \leftarrow \text{H}_i - \text{H}_1$ với $i=2, 3, 4$:}
+$$
+\xrightarrow{\text{H}_i \leftarrow \text{H}_i - \text{H}_1}
+\begin{pmatrix}
+1 & 1 & 1 & 1 & | & 1 \\
+0 & m-1 & 0 & 0 & | & 0 \\
+0 & 0 & m-1 & 0 & | & 0 \\
+0 & 0 & 0 & m-1 & | & 0
+\end{pmatrix}
+$$
+
+\subsubsection*{Trường hợp 1: $m \ne 1$}
+\text{Khi $m \ne 1$, ta chia $\text{H}_2, \text{H}_3, \text{H}_4$ cho $m-1$:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 1 & 1 & | & 1 \\
+0 & 1 & 0 & 0 & | & 0 \\
+0 & 0 & 1 & 0 & | & 0 \\
+0 & 0 & 0 & 1 & | & 0
+\end{pmatrix}
+$$
+\text{Hệ có nghiệm duy nhất $r(A)=r(\bar{A})=4=n$.}
+\text{Giải ngược: $x_4=0, x_3=0, x_2=0$. Thay vào $\text{H}_1$: $x_1 + 0 + 0 + 0 = 1 \Rightarrow x_1 = 1$.}
+\text{Nghiệm duy nhất là $(x_1, x_2, x_3, x_4) = (1, 0, 0, 0)$.}
+
+\subsubsection*{Trường hợp 2: $m = 1$}
+\text{Thay $m=1$ vào ma trận bậc thang:}
+$$
+\bar{A} \sim \begin{pmatrix}
+1 & 1 & 1 & 1 & | & 1 \\
+0 & 0 & 0 & 0 & | & 0 \\
+0 & 0 & 0 & 0 & | & 0 \\
+0 & 0 & 0 & 0 & | & 0
+\end{pmatrix}
+$$
+\text{Hạng $r(A) = r(\bar{A}) = 1 < n=4$. Hệ có vô số nghiệm phụ thuộc $4 - 1 = 3$ tham số.}
+\text{Hệ tương đương $x_1 + x_2 + x_3 + x_4 = 1$. Chọn $x_2 = C_1, x_3 = C_2, x_4 = C_3$ là tham số tùy ý.}
+$$
+x_1 = 1 - C_1 - C_2 - C_3.
+$$
+\text{Nghiệm tổng quát là $\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} + C_1 \begin{pmatrix} -1 \\ 1 \\ 0 \\ 0 \end{pmatrix} + C_2 \begin{pmatrix} -1 \\ 0 \\ 1 \\ 0 \end{pmatrix} + C_3 \begin{pmatrix} -1 \\ 0 \\ 0 \\ 1 \end{pmatrix}, \quad C_1, C_2, C_3 \in \mathbb{R}$.}
+
+\end{document}
