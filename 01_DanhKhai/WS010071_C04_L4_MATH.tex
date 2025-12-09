@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 2.1.39. Cho $A$ và $B$ là hai không gian con của không gian $V$. Chứng minh rằng nếu $\dim A + \dim B > \dim V$ thì $A \cap B \ne \{\mathbf{0}\}$.}
+
+\section*{Giải.}
+
+\text{Ta sẽ chứng minh } $\dim(A \cap B) > 0$.
+\text{Giả sử phản chứng, } $\dim(A \cap B) = 0$, \text{ suy ra } $\dim(A+B) = \dim A + \dim B$.
+\text{Theo giả thiết } $\dim A + \dim B > \dim V$, \text{ từ đó suy ra } $\dim(A+B) > \dim V$.
+\text{Điều này vô lý vì từ giả thiết } $A \triangleleft V \text{ và } B \triangleleft V \text{ ta có } A+B \triangleleft V$.
+\text{Vậy } $\dim(A+B) \le \dim V$.
+\text{Mâu thuẫn xảy ra, chứng tỏ giả sử phản chứng là sai.}
+\text{Vậy } $A \cap B \ne \{\mathbf{0}\}$.
+
+\end{document}
