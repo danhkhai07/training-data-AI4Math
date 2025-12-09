@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Xét tính độc lập tuyến tính của các vectơ sau:}
+\begin{enumerate}
+    \item[a)] $\mathbf{u}_1 = (1, 2, 3), \mathbf{u}_2 = (3, 2, 1), \mathbf{u}_3 = (1, 1, 1)$ trong $\mathbb{R}^3$.
+    \item[b)] $\mathbf{u}_1 = (1, 2, 3, 4), \mathbf{u}_2 = (2, 3, 4, 5), \mathbf{u}_3 = (3, 4, 5, 6), \mathbf{u}_4 = (4, 5, 6, 7)$ trong $\mathbb{R}^4$.
+    \item[c)] $p_1(x) = 1, p_2(x) = x, p_3(x) = x^2$ trong $P_2[x]$.
+\end{enumerate}
+
+\section*{Giải.}
+
+\subsection*{a) Xét các vectơ $\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3$ trong $\mathbb{R}^3$}
+\text{Các vectơ độc lập tuyến tính khi và chỉ khi $\det A \ne 0$, với $A$ là ma trận lập bởi các vectơ cột (hoặc hàng).}
+$$
+A = \begin{pmatrix} 1 & 3 & 1 \\ 2 & 2 & 1 \\ 3 & 1 & 1 \end{pmatrix}
+$$
+\text{Tính định thức $\det A$ (khai triển theo cột 3):}
+$$
+\det A = 1 \begin{vmatrix} 2 & 2 \\ 3 & 1 \end{vmatrix} - 1 \begin{vmatrix} 1 & 3 \\ 3 & 1 \end{vmatrix} + 1 \begin{vmatrix} 1 & 3 \\ 2 & 2 \end{vmatrix}
+$$
+$$
+= 1(2 - 6) - 1(1 - 9) + 1(2 - 6) = -4 - (-8) + (-4) = -4 + 8 - 4 = 0.
+$$
+\text{Vì $\det A = 0$, ba vectơ $\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3$ **phụ thuộc tuyến tính**.}
+
+\subsection*{b) Xét các vectơ $\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3, \mathbf{u}_4$ trong $\mathbb{R}^4$}
+\text{Ta xét phương trình tổ hợp tuyến tính thuần nhất:}
+$$
+\alpha_1 \mathbf{u}_1 + \alpha_2 \mathbf{u}_2 + \alpha_3 \mathbf{u}_3 + \alpha_4 \mathbf{u}_4 = \mathbf{0}
+$$
+\text{Ta xét ma trận lập bởi các vectơ (viết theo hàng để dễ biến đổi Gauss):}
+$$
+A = \begin{pmatrix}
+1 & 2 & 3 & 4 \\
+2 & 3 & 4 & 5 \\
+3 & 4 & 5 & 6 \\
+4 & 5 & 6 & 7
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1$, $\text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_1$, $\text{H}_4 \leftarrow \text{H}_4 - 4\text{H}_1$:}
+$$
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - 4\text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1, \text{H}_3 \leftarrow \text{H}_3 - 3\text{H}_1}
+\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+0 & -3 & -6 & -9
+\end{pmatrix}
+$$
+\text{Thực hiện $\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_2$ và $\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_2$:}
+$$
+\xrightarrow[\text{H}_4 \leftarrow \text{H}_4 - 3\text{H}_2]{\text{H}_3 \leftarrow \text{H}_3 - 2\text{H}_2}
+\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+$$
+\text{Hạng của ma trận $r(A) = 2 < 4$ (số vectơ). Hệ thuần nhất có nghiệm không tầm thường.}
+\text{Vậy bốn vectơ **phụ thuộc tuyến tính**.}
+
+\subsection*{c) Xét các đa thức $p_1(x) = 1, p_2(x) = x, p_3(x) = x^2$ trong $P_2[x]$}
+\text{Ta xét phương trình tổ hợp tuyến tính thuần nhất:}
+$$
+\alpha_1 p_1(x) + \alpha_2 p_2(x) + \alpha_3 p_3(x) = \mathbf{0}(x)
+$$
+$$
+\alpha_1 (1) + \alpha_2 (x) + \alpha_3 (x^2) = 0, \quad \forall x \in \mathbb{R}.
+$$
+\text{Đẳng thức này là một đa thức zero. Theo định nghĩa đa thức zero, tất cả các hệ số phải bằng 0.}
+$$
+\alpha_1 = 0, \quad \alpha_2 = 0, \quad \alpha_3 = 0.
+$$
+\text{Phương trình tổ hợp tuyến tính chỉ có nghiệm tầm thường.}
+\text{Vậy ba đa thức $p_1(x), p_2(x), p_3(x)$ **độc lập tuyến tính**.}
+
+\end{document}
