@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cases}
+
+\begin{document}
+
+\subsection*{Bài 3.1.22. Cho $f$ là một phép biến đổi tuyến tính trong không gian $\mathbb{R}^2$ thỏa mãn $f(1, 1) = (-5, -1), f(2, 1) = (2, 1)$. Tìm các giá trị riêng và các véctơ riêng tương ứng của $f$.}
+
+\section*{Giải.}
+
+\text{Trước hết, ta nhận thấy } $\mathbf{u}_1 = (1, 1), \mathbf{u}_2 = (2, 1)$ \text{ là một cơ sở của không gian } $\mathbb{R}^2$. \text{Hơn nữa, ta có}
+$$
+f(\mathbf{u}_1) = (-5, -1) = 3(1, 1) + (-4)(2, 1) = 3\mathbf{u}_1 + (-4)\mathbf{u}_2
+$$
+$$
+f(\mathbf{u}_2) = (2, 1) = 0(1, 1) + 1(2, 1) = 0\mathbf{u}_1 + 1\mathbf{u}_2.
+$$
+\text{Từ đó suy ra ma trận của } $f$ \text{ trong cơ sở } $B = \{\mathbf{u}_1, \mathbf{u}_2\}$ \text{ là }
+$$
+A = \begin{pmatrix}
+3 & 0 \\
+-4 & 1
+\end{pmatrix}.
+$$
+\text{Đa thức đặc trưng của } $f$ \text{ là}
+$$
+\det(A - \lambda I) = \begin{vmatrix}
+3 - \lambda & 0 \\
+-4 & 1 - \lambda
+\end{vmatrix} = (3 - \lambda)(1 - \lambda).
+$$
+\text{Vậy } $\lambda_1 = 3, \lambda_2 = 1$ \text{ là các giá trị riêng của phép biến đổi tuyến tính } $f$.
+
+\text{1. Tọa độ véctơ riêng của } $f$ \text{ ứng với giá trị riêng } $\lambda_1 = 3$ \text{ là nghiệm không tầm thường của hệ phương trình } $(A - 3I)\mathbf{x} = \mathbf{0}$, \text{ hay}
+$$
+\begin{pmatrix}
+0 & 0 \\
+-4 & -2
+\end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \Leftrightarrow -4x_1 - 2x_2 = 0 \Leftrightarrow x_2 = -2x_1.
+$$
+\text{Đặt } $x_1 = C \in \mathbb{R}$. \text{Véctơ tọa độ là } $\begin{pmatrix} C \\ -2C \end{pmatrix}$.
+\text{Véctơ riêng của } $f$ \text{ ứng với giá trị riêng } $\lambda_1 = 3$ \text{ là } $\mathbf{v}_1 = C \cdot \mathbf{u}_1 + (-2C) \cdot \mathbf{u}_2 = C(1, 1) - 2C(2, 1) = C(1-4, 1-2) = C(-3, -1)$, \text{ với } $C \ne 0$.
+
+\text{2. Tọa độ véctơ riêng của } $f$ \text{ ứng với giá trị riêng } $\lambda_2 = 1$ \text{ là nghiệm không tầm thường của hệ phương trình } $(A - 1I)\mathbf{x} = \mathbf{0}$, \text{ hay}
+$$
+\begin{pmatrix}
+2 & 0 \\
+-4 & 0
+\end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \Leftrightarrow 2x_1 = 0 \Leftrightarrow x_1 = 0.
+$$
+\text{Đặt } $x_2 = C \in \mathbb{R}$. \text{Véctơ tọa độ là } $\begin{pmatrix} 0 \\ C \end{pmatrix}$.
+\text{Véctơ riêng của } $f$ \text{ ứng với giá trị riêng } $\lambda_2 = 1$ \text{ là } $\mathbf{v}_2 = 0 \cdot \mathbf{u}_1 + C \cdot \mathbf{u}_2 = C \mathbf{u}_2 = C(2, 1)$, \text{ với } $C \ne 0$.
+
+\end{document}
