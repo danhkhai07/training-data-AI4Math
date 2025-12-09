@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Bài 2.1.20. Tìm một cơ sở và tìm chiều của không gian}
+$$
+V = \left\{ A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2\times 2}(\mathbb{R}) \middle| a = d, b = -c \right\}.
+$$
+
+\section*{Giải.}
+
+\text{Với} $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in V$, \text{ta có}
+$$
+A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \underset{a=d, b=-c}{=} \begin{pmatrix} a & b \\ -b & a \end{pmatrix} = a \cdot \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + b \cdot \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}.
+$$
+\text{Suy ra hệ}
+$$
+\left\{ u_1 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}; u_2 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \right\} \text{ là một hệ sinh của } V.
+$$
+\text{Dễ dàng chứng minh được} $\{u_1; u_2\}$ \text{độc lập tuyến tính.}
+
+\text{Vậy} $\{u_1; u_2\}$ \text{là một cơ sở của không gian} $V$ \text{và} $\dim V = 2$.
+
+\end{document}
