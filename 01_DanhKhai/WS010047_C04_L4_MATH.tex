@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Trong không gian $\mathbb{R}^3$, cho hệ vectơ $F = \{\mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3 \}$ như sau: $\mathbf{f}_1 = (1, 2, -1), \mathbf{f}_2 = (1, 1, 1), \mathbf{f}_3 = (0, 1, 1)$.}
+\text{Chứng minh rằng hệ vectơ $F$ là cơ sở của không gian $\mathbb{R}^3$. Tính tọa độ của vectơ $\mathbf{u} = (x, y, z)$ theo cơ sở $F$. Tìm ma trận chuyển cơ sở từ cơ sở chính tắc $E$ sang cơ sở $F$ và chuyển từ cơ sở $F$ sang $E$.}
+
+\section*{Giải.}
+
+\subsection*{a) Chứng minh $F$ là cơ sở của $\mathbb{R}^3$}
+\text{Để chứng minh $F = \{\mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3 \}$ là cơ sở của $\mathbb{R}^3$, ta cần chứng minh $F$ là một hệ độc lập tuyến tính (và do số vectơ bằng số chiều $\dim(\mathbb{R}^3)=3$, điều này là đủ).}
+
+\text{Ta xét ma trận lập bởi các vectơ cột:}
+$$
+A = \begin{pmatrix} 1 & 1 & 0 \\ 2 & 1 & 1 \\ -1 & 1 & 1 \end{pmatrix}
+$$
+\text{Tính định thức của ma trận $A$ (khai triển theo cột 1):}
+$$
+\det A = 1\begin{vmatrix} 1 & 1 \\ 1 & 1 \end{vmatrix} - 2\begin{vmatrix} 1 & 0 \\ 1 & 1 \end{vmatrix} + (-1)\begin{vmatrix} 1 & 0 \\ 1 & 1 \end{vmatrix}
+$$
+$$
+= 1(1-1) - 2(1-0) - 1(1-0) = 0 - 2 - 1 = -3 \ne 0.
+$$
+\text{Vì $\det A \ne 0$, nên hệ vectơ $F$ độc lập tuyến tính. Do đó, $F$ là cơ sở của không gian $\mathbb{R}^3$.}
+
+\subsection*{b) Tính tọa độ của vectơ $\mathbf{u} = (x, y, z)$ theo cơ sở $F$}
+\text{Tọa độ $\mathbf{u}$ theo cơ sở $F$ là $(\alpha_1, \alpha_2, \alpha_3)$ thỏa mãn:}
+$$
+\mathbf{u} = \alpha_1 \mathbf{f}_1 + \alpha_2 \mathbf{f}_2 + \alpha_3 \mathbf{f}_3
+$$
+\text{Ta có hệ phương trình:}
+$$
+\begin{cases}
+\alpha_1 + \alpha_2 = x \\
+2\alpha_1 + \alpha_2 + \alpha_3 = y \\
+-\alpha_1 + \alpha_2 + \alpha_3 = z
+\end{cases}
+$$
+\text{Sử dụng phương pháp Gauss - Jordan trên ma trận mở rộng $(A|\mathbf{u})$:}
+$$
+(A|\mathbf{u}) = \begin{pmatrix}
+1 & 1 & 0 & | & x \\
+2 & 1 & 1 & | & y \\
+-1 & 1 & 1 & | & z
+\end{pmatrix}
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 + \text{H}_1]{\text{H}_2 \leftarrow \text{H}_2 - 2\text{H}_1}
+\begin{pmatrix}
+1 & 1 & 0 & | & x \\
+0 & -1 & 1 & | & y - 2x \\
+0 & 2 & 1 & | & x + z
+\end{pmatrix}
+$$
+$$
+\xrightarrow[\text{H}_3 \leftarrow \text{H}_3 + 2\text{H}_2]{\text{H}_2 \leftarrow -\text{H}_2}
+\begin{pmatrix}
+1 & 1 & 0 & | & x \\
+0 & 1 & -1 & | & 2x - y \\
+0 & 0 & 3 & | & 5x - 2y + z
+\end{pmatrix}
+$$
+$$
+\xrightarrow{\text{H}_3 \leftarrow \frac{1}{3}\text{H}_3}
+\begin{pmatrix}
+1 & 1 & 0 & | & x \\
+0 & 1 & -1 & | & 2x - y \\
+0 & 0 & 1 & | & \frac{5}{3}x - \frac{2}{3}y + \frac{1}{3}z
+\end{pmatrix}
+$$
+\text{Giải ngược từ dưới lên (hoặc khử Gauss):}
+\begin{itemize}
+    \item $\alpha_3 = \frac{5}{3}x - \frac{2}{3}y + \frac{1}{3}z$.
+    \item $\alpha_2 = 2x - y + \alpha_3 = 2x - y + \frac{5}{3}x - \frac{2}{3}y + \frac{1}{3}z = \frac{11}{3}x - \frac{5}{3}y + \frac{1}{3}z$.
+    \item $\alpha_1 = x - \alpha_2 = x - (\frac{11}{3}x - \frac{5}{3}y + \frac{1}{3}z) = -\frac{8}{3}x + \frac{5}{3}y - \frac{1}{3}z$.
+\end{itemize}
+\text{Tọa độ của $\mathbf{u} = (x, y, z)$ theo cơ sở $F$ là $\left( -\frac{8}{3}x + \frac{5}{3}y - \frac{1}{3}z, \frac{11}{3}x - \frac{5}{3}y + \frac{1}{3}z, \frac{5}{3}x - \frac{2}{3}y + \frac{1}{3}z \right)$.}
+
+\subsection*{c) Ma trận chuyển cơ sở $A = T_{E \to F}$ và $T_{F \to E}$}
+\text{Ma trận chuyển cơ sở từ cơ sở $F$ sang cơ sở $E$ là $T_{F \to E} = A$. }
+$$
+T_{F \to E} = A = \begin{pmatrix} 1 & 1 & 0 \\ 2 & 1 & 1 \\ -1 & 1 & 1 \end{pmatrix}.
+$$
+\text{Ma trận chuyển cơ sở từ cơ sở $E$ sang cơ sở $F$ là $T_{E \to F} = A^{-1}$. }
+\text{Từ phép biến đổi Gauss - Jordan ở phần b), ta có $A^{-1}$ được tìm từ việc tính $(A|I)$ (đã làm trong quá trình tìm tọa độ, ta chỉ cần biến đổi bên phải thêm):}
+\text{Ma trận phụ hợp (Adjungate): }
+$$
+\text{Adj}(A) = \begin{pmatrix}
+0 & -1 & 1 \\
+-3 & 1 & -1 \\
+3 & -2 & -1
+\end{pmatrix}.
+$$
+\text{Ta có $\det A = -3$. Ma trận nghịch đảo là:}
+$$
+A^{-1} = \dfrac{1}{\det A} \text{Adj}(A)^T = \dfrac{1}{-3} \begin{pmatrix}
+0 & -3 & 3 \\
+-1 & 1 & -2 \\
+1 & -1 & -1
+\end{pmatrix} = \begin{pmatrix}
+0 & 1 & -1 \\
+\frac{1}{3} & -\frac{1}{3} & \frac{2}{3} \\
+-\frac{1}{3} & \frac{1}{3} & \frac{1}{3}
+\end{pmatrix}.
+$$
+\text{Vậy:}
+$$
+T_{E \to F} = A^{-1} = \begin{pmatrix}
+0 & 1 & -1 \\
+\frac{1}{3} & -\frac{1}{3} & \frac{2}{3} \\
+-\frac{1}{3} & \frac{1}{3} & \frac{1}{3}
+\end{pmatrix}.
+$$
+
+\end{document}
