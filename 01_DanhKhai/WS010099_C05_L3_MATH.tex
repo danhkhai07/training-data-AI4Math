@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\subsection*{Bài 3.1.29. Cho phép biến đổi tuyến tính $T: P_n[x] \to P_n[x], p(x) \mapsto p'(x)$, ($p'(x)$ là hàm đạo hàm của $p(x)$). Tìm các giá trị riêng và các vectơ riêng tương ứng của $T$.}
+
+\section*{Giải.}
+\text{Từ Bài 3.1.12, ta có ma trận của $T$ trong cơ sở chính tắc là}
+$$
+A = \begin{pmatrix}
+0 & 1 & 0 & \dots & 0 \\
+0 & 0 & 2 & \dots & 0 \\
+0 & 0 & 0 & \dots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \dots & n \\
+0 & 0 & 0 & \dots & 0
+\end{pmatrix}.
+$$
+\text{Từ đó suy ra đa thức đặc trưng của phép biến đổi tuyến tính $T$ là}
+$$
+\det(A - \lambda I) = (-\lambda)^n.
+$$
+\text{Vậy $\lambda = 0$ là giá trị riêng duy nhất của phép biến đổi tuyến tính $T$.}
+
+\text{Vectơ riêng tương ứng của $T$ là nghiệm của phương trình $T(p(x)) = 0 \cdot p(x)$ tức là $T(p(x)) = 0$. Mặt khác, do $T(p(x)) = p'(x)$ nên $p'(x) = 0$, suy ra $p(x) = C$ (với $C$ là hằng số).}
+
+\text{Vậy $p(x) = C, C \ne 0$ là vectơ riêng tương ứng với giá trị riêng duy nhất $\lambda = 0$ của phép biến đổi tuyến tính $T$.}
+
+\end{document}
